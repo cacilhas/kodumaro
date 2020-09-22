@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "SF Mono";
+  src: url("//cacilhas.info/misc/fonts/sfmono.ttf") format("truetype"), url("//cacilhas.info/misc/fonts/sfmono.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   background-image: url("/img/background.jpg") !important;
   background-repeat: repeat !important;
@@ -31,6 +37,10 @@ p code,
 tr code {
   color: #c60 !important;
   background-color: inherit !important;
+}
+h3,
+a {
+  font-family: "SF Mono", Monaco, monospace !important;
 }
 h3 code,
 a code {

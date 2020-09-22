@@ -1,5 +1,12 @@
 @import "_mixins.styl"
 
+@font-face
+  font-family "SF Mono"
+  src url("//cacilhas.info/misc/fonts/sfmono.ttf") format("truetype"),
+      url("//cacilhas.info/misc/fonts/sfmono.woff2") format("woff2")
+  font-weight normal
+  font-style normal
+
 $code = #cc6600
 $badge_color = $code
 $shadow = $code
@@ -41,6 +48,7 @@ a
   code
     color inherit !important
     background-color inherit !important
+  font-family "SF Mono", Monaco, monospace !important
 
 .tag
   border: 1px solid gray !important
