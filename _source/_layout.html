@@ -131,17 +131,25 @@
                data-ad-client="{{ googlead.client }}" data-ad-slot="{{ googoead.slot }}"></ins>
           <script>(adsbygoogle = window.adsbygoogle || []).push({})</script>
         </div>
-        <div class="pull-left">
-          <a href="{{{ devto.url }}}"><img src="{{{ devto.badge }}}" alt="DEV Profile 👩‍💻👨‍💻" height="30" width="30"></a>
-        </div>
       </div>
     </div>
     <div class="panel-footer" id="footer">
+      <p class="pull-left small">
+        <a href="{{{ devto.url }}}">
+          <img src="{{{ devto.badge }}}"
+               alt="DEV Profile 👩‍💻👨‍💻"
+               height="30" width="30"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
       <p class="small">
         {{ author.name }}
         &nbsp;
         <a ref="license" href="{{{ license.url }}}">
-          <img rel="license" alt="{{ license.name }}" src="{{{ license.image }}}" style="border: none;" />
+          <img rel="license"
+               alt="{{ license.name }}"
+               src="{{{ license.image }}}"
+               style="vertical-align: middle; border: none;" />
         </a>
       </p>
     </div>
