@@ -1,0 +1,49 @@
+author: &author
+  name: &author_name Arĥimedeς Montegasppα Cacilhας
+  email: batalema@cacilhas.info
+  url: //montegasppa.cacilhas.info/author.html
+
+description: The shadows behind the code.
+favicon: /img/favicon.ico
+lang: en
+site: &site //kodumaro.cacilhas.info
+title: &title Kodumaro
+
+license:
+  name: CC-BY 4.0
+  url: http://creativecommons.org/licenses/by/4.0/deed
+  image: https://i.creativecommons.org/l/by/4.0/80x15.png
+
+blog:
+  author: *author
+  url: *site
+  title: *title
+
+devto:
+  title: DEV Profile 👩‍💻👨‍💻
+  url: https://dev.to/cacilhas
+  badge: https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg
+
+cacilhas:
+  title: ℭacilhας.INFO
+  url: //cacilhas.info
+
+montegasppa:
+  title: ℳontegasppα and Giulia C.’s Thoughts
+  url: //montegasppa.cacilhas.info/
+  author: *author_name
+
+mosaicolivre:
+  title: Mosaico Livre
+  url: https://claudiotorcato.wordpress.com/
+  author: Cláudio Torcato
+
+waltercruz:
+  title: Walter Cruz
+  url: https://waltercruz.com/
+  author: Walter Cruz
+
+googlead:
+  client: ca-pub-5741846017654057
+  id: UA-99357497-1
+  slot: 7936078120

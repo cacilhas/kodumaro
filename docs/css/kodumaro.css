@@ -1,0 +1,66 @@
+body {
+  background-image: url("/img/background.jpg") !important;
+  background-repeat: repeat !important;
+  background-attachment: fixed !important;
+  background-position: initial !important;
+  background-origin: initial !important;
+  background-clip: initial !important;
+}
+.panel-heading {
+  color: #fff !important;
+  background-image: url("/img/title-background.jpg") !important;
+  background-repeat: repeat-x !important;
+  background-position: center !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+.panel-heading h2 {
+  text-shadow: #c60 2px 2px 2px;
+  text-transform: capitalize;
+}
+.panel-heading h6 {
+  text-shadow: #c60 1px 1px 1px;
+}
+h3 {
+  color: #c60 !important;
+}
+li code,
+p code,
+tr code {
+  color: #c60 !important;
+  background-color: inherit !important;
+}
+h3 code,
+a code {
+  color: inherit !important;
+  background-color: inherit !important;
+}
+.tag {
+  border: 1px solid #808080 !important;
+  border-radius: 5px !important;
+  color: #000 !important;
+  font-family: "Roboto Mono", Monaco, monospace !important;
+  padding: 0px 2px 0px 2px !important;
+}
+.tag a {
+  color: #000;
+}
+.label-default {
+  background-color: #c60 !important;
+}
+.badge {
+  background-color: #c60 !important;
+}
+.panel-body ul {
+  list-style: none;
+}
+.panel-body ul li:before {
+  content: '\27a2';
+  display: inline-block;
+  font-weight: bold;
+  margin-left: -1em;
+  margin-right: 1ex;
+  width: 1em;
+}
