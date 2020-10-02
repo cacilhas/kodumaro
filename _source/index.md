@@ -1,6 +1,7 @@
 ---
 type: page
 title: Kodumaro :: Saluton!
+date: 2020-09-23
 ---
 
 {:class="mg-first"} Hi there!
