@@ -244,3 +244,7 @@ Most of the logic is gonna be in the `toString` method, responsible for build th
 And it’s done! We’ve just created a very basic implementation of `SELECT` statement.
 
 You can go on and implement all the SQL features just for fun, but that’s not this post’s target; I just wanna show you how Scala is powerful to design DSL.
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/domain-specific-languages-3b52).
