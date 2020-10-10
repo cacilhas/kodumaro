@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatibile" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="language" content="en" />
+    <meta name="copyright" content="CC-BY 4.0" />
+    <meta name="url" content="//kodumaro.cacilhas.info/2020/10/dsl.html" />
+    <meta name="date" content="Oct. 10, 2020" />
+    <meta name="search_date" content="2020-10-10" />
+    <meta name="author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <meta property="og:site_name" content="Kodumaro" />
+    <meta property="og:title" content="Domain-specific Languages" />
+    <meta property="og:url" content="//kodumaro.cacilhas.info/2020/10/dsl.html" />
+    <meta property="article:author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kavivanar" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:i,bold&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
+    <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/kodumaro.css" />
+    <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
+    <title>Domain-specific Languages</title>
+    <link rel="icon" href="/img/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="//cacilhas.info/js/ie-emulation-modes-warning.js"></script>
+    <script src="//cacilhas.info/js/jquery.min.js"></script>
+    <script src="//cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
+    <script src="//cacilhas.info/js/handle-old-url.js"></script>
+    <script src="//cacilhas.info/js/alt-title.js"></script>
+    <script src="//cacilhas.info/js/anchors.js"></script>
+    <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5741846017654057",
+        enable_page_level_ads: true,
+      })
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date;a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,"script","https://www.google-analytics.com/analytics.js","ga")
+      ga("create", "UA-99357497-1", "auto")
+      ga("send", "pageview")
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-togge="collapse" data-target="#navbar" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="dropdown">
+            <span class="navbar-brand dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ℭacilhας.INFO</span>
+            <ul class="dropdown-menu">
+              <li><a href="//cacilhas.info/"><i class="glyphicon glyphicon-home"></i>&nbsp;ℭacilhας.INFO</a></li>
+              <li><a href="//kodumaro.cacilhas.info/"><i class="licon icon-kodumaro"></i>&nbsp;Kodumaro</a></li>
+              <li><a href="//montegasppa.cacilhas.info/"><i class="licon icon-montegasppa"></i>&nbsp;ℳontegasppα and Giulia C.’s Thoughts</a></li>
+              <li><hr/></li>
+              <li><a href="//cacilhas.info/maven" target="_blank"><i class="licon icon-maven"></i>&nbsp;Kodumaro Maven Repository</a></li>
+              <li><a href="https://claudiotorcato.wordpress.com/" target="_blank"><i class="licon icon-wordpress"></i>&nbsp;Mosaico Livre</a></li>
+              <li><a href="https://waltercruz.com/" target="_blank"><i class="glyphicon glyphicon-link"></i>&nbsp;Walter Cruz</a></li>
+              <li><a href="" target="_blank"><i class="licon icon-dev-to"></i>&nbsp;</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="//kodumaro.cacilhas.info"><i class="glyphicon glyphicon-home"></i>&nbsp;Home</a></li>
+            <li class="active"><a href="//kodumaro.cacilhas.info/2020/10/dsl.html">Domain-specific Languages</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="mg-title">Domain-specific Languages</h2>
+          <h6 class="pull-right">2020-10-10</h6>
+          <h6>The shadows behind the code.</h6>
+        </div>
+        <div class="panel-body">
+          <p class="pull-right" > <img src="//cacilhas.info/img/scala.png" alt="Scala" /></p>
+<p class="mg-first" > Some days ago I wrote an post about DSL, but it was so
+sloppy, that I’ve found myself in shame. ’Cause that, I’m removing that post and
+replacing it with this.</p>
+<p>When I started working with <a href="https://www.scala-lang.org/">Scala</a>, I did it all wrong. I learned Scala
+from <em title="Java programmers">oakies</em>, so my team used Scala just as a
+syntax sugar for Java (like <a href="https://kotlinlang.org/">Kotlin</a> or <a href="https://www.eclipse.org/xtend/">Xtend</a>).</p>
+<p>That’s a great way to <strong>strongly underuse</strong> Scala.</p>
+<p>Scala isn’t Java. Scala binds to Java, but goes forth. Programming in Scala,
+you can access Java resources, but even the feeling smells different.</p>
+<p>Both languages are <a href="https://www.amazon.com/gp/product/0136291554/">object-oriented</a>, but Java is an
+<a href="https://rosettacode.org/wiki/Category:Programming_paradigm/Imperative">imperative language</a> in the most strict sense, while Scala is
+impure <a href="https://rosettacode.org/wiki/Category:Programming_paradigm/Functional">functional</a>, tending tightly to the pureness.</p>
+<p>Another notable difference is that, even though both languages
+are general-purpose, Scala makes it possible (and easy) to create microlanguages
+for specific domains, called <a href="https://martinfowler.com/books/dsl.html">domain-specific languages</a>, or just <strong>DSL</strong> –
+which’s very hard to do using Java.</p>
+<h3 id="example">Example</h3>
+<p>Just for instance, we’re gonna implement a very flat and incomplete set of SQL,
+in fact, just some <code>SELECT</code> resources. For the sake of simplicity, we aren’t
+taking care of sql injection or complex queries; The idea is enabling to
+represent a simple <code>SELECT</code> statement in a syntax as close as possible to SQL.</p>
+<p>The target is:</p>
+<pre class="prettyprint"><code class="scala language-scala">Select("name", "surname") from "t_users" where Condition("surname") == "Doe" limit 10</code></pre>
+<p>It must serialise to:</p>
+<pre class="prettyprint"><code class="sql language-sql">SELECT name, surname FROM t_users WHERE surname = 'Doe' LIMIT 10</code></pre>
+<h3 id="the-condition">The condition</h3>
+<p>In order to build the <code>Select</code>, we need the <code>From</code>. To build the <code>From</code>, we need
+the <code>Condition</code>, so let’s start there.</p>
+<p>However, in order to build the <code>Condition</code>, we need the <code>Criteria</code>, that
+represent “equals”, “not equals”, etc.</p>
+<p>Let’s leave other criteria out and deal only with comparisons, “is null”, “not
+null”. The <code>Criteria</code> trait doesn’t need to be accessible outside of the
+<code>Condition</code> class, so it can be private:</p>
+<pre class="prettyprint"><code class="scala language-scala">private sealed trait Criteria {def format(key: String, value: String): String}
+
+private object EQUALS     extends Criteria {def format(key:  String, value: String): String = s"$key = $value"}
+private object GE         extends Criteria {def format(key:  String, value: String): String = s"$key &gt;= $value"}
+private object GT         extends Criteria {def format(key:  String, value: String): String = s"$key &gt; $value"}
+private object ISNULL     extends Criteria {def format(key:  String, value: String): String = s"$key ISNULL"}
+private object LE         extends Criteria {def format(key:  String, value: String): String = s"$key &lt;= $value"}
+private object LT         extends Criteria {def format(key:  String, value: String): String = s"$key &lt; $value"}
+private object NOT_EQUALS extends Criteria {def format(key:  String, value: String): String = s"$key &lt;&gt; $value"}
+private object NOTNULL    extends Criteria {def format(key:  String, value: String): String = s"$key NOTNULL"}</code></pre>
+<p>Now, the <code>Condition</code> must hold the field name, the comparing value, and the
+criteria. Since some conditions have no value, the value may be optional.</p>
+<p>Let’s use a valueless criteria for default:</p>
+<pre class="prettyprint"><code class="scala language-scala">case class Condition[A](field: String, value: Option[A] = None) {
+
+  private var criteria: Criteria = NOTNULL
+
+  def ==(value: A): Condition[A] = {
+    val res = Condition(field, Option(value))
+    res.criteria = EQUALS
+    res
+  }
+
+  def !=(value: A): Condition[A] = {
+    val res = Condition(field, Option(value))
+    res.criteria = NOT_EQUALS
+    res
+  }
+
+  def &gt;(value: A): Condition[A] = {
+    val res = Condition(field, Option(value))
+    res.criteria = GT
+    res
+  }
+
+  def &gt;=(value: A): Condition[A] = {
+    val res = Condition(field, Option(value))
+    res.criteria = GE
+    res
+  }
+
+  def &lt;(value: A): Condition[A] = {
+    val res = Condition(field, Option(value))
+    res.criteria = LT
+    res
+  }
+
+  def &lt;=(value: A): Condition[A] = {
+    val res = Condition(field, Option(value))
+    res.criteria = LE
+    res
+  }
+
+  def isNull: Condition[A] = {
+    val res = Condition(field, value)
+    res.criteria = ISNULL
+    res
+  }
+
+  def notNull: Condition[A] = {
+    val res = Condition(field, value)
+    res.criteria = NOTNULL
+    res
+  }
+
+  override def toString: String = criteria format (field, value match {
+    case None                =&gt; "NULL"
+    case Some(value: String) =&gt; s"'$value'"
+    case Some(value: Number) =&gt; value.toString
+    case _                   =&gt; ???
+  })
+}</code></pre>
+<h3 id="going-down-to-select">Going down to <code>SELECT</code></h3>
+<p>The <code>Select</code> class is the simpliest of all, it just build a simple <code>SELECT</code>:</p>
+<pre class="prettyprint"><code class="scala language-scala">case class Select private(fields: String*) {
+
+  def from(tables: String*): From = new From(this,tables: _*)
+
+  override def toString: String = "SELECT %s" format fields.mkString(", ")
+}</code></pre>
+<h3 id="creating-the-from">Creating the <code>FROM</code></h3>
+<p>Now we got the condition, let’s deal with the <code>From</code> class. It must be able to
+deal with the <code>SELECT</code> syntax. We’re implementing only <code>WHERE</code>, <code>GROUP BY</code>,
+<code>ORDER BY</code>, <code>HAVING</code>, <code>LIMIT</code>, and <code>OFFSET</code>.</p>
+<p>Those parameters are represented by attributes:</p>
+<ul>
+<li><code>WHERE</code> → <code>conditions</code></li>
+<li><code>GROUP BY</code> → <code>_groupBy</code></li>
+<li><code>ORDER BY</code> → <code>_orderBy</code></li>
+<li><code>HAVING</code> → <code>_having</code></li>
+<li><code>LIMIT</code> → <code>_limit</code></li>
+<li><code>OFFSET</code> → <code>_offset</code></li>
+</ul>
+<p>And the respective methods <code>where</code>, <code>groupBy</code>, <code>orderBy</code>, <code>having</code>, <code>limit</code>, and
+<code>offset</code>, each one returning a new instance of <code>From</code>.</p>
+<p>For making it possible, we need to override the <code>clone</code> method too.</p>
+<p>Most of the logic is gonna be in the <code>toString</code> method, responsible for build
+the SQL statement.</p>
+<pre class="prettyprint"><code class="scala language-scala">class From(val select: Select, val tables: String*) {
+
+  private var conditions: Seq[Condition[_]] = Nil
+  private var groupBy: Seq[String] = Nil
+  private var orderBy: Seq[String] = Nil
+  private var _having: Seq[Condition[_]] = Nil
+  private var _offset: Int = 0
+  private var _limit: Int = 0
+
+
+  def where(conditions: Condition[_]*): From = {
+    val res = clone
+    res.conditions = conditions
+    res
+  }
+
+  def groupBy(fields: String*): From = {
+    val res = clone
+    res.groupBy = fields
+    res
+  }
+
+  def having(conditions: Condition[_]*): From = {
+    val res = clone
+    res._having = conditions
+    res
+  }
+
+  def orderBy(fields: String*): From = {
+    val res = clone
+    res.orderBy = fields
+    res
+  }
+
+  def offset(value: Int): From = {
+    val res = clone
+    res._offset = value
+    res
+  }
+
+  def limit(value: Int): From = {
+    val res = clone
+    res._limit = value
+    res
+  }
+
+  override def clone: From = {
+    val res = new From(select, tables: _*)
+    res.conditions = conditions
+    res.groupBy = groupBy
+    res.orderBy = orderBy
+    res._offset = _offset
+    res._limit = _limit
+    res
+  }
+
+  override def toString: String = {
+    val res = new StringBuilder
+    res append select.toString
+    res append " FROM "
+    res append tables.mkString(", ")
+    if (conditions.nonEmpty) {
+      res append " WHERE "
+      res append conditions.map {_.toString}.mkString(" AND ")
+    }
+    if (groupBy.nonEmpty) {
+      res append " GROUP BY "
+      if (groupBy.size == 1)
+        res append groupBy.head.toString
+      else {
+        res append "("
+        res append groupBy.map {_.toString}.mkString(", ")
+        res append ")"
+      }
+
+      if (_having.nonEmpty) {
+        res append " HAVING "
+        res append _having.map {_.toString}.mkString(" AND ")
+      }
+    }
+    if (orderBy.nonEmpty) {
+      res append " ORDER BY "
+      if (orderBy.size == 1)
+        res append orderBy.head.toString
+      else {
+        res append "("
+        res append orderBy.map {_.toString}.mkString(", ")
+        res append ")"
+      }
+    }
+    if (_limit &gt; 0) {
+      res append " LIMIT "
+      res append _limit.toString
+    }
+    if (_offset &gt; 0) {
+      res append " OFFSET "
+      res append _offset.toString
+    }
+    res.toString
+  }
+}</code></pre>
+<h3 id="conclusion">Conclusion</h3>
+<p>And it’s done! We’ve just created a very basic implementation of <code>SELECT</code>
+statement.</p>
+<p>You can go on and implement all the SQL features just for fun, but that’s not
+this post’s target; I just wanna show you how Scala is powerful to design DSL.</p>
+        </div>
+        <div id="tags" class="pull-right tags">
+          <script>
+            var tags = 'dsl scala'
+            if (tags) {
+              var first = true
+              for (var tag of tags.split(" ")) {
+                if (first) { first = false }
+                else $('#tags').append('&nbsp;|&nbsp;')
+                $('#tags').append(
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag + '</a>'
+                )
+              }
+            }
+          </script>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="disqus_thread">
+            <script>
+              var disqus_config = function() {
+                this.page.url = '&#x2F;&#x2F;kodumaro.cacilhas.info&#x2F;2020&#x2F;10&#x2F;dsl.html'
+                this.page.identifier = '_source.posts.2020-10-10-dsl'
+                this.page.title = 'Domain-specific Languages'
+              }
+            </script>
+            <noscript>
+              Please enable JavaScript to view the comments
+              <a href="https://disqus.com/?ref_noscript">powered by Disqus</a>.
+            </noscript>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="pull-left">
+          <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px;"
+               data-ad-client="ca-pub-5741846017654057" data-ad-slot=""></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({})</script>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer" id="footer">
+      <p class="pull-left small">
+        <a href="https://dev.to/cacilhas">
+          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+               alt="DEV Profile 👩‍💻👨‍💻"
+               height="30" width="30"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+      <p class="small">
+        Arĥimedeς Montegasppα Cacilhας
+        &nbsp;
+        <a ref="license" href="http://creativecommons.org/licenses/by/4.0/deed">
+          <img rel="license"
+               alt="CC-BY 4.0"
+               src="https://i.creativecommons.org/l/by/4.0/80x15.png"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+    </div>
+    <script src="//cacilhas.info/js/bootstrap.min.js"></script>
+    <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
+    <script id="dsq-count-scr" src="//kodumaro.disqus.com/count.js" async></script>
+    <script language="javascript">
+      $(document).ready(function() {
+        $('[title]').tooltip();
+      })
+    </script>
+  </body>
+</html>
