@@ -89,6 +89,12 @@ It works like this:
 
 In order for the `reduce` function to work properly with other types, it’s enough to supply another type’s implicit monoid, for instance a `DoubleMonoid`, no need for changing the `reduce` function.
 
+> `[update]`
+> 
+> I forgot to mention, an example of Scala built-in monoid is [`Numeric`](https://www.scala-lang.org/api/current/scala/math/Numeric.html): the addition method is `ev.plus`, and the unit is `ev.zero`.
+> 
+> `[/update]`
+
 ### Apply, applicative, semiring, lattice, etc
 
 Other algebraic structures are mostly just variants of these three we’ve just been through. You can find some definitions in [this glossary](https://www.linkedin.com/pulse/glossary-functional-programming-john-de-goes/).
