@@ -22,7 +22,7 @@ Most of the Scala basic wrappers, like `Seq`/`List`, `Option`, `Either`, etc, ar
 
 ### Monad
 
-[Haskell](https://www.haskell.org/)’s monads have put people in dread, but they’re nothing than a variation of functor approach.
+[Haskell](https://www.haskell.org/)’s monads have been getting people in dread, but they’re nothing than a variation of functor approach.
 
 A monad is a wrapper around a datum or data that can operate over them flatly mapping the results and possibly describing side-effects.
 
@@ -35,7 +35,7 @@ Our first monad example is the [`Seq`](https://www.scala-lang.org/api/current/sc
 
 The result is `Seq(4, 5, 6)`; the `flatMap` method is the main resource of a monad.
 
-Since `Seq` is a functor too, you may replace the first `flatMap` by a `map`, and `Seq` has a `filter` method more expressive than `flatMap`:
+Since `Seq` is a functor too, you may replace the first `flatMap` by a `map`, and it has a `filter` method, more expressive than `flatMap`:
 
     Seq(1, 2, 3)
       .map {_ * 2}
@@ -55,7 +55,7 @@ The `greetings` function idempotently returns an `IO` monad that can trigger a w
 
 ### Monoid
 
-A monoid is a structure that supplies and addition operations and an unit instance for a type.
+A monoid is a structure that supplies an addition operation and an unit instance for a type.
 
 The monoid definition is:
 
@@ -82,7 +82,7 @@ Defined these two monoids, we can code a function that can reduce an integer or 
       if (xs.isEmpty) ev.unit
       else ev.add(xs.head, reduce(xs.tail))
 
-It works like that:
+It works like this:
 
     reduce(Seq(1, 2, 3)) // returns 6
     reduce(Seq("Hello", ", ", "World", "!")) // returns "Hello, World!"

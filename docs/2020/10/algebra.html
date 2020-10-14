@@ -111,8 +111,8 @@ data that can map operations over them and their successful results.</p>
 <p>Most of the Scala basic wrappers, like <code>Seq</code>/<code>List</code>, <code>Option</code>, <code>Either</code>, etc,
 are functors too.</p>
 <h3 id="monad">Monad</h3>
-<p><a href="https://www.haskell.org/">Haskell</a>’s monads have put people in dread, but they’re nothing than
-a variation of functor approach.</p>
+<p><a href="https://www.haskell.org/">Haskell</a>’s monads have been getting people in dread, but they’re
+nothing than a variation of functor approach.</p>
 <p>A monad is a wrapper around a datum or data that can operate over them flatly
 mapping the results and possibly describing side-effects.</p>
 <p>Our first monad example is the <a href="https://www.scala-lang.org/api/current/scala/collection/immutable/Seq.html"><code>Seq</code></a>:</p>
@@ -123,7 +123,7 @@ mapping the results and possibly describing side-effects.</p>
 <p>The result is <code>Seq(4, 5, 6)</code>; the <code>flatMap</code> method is the main resource of a
 monad.</p>
 <p>Since <code>Seq</code> is a functor too, you may replace the first <code>flatMap</code> by a <code>map</code>,
-and <code>Seq</code> has a <code>filter</code> method more expressive than <code>flatMap</code>:</p>
+and it has a <code>filter</code> method, more expressive than <code>flatMap</code>:</p>
 <pre class="prettyprint"><code class="scala language-scala">Seq(1, 2, 3)
   .map {_ * 2}
   .filter {e != 2}
@@ -137,7 +137,7 @@ greetings = printStrLn "Hello, World!"</code></pre>
 <p>The <code>greetings</code> function idempotently returns an <code>IO</code> monad that can trigger a
 writing to the standard output.</p>
 <h3 id="monoid">Monoid</h3>
-<p>A monoid is a structure that supplies and addition operations and an unit
+<p>A monoid is a structure that supplies an addition operation and an unit
 instance for a type.</p>
 <p>The monoid definition is:</p>
 <pre class="prettyprint"><code class="scala language-scala">trait Monoid[A] {
@@ -160,7 +160,7 @@ string sequence:</p>
 <pre class="prettyprint"><code class="scala language-scala">def reduce[A](xs: Seq[A])(implicit ev: Monoid[A]): A =
   if (xs.isEmpty) ev.unit
   else ev.add(xs.head, reduce(xs.tail))</code></pre>
-<p>It works like that:</p>
+<p>It works like this:</p>
 <pre class="prettyprint"><code class="scala language-scala">reduce(Seq(1, 2, 3)) // returns 6
 reduce(Seq("Hello", ", ", "World", "!")) // returns "Hello, World!"</code></pre>
 <p>In order for the <code>reduce</code> function to work properly with other types, it’s
