@@ -87,8 +87,12 @@ It works like that:
     reduce(Seq(1, 2, 3)) // returns 6
     reduce(Seq("Hello", ", ", "World", "!")) // returns "Hello, World!"
 
-In order for the `reduce` function to work properly with other types, it’s enough to supply another type implicit monoid, for instance a `DoubleMonoid`, no need for changing the `reduce` function.
+In order for the `reduce` function to work properly with other types, it’s enough to supply another type’s implicit monoid, for instance a `DoubleMonoid`, no need for changing the `reduce` function.
 
 ### Apply, applicative, semiring, lattice, etc
 
 Other algebraic structures are mostly just variants of these three we’ve just been through. You can find some definitions in [this glossary](https://www.linkedin.com/pulse/glossary-functional-programming-john-de-goes/).
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/algebraic-structures-2g9o).
