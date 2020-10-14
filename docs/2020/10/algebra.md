@@ -91,7 +91,7 @@ In order for the `reduce` function to work properly with other types, it’s eno
 
 > `[update]`
 > 
-> I forgot to mention, an example of Scala built-in monoid is [`Numeric`](https://www.scala-lang.org/api/current/scala/math/Numeric.html): the addition method is `ev.plus`, and the unit is `ev.zero`.
+> I forgot to mention, an example of Scala’s built-in monoid is [`Numeric`](https://www.scala-lang.org/api/current/scala/math/Numeric.html): the addition method is `ev.plus`, and the unit is `ev.zero`.
 > 
 > `[/update]`
 

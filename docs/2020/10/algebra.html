@@ -168,7 +168,7 @@ enough to supply another type’s implicit monoid, for instance a <code>DoubleMo
 no need for changing the <code>reduce</code> function.</p>
 <blockquote>
   <p><code>[update]</code></p>
-  <p>I forgot to mention, an example of Scala built-in monoid is
+  <p>I forgot to mention, an example of Scala’s built-in monoid is
   <a href="https://www.scala-lang.org/api/current/scala/math/Numeric.html"><code>Numeric</code></a>: the addition method is <code>ev.plus</code>, and the
   unit is <code>ev.zero</code>.</p>
   <p><code>[/update]</code></p>
@@ -198,18 +198,25 @@ been through. You can find some definitions in <a href="https://www.linkedin.com
       <div class="panel panel-default">
         <div class="panel-body">
           <div id="disqus_thread">
-            <script>
-              var disqus_config = function() {
-                this.page.url = '&#x2F;&#x2F;kodumaro.cacilhas.info&#x2F;2020&#x2F;10&#x2F;algebra.html'
-                this.page.identifier = '_source.posts.2020-10-14-algebra'
-                this.page.title = 'Algebraic Structures'
-              }
-            </script>
             <noscript>
               Please enable JavaScript to view the comments
               <a href="https://disqus.com/?ref_noscript">powered by Disqus</a>.
             </noscript>
           </div>
+          <script>
+            var disqus_config = function() {
+              this.page = this.page || {}
+              this.page.url = 'https://kodumaro.cacilhas.info/2020/10/algebra.html'
+              this.page.identifier = '_source.posts.2020-10-14-algebra'
+              this.page.title = 'Algebraic Structures'
+            }
+            $(document).ready(function() {
+              var d = document, s = d.createElement('script')
+              s.src = 'https://kodumaro.disqus.com/embed.js'
+              s.setAttribute('data-timestamp', +new Date())
+              ;(d.head || d.body).appendChild(s)
+            })
+          </script>
         </div>
       </div>
       <div>
@@ -243,7 +250,6 @@ been through. You can find some definitions in <a href="https://www.linkedin.com
     </div>
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
-    <script id="dsq-count-scr" src="//kodumaro.disqus.com/count.js" async></script>
     <script language="javascript">
       $(document).ready(function() {
         $('[title]').tooltip();

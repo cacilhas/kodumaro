@@ -111,18 +111,25 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div id="disqus_thread">
-            <script>
-              var disqus_config = function() {
-                this.page.url = '{{ url }}'
-                this.page.identifier = '{{ identifier }}'
-                this.page.title = '{{ title }}'
-              }
-            </script>
             <noscript>
               Please enable JavaScript to view the comments
               <a href="https://disqus.com/?ref_noscript">powered by Disqus</a>.
             </noscript>
           </div>
+          <script>
+            var disqus_config = function() {
+              this.page = this.page || {}
+              this.page.url = 'https:{{{ url }}}'
+              this.page.identifier = '{{ identifier }}'
+              this.page.title = '{{ title }}'
+            }
+            $(document).ready(function() {
+              var d = document, s = d.createElement('script')
+              s.src = 'https://kodumaro.disqus.com/embed.js'
+              s.setAttribute('data-timestamp', +new Date())
+              ;(d.head || d.body).appendChild(s)
+            })
+          </script>
         </div>
       </div>{{/post}}
       <div>
@@ -156,7 +163,6 @@
     </div>
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
-    <script id="dsq-count-scr" src="//kodumaro.disqus.com/count.js" async></script>
     <script language="javascript">
       $(document).ready(function() {
         $('[title]').tooltip();
