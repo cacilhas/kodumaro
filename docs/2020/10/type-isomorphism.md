@@ -97,3 +97,7 @@ And amusing code is the fast inverse square root form Quake Ⅲ Arena (`Q_rsqrt`
     }
 
 In this example, `long` and `float` aren’t isomorphic, ’cause they have different arities, but it shows how data are easily interchangeable, promoting the isomorphism.
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/type-isomorphism-3bp9).
