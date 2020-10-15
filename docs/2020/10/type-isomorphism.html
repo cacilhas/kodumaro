@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatibile" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="language" content="en" />
+    <meta name="copyright" content="CC-BY 4.0" />
+    <meta name="url" content="//kodumaro.cacilhas.info/2020/10/type-isomorphism.html" />
+    <meta name="date" content="Oct. 15, 2020" />
+    <meta name="search_date" content="2020-10-15" />
+    <meta name="author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <meta property="og:site_name" content="Kodumaro" />
+    <meta property="og:title" content="Type Isomorphism" />
+    <meta property="og:url" content="//kodumaro.cacilhas.info/2020/10/type-isomorphism.html" />
+    <meta property="article:author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kavivanar" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:i,bold&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
+    <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/kodumaro.css" />
+    <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
+    <title>Type Isomorphism</title>
+    <link rel="icon" href="/img/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="//cacilhas.info/js/ie-emulation-modes-warning.js"></script>
+    <script src="//cacilhas.info/js/jquery.min.js"></script>
+    <script src="//cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
+    <script src="//cacilhas.info/js/handle-old-url.js"></script>
+    <script src="//cacilhas.info/js/alt-title.js"></script>
+    <script src="//cacilhas.info/js/anchors.js"></script>
+    <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5741846017654057",
+        enable_page_level_ads: true,
+      })
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date;a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,"script","https://www.google-analytics.com/analytics.js","ga")
+      ga("create", "UA-99357497-1", "auto")
+      ga("send", "pageview")
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-togge="collapse" data-target="#navbar" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="dropdown">
+            <span class="navbar-brand dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ℭacilhας.INFO</span>
+            <ul class="dropdown-menu">
+              <li><a href="//cacilhas.info/"><i class="glyphicon glyphicon-home"></i>&nbsp;ℭacilhας.INFO</a></li>
+              <li><a href="//kodumaro.cacilhas.info/"><i class="licon icon-kodumaro"></i>&nbsp;Kodumaro</a></li>
+              <li><a href="//montegasppa.cacilhas.info/"><i class="licon icon-montegasppa"></i>&nbsp;ℳontegasppα and Giulia C.’s Thoughts</a></li>
+              <li><hr/></li>
+              <li><a href="//cacilhas.info/maven" target="_blank"><i class="licon icon-maven"></i>&nbsp;Kodumaro Maven Repository</a></li>
+              <li><a href="https://claudiotorcato.wordpress.com/" target="_blank"><i class="licon icon-wordpress"></i>&nbsp;Mosaico Livre</a></li>
+              <li><a href="https://waltercruz.com/" target="_blank"><i class="glyphicon glyphicon-link"></i>&nbsp;Walter Cruz</a></li>
+              <li><a href="" target="_blank"><i class="licon icon-dev-to"></i>&nbsp;</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="//kodumaro.cacilhas.info"><i class="glyphicon glyphicon-home"></i>&nbsp;Home</a></li>
+            <li class="active"><a href="//kodumaro.cacilhas.info/2020/10/type-isomorphism.html">Type Isomorphism</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="mg-title">Type Isomorphism</h2>
+          <h6 class="pull-right">2020-10-15</h6>
+          <h6>The shadows behind the code.</h6>
+        </div>
+        <div class="panel-body">
+          <p class="pull-right" > <img src="//cacilhas.info/img/scala.png" alt="Scala" /></p>
+<p class="mg-first" > In <a href="https://kseo.github.io/posts/2016-12-25-type-isomorphism.html">type algebra</a>, type isomorphism is the
+case when two types are interchangeable with no information lost.</p>
+<p>That means, two types <code>A</code> and <code>B</code> are isomorphic to each other if any <code>a: A</code> can
+be casted or converted to <code>B</code> and back to the same <code>a</code>, and any <code>b: B</code> can be
+casted or converted to <code>A</code> and back to the same <code>b</code>.</p>
+<p>For instance, take the following example:</p>
+<pre class="prettyprint"><code class="scala language-scala">sealed trait YesNo
+object Yes extends YesNo
+object No extends YesNo</code></pre>
+<p>The <code>YesNo</code> type is isomorphic to <code>Bolean</code> type:</p>
+<pre class="prettyprint"><code class="scala language-scala">implicit def yesno2bool(value: YesNo): Boolean = value == Yes
+implicit def bool2yesno(value: Boolean): YesNo = if (value) Yes else No</code></pre>
+<p>There’s no information lost in converting <code>YesNo</code> to <code>Boolean</code> and back.</p>
+<h3 id="arity">Arity</h3>
+<p>The way to find whether two types are isomorphic is by their arities: if the
+arities are the same, the types are isomorphic.</p>
+<p>Briefly, a type’s arity is the amount of its possible values. Consider a type as
+a set: the arity is the number of elements.</p>
+<p>A few main examples:</p>
+<ul>
+<li><code>Nothing</code>: arity is 0 (no possible instance)</li>
+<li><code>Unit</code>: arity is 1 (only the <code>()</code> value)</li>
+<li><code>Boolean</code>: arity is 2 (<code>true</code> and <code>false</code>)</li>
+<li><code>Int</code>: arity is 4&nbsp;294&nbsp;967&nbsp;296 (2³², 4 bytes)</li>
+</ul>
+<p>So if <code>A</code> and <code>B</code> have the same arity, you can map each value in <code>A</code> to only one
+in <code>B</code>, and vice versa.</p>
+<h3 id="algebraic-data-types">Algebraic Data Types</h3>
+<p><a href="https://wiki.haskell.org/Algebraic_data_type">ADT</a> (don’t confuse with <a href="https://www.geeksforgeeks.org/abstract-data-types/">ADT – abstract data type</a>)
+are compounded types, and their arity follows a simple arithmetic rule.</p>
+<p>A disjunctive type – when the compounding values are exclusively optional, that
+means, one <strong>or</strong> another – has arity equal to the sum of its compounding types.</p>
+<p>For instance, the <code>YesNo</code> type is the disjunction of <code>Yes.type</code> and <code>No.type</code>,
+it means a <code>YesNo</code> instance can be a <code>Yes</code> (instance of <code>Yes.type</code>) or a <code>No</code>
+(instance of <code>No.type</code>):</p>
+<ul>
+<li><code>Yes.type</code> has arity 1</li>
+<li><code>No.type</code> as arity 1</li>
+<li><code>YesNo ≡ Yes.type + No.type</code></li>
+<li>⊢ The <code>YesNo</code>’s arity is 1&nbsp;+&nbsp;1&nbsp;=&nbsp;2</li>
+</ul>
+<p>Note: <a href="https://dotty.epfl.ch/">Dotty (Scala 3)</a> has a nice <a href="https://dotty.epfl.ch/docs/reference/new-types/union-types.html">syntax</a> for type
+disjunction, similar to <a href="https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/sum-types">Haskell</a>’s.</p>
+<p>A conjunctive type – when the compounding values are companions, that means, one
+<strong>and</strong> another – has arity equal to the product of its compounding types.</p>
+<p>For instance, take the tuple <code>(Boolean, Int)</code>:</p>
+<ul>
+<li><code>Boolean</code> has arity 2</li>
+<li><code>Int</code> has arity 4&nbsp;294&nbsp;967&nbsp;296</li>
+<li><code>(Boolean, Int) ≡ Boolean * Int</code></li>
+<li>⊢ The <code>(Boolean, Int)</code>’s arity is
+2&nbsp;×&nbsp;4&nbsp;294&nbsp;967&nbsp;296&nbsp;=&nbsp;8&nbsp;589&nbsp;934&nbsp;592</li>
+</ul>
+<p>A lambda type has arity equal to the return type’s arity raised to the power of
+the argument type’s – multiple arguments are equivalent to a conjunctive type.</p>
+<ul>
+<li><code>Boolean =&gt; Int</code> has arity 4&nbsp;294&nbsp;967&nbsp;296²</li>
+<li><code>Int =&gt; Boolean</code> has arity 2⁴²⁹⁴⁹⁶⁷²⁹⁶</li>
+</ul>
+<p>You can understand why reading <a href="https://codewords.recurse.com/issues/three/algebra-and-calculus-of-algebraic-data-types#fn:answer">this</a>.</p>
+<h3 id="swapping">Swapping</h3>
+<p>Note that swappable types are isomorphic, cause <code>a+b=b+a</code> and <code>ab=ba</code>.</p>
+<p>So <code>A|B</code> is isomorphic to <code>B|A</code>, and <code>(A,B)</code> is isomorphic to <code>(B,A)</code>.</p>
+<p>The proof is nothing trickier than the <code>swap</code> function itself: if you can swap
+the values without losing data, the types are isomorphic.</p>
+<pre class="prettyprint"><code class="scala language-scala">def swap[A, B](v: (A, B)): (B, A) = (v._2, v._1)</code></pre>
+<h3 id="curiosity-isomorphism-in-c">Curiosity: isomorphism in C</h3>
+<p>Since C has low-level access to the memory (through pointers), and is weakly
+typed; one can cast between the two most different types if they have the same
+memory length.</p>
+<p>For instance, in C <code>int</code> and <code>float</code> are isomorphic.</p>
+<p>And amusing code is the fast inverse square root form Quake Ⅲ Arena (<code>Q_rsqrt</code>),
+it does some type black magic with pointer casting:</p>
+<pre class="prettyprint"><code class="c language-c">float Q_rsqrt(float number) {
+    long i;
+    float x2, y;
+    const float threehalfs = 1.5F;
+
+    x2 = number * 0.5F;
+    y  = number;
+    i  = *(long *) &amp;y;
+    i  = 0x5f3759df - (i &gt;&gt; 1);
+    y  = *(float *) &amp;i;
+    y  = y * (threehalfs - (x2 * y * y));
+
+    return y;
+}</code></pre>
+<p>In this example, <code>long</code> and <code>float</code> aren’t isomorphic, ’cause they have
+different arities, but it shows how data are easily interchangeable, promoting
+the isomorphism.</p>
+        </div>
+        <div id="tags" class="pull-right tags">
+          <script>
+            var tags = 'concept funcional scala'
+            if (tags) {
+              var first = true
+              for (var tag of tags.split(" ")) {
+                if (first) { first = false }
+                else $('#tags').append('&nbsp;|&nbsp;')
+                $('#tags').append(
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag + '</a>'
+                )
+              }
+            }
+          </script>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="disqus_thread">
+            <noscript>
+              Please enable JavaScript to view the comments
+              <a href="https://disqus.com/?ref_noscript">powered by Disqus</a>.
+            </noscript>
+          </div>
+          <script>
+            var disqus_config = function() {
+              this.page = this.page || {}
+              this.page.url = 'https://kodumaro.cacilhas.info/2020/10/type-isomorphism.html'
+              this.page.identifier = '_source.posts.2020-10-15-type-iso'
+              this.page.title = 'Type Isomorphism'
+            }
+            $(document).ready(function() {
+              var d = document, s = d.createElement('script')
+              s.src = 'https://kodumaro.disqus.com/embed.js'
+              s.setAttribute('data-timestamp', +new Date())
+              ;(d.head || d.body).appendChild(s)
+            })
+          </script>
+        </div>
+      </div>
+      <div>
+        <div class="pull-left">
+          <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px;"
+               data-ad-client="ca-pub-5741846017654057" data-ad-slot=""></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({})</script>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer" id="footer">
+      <p class="pull-left small">
+        <a href="https://dev.to/cacilhas">
+          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+               alt="DEV Profile 👩‍💻👨‍💻"
+               height="30" width="30"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+      <p class="small">
+        Arĥimedeς Montegasppα Cacilhας
+        &nbsp;
+        <a ref="license" href="http://creativecommons.org/licenses/by/4.0/deed">
+          <img rel="license"
+               alt="CC-BY 4.0"
+               src="https://i.creativecommons.org/l/by/4.0/80x15.png"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+    </div>
+    <script src="//cacilhas.info/js/bootstrap.min.js"></script>
+    <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
+    <script language="javascript">
+      $(document).ready(function() {
+        $('[title]').tooltip();
+      })
+    </script>
+  </body>
+</html>
