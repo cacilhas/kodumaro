@@ -104,13 +104,13 @@ need to be pure, but they should whenever it’s possible.</li>
 return the very same result.</li>
 <li><strong>Tail-call optimisation</strong> (TCO): the last call in a procedure must replace
 the current memory stack; it prevents stack overflow when going recursively.</li>
-<li><strong>First-class function</strong>: functions are first-class data, able to be other
+<li><strong>First-class function</strong>: functions are first-class citizens, able to be other
 function’s parameters or result, or even object attributes.</li>
 <li><strong>Algebraic structure</strong>: read <a href="/2020/10/algebra.html">this other post</a>.</li>
 <li><strong>Algebraic data type</strong>: ADTs are compounded types; read
 <a href="/2020/10/type-isomorphism.html#algebraic-data-types">this post</a>.</li>
 </ul>
-<p>Desirable features:</p>
+<p>Desirable features and other concepts:</p>
 <ul>
 <li><strong>Recursion</strong>: prefer recursion (and TCO) over a loop.</li>
 <li><strong>Laziness</strong> or <strong>Non-strictness</strong>: a function may be strictly or lazily

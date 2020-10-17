@@ -10,11 +10,11 @@ Requirements:
 *   **Immutability**: once set, it’s for good; a value cannot change.
 *   **Determinism** or **Idempotency**: given the same parameters, a function must return the very same result.
 *   **Tail-call optimisation** (TCO): the last call in a procedure must replace the current memory stack; it prevents stack overflow when going recursively.
-*   **First-class function**: functions are first-class data, able to be other function’s parameters or result, or even object attributes.
+*   **First-class function**: functions are first-class citizens, able to be other function’s parameters or result, or even object attributes.
 *   **Algebraic structure**: read [this other post](/2020/10/algebra.html).
 *   **Algebraic data type**: ADTs are compounded types; read [this post](/2020/10/type-isomorphism.html#algebraic-data-types).
 
-Desirable features:
+Desirable features and other concepts:
 
 *   **Recursion**: prefer recursion (and TCO) over a loop.
 *   **Laziness** or **Non-strictness**: a function may be strictly or lazily evaluated; on lazy evaluation, calls are performed on demand. In type algebra, a lazy value arity is represented by `a¹`, where `a` is the result type, take a look at [this topic](/2020/10/type-isomorphism.html#algebraic-data-types).
