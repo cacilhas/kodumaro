@@ -2,13 +2,13 @@
 
 For a developer to be able to work with Functional Programming, there are a few concepts he or she must master.
 
-In addition to the [functional constraints](http://kodumaro.cacilhas.info/2019/09/lies-they-told-you.html), there are two very important main ideas: algebraic data types (ADT) and algebraic structures. In this post, we’re looking at some algebraic structures.
+In addition to the [functional constraints](/2019/09/lies-they-told-you.html), there are two very important main ideas: [algebraic data types](/2020/10/type-isomorphism.html) (ADT) and algebraic structures. In this post, we’re looking at some algebraic structures.
 
 ### Functor
 
 Functor is the simpliest algebraic structure. It’s a wrapper around a datum or data that can map operations over them and their successful results.
 
-A basic example of functor in [Scala](https://www.scala-lang.org/) is [`scala.util.Try`](https://www.scala-lang.org/api/current/scala/util/Try.html):
+A basic functor example in [Scala](https://www.scala-lang.org/) is [`scala.util.Try`](https://www.scala-lang.org/api/current/scala/util/Try.html):
 
     Try {1 / x}
       .map {e => e*e}
