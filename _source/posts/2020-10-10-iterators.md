@@ -1,7 +1,7 @@
 ---
 title: Lua and MoonScript Iterators
 date: 2020-10-19
-tags: lua
+tags: lua reblog
 image: //cacilhas.info/img/moonscript.png
 permalink: /2020/10/iterators.html
 ---
