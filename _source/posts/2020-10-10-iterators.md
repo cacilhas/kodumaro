@@ -2,6 +2,7 @@
 title: Lua and MoonScript Iterators
 date: 2020-10-19
 tag: lua
+image: //cacilhas.info/img.moonscript.png
 permalink: /2020/10/iterators.html
 ---
 [2008]: https://kodumaro.blogspot.com/2008/
@@ -13,7 +14,7 @@ permalink: /2020/10/iterators.html
 [moonscript]: https://moonscript.org/
 [reiteradores]: /2017/02/reiteradores-em-moonscript.html
 
-{:class="pull-right"} <img src="{{{ cacilhas.url }}}/img/moonscript.jpg" alt="MoonScript" />
+{:class="pull-right"} <img src="{{{ image }}}" alt="MoonScript" />
 
 {:class="mg-first"} [2017][legacy], just before the Brazil’s democracy death,
 was one of my more fruitful years (the more at all was [2008][2008]), so I
