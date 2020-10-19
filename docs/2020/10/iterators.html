@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatibile" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="language" content="en" />
+    <meta name="copyright" content="CC-BY 4.0" />
+    <meta name="url" content="//kodumaro.cacilhas.info/2020/10/iterators.html" />
+    <meta name="date" content="Oct. 19, 2020" />
+    <meta name="search_date" content="2020-10-19" />
+    <meta name="author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <meta property="og:site_name" content="Kodumaro" />
+    <meta property="og:title" content="Lua and MoonScript Iterators" />
+    <meta property="og:url" content="//kodumaro.cacilhas.info/2020/10/iterators.html" />
+    <meta property="article:author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kavivanar" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:i,bold&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
+    <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/kodumaro.css" />
+    <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
+    <title>Lua and MoonScript Iterators</title>
+    <link rel="icon" href="/img/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="//cacilhas.info/js/ie-emulation-modes-warning.js"></script>
+    <script src="//cacilhas.info/js/jquery.min.js"></script>
+    <script src="//cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
+    <script src="//cacilhas.info/js/handle-old-url.js"></script>
+    <script src="//cacilhas.info/js/alt-title.js"></script>
+    <script src="//cacilhas.info/js/anchors.js"></script>
+    <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5741846017654057",
+        enable_page_level_ads: true,
+      })
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date;a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,"script","https://www.google-analytics.com/analytics.js","ga")
+      ga("create", "UA-99357497-1", "auto")
+      ga("send", "pageview")
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-togge="collapse" data-target="#navbar" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="dropdown">
+            <span class="navbar-brand dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ℭacilhας.INFO</span>
+            <ul class="dropdown-menu">
+              <li><a href="//cacilhas.info/"><i class="glyphicon glyphicon-home"></i>&nbsp;ℭacilhας.INFO</a></li>
+              <li><a href="//kodumaro.cacilhas.info/"><i class="licon icon-kodumaro"></i>&nbsp;Kodumaro</a></li>
+              <li><a href="//montegasppa.cacilhas.info/"><i class="licon icon-montegasppa"></i>&nbsp;ℳontegasppα and Giulia C.’s Thoughts</a></li>
+              <li><hr/></li>
+              <li><a href="//cacilhas.info/maven" target="_blank"><i class="licon icon-maven"></i>&nbsp;Kodumaro Maven Repository</a></li>
+              <li><a href="https://claudiotorcato.wordpress.com/" target="_blank"><i class="licon icon-wordpress"></i>&nbsp;Mosaico Livre</a></li>
+              <li><a href="https://waltercruz.com/" target="_blank"><i class="glyphicon glyphicon-link"></i>&nbsp;Walter Cruz</a></li>
+              <li><a href="" target="_blank"><i class="licon icon-dev-to"></i>&nbsp;</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="//kodumaro.cacilhas.info"><i class="glyphicon glyphicon-home"></i>&nbsp;Home</a></li>
+            <li class="active"><a href="//kodumaro.cacilhas.info/2020/10/iterators.html">Lua and MoonScript Iterators</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="mg-title">Lua and MoonScript Iterators</h2>
+          <h6 class="pull-right">2020-10-19</h6>
+          <h6>The shadows behind the code.</h6>
+        </div>
+        <div class="panel-body">
+          <p class="pull-right" > <img src="//cacilhas.info/img/moonscript.jpg" alt="MoonScript" /></p>
+<p class="mg-first" > <a href="/legacy.html">2017</a>, just before the Brazil’s democracy death,
+was one of my more fruitful years (the more at all was <a href="https://kodumaro.blogspot.com/2008/">2008</a>), so I
+decided to transcript some of that year’s posts back.</p>
+<p>I’m starting with a compilation of two
+posts&nbsp;<a href="/2017/02/reiteradores-em-moonscript.html">¹</a>&nbsp;<a href="/2017/02/mais-reiteradores-em-moonscript.html">²</a> about interators in
+<a href="https://moonscript.org/">MoonScript</a>.</p>
+<h3 id="lua-standard-iterator">Lua standard iterator</h3>
+<p>The Lua’s standard approach is a function that returns multiple values:</p>
+<ol>
+<li>The deal function, that returns the next value or <code>nil</code> if it’s ended.</li>
+<li>The overall state (usually the stop condition).</li>
+<li>The initial value.</li>
+</ol>
+<p>For instance, the <a href="https://planetmath.org/CollatzProblem">Collatz Conjecture</a> can be implemented as follows:</p>
+<pre class="prettyprint"><code class="moonscript language-moonscript">collatz = =&gt; _collatz, 1, @*2</code></pre>
+<p>The initial value is dobled to allow the first step to return it; the loop ends
+when the state reaches one (<code>1</code>).</p>
+<p>The deal function (<code>_collatz</code>) must accept the stop condition (<code>1</code>) and the
+last value. Using the MoonScript’s <code>self</code>, we can omit the first argument:</p>
+<pre class="prettyprint"><code class="moonscript language-moonscript">_collatz = (last) =&gt;
+    return if last == @
+    switch last % 2
+        when 0
+            last / 2
+        when 1
+            last * 3 + 1</code></pre>
+<p>Then it already works in <code>mooni</code>:</p>
+<pre class="prettyprint"><code>moon&gt; print x for x in collatz 10
+10
+5
+16
+8
+4
+2
+1
+moon&gt;</code></pre>
+<h3 id="closures">Closures</h3>
+<p>We can solve this problem by using closures too.</p>
+<p>For that, we need to write a factory that returns only the deal function, but
+with no arguments.</p>
+<pre class="prettyprint"><code class="moonscript language-moonscript">collatz = (value) -&gt;
+    value *= 2
+    -&gt;
+        return if value == 1
+        switch value % 2
+            when 0
+                value =/ 2
+            when 1
+                value = value * 3 + 1
+        value</code></pre>
+<p>This new function holding a closure (the <code>value</code> variable) behaves exactly like
+the <code>collatz</code> implemented using the standard iterator, but in one single block.</p>
+<h3 id="coroutines">Coroutines</h3>
+<p>The more powerful resource in Lua is the <a href="https://www.lua.org/pil/9.1.html">coroutine</a>.</p>
+<p>Coroutines allow yielding results while it keeps running the concurrent routine.</p>
+<p>Collatz Conjecture using coroutine is:</p>
+<pre class="prettyprint"><code class="moonscript language-moonscript">_collatz = (value using coroutine) -&gt;
+    import wrap, yield from coroutine
+    wrap -&gt;
+        while value != 1
+            yield value
+            switch value % 2
+                when 0
+                    value =/ 2
+                when 1
+                    value = value * 3 + 1
+        1</code></pre>
+<p>And also:</p>
+<pre class="prettyprint"><code>moon&gt; print x for x in collatz 10
+10
+5
+16
+8
+4
+2
+1
+moon&gt;</code></pre>
+<h3 id="fibonacci">Fibonacci</h3>
+<p>Let’s implement two approaches of <a href="https://encyclopediaofmath.org/index.php?title=Fibonacci_numbers">Fibonacci numbers</a>.</p>
+<p>Using the standard iterator, we simply don’t need to know the last result,
+we can manage it inside a mutable state – it’s possible to implement it in only
+one function using <code>unpack</code>:</p>
+<pre class="prettyprint"><code class="moonscript language-moonscript">fib = (n) -&gt; unpack {
+    -- Deal function
+    =&gt;
+        return if @n == 0 -- stop
+        @a, @b, @n = @b, @a+@b, @n-1
+        @a                -- step
+
+    -- Initial state
+    {a: 0, b: 1, :n}
+}</code></pre>
+<p>And this works fine:</p>
+<pre class="prettyprint"><code>moon&gt; print i for i in fib 10
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55</code></pre>
+<p>Now Fibonacci numbers using coroutine:</p>
+<pre class="prettyprint"><code class="moonscript language-moonscript">fib = (n using coroutine) -&gt;
+    import wrap, yield from coroutine
+    wrap -&gt;
+        a, b = 0, 1
+        for _ = 1, n
+            a, b = b, a+b
+            yield a</code></pre>
+<p>The both approaches are performative, ’cause they use double accumulator to run
+a linear procedure.</p>
+        </div>
+        <div id="tags" class="pull-right tags">
+          <script>
+            var tags = ''
+            if (tags) {
+              var first = true
+              for (var tag of tags.split(" ")) {
+                if (first) { first = false }
+                else $('#tags').append('&nbsp;|&nbsp;')
+                $('#tags').append(
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag + '</a>'
+                )
+              }
+            }
+          </script>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="disqus_thread">
+            <noscript>
+              Please enable JavaScript to view the comments
+              <a href="https://disqus.com/?ref_noscript">powered by Disqus</a>.
+            </noscript>
+          </div>
+          <script>
+            var disqus_config = function() {
+              this.page = this.page || {}
+              this.page.url = 'https://kodumaro.cacilhas.info/2020/10/iterators.html'
+              this.page.identifier = '_source.posts.2020-10-10-iterators'
+              this.page.title = 'Lua and MoonScript Iterators'
+            }
+            $(document).ready(function() {
+              var d = document, s = d.createElement('script')
+              s.src = 'https://kodumaro.disqus.com/embed.js'
+              s.setAttribute('data-timestamp', +new Date())
+              ;(d.head || d.body).appendChild(s)
+            })
+          </script>
+        </div>
+      </div>
+      <div>
+        <div class="pull-left">
+          <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px;"
+               data-ad-client="ca-pub-5741846017654057" data-ad-slot=""></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({})</script>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer" id="footer">
+      <p class="pull-left small">
+        <a href="https://dev.to/cacilhas">
+          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+               alt="DEV Profile 👩‍💻👨‍💻"
+               height="30" width="30"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+      <p class="small">
+        Arĥimedeς Montegasppα Cacilhας
+        &nbsp;
+        <a ref="license" href="http://creativecommons.org/licenses/by/4.0/deed">
+          <img rel="license"
+               alt="CC-BY 4.0"
+               src="https://i.creativecommons.org/l/by/4.0/80x15.png"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+    </div>
+    <script src="//cacilhas.info/js/bootstrap.min.js"></script>
+    <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
+    <script language="javascript">
+      $(document).ready(function() {
+        $('[title]').tooltip();
+      })
+    </script>
+  </body>
+</html>
