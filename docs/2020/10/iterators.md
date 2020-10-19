@@ -52,7 +52,7 @@ For that, we need to write a factory that returns only the deal function, but wi
             return if value == 1
             switch value % 2
                 when 0
-                    value =/ 2
+                    value /= 2
                 when 1
                     value = value * 3 + 1
             value
@@ -74,7 +74,7 @@ Collatz Conjecture using coroutine is:
                 yield value
                 switch value % 2
                     when 0
-                        value =/ 2
+                        value /= 2
                     when 1
                         value = value * 3 + 1
             1

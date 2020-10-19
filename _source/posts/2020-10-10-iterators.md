@@ -83,7 +83,7 @@ collatz = (value) ->
         return if value == 1
         switch value % 2
             when 0
-                value =/ 2
+                value /= 2
             when 1
                 value = value * 3 + 1
         value
@@ -108,7 +108,7 @@ _collatz = (value using coroutine) ->
             yield value
             switch value % 2
                 when 0
-                    value =/ 2
+                    value /= 2
                 when 1
                     value = value * 3 + 1
         1
