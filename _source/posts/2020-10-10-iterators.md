@@ -8,6 +8,7 @@ permalink: /2020/10/iterators.html
 [2008]: https://kodumaro.blogspot.com/2008/
 [collatz]: https://planetmath.org/CollatzProblem
 [coroutine]: https://www.lua.org/pil/9.1.html
+[dev.to]: https://dev.to/cacilhas/lua-moonscript-iterators-1fd0
 [fibonacci]: https://encyclopediaofmath.org/index.php?title=Fibonacci_numbers
 [legacy]: /legacy.html
 [mais-reiteradores]: /2017/02/mais-reiteradores-em-moonscript.html
@@ -178,3 +179,7 @@ fib = (n using coroutine) ->
 
 The both approaches are performative, ’cause they use double accumulator to run
 a linear procedure.
+
+-----
+
+{:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].

@@ -133,3 +133,7 @@ Now Fibonacci numbers using coroutine:
                 yield a
 
 The both approaches are performative, ’cause they use double accumulator to run a linear procedure.
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/lua-moonscript-iterators-1fd0).
