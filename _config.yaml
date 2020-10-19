@@ -5,6 +5,7 @@ author: &author
 
 description: The shadows behind the code.
 favicon: /img/favicon.ico
+image: /img/background.jpg
 lang: en
 site: &site //kodumaro.cacilhas.info
 title: &title Kodumaro
