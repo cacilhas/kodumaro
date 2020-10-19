@@ -17,7 +17,7 @@ permalink: /2020/10/iterators.html
 
 {:class="pull-right"} <img src="{{{ image }}}" alt="MoonScript" />
 
-{:class="mg-first"} [2017][legacy], just before the Brazil’s democracy death,
+{:class="mg-first"} [2017][legacy], the year after the Brazil’s democracy death,
 was one of my more fruitful years (the more at all was [2008][2008]), so I
 decided to transcript some of that year’s posts back.
 
