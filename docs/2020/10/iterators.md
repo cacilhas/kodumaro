@@ -1,4 +1,4 @@
-![MoonScript](//cacilhas.info/img.moonscript.png)
+![MoonScript](//cacilhas.info/img/moonscript.png)
 
 [2017](/legacy.html), just before the Brazil’s democracy death, was one of my more fruitful years (the more at all was [2008](https://kodumaro.blogspot.com/2008/)), so I decided to transcript some of that year’s posts back.
 
