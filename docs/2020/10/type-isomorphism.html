@@ -159,8 +159,8 @@ the argument type’s – multiple arguments are equivalent to a conjunctive typ
 the values without losing data, the types are isomorphic.</p>
 <pre class="prettyprint"><code class="scala language-scala">def swap[A, B](v: (A, B)): (B, A) = (v._2, v._1)</code></pre>
 <h3 id="curiosity-isomorphism-in-c">Curiosity: isomorphism in C</h3>
-<p>Since C has low-level access to the memory (through pointers), and is weakly
-typed; one can cast between the two most different types if they have the same
+<p>Since C has low-level access to the memory (through pointers) and is weakly
+typed, one can cast between the two most different types if they have the same
 memory length.</p>
 <p>For instance, in C <code>int</code> and <code>float</code> are isomorphic.</p>
 <p>And amusing code is the fast inverse square root form Quake Ⅲ Arena (<code>Q_rsqrt</code>),

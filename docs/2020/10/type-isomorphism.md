@@ -75,7 +75,7 @@ The proof is nothing trickier than the `swap` function itself: if you can swap t
 
 ### Curiosity: isomorphism in C
 
-Since C has low-level access to the memory (through pointers), and is weakly typed; one can cast between the two most different types if they have the same memory length.
+Since C has low-level access to the memory (through pointers) and is weakly typed, one can cast between the two most different types if they have the same memory length.
 
 For instance, in C `int` and `float` are isomorphic.
 
