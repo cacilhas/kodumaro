@@ -7,7 +7,7 @@ This is just a brief and shallow list of the main concepts.
 Requirements:
 
 *   **Pure function**: pure functions must have no side effects; not all functions need to be pure, but they should whenever it’s possible.
-*   **Immutability**: once set, it’s for good; a value cannot change.
+*   **Immutability**: once set, it’s for good; a value shouldn’t change.
 *   **Determinism** or **Idempotency**: given the same parameters, a function must return the very same result.
 *   **Tail-call optimisation** (TCO): the last call in a procedure must replace the current memory stack; it prevents stack overflow when going recursively.
 *   **First-class function**: functions are first-class citizens, able to be other function’s parameters or result, or even object attributes.
