@@ -34,7 +34,7 @@ So if `A` and `B` have the same arity, you can map each value in `A` to only one
 
 ### Algebraic Data Types
 
-[ADT](https://wiki.haskell.org/Algebraic_data_type) (don’t confuse with [ADT – abstract data type](https://www.geeksforgeeks.org/abstract-data-types/)) are compounded types, and their arity follows a simple arithmetic rule.
+[ADT](https://wiki.haskell.org/Algebraic_data_type) (don’t confuse with [ADT – abstract data type](https://www.geeksforgeeks.org/abstract-data-types/)) are compounded types, and their arity follows simple arithmetic rules.
 
 A disjunctive type – when the compounding values are exclusively optional, that means, one **or** another – has arity equal to the sum of its compounding types.
 
