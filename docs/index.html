@@ -124,7 +124,7 @@ in an effort to offer you some interesting tips about programming.</p>
     })
 
   } else {
-    $('#posts').text('Latter posts')
+    $('#posts').text('Latest posts')
     $.getJSON('/posts.json', function(posts) {
       for (var post of posts) {
         $('#postsList').append(
