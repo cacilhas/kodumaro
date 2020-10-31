@@ -1,4 +1,4 @@
-![Go](//cacilhas.info/img/golang.png)
+![Gopher](//cacilhas.info/img/golang.png)
 
 Now I’m revisiting an [old post mine](/2017/06/golang.html) about my personal impressions about the [Go](https://golang.org/) language.
 
@@ -145,3 +145,7 @@ Some useful resources:
 *   [The Go Blog](https://blog.golang.org/)
 *   [Going Go Programming](https://www.goinggo.net/) (looks unreachable)
 *   [The Go Playground](https://play.golang.org/)
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/about-go-51c1).
