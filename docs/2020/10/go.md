@@ -4,11 +4,11 @@ Now I’m revisiting an [old post of mine](/2017/06/golang.html) about my person
 
 ### Outflanking
 
-My first impression on Go was very wrong. I flanked Go from the [Python](https://www.python.org/) and [Node.js](https://nodejs.org/) perspective, which was very disappoing. When you try to use a language that offers powerful tools to access system resources with an open-and-shut mind, the result is frustrating.
+My first impression on Go was very wrong. I flanked Go from the [Python](https://www.python.org/) and [Node.js](https://nodejs.org/) perspective, which was very disappointing. When you try to use a language that offers powerful tools to access system resources with an open-and-shut mind, the result is frustrating.
 
 As soon as I understood Go is closer to [C++](http://www.cplusplus.com/) and [Objective-C](https://www.gnu.org/software/gnustep/resources/documentation/Developer/Base/ProgrammingManual/manual_toc.html), I realised it’s a cool, powerful, and fun programming language.
 
-At that time, a friend vainly tried to explain me Go pointers as read-write parameters against read-only ones. If he had simply told me “pointers like C,” I’d get at once.
+At that time, a friend vainly tried to explain me Go pointers as read-write parameters against read-only ones. If he had simply told me “pointers like in C,” I’d get at once.
 
 My disapproval to Go is that [Alphabet](https://abc.xyz/) might not have recreated the wheel so hard, it could take advantage of other well-tested platforms, like [Vala](https://wiki.gnome.org/Projects/Vala) and [C♯](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/) did. It would entice lotta god programmers by the soft learning curve (despite [Linus Tovarlds disagrees](https://lwn.net/Articles/249460/)).
 
