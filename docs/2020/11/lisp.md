@@ -132,3 +132,9 @@ And one can evaluate it by calling:
 The result is:
 
     '((0 1) (1 1) (2 2) (3 6) (4 24) (5 120))
+
+* * *
+
+Translated from [here](/2017/11/lisp.html) and [here](/2017/11/lazy-racket.html).
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/lisp-473j).
