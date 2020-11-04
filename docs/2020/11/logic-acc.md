@@ -78,7 +78,7 @@ Since the last call is `fibonacci/4`, it takes advantage of TCO.
 
 Shallowly it omits the last two parameters, creating a chaining of clauses.
 
-The `fibonacci/4` becomes something like:
+The `fibonacci//2` becomes something like:
 
     fibonacci(0, _) --> '=', !.
     fibonacci(N, A) --> { succ(N1, N) },
@@ -86,7 +86,7 @@ The `fibonacci/4` becomes something like:
                         plus(A),
                         fibonacci(N1, B).
 
-The curly brackets are used to define the `N1` as `N`’s predecessor without change the chain. The `call/4` uses a lambda to define `B` as the first implicit parameter.
+The curly brackets are used to define the `N1` as `N`’s predecessor without change the chain. The `call//2` (`call/4`) uses a lambda to define `B` as the first implicit parameter.
 
 After that, the `A` value is added to the first implicit parameter.
 

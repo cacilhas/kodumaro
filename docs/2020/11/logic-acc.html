@@ -164,15 +164,15 @@ the index (<code>N</code>), two accumulators (<code>A</code> and <code>B</code>)
 grammar in Prolog. It uses the <code>--&gt;/2</code> clause as a syntax sugar for grammar
 clearance.</p>
 <p>Shallowly it omits the last two parameters, creating a chaining of clauses.</p>
-<p>The <code>fibonacci/4</code> becomes something like:</p>
+<p>The <code>fibonacci//2</code> becomes something like:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">fibonacci(0, _) --&gt; '=', !.
 fibonacci(N, A) --&gt; { succ(N1, N) },
                     call(\B^B^B^(true), B),
                     plus(A),
                     fibonacci(N1, B).</code></pre>
 <p>The curly brackets are used to define the <code>N1</code> as <code>N</code>’s predecessor without
-change the chain. The <code>call/4</code> uses a lambda to define <code>B</code> as the first implicit
-parameter.</p>
+change the chain. The <code>call//2</code> (<code>call/4</code>) uses a lambda to define <code>B</code> as the
+first implicit parameter.</p>
 <p>After that, the <code>A</code> value is added to the first implicit parameter.</p>
 <p>Finally, the recursion is called passing the predecessor, the original first
 parameter, followed by the current implicit parameters.</p>
