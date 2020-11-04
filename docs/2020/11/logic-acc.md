@@ -104,9 +104,9 @@ For curiosity, the DCG above expands to:
 
     fibonacci(0, _, `_1`, `_R`) :- `_1` = `_R`, !.
     fibonacci(N, A, `_1`, `_R`) :- succ(N1, N),
-                        call(\B^B^B^(true), B, `_1`, `_2`),
-                        plus(A, `_2`, `_3`),
-                        fibonacci(N1, B, `_3`, `_R`).
+                                   call(\B^B^B^(true), B, `_1`, `_2`),
+                                   plus(A, `_2`, `_3`),
+                                   fibonacci(N1, B, `_3`, `_R`).
 
 * * *
 
