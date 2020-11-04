@@ -99,9 +99,9 @@ for other paradigm pogrammers.</p>
 consists of ordering statements that the computer system must perform in
 sequence, respecting flow changes. It’s as close as possible to the
 microprogram.</p>
-<p>However it’s far from efficient, standing in a creation and management sight,
-which leads to hard-mantaining codes, much denser of bugs than any other
-paradigm.</p>
+<p>However, standing in a creation and management sight, Imperative Programming’s
+far from efficient, leads to hard-mantaining codes, much denser of bugs than any
+other paradigm.</p>
 <p>A rival paradigm that’s gaining ground is the
 <a href="https://en.wikipedia.org/wiki/Functional_programming">Function Programming</a>, based on <a href="https://en.wikipedia.org/wiki/Lambda_calculus">λ-calculus</a>, that
 takes advantage of some constraints to solve the integrity issues.</p>
@@ -115,7 +115,7 @@ flow, but instead by declaring a facts domain.</li>
 existence to a large intersection named Declarative Logic Programming.</p>
 <p>While in Imperative Programming one orders statements to the machine, in the
 Declarative Logic Programming one defines a facts domain and the logical
-relations between facts and rules.</p>
+relations between clauses.</p>
 <p>No “order” is give to the system, instead queries are asked. The aftermath of
 the system trying to figure out the answers is the expected program behaviour.</p>
 <p>The behaviour varies from I/O side-effects to domain changes itself.</p>
@@ -134,8 +134,8 @@ to the system, with variables or not.</p>
 values. The goal must be true, returning a failure status otherwise.</p>
 <h3 id="fibonacci">Fibonacci</h3>
 <p>Let’s define the Fibonacci numbers now.</p>
-<p>It’s required that the two first values (indexes 0 and 1) to equal 1. One
-represents it in Prolog like this:</p>
+<p>It’s required the two first values (indexes 0 and 1) to equal 1. One represents
+it in Prolog like this:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">fibonacci(0, 1).
 fibonacci(1, 1).</code></pre>
 <p>The step is defined as the sum of its two predecessors. It’s valid to call the
@@ -146,9 +146,9 @@ current value <code>N</code> and its predecessors <code>N1</code> and <code>N2</
                    fibonacci(N2, R2),
                    plus(R1, R2, R).</code></pre>
 <p>This is a valid implementation, but with a serious stack overflow issue.
-<a href="http://wiki.c2.com/?TailCallOptimization">TCO</a> is needed for solving this problem.</p>
-<p>Let’s define two rules: the main calling an auxiliar. The auxiliar rule uses
-accumulators to transport the result:</p>
+<a href="http://wiki.c2.com/?TailCallOptimization">TCO</a> is needed for solving it.</p>
+<p>Let’s define two rules: the main one calling an auxiliary one. The auxiliary
+rule uses accumulators to transport the result:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">fibonacci(N, R) :- N &gt;= 0,
                    fibonacci(N, 0, 1, R).
 
@@ -156,14 +156,14 @@ fibonacci(0, _, R, R) :- !.
 fibonacci(N, A, B, R) :- succ(N1, N),
                          plus(A, B, AB),
                          fibonacci(N1, B, AB, R).</code></pre>
-<p>The <code>fibonacci/2</code> is the main rule; <code>fibonacci/4</code> is the auxiliar one, it takes
+<p>The <code>fibonacci/2</code> is the main rule; <code>fibonacci/4</code> is the auxiliary one, it takes
 the index (<code>N</code>), two accumulators (<code>A</code> and <code>B</code>), and the result (<code>R</code>).</p>
-<p>As the last call is <code>fibonacci/4</code>, it takes advantage of TCO.</p>
+<p>Since the last call is <code>fibonacci/4</code>, it takes advantage of TCO.</p>
 <h3 id="definite-clause-grammar">Definite clause grammar</h3>
 <p><a href="https://www.swi-prolog.org/pldoc/man?section=DCG">Definite clause grammar</a> (DCG) is a way for expressing natural and formal
 grammar in Prolog. It uses the <code>--&gt;/2</code> clause as a syntax sugar for grammar
 clearance.</p>
-<p>Basically it omits the last two parameters, creating a chaining of clauses.</p>
+<p>Shallowly it omits the last two parameters, creating a chaining of clauses.</p>
 <p>The <code>fibonacci/4</code> becomes something like:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">fibonacci(0, _) --&gt; '=', !.
 fibonacci(N, A) --&gt; { succ(N1, N) },
@@ -186,6 +186,8 @@ fibonacci(N, A, `_1`, `_R`) :- succ(N1, N),
                     call(\B^B^B^(true), B, `_1`, `_2`),
                     plus(A, `_2`, `_3`),
                     fibonacci(N1, B, `_3`, `_R`).</code></pre>
+<hr />
+<p>Also in <a href="https://dev.to/cacilhas/accumulators-in-declarative-logic-programming-5cl7">DEV Community 👩‍💻👨‍💻</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
