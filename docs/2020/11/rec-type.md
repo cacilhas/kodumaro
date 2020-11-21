@@ -86,3 +86,7 @@ And _vois la_! It works pretty well!
     x = null
 
 Now the `JValue` is quite stricter, and the `WeakRef` made the recursive type possible.
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/recursive-types-32je).
