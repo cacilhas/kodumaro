@@ -28,7 +28,7 @@ But odd things started to happen, like:
 
     val element: JValue = <data>This is an XML node</data>
 
-It should crash! But doesn’t, ’cause `NodeSeq` is `Any`’s subclass.
+It should crash! But doesn’t, since `NodeSeq` is `Any`’s subclass.
 
 I needed something stricter.
 

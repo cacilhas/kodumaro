@@ -115,7 +115,7 @@ type JObject = String Map JValue</code></pre>
 )</code></pre>
 <p>But odd things started to happen, like:</p>
 <pre class="prettyprint"><code class="scala language-scala">val element: JValue = &lt;data&gt;This is an XML node&lt;/data&gt;</code></pre>
-<p>It should crash! But doesn’t, ’cause <code>NodeSeq</code> is <code>Any</code>’s subclass.</p>
+<p>It should crash! But doesn’t, since <code>NodeSeq</code> is <code>Any</code>’s subclass.</p>
 <p>I needed something stricter.</p>
 <h3 id="enter-dotty">Enter Dotty</h3>
 <p>Now I’ve tried <a href="https://dotty.epfl.ch/">Scala 3, codename Dotty</a>.</p>
