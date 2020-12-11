@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatibile" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="language" content="en" />
+    <meta name="copyright" content="CC-BY 4.0" />
+    <meta name="url" content="//kodumaro.cacilhas.info/2020/12/implicit-conversions.html" />
+    <meta name="date" content="Dec. 11, 2020" />
+    <meta name="search_date" content="2020-12-11" />
+    <meta name="author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <meta property="og:site_name" content="Kodumaro" />
+    <meta property="og:title" content="Implicit Conversions in Scala" />
+    <meta property="og:url" content="//kodumaro.cacilhas.info/2020/12/implicit-conversions.html" />
+    <meta property="og:image" content="//cacilhas.info/img/scala.png" />
+    <meta property="article:author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kavivanar" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:i,bold&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
+    <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/kodumaro.css" />
+    <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
+    <title>Implicit Conversions in Scala</title>
+    <link rel="icon" href="/img/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="//cacilhas.info/js/ie-emulation-modes-warning.js"></script>
+    <script src="//cacilhas.info/js/jquery.min.js"></script>
+    <script src="//cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
+    <script src="//cacilhas.info/js/handle-old-url.js"></script>
+    <script src="//cacilhas.info/js/alt-title.js"></script>
+    <script src="//cacilhas.info/js/anchors.js"></script>
+    <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5741846017654057",
+        enable_page_level_ads: true,
+      })
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date;a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,"script","https://www.google-analytics.com/analytics.js","ga")
+      ga("create", "UA-99357497-1", "auto")
+      ga("send", "pageview")
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-togge="collapse" data-target="#navbar" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="dropdown">
+            <span class="navbar-brand dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ℭacilhας.INFO</span>
+            <ul class="dropdown-menu">
+              <li><a href="//cacilhas.info/"><i class="glyphicon glyphicon-home"></i>&nbsp;ℭacilhας.INFO</a></li>
+              <li><a href="//kodumaro.cacilhas.info/"><i class="licon icon-kodumaro"></i>&nbsp;Kodumaro</a></li>
+              <li><a href="//montegasppa.cacilhas.info/"><i class="licon icon-montegasppa"></i>&nbsp;ℳontegasppα and Giulia C.’s Thoughts</a></li>
+              <li><hr/></li>
+              <li><a href="//cacilhas.info/maven" target="_blank"><i class="licon icon-maven"></i>&nbsp;Kodumaro Maven Repository</a></li>
+              <li><a href="https://claudiotorcato.wordpress.com/" target="_blank"><i class="licon icon-wordpress"></i>&nbsp;Mosaico Livre</a></li>
+              <li><a href="https://waltercruz.com/" target="_blank"><i class="glyphicon glyphicon-link"></i>&nbsp;Walter Cruz</a></li>
+              <li><a href="" target="_blank"><i class="licon icon-dev-to"></i>&nbsp;</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="//kodumaro.cacilhas.info"><i class="glyphicon glyphicon-home"></i>&nbsp;Home</a></li>
+            <li class="active"><a href="//kodumaro.cacilhas.info/2020/12/implicit-conversions.html">Implicit Conversions in Scala</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="mg-title">Implicit Conversions in Scala</h2>
+          <h6 class="pull-right">2020-12-11</h6>
+          <h6>The shadows behind the code.</h6>
+        </div>
+        <div class="panel-body">
+          <p class="pull-right" > <img src="//cacilhas.info/img/scala.png" alt="Scala"/></p>
+<p class="mg-first" > <a href="https://www.scala-lang.org/">Scala</a> (in version 2.13 while I write) has a
+powerful conversion system based on its <a href="https://www.scala-lang.org/files/archive/spec/2.13/07-implicits.html">implicits system</a>.</p>
+<p>It works by expanding implicit methods and classes into a more complex
+structure, which would be way harder to code if it needs to be done explicitly.</p>
+<p>We’re gonna talk about three ways to implement implicit conversions and their
+expansions.</p>
+<h3 id="implicit-methods">Implicit methods</h3>
+<p>Take the double value sequence:</p>
+<pre class="prettyprint"><code class="scala language-scala">Seq(0.4, 1.8, 2.2)</code></pre>
+<p>In this case it’s a short list, but it could be hundreds larger. One needs only
+their ceiling integer values, so one must a way to convert the values.</p>
+<p>One can use an implicit method:</p>
+<pre class="prettyprint"><code class="scala language-scala">implicit def double2int(value: Double): Int = value.ceil.toInt
+
+val values: Seq[Int] = Seq(0.4, 1.8, 2.2)</code></pre>
+<p>The value of <code>values</code> is:</p>
+<pre class="prettyprint"><code class="scala language-scala">Seq(1, 2, 3)</code></pre>
+<p>It’s expanded to:</p>
+<pre class="prettyprint"><code class="scala language-scala">def double2int(value: Double): Int = value.ceil.toInt
+
+val values: Seq[Int] = Seq(double2int(0.4), double2int(1.8), double2int(2.2))</code></pre>
+<h3 id="implicit-classes">Implicit classes</h3>
+<p>Implicit classes are the way to inject methods into existent types.</p>
+<p>For instance, let’s create a string method to generate the XML node from it:</p>
+<pre class="prettyprint"><code class="scala language-scala">implicit class XMLString(value: String) {
+  def toXML: Option[NodeSeq] = Try(XML loadString value).toOption
+}
+
+val source = getDataFromOutsideSource() // : String
+
+val node = source.toXML</code></pre>
+<p>It expands to:</p>
+<pre class="prettyprint"><code class="scala language-scala">class XMLString(value: String) {
+  def toXML: Option[NodeSeq] = Try(XML loadString value).toOption
+}
+
+object XMLString extends (String =&gt; XMLString) {
+  def apply(value: String): XMLString = new XMLString(value)
+}
+
+val source: String = getDataFromOutsideSource()
+
+val node: Option[NodeSeq] = XMLString(source).toXML</code></pre>
+<p>Note that everytime <code>.toXML</code> is called, a new <code>XMLString</code> is created.</p>
+<h3 id="implicit-value-classes">Implicit value classes</h3>
+<p><a href="https://docs.scala-lang.org/overviews/core/value-classes.html">Value classes</a> are lightweight Scala resources, which <strong>don’t</strong>
+create new instance each call. Instead, every value class uses a companion
+object to envelope the methods, and calls them from it.</p>
+<p>Consider the following example, a method to determine whether a double is
+integral:</p>
+<pre class="prettyprint"><code class="scala language-scala">implicit class IntegralDouble(val value: Double): extends AnyVal {
+  def isIntegral: Boolean = value % 1 == 0
+}
+
+val value = getSomeFloatPointValue() // : Double
+
+if (value.isIntegral)
+  doSomeMathWith(value)</code></pre>
+<p>It expands to:</p>
+<pre class="prettyprint"><code class="scala language-scala">class IntegralDouble(val value: Double): extends AnyVal {
+  def isIntegral: Boolean = IntegralDouble isIntegral$expansion value
+}
+
+object IntegralDouble {
+  def isIntegral$expansion(value: Double): Boolean = value % 1.0 == 0.0
+}
+
+val value: Double = getSomeFloatPointValue()
+
+if (IntegralDouble.isIntegral$expansion(value))
+  doSomeMathWith(value)</code></pre>
+<p>No instance is created on <code>.isIntegral</code> call.</p>
+<p>Note: value classes are tagged by inheriting <code>AnyVal</code>, and need a value of type
+<code>* &lt;: AnyVal</code>, i.e., <code>Boolean</code>, <code>Byte</code>, <code>Char</code>, <code>Double</code>, <code>Float</code>, <code>Int</code>,
+<code>Long</code>, <code>Short</code>, <code>Unit</code>, and their <a href="https://docs.scala-lang.org/sips/42.type.html">literal-based singleton types</a>.</p>
+        </div>
+        <div id="tags" class="pull-right tags">
+          <script>
+            var tags = 'functional scala'
+            if (tags) {
+              var first = true
+              for (var tag of tags.split(" ")) {
+                if (first) { first = false }
+                else $('#tags').append('&nbsp;|&nbsp;')
+                $('#tags').append(
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag + '</a>'
+                )
+              }
+            }
+          </script>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="disqus_thread">
+            <noscript>
+              Please enable JavaScript to view the comments
+              <a href="https://disqus.com/?ref_noscript">powered by Disqus</a>.
+            </noscript>
+          </div>
+          <script>
+            var disqus_config = function() {
+              this.page = this.page || {}
+              this.page.url = 'https://kodumaro.cacilhas.info/2020/12/implicit-conversions.html'
+              this.page.identifier = '_source.posts.2020-12-11-expansion'
+              this.page.title = 'Implicit Conversions in Scala'
+            }
+            $(document).ready(function() {
+              var d = document, s = d.createElement('script')
+              s.src = 'https://kodumaro.disqus.com/embed.js'
+              s.setAttribute('data-timestamp', +new Date())
+              ;(d.head || d.body).appendChild(s)
+            })
+          </script>
+        </div>
+      </div>
+      <div>
+        <div class="pull-left">
+          <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px;"
+               data-ad-client="ca-pub-5741846017654057" data-ad-slot=""></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({})</script>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer" id="footer">
+      <p class="pull-left small">
+        <a href="https://dev.to/cacilhas">
+          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+               alt="DEV Profile 👩‍💻👨‍💻"
+               height="30" width="30"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+      <p class="small">
+        Arĥimedeς Montegasppα Cacilhας
+        &nbsp;
+        <a ref="license" href="http://creativecommons.org/licenses/by/4.0/deed">
+          <img rel="license"
+               alt="CC-BY 4.0"
+               src="https://i.creativecommons.org/l/by/4.0/80x15.png"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+    </div>
+    <script src="//cacilhas.info/js/bootstrap.min.js"></script>
+    <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
+    <script language="javascript">
+      $(document).ready(function() {
+        $('[title]').tooltip();
+      })
+    </script>
+  </body>
+</html>
