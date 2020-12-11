@@ -100,19 +100,19 @@ consists of ordering statements that the computer system must perform in
 sequence, respecting flow changes. It’s as close as possible to the
 microprogram.</p>
 <p>However, standing in a creation and management sight, Imperative Programming’s
-far from efficient, leads to hard-mantaining codes, much denser of bugs than any
+far from efficient, leads to hard-mantaining codes, much bug-denser than any
 other paradigm.</p>
 <p>A rival paradigm that’s gaining ground is the
 <a href="https://en.wikipedia.org/wiki/Functional_programming">Function Programming</a>, based on <a href="https://en.wikipedia.org/wiki/Lambda_calculus">λ-calculus</a>, that
-takes advantage of some constraints to solve the integrity issues.</p>
+takes advantage of some constraints to solve integrity issues.</p>
 <p>Beyond those paradigms, there are a lot more, notable two:</p>
 <ul>
 <li>The Declarative Programming: doesn’t express the algorithms by the control
 flow, but instead by declaring a facts domain.</li>
 <li>The Logic Programming: largely based on formal logic.</li>
 </ul>
-<p>The Logic Programming barely exists apart from Declarative Programming, giving
-existence to a large intersection named Declarative Logic Programming.</p>
+<p>The Logic Programming barely exists apart from Declarative Programming, and
+gives birth to a large intersection named <strong>Declarative Logic Programming</strong>.</p>
 <p>While in Imperative Programming one orders statements to the machine, in the
 Declarative Logic Programming one defines a facts domain and the logical
 relations between clauses.</p>
@@ -122,7 +122,7 @@ the system trying to figure out the answers is the expected program behaviour.</
 <p>Let’s take <a href="https://www.swi-prolog.org/">Prolog</a> as reference: Prolog has four types of clauses:
 <a href="http://www.ablmcc.edu.hk/~scy/prolog/pro02.htm">facts, rules, goals, and queries</a>.</p>
 <p><strong>Facts</strong> are self-sufficient truths, they don’t depend on other facts or rules.
-For instance, “Anna is Bob’s friend,” that can be represented as following:</p>
+For instance, “Anna and Bob are friends,” that can be represented as following:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">friend(anna, bob).</code></pre>
 <p><strong>Rules</strong> depend on facts or other rules to validate whether it’s true. For
 instance:</p>
@@ -131,7 +131,8 @@ instance:</p>
 <p><strong>Goal</strong> is the target query, with no variables. <strong>Query</strong> is any question asked
 to the system, with variables or not.</p>
 <p>A query may be true, false, or give multiple answers depending on the variable
-values. The goal must be true, returning a failure status otherwise.</p>
+values. The goal must have a truthful answer, returning a failure status
+otherwise.</p>
 <h3 id="fibonacci">Fibonacci</h3>
 <p>Let’s define the Fibonacci numbers now.</p>
 <p>It’s required the two first values (indexes 0 and 1) to equal 1. One represents

@@ -102,10 +102,10 @@ this post, we’re looking at some algebraic structures.</p>
 data that can map operations over them and their successful results.</p>
 <p>A basic functor example in <a href="https://www.scala-lang.org/">Scala</a> is
 <a href="https://www.scala-lang.org/api/current/scala/util/Try.html"><code>scala.util.Try</code></a>:</p>
-<pre class="prettyprint"><code class="scala language-scala">Try {1 / x}
-  .map {e =&gt; e*e}
-  .map {1 - _}
-  .map {_.toString} match {
+<pre class="prettyprint"><code class="scala language-scala">Try(1 / x)
+  .map(e =&gt; e*e)
+  .map(1 - _)
+  .map(_.toString) match {
     case Success(value) =&gt; s"the result is $value"
     case Failure(exc)   =&gt; s"it raised an exception: $exc"
   }</code></pre>
@@ -118,17 +118,17 @@ nothing than a variation of functor approach.</p>
 mapping the results and possibly describing side-effects.</p>
 <p>Our first monad example is the <a href="https://www.scala-lang.org/api/current/scala/collection/immutable/Seq.html"><code>Seq</code></a>:</p>
 <pre class="prettyprint"><code class="scala language-scala">Seq(1, 2, 3)
-  .flapMap {e =&gt; Seq(e * 2)}
-  .flatMap {e =&gt; if (e == 2) Nil else Seq(e)}
-  .flatMap {e =&gt; if (e == 4) Seq(4, 5) else Seq(e)}</code></pre>
+  .flapMap(e =&gt; Seq(e * 2))
+  .flatMap(e =&gt; if (e == 2) Nil else Seq(e))
+  .flatMap(e =&gt; if (e == 4) Seq(4, 5) else Seq(e))</code></pre>
 <p>The result is <code>Seq(4, 5, 6)</code>; the <code>flatMap</code> method is the main resource of a
 monad.</p>
 <p>Since <code>Seq</code> is a functor too, you may replace the first <code>flatMap</code> by a <code>map</code>,
 and it has a <code>filter</code> method, more expressive than <code>flatMap</code>:</p>
 <pre class="prettyprint"><code class="scala language-scala">Seq(1, 2, 3)
-  .map {_ * 2}
-  .filter {e != 2}
-  .flatMap {e =&gt; if (e == 4) Seq(4, 5) else Seq(e)}</code></pre>
+  .map(_ * 2)
+  .filter(_ != 2)
+  .flatMap(e =&gt; if (e == 4) Seq(4, 5) else Seq(e))</code></pre>
 <p>The result is the same. <code>List</code>, <code>Option</code>, <code>Try</code>, <code>Either</code>, etc, are monads too.</p>
 <p>The knownest monad is the Haskell’s <a href="https://wiki.haskell.org/Introduction_to_IO"><code>IO</code></a>. The <code>IO</code> monad describes how an
 I/O side-effect happens.</p>

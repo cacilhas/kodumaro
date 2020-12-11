@@ -143,7 +143,7 @@ Some useful resources:
 *   [A Tour of Go](https://tour.golang.org/)
 *   [An Introduction to Programming in Go](https://www.golang-book.com/books/intro)
 *   [The Go Blog](https://blog.golang.org/)
-*   [Going Go Programming](https://www.goinggo.net/) (looks unreachable)
+*   [Going Go Programming](https://www.goinggo.net/) (looks unreachable 😟)
 *   [The Go Playground](https://play.golang.org/)
 
 * * *

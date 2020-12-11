@@ -112,7 +112,7 @@ val values: Seq[Int] = Seq(0.4, 1.8, 2.2)</code></pre>
 <p>It’s expanded to:</p>
 <pre class="prettyprint"><code class="scala language-scala">def double2int(value: Double): Int = value.ceil.toInt
 
-val values: Seq[Int] = Seq(double2int(0.4), double2int(1.8), double2int(2.2))</code></pre>
+val values: Seq[Int] = Seq(0.4, 1.8, 2.2) map double2int</code></pre>
 <h3 id="implicit-classes">Implicit classes</h3>
 <p>Implicit classes are the way to inject methods into existent types.</p>
 <p>For instance, let’s create a string method to generate the XML node from it:</p>

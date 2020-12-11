@@ -6,16 +6,16 @@ This post is a translation of an [older one](/2017/11/acumuladores.html).
 
 The most popular paradigm is the Imperative Programming (it has changed), which consists of ordering statements that the computer system must perform in sequence, respecting flow changes. It’s as close as possible to the microprogram.
 
-However, standing in a creation and management sight, Imperative Programming’s far from efficient, leads to hard-mantaining codes, much denser of bugs than any other paradigm.
+However, standing in a creation and management sight, Imperative Programming’s far from efficient, leads to hard-mantaining codes, much bug-denser than any other paradigm.
 
-A rival paradigm that’s gaining ground is the [Function Programming](https://en.wikipedia.org/wiki/Functional_programming), based on [λ-calculus](https://en.wikipedia.org/wiki/Lambda_calculus), that takes advantage of some constraints to solve the integrity issues.
+A rival paradigm that’s gaining ground is the [Function Programming](https://en.wikipedia.org/wiki/Functional_programming), based on [λ-calculus](https://en.wikipedia.org/wiki/Lambda_calculus), that takes advantage of some constraints to solve integrity issues.
 
 Beyond those paradigms, there are a lot more, notable two:
 
 *   The Declarative Programming: doesn’t express the algorithms by the control flow, but instead by declaring a facts domain.
 *   The Logic Programming: largely based on formal logic.
 
-The Logic Programming barely exists apart from Declarative Programming, giving existence to a large intersection named Declarative Logic Programming.
+The Logic Programming barely exists apart from Declarative Programming, and gives birth to a large intersection named **Declarative Logic Programming**.
 
 While in Imperative Programming one orders statements to the machine, in the Declarative Logic Programming one defines a facts domain and the logical relations between clauses.
 
@@ -25,7 +25,7 @@ The behaviour varies from I/O side-effects to domain changes itself.
 
 Let’s take [Prolog](https://www.swi-prolog.org/) as reference: Prolog has four types of clauses: [facts, rules, goals, and queries](http://www.ablmcc.edu.hk/~scy/prolog/pro02.htm).
 
-**Facts** are self-sufficient truths, they don’t depend on other facts or rules. For instance, “Anna is Bob’s friend,” that can be represented as following:
+**Facts** are self-sufficient truths, they don’t depend on other facts or rules. For instance, “Anna and Bob are friends,” that can be represented as following:
 
     friend(anna, bob).
 
@@ -37,7 +37,7 @@ Today is sunny if it’s not (`\+`) raining.
 
 **Goal** is the target query, with no variables. **Query** is any question asked to the system, with variables or not.
 
-A query may be true, false, or give multiple answers depending on the variable values. The goal must be true, returning a failure status otherwise.
+A query may be true, false, or give multiple answers depending on the variable values. The goal must have a truthful answer, returning a failure status otherwise.
 
 ### Fibonacci
 

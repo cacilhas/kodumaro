@@ -52,7 +52,7 @@ It’s expanded to:
 ```scala
 def double2int(value: Double): Int = value.ceil.toInt
 
-val values: Seq[Int] = Seq(double2int(0.4), double2int(1.8), double2int(2.2))
+val values: Seq[Int] = Seq(0.4, 1.8, 2.2) map double2int
 ```
 
 ### Implicit classes

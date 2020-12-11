@@ -93,12 +93,12 @@
         <div class="panel-body">
           <p class="pull-right" > <img src="//cacilhas.info/img/lisp.png" alt="Made with secret alien technology" /></p>
 <p class="mg-first" > LISP is a specification by <a href="http://www.genealogy.ams.org/id.php?id=22145">John McCarthy</a>,
-that has started a whole programming language family since 1958. It’s based on
-<a href="https://en.wikipedia.org/wiki/Lambda_calculus">λ-calculus</a>, formal system from <a href="http://www.genealogy.ams.org/id.php?id=8011">Alonzo Church</a>’s
+that has started a brand new programming language family since 1958. It’s based
+on <a href="https://en.wikipedia.org/wiki/Lambda_calculus">λ-calculus</a>, formal system from <a href="http://www.genealogy.ams.org/id.php?id=8011">Alonzo Church</a>’s
 work in 1930s, designed to deal with symbolic data instead of numeric, most
 imperative languages’ standard.</p>
-<p>LISP means “list processing,” and list is the specification main structure.
-Every data – as the code itself – are represented as lists.</p>
+<p>LISP means “list processing,” and list is the specification’s main structure.
+Every data – as the code itself – are presented as lists.</p>
 <p>For instance, the sum of 1 and 2:</p>
 <pre class="prettyprint"><code class="lisp language-lisp">(+ 1 2)</code></pre>
 <p>Which is a list of the elements <code>+</code>, <code>1</code>, and <code>2</code>. This list is processed by the
@@ -107,9 +107,9 @@ Every data – as the code itself – are represented as lists.</p>
 <p><code>car</code> and <code>cdr</code> are <a href="https://en.wikipedia.org/wiki/IBM_704">IBM 704</a> instructions, the system where LISP was
 formost developed. CAR means “Contents of the Address part of Register number”
 and CDR means “Contents of the Decrement part of Register number.”</p>
-<p>The head represents a lambda function, and the tail the parameters. In this
+<p>The head represents a lambda function, and the tail its parameters. In this
 case, the function is <code>'+</code>, which returns the sum of the parameters.</p>
-<p>The LISP family most important languages are <a href="https://common-lisp.net/">Common Lisp</a>,
+<p>The LISP family’s most notable languages are <a href="https://common-lisp.net/">Common Lisp</a>,
 <a href="https://www.gnu.org/software/emacs/manual/html_node/eintr/">Emacs LISP</a>, <a href="http://www.schemers.org/">Scheme</a>, and <a href="https://clojure.org/">Clojure</a>.</p>
 <p>Let’s take a look at the factorial implementation in three LISP languages. First
 in Common Lisp:</p>
@@ -127,8 +127,8 @@ in Common Lisp:</p>
 <pre class="prettyprint"><code class="clojure language-clojure">(defn factorial [n]
   (reduce * (range 1 (inc n))))</code></pre>
 <h3 id="scheme">Scheme</h3>
-<p>Scheme has became a family itself, with a lotta different variations, not only
-different implementations, but different language variations too.</p>
+<p>Scheme has became a family itself, with a whole lotta different variations, not
+only different implementations, but different languages too.</p>
 <p>Its most important variations are <a href="https://www.gnu.org/software/guile/">Guile</a>, <a href="https://www.gnu.org/software/mit-scheme/">MIT Scheme</a>, and
 <a href="https://racket-lang.org/">Racket</a> (formerly PLT Scheme).</p>
 <p>Racket is a full <a href="https://en.wikipedia.org/wiki/Rapid_application_development">RAD</a> platform, containing an IDE called
@@ -155,12 +155,12 @@ and the PLT interpreter.</p>
 <h3 id="accumulators">Accumulators</h3>
 <p>Accumulator is a functional programming design pattern for dealing with stack
 overflow by taking advantage of <a href="http://wiki.c2.com/?TailCallOptimization">tail-call optimisation</a> (TCO).</p>
-<p>Let’s take the factorial again: the step is defined as the current value times
-its predecessor’s factorial; the stop is zero’s factorial, which equals one.</p>
+<p>Take the factorial back: the step is defined as the current value times its
+predecessor’s factorial; the stop is zero’s factorial, which equals one.</p>
 <pre class="prettyprint"><code>n! = n × (n-1)!
 0! = 1</code></pre>
-<p>If you take a look at the PLT implementation above, you can see the last call
-id <code>'*</code>; in order to enable TCO, it should be <code>factorial</code>.</p>
+<p>Looking at the PLT implementation above, you can see the last call id <code>'*</code>; in
+order to enable TCO, it should be <code>factorial</code>.</p>
 <p>It must exist an accumulator-driven function to make it possible, so the
 <code>factorial</code> becomes:</p>
 <pre class="prettyprint"><code class="scheme language-scheme">(define factorial

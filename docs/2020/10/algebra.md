@@ -10,10 +10,10 @@ Functor is the simpliest algebraic structure. It’s a wrapper around a datum or
 
 A basic functor example in [Scala](https://www.scala-lang.org/) is [`scala.util.Try`](https://www.scala-lang.org/api/current/scala/util/Try.html):
 
-    Try {1 / x}
-      .map {e => e*e}
-      .map {1 - _}
-      .map {_.toString} match {
+    Try(1 / x)
+      .map(e => e*e)
+      .map(1 - _)
+      .map(_.toString) match {
         case Success(value) => s"the result is $value"
         case Failure(exc)   => s"it raised an exception: $exc"
       }
@@ -29,18 +29,18 @@ A monad is a wrapper around a datum or data that can operate over them flatly ma
 Our first monad example is the [`Seq`](https://www.scala-lang.org/api/current/scala/collection/immutable/Seq.html):
 
     Seq(1, 2, 3)
-      .flapMap {e => Seq(e * 2)}
-      .flatMap {e => if (e == 2) Nil else Seq(e)}
-      .flatMap {e => if (e == 4) Seq(4, 5) else Seq(e)}
+      .flapMap(e => Seq(e * 2))
+      .flatMap(e => if (e == 2) Nil else Seq(e))
+      .flatMap(e => if (e == 4) Seq(4, 5) else Seq(e))
 
 The result is `Seq(4, 5, 6)`; the `flatMap` method is the main resource of a monad.
 
 Since `Seq` is a functor too, you may replace the first `flatMap` by a `map`, and it has a `filter` method, more expressive than `flatMap`:
 
     Seq(1, 2, 3)
-      .map {_ * 2}
-      .filter {e != 2}
-      .flatMap {e => if (e == 4) Seq(4, 5) else Seq(e)}
+      .map(_ * 2)
+      .filter(_ != 2)
+      .flatMap(e => if (e == 4) Seq(4, 5) else Seq(e))
 
 The result is the same. `List`, `Option`, `Try`, `Either`, etc, are monads too.
 
