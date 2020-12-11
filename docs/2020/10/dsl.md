@@ -28,9 +28,9 @@ It must serialise to:
 
 In order to build the `Select`, we need the `From`. To build the `From`, we need the `Condition`, so let’s start there.
 
-However, in order to build the `Condition`, we need the `Criteria`, that represent “equals”, “not equals”, etc.
+However, in order to build the `Condition`, we need the `Criteria`, that represent “equals,” “not equals,” etc.
 
-Let’s leave other criteria out and deal only with comparisons, “is null”, “not null”. The `Criteria` trait doesn’t need to be accessible outside of the `Condition` class, so it can be private:
+Let’s leave other criteria out and deal only with comparisons, “is null,” “not null.” The `Criteria` trait doesn’t need to be accessible outside of the `Condition` class, so it can be private:
 
     private sealed trait Criteria {def format(key: String, value: String): String}
     
@@ -113,9 +113,9 @@ The `Select` class is the simpliest of all, it just build a simple `SELECT`:
 
     case class Select private(fields: String*) {
     
-      def from(tables: String*): From = new From(this,tables: _*)
+      def from(tables: String*): From = new From(this, tables: _*)
     
-      override def toString: String = "SELECT %s" format fields.mkString(", ")
+      override def toString: String = "SELECT " concat fields.mkString(", ")
     }
 
 ### Creating the `FROM`
@@ -140,8 +140,8 @@ Most of the logic is gonna be in the `toString` method, responsible for build th
     class From(val select: Select, val tables: String*) {
     
       private var conditions: Seq[Condition[_]] = Nil
-      private var groupBy: Seq[String] = Nil
-      private var orderBy: Seq[String] = Nil
+      private var _groupBy: Seq[String] = Nil
+      private var _orderBy: Seq[String] = Nil
       private var _having: Seq[Condition[_]] = Nil
       private var _offset: Int = 0
       private var _limit: Int = 0
@@ -155,7 +155,7 @@ Most of the logic is gonna be in the `toString` method, responsible for build th
     
       def groupBy(fields: String*): From = {
         val res = clone
-        res.groupBy = fields
+        res._groupBy = fields
         res
       }
     
@@ -167,7 +167,7 @@ Most of the logic is gonna be in the `toString` method, responsible for build th
     
       def orderBy(fields: String*): From = {
         val res = clone
-        res.orderBy = fields
+        res._orderBy = fields
         res
       }
     
@@ -186,8 +186,8 @@ Most of the logic is gonna be in the `toString` method, responsible for build th
       override def clone: From = {
         val res = new From(select, tables: _*)
         res.conditions = conditions
-        res.groupBy = groupBy
-        res.orderBy = orderBy
+        res._groupBy = _groupBy
+        res._orderBy = _orderBy
         res._offset = _offset
         res._limit = _limit
         res
@@ -200,7 +200,7 @@ Most of the logic is gonna be in the `toString` method, responsible for build th
         res append tables.mkString(", ")
         if (conditions.nonEmpty) {
           res append " WHERE "
-          res append conditions.map {_.toString}.mkString(" AND ")
+          res append conditions.map(_.toString).mkString(" AND ")
         }
         if (groupBy.nonEmpty) {
           res append " GROUP BY "
@@ -208,13 +208,13 @@ Most of the logic is gonna be in the `toString` method, responsible for build th
             res append groupBy.head.toString
           else {
             res append "("
-            res append groupBy.map {_.toString}.mkString(", ")
+            res append groupBy.map(_.toString).mkString(", ")
             res append ")"
           }
     
           if (_having.nonEmpty) {
             res append " HAVING "
-            res append _having.map {_.toString}.mkString(" AND ")
+            res append _having.map(_.toString).mkString(" AND ")
           }
         }
         if (orderBy.nonEmpty) {
@@ -223,7 +223,7 @@ Most of the logic is gonna be in the `toString` method, responsible for build th
             res append orderBy.head.toString
           else {
             res append "("
-            res append orderBy.map {_.toString}.mkString(", ")
+            res append orderBy.map(_.toString).mkString(", ")
             res append ")"
           }
         }

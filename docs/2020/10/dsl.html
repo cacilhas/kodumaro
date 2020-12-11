@@ -121,9 +121,9 @@ represent a simple <code>SELECT</code> statement in a syntax as close as possibl
 <p>In order to build the <code>Select</code>, we need the <code>From</code>. To build the <code>From</code>, we need
 the <code>Condition</code>, so let’s start there.</p>
 <p>However, in order to build the <code>Condition</code>, we need the <code>Criteria</code>, that
-represent “equals”, “not equals”, etc.</p>
-<p>Let’s leave other criteria out and deal only with comparisons, “is null”, “not
-null”. The <code>Criteria</code> trait doesn’t need to be accessible outside of the
+represent “equals,” “not equals,” etc.</p>
+<p>Let’s leave other criteria out and deal only with comparisons, “is null,” “not
+null.” The <code>Criteria</code> trait doesn’t need to be accessible outside of the
 <code>Condition</code> class, so it can be private:</p>
 <pre class="prettyprint"><code class="scala language-scala">private sealed trait Criteria {def format(key: String, value: String): String}
 
@@ -201,9 +201,9 @@ criteria. Since some conditions have no value, the value may be optional.</p>
 <p>The <code>Select</code> class is the simpliest of all, it just build a simple <code>SELECT</code>:</p>
 <pre class="prettyprint"><code class="scala language-scala">case class Select private(fields: String*) {
 
-  def from(tables: String*): From = new From(this,tables: _*)
+  def from(tables: String*): From = new From(this, tables: _*)
 
-  override def toString: String = "SELECT %s" format fields.mkString(", ")
+  override def toString: String = "SELECT " concat fields.mkString(", ")
 }</code></pre>
 <h3 id="creating-the-from">Creating the <code>FROM</code></h3>
 <p>Now we got the condition, let’s deal with the <code>From</code> class. It must be able to
@@ -226,8 +226,8 @@ the SQL statement.</p>
 <pre class="prettyprint"><code class="scala language-scala">class From(val select: Select, val tables: String*) {
 
   private var conditions: Seq[Condition[_]] = Nil
-  private var groupBy: Seq[String] = Nil
-  private var orderBy: Seq[String] = Nil
+  private var _groupBy: Seq[String] = Nil
+  private var _orderBy: Seq[String] = Nil
   private var _having: Seq[Condition[_]] = Nil
   private var _offset: Int = 0
   private var _limit: Int = 0
@@ -241,7 +241,7 @@ the SQL statement.</p>
 
   def groupBy(fields: String*): From = {
     val res = clone
-    res.groupBy = fields
+    res._groupBy = fields
     res
   }
 
@@ -253,7 +253,7 @@ the SQL statement.</p>
 
   def orderBy(fields: String*): From = {
     val res = clone
-    res.orderBy = fields
+    res._orderBy = fields
     res
   }
 
@@ -272,8 +272,8 @@ the SQL statement.</p>
   override def clone: From = {
     val res = new From(select, tables: _*)
     res.conditions = conditions
-    res.groupBy = groupBy
-    res.orderBy = orderBy
+    res._groupBy = _groupBy
+    res._orderBy = _orderBy
     res._offset = _offset
     res._limit = _limit
     res
@@ -286,7 +286,7 @@ the SQL statement.</p>
     res append tables.mkString(", ")
     if (conditions.nonEmpty) {
       res append " WHERE "
-      res append conditions.map {_.toString}.mkString(" AND ")
+      res append conditions.map(_.toString).mkString(" AND ")
     }
     if (groupBy.nonEmpty) {
       res append " GROUP BY "
@@ -294,13 +294,13 @@ the SQL statement.</p>
         res append groupBy.head.toString
       else {
         res append "("
-        res append groupBy.map {_.toString}.mkString(", ")
+        res append groupBy.map(_.toString).mkString(", ")
         res append ")"
       }
 
       if (_having.nonEmpty) {
         res append " HAVING "
-        res append _having.map {_.toString}.mkString(" AND ")
+        res append _having.map(_.toString).mkString(" AND ")
       }
     }
     if (orderBy.nonEmpty) {
@@ -309,7 +309,7 @@ the SQL statement.</p>
         res append orderBy.head.toString
       else {
         res append "("
-        res append orderBy.map {_.toString}.mkString(", ")
+        res append orderBy.map(_.toString).mkString(", ")
         res append ")"
       }
     }
