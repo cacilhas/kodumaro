@@ -75,7 +75,7 @@ Consider the following example, a method to determine whether a double is integr
     if (value.isIntegral)
       doSomeMathWith(value)
 
-It expands to:
+Which expands to:
 
     class IntegralDouble(val value: Double): extends AnyVal {
       def isIntegral: Boolean = IntegralDouble isIntegral$expansion value
@@ -93,3 +93,7 @@ It expands to:
 No instance is created on `.isIntegral` call.
 
 Note: value classes are tagged by inheriting `AnyVal`, and need a value of type `* <: AnyVal`, i.e., `Boolean`, `Byte`, `Char`, `Double`, `Float`, `Int`, `Long`, `Short`, `Unit`, and their [literal-based singleton types](https://docs.scala-lang.org/sips/42.type.html).
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/implicit-conversions-in-scala-4dgb).

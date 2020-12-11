@@ -5,6 +5,7 @@ tags: functional scala
 image: //cacilhas.info/img/scala.png
 permalink: /2020/12/implicit-conversions.html
 ---
+[dev.to]: https://dev.to/cacilhas/implicit-conversions-in-scala-4dgb
 [implicits]: https://www.scala-lang.org/files/archive/spec/2.13/07-implicits.html
 [scala]: https://www.scala-lang.org/
 [singleton]: https://docs.scala-lang.org/sips/42.type.html
@@ -108,7 +109,7 @@ if (value.isIntegral)
   doSomeMathWith(value)
 ```
 
-It expands to:
+Which expands to:
 
 ```scala
 class IntegralDouble(val value: Double): extends AnyVal {
@@ -130,3 +131,7 @@ No instance is created on `.isIntegral` call.
 Note: value classes are tagged by inheriting `AnyVal`, and need a value of type
 `* <: AnyVal`, i.e., `Boolean`, `Byte`, `Char`, `Double`, `Float`, `Int`,
 `Long`, `Short`, `Unit`, and their [literal-based singleton types][singleton].
+
+-----
+
+{:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].

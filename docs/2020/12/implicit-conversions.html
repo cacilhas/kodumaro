@@ -150,7 +150,7 @@ val value = getSomeFloatPointValue() // : Double
 
 if (value.isIntegral)
   doSomeMathWith(value)</code></pre>
-<p>It expands to:</p>
+<p>Which expands to:</p>
 <pre class="prettyprint"><code class="scala language-scala">class IntegralDouble(val value: Double): extends AnyVal {
   def isIntegral: Boolean = IntegralDouble isIntegral$expansion value
 }
@@ -167,6 +167,8 @@ if (IntegralDouble.isIntegral$expansion(value))
 <p>Note: value classes are tagged by inheriting <code>AnyVal</code>, and need a value of type
 <code>* &lt;: AnyVal</code>, i.e., <code>Boolean</code>, <code>Byte</code>, <code>Char</code>, <code>Double</code>, <code>Float</code>, <code>Int</code>,
 <code>Long</code>, <code>Short</code>, <code>Unit</code>, and their <a href="https://docs.scala-lang.org/sips/42.type.html">literal-based singleton types</a>.</p>
+<hr />
+<p class="small" > Also in <a href="https://dev.to/cacilhas/implicit-conversions-in-scala-4dgb">DEV Community 👩‍💻👨‍💻</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
