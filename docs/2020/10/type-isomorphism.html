@@ -101,7 +101,7 @@ casted or converted to <code>A</code> and back to the same <code>b</code>.</p>
 <pre class="prettyprint"><code class="scala language-scala">sealed trait YesNo
 object Yes extends YesNo
 object No extends YesNo</code></pre>
-<p>The <code>YesNo</code> type is isomorphic to <code>Bolean</code> type:</p>
+<p>The <code>YesNo</code> type is isomorphic to <code>Boolean</code>:</p>
 <pre class="prettyprint"><code class="scala language-scala">implicit def yesno2bool(value: YesNo): Boolean = value == Yes
 implicit def bool2yesno(value: Boolean): YesNo = if (value) Yes else No</code></pre>
 <p>There’s no information lost in converting <code>YesNo</code> to <code>Boolean</code> and back.</p>

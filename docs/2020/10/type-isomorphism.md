@@ -10,7 +10,7 @@ For instance, take the following example:
     object Yes extends YesNo
     object No extends YesNo
 
-The `YesNo` type is isomorphic to `Bolean` type:
+The `YesNo` type is isomorphic to `Boolean`:
 
     implicit def yesno2bool(value: YesNo): Boolean = value == Yes
     implicit def bool2yesno(value: Boolean): YesNo = if (value) Yes else No
