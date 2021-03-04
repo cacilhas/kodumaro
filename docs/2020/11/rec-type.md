@@ -2,9 +2,9 @@
 
 I was around with a cyclic reference issue in [Scala](https://www.scala-lang.org/): [JSON](https://www.json.org/) representation.
 
-I was using [Gson](https://github.com/google/gson) for serialising and deserialising (not going in details), but how to represent the models inside the language ecosystem?
+I was using [Gson](https://github.com/google/gson) for serialising and deserialising (ain’t going in details), but how to represent the models inside the language ecosystem?
 
-I could follow the Gson documentation and use [pojos](https://pt.wikipedia.org/wiki/Plain_Old_Java_Objects) ([case classes](https://docs.scala-lang.org/tour/case-classes.html) are great for it), but I needed something more flexible.
+I could follow the Gson documentation and use [pojos](https://pt.wikipedia.org/wiki/Plain_Old_Java_Objects) ([case classes](https://docs.scala-lang.org/tour/case-classes.html) are great for it), but I was in need of something more flexible.
 
 I decided to use language primitives, like integers, strings, big numbers, and so one.
 
