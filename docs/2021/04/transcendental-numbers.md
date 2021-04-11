@@ -14,6 +14,8 @@ Now, if you enjoy , and would like to fund this project, please [mail me](mailto
 
 Bringing it in mind, **I’m releasing a [Kodumaro’s Patreon page](https://www.patreon.com/kodumaro)**. Please [subscribe](https://www.patreon.com/join/kodumaro?).
 
+* * *
+
 ### Getting into the point
 
 ![Idea](//cacilhas.info/img/lamp.png)
@@ -303,4 +305,8 @@ This computation is way more inefficient than the previous one – Python isn’
 
 To this task, one’s gonna need a tougher tool, as C and multithreading. Again performance is not this post’s scope. Probably it requires using some C cast spells in order to optimise the computation.
 
-Or you can go down through the [Wolfram MathWorld’s](https://mathworld.wolfram.com/Pi.html#related) or [Wolfram Alpha’s](https://www.wolframalpha.com/input/?i=pi) π page references in search of better formulæs. I did it, and I can ensure they are, including serie representations.
+Or you can go down through the [Wolfram MathWorld’s](https://mathworld.wolfram.com/Pi.html#related) or [Wolfram Alpha’s](https://www.wolframalpha.com/input/?i=pi) π page references in search of better formulæ. I did it, and I can ensure they are, including serie representations.
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc).

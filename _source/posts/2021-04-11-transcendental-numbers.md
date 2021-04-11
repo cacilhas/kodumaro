@@ -5,7 +5,7 @@ tags: concept education-and-culture math python
 image: //cacilhas.info/img/lamp.png
 permalink: /2021/04/transcendental-numbers.html
 ---
-
+[dev.to]: https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc
 [email]: mailto:kodumaro@cacilhas.info
 [euler]: https://mathworld.wolfram.com/e.html
 [eulers-formula]: https://mathworld.wolfram.com/EulerFormula.html
@@ -47,6 +47,8 @@ funding, I’m considering making it my main job.
 Bringing it in mind,
 <strong>I’m releasing a <a href="{{{ patreon.url }}}">Kodumaro’s Patreon page</a></strong>.
 Please [subscribe][subscribe].
+
+-----
 
 ### Getting into the point
 
@@ -236,4 +238,8 @@ spells in order to optimise the computation.
 
 Or you can go down through the [Wolfram MathWorld’s][mathworld-pi] or
 [Wolfram Alpha’s][wolframalpha-pi] π page references in search of better
-formulæs. I did it, and I can ensure they are, including serie representations.
+formulæ. I did it, and I can ensure they are, including serie representations.
+
+-----
+
+{:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].
