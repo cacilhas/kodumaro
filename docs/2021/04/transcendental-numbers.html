@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatibile" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="language" content="en" />
+    <meta name="copyright" content="CC-BY 4.0" />
+    <meta name="url" content="//kodumaro.cacilhas.info/2021/04/transcendental-numbers.html" />
+    <meta name="date" content="Apr. 11, 2021" />
+    <meta name="search_date" content="2021-04-11" />
+    <meta name="author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <meta property="og:site_name" content="Kodumaro" />
+    <meta property="og:title" content="How to Compute Arbitrary Precision Transcendental Numbers" />
+    <meta property="og:url" content="//kodumaro.cacilhas.info/2021/04/transcendental-numbers.html" />
+    <meta property="og:image" content="//cacilhas.info/img/lamp.png" />
+    <meta property="article:author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kavivanar" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:i,bold&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
+    <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/kodumaro.css" />
+    <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
+    <title>How to Compute Arbitrary Precision Transcendental Numbers</title>
+    <link rel="icon" href="/img/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="//cacilhas.info/js/ie-emulation-modes-warning.js"></script>
+    <script src="//cacilhas.info/js/jquery.min.js"></script>
+    <script src="//cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
+    <script src="//cacilhas.info/js/handle-old-url.js"></script>
+    <script src="//cacilhas.info/js/alt-title.js"></script>
+    <script src="//cacilhas.info/js/anchors.js"></script>
+    <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5741846017654057",
+        enable_page_level_ads: true,
+      })
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date;a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,"script","https://www.google-analytics.com/analytics.js","ga")
+      ga("create", "UA-99357497-1", "auto")
+      ga("send", "pageview")
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-togge="collapse" data-target="#navbar" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="dropdown">
+            <span class="navbar-brand dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ℭacilhας.INFO</span>
+            <ul class="dropdown-menu">
+              <li><a href="//cacilhas.info/"><i class="glyphicon glyphicon-home"></i>&nbsp;ℭacilhας.INFO</a></li>
+              <li><a href="//kodumaro.cacilhas.info/"><i class="licon icon-kodumaro"></i>&nbsp;Kodumaro</a></li>
+              <li><a href="//montegasppa.cacilhas.info/"><i class="licon icon-montegasppa"></i>&nbsp;ℳontegasppα and Giulia C.’s Thoughts</a></li>
+              <li><hr/></li>
+              <li><a href="//cacilhas.info/maven" target="_blank"><i class="licon icon-maven"></i>&nbsp;Kodumaro Maven Repository</a></li>
+              <li><a href="https://claudiotorcato.wordpress.com/" target="_blank"><i class="licon icon-wordpress"></i>&nbsp;Mosaico Livre</a></li>
+              <li><a href="https://waltercruz.com/" target="_blank"><i class="glyphicon glyphicon-link"></i>&nbsp;Walter Cruz</a></li>
+              <li><a href="" target="_blank"><i class="licon icon-dev-to"></i>&nbsp;</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="//kodumaro.cacilhas.info"><i class="glyphicon glyphicon-home"></i>&nbsp;Home</a></li>
+            <li class="active"><a href="//kodumaro.cacilhas.info/2021/04/transcendental-numbers.html">How to Compute Arbitrary Precision Transcendental Numbers</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="mg-title">How to Compute Arbitrary Precision Transcendental Numbers</h2>
+          <h6 class="pull-right">2021-04-11</h6>
+          <h6>The shadows behind the code.</h6>
+        </div>
+        <div class="panel-body">
+          <h3 id="announcement">Announcement</h3>
+<p>It has been four months since my
+<a href="/2020/12/implicit-conversions.html">my last post</a>,
+one could think this blog has come to an end, but that’s not the case.</p>
+<p>I’ve been very busy working on my
+<a href="https://contabilone.com/" title="Expect the site‘s gonna be published soon.">employer’s project</a>,
+what drained my time, stopping me working on my personal projects.</p>
+<p>Even so, <a href="//kodumaro.cacilhas.info">Kodumaro</a>,
+<a href="//montegasppa.cacilhas.info/">my personal blog</a>, and my
+<a href="https://www.patreon.com/cacilhas">musical project</a> are <strong>not</strong> over. I just have not enough
+payback for those project, so I cannot apply much time on those. 😢</p>
+<p>If you’d like to patronise my musical project, <a href="https://www.patreon.com/join/cacilhas?">become my patron</a>!!</p>
+<p><a href="https://www.youtube.com/channel/UCVJR3ltOPy2fQ7zxzXjUvJA">Take a look at what I’ve been on.</a></p>
+<p>Now, if you enjoy , and would like to fund this project,
+please <a href="mailto:kodumaro@cacilhas.info">mail me</a>, and let’s talk about it. If I’m getting enough
+funding, I’m considering making it my main job.</p>
+<p>Bringing it in mind,
+<strong>I’m releasing a <a href="https://www.patreon.com/kodumaro">Kodumaro’s Patreon page</a></strong>.
+Please <a href="https://www.patreon.com/join/kodumaro?">subscribe</a>.</p>
+<h3 id="getting-into-the-point">Getting into the point</h3>
+<p class="pull-right" > <img src="//cacilhas.info/img/lamp.png" alt="Idea"/></p>
+<p class="mg-first" > <a href="https://mathworld.wolfram.com/TranscendentalNumber.html">Transcendental numbers</a> are probably the
+most useful tools in Mathematics. They are irrational numbers that cannot be
+expressed using a finite formula.</p>
+<p>For example, the <a href="https://mathworld.wolfram.com/EulerFormula.html">Euler’s identity</a> is considered the most
+beautiful Mathematical formula (perhaps I’m gonna explore it in the future):</p>
+<p class="text-center" > 𝑒<sup>𝑖π</sup> + 1 = 0</p>
+<p>It exposes a relation between the two most important transcendental numbers, the
+complex numbers, the unit and the null / zero. It’s used mostly in rotation
+over real 𝑣𝑠 imaginary axes, on complex exponential, roots, and other useful
+operations.</p>
+<p>Yet, it’s useless if one doesn’t know how to get 𝑒 and π in the required
+precision.</p>
+<h3 id="euler’s-constant">Euler’s constant</h3>
+<p>The <a href="https://mathworld.wolfram.com/e.html">Euler’s constant</a> or Euler’s number, 𝑒 for short, is the ratio
+describing any constant growth. It’s defined as:</p>
+<p class="text-center" > <img src="//cacilhas.info/img/euler.png" alt="𝑒 = lim_(n→+∞)[1+(1/n)]^n" /></p>
+<p>It’s about 2.71828…. 𝑒 is kinda magical number, poping up in a lot of
+Mathematical problems, offering good and easy solutions, since complex number
+operations to logarithm, exponential, and other kinds of growth behaviour.</p>
+<p>But how to get to the desired precision?</p>
+<p>One can take this formula and compute greater and greater 𝑛 values, until it
+reaches the required precision. Nevertheless, the exponent can be quite
+intimidating, leading to an undesired weak performance – similar or worst than
+the π computation below. Yet, it’s hard to say how long it must go to getta the
+desired precision.</p>
+<p>Fortunately another <a href="https://www.wolframalpha.com/input/?i=Leonhard+Euler">Euler’s</a> formula gives us a better
+solution:</p>
+<p class="text-center" > <img src="//cacilhas.info/img/fact-euler.png" alt="𝑒 = Σ(1/n!)" /></p>
+<p>This formula is very convenient, ’cause it increases the precision every step
+in an easly predictable way:</p>
+<table class="table">
+<thead>
+<tr>
+<th id="" style="text-align:center;"></th>
+<th id=""></th>
+<th id="" style="text-align:center;"></th>
+<th id=""></th>
+<th id=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><sup>1</sup>/<sub>0!</sub></td>
+<td>=</td>
+<td style="text-align:center;"><sup>1</sup>/<sub>1</sub></td>
+<td>=</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:center;">1 + <sup>1</sup>/<sub>1!</sub></td>
+<td>=</td>
+<td style="text-align:center;">1 + <sup>1</sup>/<sub>1</sub></td>
+<td>=</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="text-align:center;">2 + <sup>1</sup>/<sub>2!</sub></td>
+<td>=</td>
+<td style="text-align:center;">2 + <sup>1</sup>/<sub>2</sub></td>
+<td>=</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td style="text-align:center;">2.5 + <sup>1</sup>/<sub>3!</sub></td>
+<td>=</td>
+<td style="text-align:center;">2.5 + <sup>1</sup>/<sub>6</sub></td>
+<td>≈</td>
+<td>2.6667</td>
+</tr>
+<tr>
+<td style="text-align:center;">2.6667 + <sup>1</sup>/<sub>4!</sub></td>
+<td>≈</td>
+<td style="text-align:center;">2.6666 + <sup>1</sup>/<sub>24</sub></td>
+<td>≈</td>
+<td>2.7083</td>
+</tr>
+<tr>
+<td style="text-align:center;">2.7083 + <sup>1</sup>/<sub>5!</sub></td>
+<td>≈</td>
+<td style="text-align:center;">2.7083 + <sup>1</sup>/<sub>120</sub></td>
+<td>≈</td>
+<td>2.7167</td>
+</tr>
+<tr>
+<td style="text-align:center;">2.7167 + <sup>1</sup>/<sub>6!</sub></td>
+<td>≈</td>
+<td style="text-align:center;">2.7177 + <sup>1</sup>/<sub>720</sub></td>
+<td>≈</td>
+<td>2.7180</td>
+</tr>
+<tr>
+<td style="text-align:center;">⋱</td>
+<td></td>
+<td style="text-align:center;"></td>
+<td></td>
+<td>⋱</td>
+</tr>
+<tr>
+<td style="text-align:center;">prev. + <sup>1</sup>/<sub>∞!</sub></td>
+<td></td>
+<td style="text-align:center;">=</td>
+<td></td>
+<td>𝑒</td>
+</tr>
+</tbody>
+</table>
+<p>It’s easly predictable ’cause the precision equals to <em>log₁₀(n!)</em>:</p>
+<table class="table">
+<thead>
+<tr>
+<th id=""></th>
+<th id="" style="text-align:center;"></th>
+<th id=""></th>
+<th id="" style="text-align:center;"></th>
+<th id=""></th>
+<th id=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n = 0 →</td>
+<td style="text-align:center;">log₁₀(0!)</td>
+<td>=</td>
+<td style="text-align:center;">log₁₀(1)</td>
+<td>=</td>
+<td>0</td>
+</tr>
+<tr>
+<td>n = 1 →</td>
+<td style="text-align:center;">log₁₀(1!)</td>
+<td>=</td>
+<td style="text-align:center;">log₁₀(1)</td>
+<td>=</td>
+<td>0</td>
+</tr>
+<tr>
+<td>n = 2 →</td>
+<td style="text-align:center;">log₁₀(2!)</td>
+<td>=</td>
+<td style="text-align:center;">log₁₀(2)</td>
+<td>≈</td>
+<td>0.3010</td>
+</tr>
+<tr>
+<td>n = 3 →</td>
+<td style="text-align:center;">log₁₀(3!)</td>
+<td>=</td>
+<td style="text-align:center;">log₁₀(6)</td>
+<td>≈</td>
+<td>0.7782</td>
+</tr>
+<tr>
+<td>n = 4 →</td>
+<td style="text-align:center;">log₁₀(4!)</td>
+<td>=</td>
+<td style="text-align:center;">log₁₀(24)</td>
+<td>≈</td>
+<td>1.3802</td>
+</tr>
+<tr>
+<td>n = 5 →</td>
+<td style="text-align:center;">log₁₀(5!)</td>
+<td>=</td>
+<td style="text-align:center;">log₁₀(120)</td>
+<td>≈</td>
+<td>2.0792</td>
+</tr>
+<tr>
+<td>⋱</td>
+<td style="text-align:center;">⋱</td>
+<td></td>
+<td style="text-align:center;"></td>
+<td></td>
+<td>⋱</td>
+</tr>
+<tr>
+<td>n = 1000 →</td>
+<td style="text-align:center;">log₁₀(1000!)</td>
+<td></td>
+<td style="text-align:center;">≈</td>
+<td></td>
+<td>2567.60461</td>
+</tr>
+</tbody>
+</table>
+<p>It gets big very quickly.</p>
+<h3 id="more-everyday-case">More everyday case</h3>
+<p>Image one needs to calculate 𝑒 to the 80-bit precision. That doesn’t differ from
+before. Bits are binary digits, i.e, 2-base numbers. So, instead of <em>log₁₀</em>, one
+must use <em>log₂</em>:</p>
+<ul>
+<li>log₂(n!) ≈ 80</li>
+<li>2<sup>log₂(n!)</sup> ≈ 2<sup>80</sup></li>
+<li>n! ≈ 2⁸⁰</li>
+<li>25! &lt; 2⁸⁰ &lt; 26!</li>
+</ul>
+<p>So, 26 steps are good enough.</p>
+<p>Let’s implement it using <a href="https://www.python.org/">Python</a>:</p>
+<pre class="prettyprint"><code class="python language-python">from numbers import Integral, Rational
+from typing import Callable
+
+# Lazy factorial implementation
+fact: Callable[[Integral], Integral] = lambda n: prod(range(1, n+1))
+
+# An LRU cached version, if you prefer:
+#
+# from functools import lru_cache
+#
+# fact: Callable[[Integral], Integral] = lambda n: lru_cache(
+#     1 if n &lt;= 0 else (n * fact(n - 1))
+# )
+
+def steps(prec: Integral) -&gt; Integral:
+    res = 1
+    while fact(res) &gt;&gt; prec == 0:
+        res += 1
+    return res</code></pre>
+<p>The right shift (<code>&gt;&gt;</code>) returns zero as long as the value‘s less bit wide than
+the precision.</p>
+<p>Now let’s compute 𝑒 itself:</p>
+<pre class="prettyprint"><code class="python language-python">compute_e: Callable[[Integral], Rational] = lambda prec: sum(
+    1./fact(x) for x in range(prec)
+)</code></pre>
+<p>The solutions coming out from it is:</p>
+<pre class="prettyprint"><code class="python language-python">&gt;&gt;&gt; calculate_e(steps(64))  # Python uses 64-bit floats
+2.7182818284590455
+&gt;&gt;&gt; math.e
+2.718281828459045</code></pre>
+<p>Not bad at all. In fact, we reach the 64-bit precision with only 18 iterations.</p>
+<h3 id="performance">Performance</h3>
+<p>We’re not worried about performance here, it’s not this post’s scope. We’re just
+showing how it works and how you can implement and use it.</p>
+<h3 id="what-about-π">What about π?</h3>
+<p>π is the ratio of any circle’s perimeter (circumference) to its diameter. That’s
+π very definition.</p>
+<p>However, it’s a transcendental number and needs an infinity serie to be
+computed. <a href="https://www.wolframalpha.com/input/?i=Gottfried+Wilhelm+Leibniz">Leibniz</a> gave us a neat solution:</p>
+<p class="text-center" > <img src="//cacilhas.info/img/leibniz-pi.png" alt="π = 4Σ(1/(4n+1) - 1/(4n+3))" /></p>
+<p>The process is quite the same used for 𝑒, take the formula:</p>
+<p class="text-center" > <img src="//cacilhas.info/img/leibniz-pi-alt.png" alt="π = 4Σ(1/(4n+1) - 1/(4n+3))" /></p>
+<p>Then get the precision:</p>
+<pre class="prettyprint"><code class="python language-python">compute_pi: Callable[[Integral], Rational] = lambda prec: 4. * sum(
+    (1./(4*n+1) - 1./(4*n+3)) for n in range(prec)
+)</code></pre>
+<p>Tip: the precision is <em>log₂(4n)</em>, so <em>n = 2<sup>prec-2</sup></em>, which one
+can get by left shifting. Note that we got exactly the inverse of the previous
+calculation: here the necessary steps amount grows very fast with small gain.</p>
+<p>So you may get disappointed when running:</p>
+<pre class="prettyprint"><code class="python language-python">&gt;&gt;&gt; compute_pi(1 &lt;&lt; (64 - 2))</code></pre>
+<p>This computation is way more inefficient than the previous one – Python isn’t
+that good in dealing with floating-point operation and it’s necessary a
+humongous amount of steps to getta the target. I recomend 5M steps:</p>
+<pre class="prettyprint"><code class="python language-python">&gt;&gt;&gt; compute_pi(5000000)
+3.141592553588895
+&gt;&gt;&gt; math.pi
+3.141592653589793</code></pre>
+<p>To this task, one’s gonna need a tougher tool, as C and multithreading. Again
+performance is not this post’s scope. Probably it requires using some C cast
+spells in order to optimise the computation.</p>
+<p>Or you can go down through the <a href="https://mathworld.wolfram.com/Pi.html#related">Wolfram MathWorld’s</a> or
+<a href="https://www.wolframalpha.com/input/?i=pi">Wolfram Alpha’s</a> π page references in search of better
+formulæs. I did it, and I can ensure they are, including serie representations.</p>
+        </div>
+        <div id="tags" class="pull-right tags">
+          <script>
+            var tags = 'concept education-and-culture math python'
+            if (tags) {
+              var first = true
+              for (var tag of tags.split(" ")) {
+                if (first) { first = false }
+                else $('#tags').append('&nbsp;|&nbsp;')
+                $('#tags').append(
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag + '</a>'
+                )
+              }
+            }
+          </script>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="disqus_thread">
+            <noscript>
+              Please enable JavaScript to view the comments
+              <a href="https://disqus.com/?ref_noscript">powered by Disqus</a>.
+            </noscript>
+          </div>
+          <script>
+            var disqus_config = function() {
+              this.page = this.page || {}
+              this.page.url = 'https://kodumaro.cacilhas.info/2021/04/transcendental-numbers.html'
+              this.page.identifier = '_source.posts.2021-04-11-transcendental-numbers'
+              this.page.title = 'How to Compute Arbitrary Precision Transcendental Numbers'
+            }
+            $(document).ready(function() {
+              var d = document, s = d.createElement('script')
+              s.src = 'https://kodumaro.disqus.com/embed.js'
+              s.setAttribute('data-timestamp', +new Date())
+              ;(d.head || d.body).appendChild(s)
+            })
+          </script>
+        </div>
+      </div>
+      <div>
+        <div class="pull-left">
+          <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px;"
+               data-ad-client="ca-pub-5741846017654057" data-ad-slot=""></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({})</script>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer" id="footer">
+      <p class="pull-left small">
+        <a href="https://dev.to/cacilhas">
+          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+               alt="DEV Profile 👩‍💻👨‍💻"
+               height="30" width="30"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+      <p class="small">
+        Arĥimedeς Montegasppα Cacilhας
+        &nbsp;
+        <a ref="license" href="http://creativecommons.org/licenses/by/4.0/deed">
+          <img rel="license"
+               alt="CC-BY 4.0"
+               src="https://i.creativecommons.org/l/by/4.0/80x15.png"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+    </div>
+    <script src="//cacilhas.info/js/bootstrap.min.js"></script>
+    <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
+    <script language="javascript">
+      $(document).ready(function() {
+        $('[title]').tooltip();
+      })
+    </script>
+  </body>
+</html>
