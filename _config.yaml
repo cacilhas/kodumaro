@@ -39,6 +39,11 @@ mosaicolivre:
   url: https://claudiotorcato.wordpress.com/
   author: Cláudio Torcato
 
+patreon:
+  title: Kodumaro at Patreon
+  url: https://www.patreon.com/kodumaro
+  author: *author_name
+
 waltercruz:
   title: Walter Cruz
   url: https://waltercruz.com/
