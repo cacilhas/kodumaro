@@ -226,6 +226,8 @@ Image one needs to calculate 𝑒 to the 80-bit precision. That doesn’t differ
 *   2log₂(n!) ≈ 280
 *   n! ≈ 2⁸⁰
 *   25! < 2⁸⁰ < 26!
+*   25! < n! < 26!
+*   25 < n < 26
 
 So, 26 steps are good enough.
 

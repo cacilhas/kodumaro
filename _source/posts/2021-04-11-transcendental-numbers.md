@@ -135,6 +135,8 @@ must use *log₂*:
 - 2<sup>log₂(n!)</sup> ≈ 2<sup>80</sup>
 - n! ≈ 2⁸⁰
 - 25! &lt; 2⁸⁰ &lt; 26!
+- 25! &lt; n! &lt; 26!
+- 25 &lt; n &lt; 26
 
 So, 26 steps are good enough.
 
