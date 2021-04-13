@@ -312,3 +312,5 @@ Or you can go down through the [Wolfram MathWorld’s](https://mathworld.wolfram
 * * *
 
 Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc).
+
+Also in [Functional Works](https://www.works-hub.com/learn/how-to-compute-arbitrary-precision-transcendental-numbers-3c1bc?utm_campaign=Automation%20-%20Candidate%20Emails&utm_medium=email&_hsmi=106671327&_hsenc=p2ANqtz-8_Q4Pbh3qH2i_8NyfURQW4LB3Zw54WMX8p4CsnfaSnzEvto6P2K-OaMuOPdhx42y46dRm5lSrLFBtwKWSRIf8d91mzGA&utm_content=106671327&utm_source=hs_email).

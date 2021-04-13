@@ -19,6 +19,7 @@ permalink: /2021/04/transcendental-numbers.html
 [subscribe]: https://www.patreon.com/join/kodumaro?
 [transcendental]: https://mathworld.wolfram.com/TranscendentalNumber.html
 [wolframalpha-pi]: https://www.wolframalpha.com/input/?i=pi
+[works-hub]: https://www.works-hub.com/learn/how-to-compute-arbitrary-precision-transcendental-numbers-3c1bc?utm_campaign=Automation%20-%20Candidate%20Emails&utm_medium=email&_hsmi=106671327&_hsenc=p2ANqtz-8_Q4Pbh3qH2i_8NyfURQW4LB3Zw54WMX8p4CsnfaSnzEvto6P2K-OaMuOPdhx42y46dRm5lSrLFBtwKWSRIf8d91mzGA&utm_content=106671327&utm_source=hs_email
 [youtube]: https://www.youtube.com/channel/UCVJR3ltOPy2fQ7zxzXjUvJA
 
 ### Announcement
@@ -245,3 +246,5 @@ formulæ. I did it, and I can ensure they are, including serie representations.
 -----
 
 {:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].
+
+{:class="small"} Also in [Functional Works][works-hub].
