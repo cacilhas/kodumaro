@@ -6,11 +6,13 @@ date: 2020-09-23
 
 {:class="mg-first"} Hi there!
 
-Kodumaro is a colaboration between three friend programmers:
+Kodumaro is a colaboration between three fiend[¹](#pun) programmers:
 <a href="{{{ mosaicolivre.url }}}">{{ mosaicolivre.author }}</a>,
 <a href="{{{ montegasppa.url }}}">{{ montegasppa.author }}</a>,
 and <a href="{{{ waltercruz.url }}}">{{ waltercruz.author }}</a>,
 in an effort to offer you some interesting tips about programming.
+
+{:id="pun" :class="small"} ¹I like the pun.
 
 ### Posts
 
