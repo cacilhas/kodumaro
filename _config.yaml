@@ -2,6 +2,64 @@ author: &author
   name: &author_name Arĥimedeς Montegasppα Cacilhας
   email: batalema@cacilhas.info
   url: //montegasppa.cacilhas.info/author.html
+  contacts:
+    devto:
+      name: DEV Profile 👩‍💻👨‍💻
+      title: DEV Profile 👩‍💻👨‍💻
+      url: https://dev.to/cacilhas
+    twitter:
+      name: Twitter
+      title: Arĥimedeς ℳontegasppα
+      url: https://twitter.com/Montegasppa
+      image:
+        source: //cacilhas.info/img/twitter.png
+        style:
+          width: 24px
+          height: 24px
+    patreon:
+      name: Patreon
+      title: ℳontegasppα
+      url: https://www.patreon.com/cacilhas
+      image:
+        source: //cacilhas.info/img/patreon.png
+        style:
+          width: 24px
+          height: 24px
+    bandcamp:
+      name: Bandcamp
+      title: Le Obscur Essenteς
+      url: https://montegasppa.bandcamp.com/releases
+      image:
+        source: //cacilhas.info/img/le-obscur-essentes.jpg
+        style:
+          width: 24px
+          height: 24px
+    github:
+      name: Github
+      url: https://github.com/cacilhas/
+      image:
+        source: //cacilhas.info/img/github.png
+        style:
+          width: 24px
+          height: 20px
+    facebook:
+      name: Facebook
+      title: Archimedes Montegasppa
+      url: https://www.facebook.com/archimedes.montegasppa.3
+      image:
+        source: //cacilhas.info/img/facebook.png
+        style:
+          width: 24px
+          height: 24px
+    linkedin:
+      name: LinkedIn
+      title: Rodrigo Cacilhas
+      url: https://br.linkedin.com/in/rodrigocacilhas
+      image:
+        source: //cacilhas.info/img/linkedin.png
+        style:
+          width: 24px
+          height: 24px
 
 description: The shadows behind the code.
 favicon: /img/favicon.ico
@@ -29,6 +87,10 @@ cacilhas:
   title: ℭacilhας.INFO
   url: //cacilhas.info
 
+hondaj:
+  title: ĤøŅĐΔj̆₀
+  url: //hondaj.cacilhas.info/
+
 montegasppa:
   title: ℳontegasppα and Giulia C.’s Thoughts
   url: //montegasppa.cacilhas.info/
@@ -43,6 +105,14 @@ patreon:
   title: Kodumaro at Patreon
   url: https://www.patreon.com/kodumaro
   author: *author_name
+
+todasfridas:
+  title: Todas Fridas
+  url: https://www.todasfridas.com.br/
+
+vortaro:
+  title: Konsulta Vortaro
+  url: //vortaro.cacilhas.info/
 
 waltercruz:
   title: Walter Cruz
