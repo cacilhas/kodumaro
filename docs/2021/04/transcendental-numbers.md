@@ -214,7 +214,7 @@ log₁₀(1000!)
 
 ≈
 
-2567.60461
+2’567.6046
 
 It gets big very quickly.
 

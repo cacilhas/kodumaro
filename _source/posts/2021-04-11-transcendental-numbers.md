@@ -122,7 +122,7 @@ It’s easly predictable ’cause the precision equals to *log₁₀(n!)*:
 | n = 4 →    | log₁₀(4!)    | = | log₁₀(24)  | ≈ | 1.3802     |
 | n = 5 →    | log₁₀(5!)    | = | log₁₀(120) | ≈ | 2.0792     |
 | ⋱          | ⋱            |   |           |   | ⋱           |
-| n = 1000 → | log₁₀(1000!) |   | ≈          |   | 2567.60461 |
+| n = 1000 → | log₁₀(1000!) |   | ≈          |   | 2’567.6046 |
 
 It gets big very quickly.
 
