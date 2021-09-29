@@ -20,7 +20,7 @@ Desirable features and other concepts:
 *   **Laziness** or **Non-strictness**: a function may be strictly or lazily evaluated; on lazy evaluation, calls are performed on demand. In type algebra, a lazy value arity is represented by `a¹`, where `a` is the result type, take a look at [this topic](/2020/10/type-isomorphism.html#algebraic-data-types).
 *   **Typed Lambda**: functions are typed by their signature; a type is a set of possible values.
 *   **Arity**: given a type, arity is the amount of its possible values.
-*   **Generics**: broadly, generics are about type parameters, usually related to functors and monads.
+*   **Generics**: briefly, generics are about type parameters, usually related to functors and monads.
 *   **Kind**: a kind is a type of types; for example, a `Set` over `Set[A]`.
 *   **Higher kind**: higher kinds are a way to build more complex types on the fly, usually bringing holes; read [this](https://dotty.epfl.ch/docs/internals/higher-kinded-v2.html) and [this](https://github.com/typelevel/kind-projector#function-syntax).
 
