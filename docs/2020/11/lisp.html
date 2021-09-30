@@ -203,7 +203,8 @@ taste as Haskell.</p>
       (*factorial* (- n 1) (* acc n))]))
 
 (define factorial
-  (*factorial* n 1))</code></pre>
+  (λ (n)
+    (*factorial* n 1)))</code></pre>
 <p>And one can evaluate it by calling:</p>
 <pre class="prettyprint"><code class="scheme language-scheme">(!! [map (λ (n) `(,n ,(factorial n))) '(0 1 2 3 4 5)])</code></pre>
 <p>The result is:</p>
