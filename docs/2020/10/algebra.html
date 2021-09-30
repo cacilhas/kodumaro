@@ -142,9 +142,9 @@ greetings = printStrLn "Hello, World!"</code></pre>
 <p>The <code>greetings</code> function idempotently returns an <code>IO</code> monad that can trigger a
 writing to the standard output.</p>
 <h3 id="monoid">Monoid</h3>
-<p>A monoid is a structure that supplies an addition operation and an unit
-instance for a type.</p>
-<p>The monoid definition is:</p>
+<p>A monoid is a structure that supplies an operation and an unit instance for that
+operation and type.</p>
+<p>A simple monoid definition is:</p>
 <pre class="prettyprint"><code class="scala language-scala">trait Monoid[A] {
   def add(a: A, b: A): A
   def unit[A]: A
@@ -174,7 +174,7 @@ no need for changing the <code>reduce</code> function.</p>
 <blockquote>
   <p><code>[update]</code></p>
   <p>I forgot to mention, an example of Scala’s built-in monoid is
-  <a href="https://www.scala-lang.org/api/current/scala/math/Numeric.html"><code>Numeric</code></a>: the addition method is <code>ev.plus</code>, and the
+  <a href="https://www.scala-lang.org/api/current/scala/math/Numeric.html"><code>Numeric</code></a>: the operation method is <code>ev.plus</code>, and the
   unit is <code>ev.zero</code>.</p>
   <p><code>[/update]</code></p>
 </blockquote>

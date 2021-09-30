@@ -55,9 +55,9 @@ The `greetings` function idempotently returns an `IO` monad that can trigger a w
 
 ### Monoid
 
-A monoid is a structure that supplies an addition operation and an unit instance for a type.
+A monoid is a structure that supplies an operation and an unit instance for that operation and type.
 
-The monoid definition is:
+A simple monoid definition is:
 
     trait Monoid[A] {
       def add(a: A, b: A): A
@@ -91,7 +91,7 @@ In order for the `reduce` function to work properly with other types, it’s eno
 
 > `[update]`
 > 
-> I forgot to mention, an example of Scala’s built-in monoid is [`Numeric`](https://www.scala-lang.org/api/current/scala/math/Numeric.html): the addition method is `ev.plus`, and the unit is `ev.zero`.
+> I forgot to mention, an example of Scala’s built-in monoid is [`Numeric`](https://www.scala-lang.org/api/current/scala/math/Numeric.html): the operation method is `ev.plus`, and the unit is `ev.zero`.
 > 
 > `[/update]`
 
