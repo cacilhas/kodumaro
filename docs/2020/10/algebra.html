@@ -193,7 +193,7 @@ been through. You can find some definitions in <a href="https://www.linkedin.com
                 if (first) { first = false }
                 else $('#tags').append('&nbsp;|&nbsp;')
                 $('#tags').append(
-                  '<a href="/?tag=' + tag + '" class="tag">' + tag + '</a>'
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag.replace(/-/g, ' ') + '</a>'
                 )
               }
             }

@@ -141,7 +141,7 @@ in an effort to offer you some interesting tips about programming.</p>
 
   $.getJSON('/tags.json', function(tags) {
     for (var tag of tags) {
-      $('#tagsList').append('<li><a href="/?tag=' + tag + '"><code>' + tag + '</code></a></li>')
+      $('#tagsList').append('<li><a href="/?tag=' + tag + '"><code>' + tag.replace(/-/g, ' ') + '</code></a></li>')
     }
   })
 </script>

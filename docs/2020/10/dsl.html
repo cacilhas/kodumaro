@@ -345,7 +345,7 @@ this post’s target; I just wanna show you how Scala is powerful to design DSL.
                 if (first) { first = false }
                 else $('#tags').append('&nbsp;|&nbsp;')
                 $('#tags').append(
-                  '<a href="/?tag=' + tag + '" class="tag">' + tag + '</a>'
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag.replace(/-/g, ' ') + '</a>'
                 )
               }
             }

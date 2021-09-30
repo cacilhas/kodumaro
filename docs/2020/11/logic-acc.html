@@ -203,7 +203,7 @@ fibonacci(N, A, `_1`, `_R`) :- succ(N1, N),
                 if (first) { first = false }
                 else $('#tags').append('&nbsp;|&nbsp;')
                 $('#tags').append(
-                  '<a href="/?tag=' + tag + '" class="tag">' + tag + '</a>'
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag.replace(/-/g, ' ') + '</a>'
                 )
               }
             }

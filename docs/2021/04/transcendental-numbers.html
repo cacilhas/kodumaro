@@ -394,7 +394,7 @@ formulæ. I did it, and I can ensure they are, including serie representations.<
                 if (first) { first = false }
                 else $('#tags').append('&nbsp;|&nbsp;')
                 $('#tags').append(
-                  '<a href="/?tag=' + tag + '" class="tag">' + tag + '</a>'
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag.replace(/-/g, ' ') + '</a>'
                 )
               }
             }
