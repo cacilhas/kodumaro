@@ -6,6 +6,7 @@ image: //cacilhas.info/img/lamp.png
 permalink: /2022/02/either-issue.html
 ---
 
+[dev.to]: https://dev.to/cacilhas/the-either-issue-3j53
 [Either]: https://www.scala-lang.org/api/current/scala/util/Either.html
 [scala]: https://scala-lang.org/
 
@@ -60,3 +61,7 @@ newbies.
 
 Unfortunately the Capitalism is about profit, not quality, getting the employees
 to that kinda highly uncomfortable situation.
+
+-----
+
+{:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].

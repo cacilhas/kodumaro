@@ -27,3 +27,7 @@ After a while, I had to spend a long time cleaning the code: removing the `Eithe
 The team wasn’t to blame, they were doing what was expected; but the company should’ve invested more in hiring qualified professionals and in qualifying the newbies.
 
 Unfortunately the Capitalism is about profit, not quality, getting the employees to that kinda highly uncomfortable situation.
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/the-either-issue-3j53).
