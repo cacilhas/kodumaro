@@ -1,5 +1,3 @@
-TODO video
-
 [TIC-80](https://tic80.com/) is a free fantasy console for making, playing, and sharing tiny games.
 
 It has lots of built-in tools for development, like code, sprites, maps, sound editors, a command line, and a Surf browser.
