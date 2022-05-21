@@ -73,7 +73,7 @@ However, it’s great for PoC.
 
 [Java][java] is the big static companies’ darling.
 
-Unlike Python and Ruby, Java is statically typed, and you need to cary errors
+Unlike Python and Ruby, Java is statically typed, and you need to carry errors
 explicitly if you don’t want them to explode right where they arise.
 
 Still, Java is extremely bureaucratic though, the simplest procedure is hard to
@@ -122,7 +122,7 @@ C and [C++][c++] are great programming languages, so great that lots of other
 programming languages are built on top of them. Everything you need, you can
 find or build in C/C++.
 
-But C is much too verbose, everything is taugh to get done, C++ is a pitfall of
+But C is much too verbose, everything is tough to get done, C++ is a pitfall of
 infinite tokens, and both have unexpected behaviour. Don’t get me wrong! C/C++
 are very stable, but they simply don’t behave like you may expect.
 
