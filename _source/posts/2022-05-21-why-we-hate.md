@@ -9,6 +9,7 @@ permalink: /2022/05/why-we-hate.html
 [c++]: https://www.cplusplus.com/
 [c#]: https://docs.microsoft.com/en-us/dotnet/csharp/
 [dart]: https://dart.dev/
+[dev.to]: https://dev.to/cacilhas/why-we-hate-3m8k
 [dotty]: https://dotty.epfl.ch/
 [elixir]: https://elixir-lang.org/
 [erlang]: https://www.erlang.org/
@@ -173,3 +174,8 @@ I could keep going on and on, talking about [Javascript][javascript],
 [TypeScript][typescript], [Wren][wren], [Odin][odin], [Moonscript][moonscript],
 [Lua][lua], [Dart][dart], [C#][c#], [F★][f*], and every other noteworthy
 programming language, but I think we’re good here.
+
+
+-----
+
+{:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].

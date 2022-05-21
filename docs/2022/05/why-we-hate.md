@@ -26,7 +26,7 @@ However, it’s great for PoC.
 
 [Java](https://docs.oracle.com/java/) is the big static companies’ darling.
 
-Unlike Python and Ruby, Java is statically typed, and you need to cary errors explicitly if you don’t want them to explode right where they arise.
+Unlike Python and Ruby, Java is statically typed, and you need to carry errors explicitly if you don’t want them to explode right where they arise.
 
 Still, Java is extremely bureaucratic though, the simplest procedure is hard to be done and requires many code statements.
 
@@ -58,7 +58,7 @@ You can find libraries for almost everything you need in OCaml, and what you can
 
 C and [C++](https://www.cplusplus.com/) are great programming languages, so great that lots of other programming languages are built on top of them. Everything you need, you can find or build in C/C++.
 
-But C is much too verbose, everything is taugh to get done, C++ is a pitfall of infinite tokens, and both have unexpected behaviour. Don’t get me wrong! C/C++ are very stable, but they simply don’t behave like you may expect.
+But C is much too verbose, everything is tough to get done, C++ is a pitfall of infinite tokens, and both have unexpected behaviour. Don’t get me wrong! C/C++ are very stable, but they simply don’t behave like you may expect.
 
 The better description for those languages could be: C/C++ do exactly what you ask, not what you want.
 
@@ -91,3 +91,7 @@ In order to allow then to work with Erlang, some imbecile developer decided to w
 ### Why we hate X
 
 I could keep going on and on, talking about [Javascript](https://www.javascript.com/), [TypeScript](https://www.typescriptlang.org/), [Wren](https://wren.io/), [Odin](https://odin-lang.org/), [Moonscript](https://moonscript.org/), [Lua](https://www.lua.org/), [Dart](https://dart.dev/), [C#](https://docs.microsoft.com/en-us/dotnet/csharp/), [F★](https://www.fstar-lang.org/), and every other noteworthy programming language, but I think we’re good here.
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/why-we-hate-3m8k).
