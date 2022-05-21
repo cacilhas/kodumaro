@@ -36,6 +36,8 @@ Besides, Java is very greedy, consuming every hardware resource it can take.
 
 The worst flaw of [Scala](https://scala-lang.org/) is to be not [Dotty](https://dotty.epfl.ch/). Every nice and useful feature you expect from an impure functional programming language, you get from Scala.
 
+> `[update]`Actually Scala **is Dotty** currently. I haven’t worked with Scala for so long, that I missed that.`[/update]`
+
 However, Scala compiles to JVM bytecodes 😖 – and this is enough reason not to use it.
 
 One can say you could do [Scala Native](https://scala-native.readthedocs.io/), but that’s a hell you don’t wanna get in – believe me.

@@ -89,6 +89,9 @@ The worst flaw of [Scala][scala] is to be not [Dotty][dotty]. Every nice and
 useful feature you expect from an impure functional programming language, you
 get from Scala.
 
+> `[update]`Actually Scala **is Dotty** currently. I haven’t worked with Scala
+> for so long, that I missed that.`[/update]`
+
 However, Scala compiles to JVM bytecodes 😖 – and this is enough reason not to
 use it.
 
