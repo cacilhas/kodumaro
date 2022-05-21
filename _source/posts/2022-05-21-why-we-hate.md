@@ -85,7 +85,7 @@ Besides, Java is very greedy, consuming every hardware resource it can take.
 
 ### Why we hate Scala
 
-The worst flaw of [Scala][scala] is not to be [Dotty][dotty]. Every nice and
+The worst flaw of [Scala][scala] is to be not [Dotty][dotty]. Every nice and
 useful feature you expect from an impure functional programming language, you
 get from Scala.
 
@@ -102,7 +102,7 @@ don’t wanna get in – believe me.
 for requiring widely long boilerplates to work.
 
 The simpler project is more bureaucratic than Java, and you can get into a hell
-of cyclical references too soon.
+of cyclical references much too soon.
 
 
 ### Why we hate Standard ML
@@ -123,7 +123,7 @@ C and [C++][c++] are great programming languages, so great that lots of other
 programming languages are built on top of them. Everything you need, you can
 find or build in C/C++.
 
-But C is much too verbose, everything is tough to get done, C++ is a pitfall of
+But C is too verbose, everything is tough to get done, C++ is a pitfall of
 infinite tokens, and both have unexpected behaviour. Don’t get me wrong! C/C++
 are very stable, but they simply don’t behave like you may expect.
 
@@ -143,10 +143,10 @@ constant, raises a warning instead of an error? And the program keeps going!
 
 [Nim][nim] is Python made right. Or it would be…
 
-The big Nim’s no-no is that you keep bumping into things that don’t behave as
+The Nim’s big no-no is that you keep bumping into things that don’t behave as
 they told – or don’t work at all.
 
-The Nim’s line is:
+The Nim creators’ line is:
 
 {:class="text-center"} <img src="{{{ cacilhas.url }}}/img/works-on-my-machine.png" alt="WORKS ON MY MACHINE"/>
 

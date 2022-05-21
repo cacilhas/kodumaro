@@ -34,7 +34,7 @@ Besides, Java is very greedy, consuming every hardware resource it can take.
 
 ### Why we hate Scala
 
-The worst flaw of [Scala](https://scala-lang.org/) is not to be [Dotty](https://dotty.epfl.ch/). Every nice and useful feature you expect from an impure functional programming language, you get from Scala.
+The worst flaw of [Scala](https://scala-lang.org/) is to be not [Dotty](https://dotty.epfl.ch/). Every nice and useful feature you expect from an impure functional programming language, you get from Scala.
 
 However, Scala compiles to JVM bytecodes 😖 – and this is enough reason not to use it.
 
@@ -44,7 +44,7 @@ One can say you could do [Scala Native](https://scala-native.readthedocs.io/), b
 
 [OCaml](https://ocaml.org/) is the perfect impure functional programming language, except for requiring widely long boilerplates to work.
 
-The simpler project is more bureaucratic than Java, and you can get into a hell of cyclical references too soon.
+The simpler project is more bureaucratic than Java, and you can get into a hell of cyclical references much too soon.
 
 ### Why we hate Standard ML
 
@@ -58,7 +58,7 @@ You can find libraries for almost everything you need in OCaml, and what you can
 
 C and [C++](https://www.cplusplus.com/) are great programming languages, so great that lots of other programming languages are built on top of them. Everything you need, you can find or build in C/C++.
 
-But C is much too verbose, everything is tough to get done, C++ is a pitfall of infinite tokens, and both have unexpected behaviour. Don’t get me wrong! C/C++ are very stable, but they simply don’t behave like you may expect.
+But C is too verbose, everything is tough to get done, C++ is a pitfall of infinite tokens, and both have unexpected behaviour. Don’t get me wrong! C/C++ are very stable, but they simply don’t behave like you may expect.
 
 The better description for those languages could be: C/C++ do exactly what you ask, not what you want.
 
@@ -72,9 +72,9 @@ What to expect from a programming language that, when you assign a value to a co
 
 [Nim](https://nim-lang.org/) is Python made right. Or it would be…
 
-The big Nim’s no-no is that you keep bumping into things that don’t behave as they told – or don’t work at all.
+The Nim’s big no-no is that you keep bumping into things that don’t behave as they told – or don’t work at all.
 
-The Nim’s line is:
+The Nim creators’ line is:
 
 ![WORKS ON MY MACHINE](//cacilhas.info/img/works-on-my-machine.png)
 
