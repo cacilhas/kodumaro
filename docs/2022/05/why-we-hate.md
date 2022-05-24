@@ -46,7 +46,7 @@ One can say you could do [Scala Native](https://scala-native.readthedocs.io/), b
 
 [OCaml](https://ocaml.org/) is the perfect impure functional programming language, except for requiring widely long boilerplates to work.
 
-The simpler project is more bureaucratic than Java, and you can get into a hell of cyclical references much too soon.
+The simplest project is more bureaucratic than Java, and you can get into a hell of cyclical references much too soon.
 
 ### Why we hate Standard ML
 
