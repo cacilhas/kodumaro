@@ -268,7 +268,7 @@ The solutions coming out from it is:
     >>> math.e
     2.718281828459045
 
-Not bad at all. In fact, we reach the 64-bit precision with only 18 iterations.
+Not bad at all. In fact, we might reach the 64-bit precision with only 18 iterations.
 
 ### Performance
 
