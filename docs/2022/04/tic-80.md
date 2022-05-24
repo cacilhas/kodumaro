@@ -41,7 +41,7 @@ Update the headers to reflect our intension:
     -- script: moon
     export ^
 
-We’re gonna do some black magic hereafter… This code was taken from the [TIC-80’s wiki](https://github.com/nesbox/TIC-80/wiki/Sky-gradient), and create a beautiful blue background gradient:
+We’re gonna do some black magic hereafter… This code was taken from the [TIC-80’s wiki](https://github.com/nesbox/TIC-80/wiki/Sky-gradient), and creates a beautiful blue background gradient:
 
     fst_tick = true
     
