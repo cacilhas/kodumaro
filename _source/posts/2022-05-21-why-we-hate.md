@@ -141,6 +141,10 @@ Regarding [Julia][julia], I think we don’t need to go further than this:
 What to expect from a programming language that, when you assign a value to a
 constant, raises a warning instead of an error? And the program keeps going!
 
+> `[update 2022-05-29]`I must be honest, and I owe Lua a retractation: Julia
+> doesn’t allow anymore a program to go on if a constant is redefined. I’m
+> intending to write another post about Julia exclusively.`[/update]`
+
 
 ### Why we hate Nim
 
