@@ -13,8 +13,8 @@ Aiming to build a brief presentation, I’m coding a turning Yin-Yang symbol.
 Once you open the application, you got the prompt:
 
     TIC-80 tiny computer
-    version 0.90.1723 (9c38a80)
-    https://tic80.com (C) 2017-2021
+    version 1.0.2164 (b09c50c)
+    https://tic80.com (C) 2017-2022
     
     hello! type help for help
     
@@ -29,10 +29,13 @@ Or something like this. In order to start a new project, use the `NEW` command, 
 
 Now press `Escape` to enter the code editor. It starts with a boilerplate we don’t need, let’s delete the code, keeping only the headers:
 
-    -- title:  game title
-    -- author: game developer
-    -- desc:   short description
-    -- script: moon
+    -- title:   game title
+    -- author:  game developer, email, etc.
+    -- desc:    short description
+    -- site:    website link
+    -- license: MIT License (change this to your license of choice)
+    -- version: 0.1
+    -- script:  moon
 
 Update the headers to reflect our intension:
 
@@ -43,18 +46,15 @@ Update the headers to reflect our intension:
 
 We’re gonna do some black magic hereafter… This code was taken from the [TIC-80’s wiki](https://github.com/nesbox/TIC-80/wiki/Sky-gradient), and creates a beautiful blue background gradient:
 
-    fst_tick = true
+    BOOT=cls
     
     SCN==>
      poke 0x3fc1,@
      poke 0x3fc2,@+120
     
     TIC=->
-     if fst_tick
-      cls!
-      fst_tick=false
 
-The `fst_tick` variable grants the `cls!` (clear screen) is called only once.
+The `BOOT` function is called only once, clearing the screen (`cls`).
 
 **Note:** TIC-80 code cannot be larger than 65 536 characters, so avoid unnecessary whitespaces.
 
@@ -62,7 +62,9 @@ If nothing is wrong, when you press C-r, you’re gonna get the following backgr
 
 ![Sky Gradient](//cacilhas.info/img/tic80/sky-gradient.png)
 
-`Escape` leads you back to the prompt, `escape` again to the code editor.
+In earlier versions, `Escape` leads you back to the prompt, `escape` again to the code editor. From version 1.0, you must select `CLOSE GAME` in order to get back:
+
+![CLOSE GAME](//cacilhas.info/img/tic80/close-game.png)
 
 ### Creating the Yin-Yang symbol
 
@@ -90,6 +92,8 @@ So the variables are initialised:
     rM=20
     yin=15
     yang=12
+
+The following statements must be put inside the `TIC` function, ’cause they need to run every tick.
 
 The black eye centre is calculated as a 2D vector of the current angle, away from the screen centre using the greater radius:
 

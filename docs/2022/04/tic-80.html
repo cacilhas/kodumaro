@@ -111,8 +111,8 @@ and <a href="http://www.squirrel-lang.org/">Squirrel</a>.</p>
 <h3 id="opening-tic-80">Opening TIC-80</h3>
 <p>Once you open the application, you got the prompt:</p>
 <pre class="prettyprint"><code>TIC-80 tiny computer
-version 0.90.1723 (9c38a80)
-https://tic80.com (C) 2017-2021
+version 1.0.2164 (b09c50c)
+https://tic80.com (C) 2017-2022
 
 hello! type help for help
 
@@ -124,10 +124,13 @@ new cart is created</code></pre>
 <h3 id="coding-headers-and-background">Coding headers and background</h3>
 <p>Now press <code>Escape</code> to enter the code editor. It starts with a boilerplate we
 don’t need, let’s delete the code, keeping only the headers:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">-- title:  game title
--- author: game developer
--- desc:   short description
--- script: moon</code></pre>
+<pre class="prettyprint"><code class="moonscript language-moonscript">-- title:   game title
+-- author:  game developer, email, etc.
+-- desc:    short description
+-- site:    website link
+-- license: MIT License (change this to your license of choice)
+-- version: 0.1
+-- script:  moon</code></pre>
 <p>Update the headers to reflect our intension:</p>
 <pre class="prettyprint"><code class="moonscript language-moonscript">-- title:  Yin Yang
 -- author: Kodumaro
@@ -135,23 +138,23 @@ don’t need, let’s delete the code, keeping only the headers:</p>
 export ^</code></pre>
 <p>We’re gonna do some black magic hereafter… This code was taken from the
 <a href="https://github.com/nesbox/TIC-80/wiki/Sky-gradient">TIC-80’s wiki</a>, and creates a beautiful blue background gradient:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">fst_tick = true
+<pre class="prettyprint"><code class="moonscript language-moonscript">BOOT=cls
 
 SCN==&gt;
  poke 0x3fc1,@
  poke 0x3fc2,@+120
 
-TIC=-&gt;
- if fst_tick
-  cls!
-  fst_tick=false</code></pre>
-<p>The <code>fst_tick</code> variable grants the <code>cls!</code> (clear screen) is called only once.</p>
+TIC=-&gt;</code></pre>
+<p>The <code>BOOT</code> function is called only once, clearing the screen (<code>cls</code>).</p>
 <p><strong>Note:</strong> TIC-80 code cannot be larger than 65&nbsp;536 characters, so avoid
 unnecessary whitespaces.</p>
 <p>If nothing is wrong, when you press <abbr title="Control+R">C-r</abbr>, you’re
 gonna get the following background:</p>
 <p class="text-center" > <img src="//cacilhas.info/img/tic80/sky-gradient.png" alt="Sky Gradient" /></p>
-<p><code>Escape</code> leads you back to the prompt, <code>escape</code> again to the code editor.</p>
+<p>In earlier versions, <code>Escape</code> leads you back to the prompt, <code>escape</code> again to
+the code editor. From version 1.0, you must select <code>CLOSE GAME</code> in order to get
+back:</p>
+<p class="text-center" > <img src="//cacilhas.info/img/tic80/close-game.png" alt="CLOSE GAME" /></p>
 <h3 id="creating-the-yin-yang-symbol">Creating the Yin-Yang symbol</h3>
 <p>Now we need to initialise the variables:</p>
 <ul>
@@ -174,6 +177,8 @@ rm=3
 rM=20
 yin=15
 yang=12</code></pre>
+<p>The following statements must be put inside the <code>TIC</code> function, ’cause they need
+to run every tick.</p>
 <p>The black eye centre is calculated as a 2D vector of the current angle, away
 from the screen centre using the greater radius:</p>
 <pre class="prettyprint"><code class="moonscript language-moonscript"> c1=x:c.x+cos(angle)*rM,y:c.y+sin(angle)*rM</code></pre>
