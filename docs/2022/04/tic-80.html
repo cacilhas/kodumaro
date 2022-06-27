@@ -140,9 +140,9 @@ export ^</code></pre>
 <a href="https://github.com/nesbox/TIC-80/wiki/Sky-gradient">TIC-80’s wiki</a>, and creates a beautiful blue background gradient:</p>
 <pre class="prettyprint"><code class="moonscript language-moonscript">BOOT=cls
 
-SCN==&gt;
+BDR==&gt;
  poke 0x3fc1,@
- poke 0x3fc2,@+120
+ poke 0x3fc2,@+100
 
 TIC=-&gt;</code></pre>
 <p>The <code>BOOT</code> function is called only once, clearing the screen (<code>cls</code>).</p>

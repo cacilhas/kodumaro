@@ -48,9 +48,9 @@ We’re gonna do some black magic hereafter… This code was taken from the [TIC
 
     BOOT=cls
     
-    SCN==>
+    BDR==>
      poke 0x3fc1,@
-     poke 0x3fc2,@+120
+     poke 0x3fc2,@+100
     
     TIC=->
 
