@@ -43,6 +43,7 @@ Update the headers to reflect our intension:
     -- author: Kodumaro
     -- script: moon
     export ^
+    local  *
 
 We’re gonna do some black magic hereafter… This code was taken from the [TIC-80’s wiki](https://github.com/nesbox/TIC-80/wiki/Sky-gradient), and creates a beautiful blue background gradient:
 
@@ -78,14 +79,14 @@ Now we need to initialise the variables:
 *   `rm` and `rM` for smaller and greater circle radii respectively
 *   `yin` and `yang` for the colours
 
-In TIC-80, colours are stored in a palette, defaults to:
+In TIC-80, colours are stored in a palette, [defaults to](https://lospec.com/palette-list/sweetie-16):
 
 ![Sweetie-16](//cacilhas.info/img/tic80/sweetie-16.png)
 
 So the variables are initialised:
 
+    import sin,cos,pi from math
     c=x:120,y:68
-    :sin,:cos,:pi=math
     tau=pi*2
     angle=0
     rm=3

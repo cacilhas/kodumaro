@@ -135,7 +135,8 @@ don’t need, let’s delete the code, keeping only the headers:</p>
 <pre class="prettyprint"><code class="moonscript language-moonscript">-- title:  Yin Yang
 -- author: Kodumaro
 -- script: moon
-export ^</code></pre>
+export ^
+local  *</code></pre>
 <p>We’re gonna do some black magic hereafter… This code was taken from the
 <a href="https://github.com/nesbox/TIC-80/wiki/Sky-gradient">TIC-80’s wiki</a>, and creates a beautiful blue background gradient:</p>
 <pre class="prettyprint"><code class="moonscript language-moonscript">BOOT=cls
@@ -166,11 +167,11 @@ back:</p>
 <li><code>rm</code> and <code>rM</code> for smaller and greater circle radii respectively</li>
 <li><code>yin</code> and <code>yang</code> for the colours</li>
 </ul>
-<p>In TIC-80, colours are stored in a palette, defaults to:</p>
+<p>In TIC-80, colours are stored in a palette, <a href="https://lospec.com/palette-list/sweetie-16">defaults to</a>:</p>
 <p class="text-center" > <img src="//cacilhas.info/img/tic80/sweetie-16.png" alt="Sweetie-16" /></p>
 <p>So the variables are initialised:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">c=x:120,y:68
-:sin,:cos,:pi=math
+<pre class="prettyprint"><code class="moonscript language-moonscript">import sin,cos,pi from math
+c=x:120,y:68
 tau=pi*2
 angle=0
 rm=3
