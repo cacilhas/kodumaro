@@ -55,3 +55,7 @@ That’s okay. You don’t need.
 As well as you don’t need to become an accountant just because you’ve learned basic math.
 
 Learn to code just because. It might be useful at some point – or not.
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/should-everybody-learn-to-code-45lo).
