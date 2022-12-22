@@ -6,7 +6,7 @@ Kodumaro [Twitter account](https://twitter.com/kodumaro) has been deactivated, a
 
 We’d like to invite you to get in. You can do it by signing up one of the servers listed [here](https://joinmastodon.org/servers).
 
-I created my personal account in [Stranger.Social](https://stranger.social/), but I believe [FOSStodon](https://fosstodon.org/) could be a good choise as well.
+I created my personal account at [Stranger.Social](https://stranger.social/), but I believe [FOSStodon](https://fosstodon.org/) could be a good choise as well.
 
 You can find us searching for [`@kodumaro@social.sndevs.com`](https://social.sndevs.com/@kodumaro).
 
