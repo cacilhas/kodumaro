@@ -193,7 +193,7 @@ function writeFile(file: string, content: string): Promise<void> {
 }
 
 function loadYaml(file: string): Context {
-  return yaml.safeLoad(fs.readFileSync(file, 'utf8'));
+  return yaml.load(fs.readFileSync(file, 'utf8')) as Context;
 }
 
 function loadContext(directory: string, context: Context): Context {
