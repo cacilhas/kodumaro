@@ -9,3 +9,7 @@ We’d like to invite you to get in. You can do it by signing up one of the serv
 I created my personal account in [Stranger.Social](https://stranger.social/), but I believe [FOSStodon](https://fosstodon.org/) could be a good choise as well.
 
 You can find us searching for [`@kodumaro@social.sndevs.com`](https://social.sndevs.com/@kodumaro).
+
+* * *
+
+Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/kodumaro-is-going-mastodon-cbl).
