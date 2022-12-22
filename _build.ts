@@ -76,14 +76,14 @@ async function walk(directory: string, context: Context, layout: string): Promis
   console.log(`walking through ${directory}`);
   const layoutCandidate = `${directory}/_layout.html`;
   const currentLayout = fs.existsSync(layoutCandidate) ? layoutCandidate : layout;
-  const currentContext: Context = loadContext(directory, context);
+  const currentContext = loadContext(directory, context);
   const promises: Promise<void>[] = [];
 
   const files = fs.readdirSync(directory).filter(e => !(e.startsWith('.') || e.startsWith('_')));
   for (let cname of files) {
     const file = path.join(directory, cname);
     const stats = fs.statSync(file);
-    let target: string = file.replace(/^.+?\/(.*)$/, './docs/$1');
+    let target = file.replace(/^.+?\/(.*)$/, './docs/$1');
 
     if (stats.isDirectory()) {
       if (!fs.existsSync(target)) createDirSync(target);
@@ -100,17 +100,14 @@ async function walk(directory: string, context: Context, layout: string): Promis
           stylus(fs.readFileSync(file, 'utf8'))
             .set('filename', target)
             .set('paths', [ directory ])
-            .render((err: Error, css: string) => {
-              if (err) reject(err)
-              else resolve(css);
-            })
-        )
+            .render((err: Error, css: string) => err ? reject(err) : resolve(css))
+        );
 
       } else if (cname.endsWith('.md')) {
         const converter = buildMdConverter();
         target = target.replace(/\.md$/, '.html');
         const block = converter.makeHtml(fs.readFileSync(file, 'utf8'));
-        const metadata = _.assign({}, currentContext, converter.getMetadata());
+        const metadata: Context = _.assign({}, currentContext, converter.getMetadata());
         metadata.source = file;
         metadata.identifier = metadata.identifier
           ? metadata.identifier
@@ -143,7 +140,7 @@ async function walk(directory: string, context: Context, layout: string): Promis
           };
           tags[''].push(current);
           if (metadata.tags)
-            for (let tag of metadata.tags.split(/\s+/).filter(e => !!e))
+            for (let tag of <string[]>metadata.tags.split(/\s+/).filter((e: string) => !!e))
               if (tags[tag]) tags[tag].push(current);
               else tags[tag] = [current];
 
@@ -189,10 +186,9 @@ function copyFile(source: string, target: string): Promise<void> {
 
 function writeFile(file: string, content: string): Promise<void> {
   return new Promise((resolve, reject) => {
-    fs.writeFile(file, content, {encoding: 'utf8'}, err => {
-      if (err) reject(err);
-      else resolve();
-    });
+    fs.writeFile(file, content, {encoding: 'utf8'}, err =>
+      err ? reject(err) : resolve()
+    );
   });
 }
 
@@ -210,8 +206,8 @@ function loadContext(directory: string, context: Context): Context {
   return res;
 }
 
-async function ordenateTags(output): Promise<void> {
-  await Promise.all(_.map(tags, value => Promise.resolve(value.sort((a, b) => a.date > b.date ? -1 : 1))));
+async function ordenateTags(output: string): Promise<void> {
+  await Promise.all(_.map(tags, (value: Tag[]) => Promise.resolve(value.sort((a, b) => a.date > b.date ? -1 : 1))));
   const postsFile = path.join(output, 'posts.json');
   console.log(`writing ${postsFile}`);
   fs.writeFileSync(postsFile, JSON.stringify(tags[''].slice(0, postsLimit)), {encoding: 'utf8'});
@@ -231,7 +227,7 @@ async function ordenateTags(output): Promise<void> {
   fs.writeFileSync(tagsFile, JSON.stringify(_.keys(tags).filter(e => !!e).sort()), {encoding: 'utf8'});
 }
 
-;(async () => {
+async function main(): Promise<void> {
   console.log('loading context');
   const context: Context = loadYaml('./_config.yaml');
 
@@ -242,7 +238,8 @@ async function ordenateTags(output): Promise<void> {
 
   await Promise.all([walk('./_legacy', context, ''), walk('./_source', context, '')]);
   await ordenateTags('./docs');
+}
 
-})()
+main()
   .then(() => console.log("built"))
   .catch(console.error);
