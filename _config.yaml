@@ -95,6 +95,7 @@ hondaj:
 mastodon:
   title: Mastodon
   url: https://social.sndevs.com/@kodumaro
+  account: "@kodumaro@social.sndevs.com"
   badge: //cacilhas.info/img/mastodon.png
 
 montegasppa:
