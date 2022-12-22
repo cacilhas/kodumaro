@@ -42,6 +42,14 @@ author: &author
         style:
           width: 24px
           height: 20px
+    mastodon:
+      name: Mastodon
+      url: https://social.sndevs.com/@kodumaro
+      image:
+        source: //cacilhas.info/img/mastodon.png
+        style:
+          width: 22px
+          height: 24px
     facebook:
       name: Facebook
       title: Archimedes Montegasppa
