@@ -42,14 +42,6 @@ author: &author
         style:
           width: 24px
           height: 20px
-    mastodon:
-      name: Mastodon
-      url: https://social.sndevs.com/@kodumaro
-      image:
-        source: //cacilhas.info/img/mastodon.png
-        style:
-          width: 22px
-          height: 24px
     facebook:
       name: Facebook
       title: Archimedes Montegasppa
@@ -98,6 +90,12 @@ cacilhas:
 hondaj:
   title: ĤøŅĐΔj̆₀
   url: //hondaj.cacilhas.info/
+
+
+mastodon:
+  title: Mastodon
+  url: https://social.sndevs.com/@kodumaro
+  badge: //cacilhas.info/img/mastodon.png
 
 montegasppa:
   title: ℳontegasppα and Giulia C.’s Thoughts
