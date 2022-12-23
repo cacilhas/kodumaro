@@ -95,9 +95,9 @@
           <h6>The shadows behind the code.</h6>
         </div>
         <div class="panel-body">
-          <p class="pull-right"> <img src="//cacilhas.info/img/scala.png" alt="Scala"></p>
-<p class="mg-first"> In <a href="https://kseo.github.io/posts/2016-12-25-type-isomorphism.html" target="_blank">type algebra</a>, type isomorphism is the
-case when two types are interchangeable with no information lost.</p>
+          <p class="pull-right" > <img src="//cacilhas.info/img/scala.png" alt="Scala" /></p>
+<p class="mg-first" > In <a href="https://kseo.github.io/posts/2016-12-25-type-isomorphism.html" target="_blank">type algebra</a>, type isomorphism is the case when two
+types are interchangeable with no information lost.</p>
 <p>That means, two types <code>A</code> and <code>B</code> are isomorphic to each other if any <code>a: A</code> can
 be casted or converted to <code>B</code> and back to the same <code>a</code>, and any <code>b: B</code> can be
 casted or converted to <code>A</code> and back to the same <code>b</code>.</p>
@@ -119,14 +119,14 @@ a set: the arity is the number of elements.</p>
 <li><code>Nothing</code>: arity is 0 (no possible instance)</li>
 <li><code>Unit</code>: arity is 1 (only the <code>()</code> value)</li>
 <li><code>Boolean</code>: arity is 2 (<code>true</code> and <code>false</code>)</li>
-<li><code>Int</code>: arity is 4&nbsp;294&nbsp;967&nbsp;296 (2³², 4 bytes)</li>
+<li><code>Int</code>: arity is 4&#8239;294&#8239;967&#8239;296 (2³², 4 bytes)</li>
 </ul>
 <p>So if <code>A</code> and <code>B</code> have the same arity, you can map each value in <code>A</code> to only one
 in <code>B</code>, and vice versa.</p>
 <h3 id="algebraic-data-types">Algebraic Data Types</h3>
-<p><a href="https://wiki.haskell.org/Algebraic_data_type" target="_blank">ADT</a> (don’t confuse with <a href="https://www.geeksforgeeks.org/abstract-data-types/" target="_blank">ADT – abstract data type</a>)
-are <del>compounded types</del> types under a compounding-operation viewpoint, and
-their arity follows simple arithmetic rules.</p>
+<p><a href="https://wiki.haskell.org/Algebraic_data_type" target="_blank">ADT</a> (don’t confuse with <a href="https://www.geeksforgeeks.org/abstract-data-types/" target="_blank">ADT – abstract data type</a>) are
+<del>compounded types</del> types under a compounding-operation viewpoint, and their
+arity follows simple arithmetic rules.</p>
 <p>A disjunctive type – when the compounding values are exclusively optional, that
 means, one <strong>or</strong> another – has arity equal to the sum of its compounding types.</p>
 <p>For instance, the <code>YesNo</code> type is the disjunction of <code>Yes.type</code> and <code>No.type</code>,
@@ -136,7 +136,7 @@ it means a <code>YesNo</code> instance can be a <code>Yes</code> (instance of <c
 <li><code>Yes.type</code> has arity 1</li>
 <li><code>No.type</code> as arity 1</li>
 <li><code>YesNo ≡ Yes.type + No.type</code></li>
-<li>⊢ The <code>YesNo</code>’s arity is 1&nbsp;+&nbsp;1&nbsp;=&nbsp;2</li>
+<li>⊢ The <code>YesNo</code>’s arity is 1&#8239;+&#8239;1&#8239;=&#8239;2</li>
 </ul>
 <p>Note: <a href="https://dotty.epfl.ch/" target="_blank">Dotty (Scala 3)</a> has a nice <a href="https://dotty.epfl.ch/docs/reference/new-types/union-types.html" target="_blank">syntax</a> for type
 disjunction, similar to <a href="https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/sum-types" target="_blank">Haskell</a>’s.</p>
@@ -145,15 +145,15 @@ disjunction, similar to <a href="https://www.schoolofhaskell.com/school/to-infin
 <p>For instance, take the tuple <code>(Boolean, Int)</code>:</p>
 <ul>
 <li><code>Boolean</code> has arity 2</li>
-<li><code>Int</code> has arity 4&nbsp;294&nbsp;967&nbsp;296</li>
+<li><code>Int</code> has arity 4&#8239;294&#8239;967&#8239;296</li>
 <li><code>(Boolean, Int) ≡ Boolean * Int</code></li>
 <li>⊢ The <code>(Boolean, Int)</code>’s arity is
-2&nbsp;×&nbsp;4&nbsp;294&nbsp;967&nbsp;296&nbsp;=&nbsp;8&nbsp;589&nbsp;934&nbsp;592</li>
+2&#8239;×&#8239;4&#8239;294&#8239;967&#8239;296&#8239;=&#8239;8&#8239;589&#8239;934&#8239;592</li>
 </ul>
 <p>A lambda type has arity equal to the return type’s arity raised to the power of
 the argument type’s – multiple arguments are equivalent to a conjunctive type.</p>
 <ul>
-<li><code>Boolean =&gt; Int</code> has arity 4&nbsp;294&nbsp;967&nbsp;296²</li>
+<li><code>Boolean =&gt; Int</code> has arity 4&#8239;294&#8239;967&#8239;296²</li>
 <li><code>Int =&gt; Boolean</code> has arity 2⁴²⁹⁴⁹⁶⁷²⁹⁶</li>
 </ul>
 <p>You can understand why reading <a href="https://codewords.recurse.com/issues/three/algebra-and-calculus-of-algebraic-data-types#fn:answer" target="_blank">this</a>.</p>
@@ -187,8 +187,8 @@ it does some type black magic with pointer casting:</p>
 <p>In this example, <code>long</code> and <code>float</code> aren’t isomorphic, ’cause they have
 different arities, but it shows how data are easily interchangeable, promoting
 the isomorphism.</p>
-<hr>
-<p class="small"> Also in <a href="https://dev.to/cacilhas/type-isomorphism-3bp9" target="_blank">DEV Community 👩‍💻👨‍💻</a>.</p>
+<hr />
+<p class="small" > Also in <a href="https://dev.to/cacilhas/type-isomorphism-3bp9" target="_blank">DEV.to</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

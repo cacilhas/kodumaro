@@ -110,4 +110,4 @@ For curiosity, the DCG above expands to:
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/accumulators-in-declarative-logic-programming-5cl7).
+Also in [DEV.to](https://dev.to/cacilhas/accumulators-in-declarative-logic-programming-5cl7).

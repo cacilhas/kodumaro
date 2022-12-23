@@ -95,14 +95,14 @@
           <h6>The shadows behind the code.</h6>
         </div>
         <div class="panel-body">
-          <div class="text-center"> <iframe src="https://www.youtube.com/embed/LxRiY2P9apw" frameborder="0" width="560" height="315" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""> </iframe> </div>
-<p class="mg-first"> <a href="https://tic80.com/" target="_blank">TIC-80</a> is a free fantasy console for making,
-playing, and sharing tiny games.</p>
+          <div class="text-center"> <iframe src="https://www.youtube.com/embed/LxRiY2P9apw" frameborder="0" width="560" height="315" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe> </div>
+<p class="mg-first" > <a href="https://tic80.com/" target="_blank">TIC-80</a> is a free fantasy console for making, playing,
+and sharing tiny games.</p>
 <p>It has lots of built-in tools for development, like code, sprites, maps, sound
 editors, a command line, and a Surf browser.</p>
 <p>Its main development language is <a href="https://www.lua.org/" target="_blank">Lua</a>, but it supports a bunch of other
-languages too, such as <a href="https://moonscript.org/" target="_blank">Moonscript</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a>, <a href="http://wren.io/" target="_blank">Wren</a>,
-and <a href="http://www.squirrel-lang.org/" target="_blank">Squirrel</a>.</p>
+languages too, such as <a href="https://moonscript.org/" target="_blank">Moonscript</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a>, <a href="http://wren.io/" target="_blank">Wren</a>, and
+<a href="http://www.squirrel-lang.org/" target="_blank">Squirrel</a>.</p>
 <blockquote>
   <p>Talking about Wren by the way, you can check the amazing <a href="https://domeengine.com/" target="_blank">Dome</a> game
   engine.</p>
@@ -147,15 +147,15 @@ BDR==&gt;
 
 TIC=-&gt;</code></pre>
 <p>The <code>BOOT</code> function is called only once, clearing the screen (<code>cls</code>).</p>
-<p><strong>Note:</strong> TIC-80 code cannot be larger than 65&nbsp;536 characters, so avoid
+<p><strong>Note:</strong> TIC-80 code cannot be larger than 65&#8239;536 characters, so avoid
 unnecessary whitespaces.</p>
 <p>If nothing is wrong, when you press <abbr title="Control+R">C-r</abbr>, you’re
 gonna get the following background:</p>
-<p class="text-center"> <img src="//cacilhas.info/img/tic80/sky-gradient.png" alt="Sky Gradient"></p>
+<p class="text-center" > <img src="//cacilhas.info/img/tic80/sky-gradient.png" alt="Sky Gradient" /></p>
 <p>In earlier versions, <code>Escape</code> leads you back to the prompt, <code>escape</code> again to
 the code editor. From version 1.0, you must select <code>CLOSE GAME</code> in order to get
 back:</p>
-<p class="text-center"> <img src="//cacilhas.info/img/tic80/close-game.png" alt="CLOSE GAME"></p>
+<p class="text-center" > <img src="//cacilhas.info/img/tic80/close-game.png" alt="CLOSE GAME" /></p>
 <h3 id="creating-the-yin-yang-symbol">Creating the Yin-Yang symbol</h3>
 <p>Now we need to initialise the variables:</p>
 <ul>
@@ -168,7 +168,7 @@ back:</p>
 <li><code>yin</code> and <code>yang</code> for the colours</li>
 </ul>
 <p>In TIC-80, colours are stored in a palette, <a href="https://lospec.com/palette-list/sweetie-16" target="_blank">defaults to</a>:</p>
-<p class="text-center"> <img src="//cacilhas.info/img/tic80/sweetie-16.png" alt="Sweetie-16"></p>
+<p class="text-center" > <img src="//cacilhas.info/img/tic80/sweetie-16.png" alt="Sweetie-16" /></p>
 <p>So the variables are initialised:</p>
 <pre class="prettyprint"><code class="moonscript language-moonscript">import sin,cos,pi from math
 c=x:120,y:68
@@ -203,7 +203,7 @@ from the screen centre using the greater radius:</p>
 framerate is 60Hz, 3° a tick:</p>
 <pre class="prettyprint"><code class="moonscript language-moonscript"> angle=(angle+pi/60)%tau</code></pre>
 <p>Running you must get the turning symbol:</p>
-<p class="text-center"> <img src="//cacilhas.info/img/tic80/yin-yang.png" alt="Sky Gradient"></p>
+<p class="text-center" > <img src="//cacilhas.info/img/tic80/yin-yang.png" alt="Sky Gradient" /></p>
 <h3 id="resouces">Resouces</h3>
 <p>Download the Moonscript code from <a href="//cacilhas.info/misc/tic80/yin-yang.moon">here</a>, or the cartridge from
 <a href="//cacilhas.info/misc/tic80/yin-yang.tic">here</a>.</p>

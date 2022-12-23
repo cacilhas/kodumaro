@@ -5,25 +5,25 @@ tags: lua reblog
 image: //cacilhas.info/img/moonscript.png
 permalink: /2020/10/iterators.html
 ---
+[image]: {{{image}}}
 [2008]: https://kodumaro.blogspot.com/2008/
-[collatz]: https://planetmath.org/CollatzProblem
+[2017]: /legacy.html
+[Collatz Conjecture]: https://planetmath.org/CollatzProblem
 [coroutine]: https://www.lua.org/pil/9.1.html
-[dev.to]: https://dev.to/cacilhas/lua-moonscript-iterators-1fd0
-[fibonacci]: https://encyclopediaofmath.org/index.php?title=Fibonacci_numbers
-[legacy]: /legacy.html
-[mais-reiteradores]: /2017/02/mais-reiteradores-em-moonscript.html
-[moonscript]: https://moonscript.org/
-[reiteradores]: /2017/02/reiteradores-em-moonscript.html
+[DEV.to]: https://dev.to/cacilhas/lua-moonscript-iterators-1fd0
+[Fibonacci numbers]: https://encyclopediaofmath.org/index.php?title=Fibonacci_numbers
+[MoonScript]: https://moonscript.org/
+[¹]: /2017/02/reiteradores-em-moonscript.html
+[²]: /2017/02/mais-reiteradores-em-moonscript.html
 
-{:class="pull-right"} <img src="{{{ image }}}" alt="MoonScript" />
+{:class="pull-right"} ![MoonScript][image]
 
-{:class="mg-first"} [2017][legacy], the year after the Brazil’s democracy death,
-was one of my more fruitful years (the more at all was [2008][2008]), so I
-decided to transcript some of that year’s posts back.
+{:class="mg-first"} [2017][], the year after the Brazil’s democracy death, was
+one of my more fruitful years (the more at all was [2008][2008]), so I decided
+to transcript some of that year’s posts back.
 
-I’m starting with a compilation of two
-posts&nbsp;[¹][reiteradores]&nbsp;[²][mais-reiteradores] about interators in
-[MoonScript][moonscript].
+I’m starting with a compilation of two posts[¹][]&#8202;[²][] about
+interators in [MoonScript][].
 
 ### Lua standard iterator
 
@@ -33,7 +33,7 @@ The Lua’s standard approach is a function that returns multiple values:
 1. The overall state (usually the stop condition).
 1. The initial value.
 
-For instance, the [Collatz Conjecture][collatz] can be implemented as follows:
+For instance, the [Collatz Conjecture][] can be implemented as follows:
 
 ```moonscript
 collatz = => _collatz, 1, @*2
@@ -94,7 +94,7 @@ the `collatz` implemented using the standard iterator, but in one single block.
 
 ### Coroutines
 
-The more powerful resource in Lua is the [coroutine][coroutine].
+The more powerful resource in Lua is the [coroutine][].
 
 Coroutines allow yielding results while it keeps running the concurrent routine.
 
@@ -130,7 +130,7 @@ moon>
 
 ### Fibonacci
 
-Let’s implement two approaches of [Fibonacci numbers][fibonacci].
+Let’s implement two approaches of [Fibonacci numbers][].
 
 Using the standard iterator, we simply don’t need to know the last result,
 we can manage it inside a mutable state – it’s possible to implement it in only
@@ -182,4 +182,4 @@ a linear procedure.
 
 -----
 
-{:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].
+{:class="small"} Also in [DEV.to][].

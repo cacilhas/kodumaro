@@ -43,7 +43,9 @@ My first unsuccessful attempt was:
 
 And Dotty put a damper on my plans:
 
-> Illegal cyclic type reference: alias Map\[Int | BigDecimal | String | Boolean | JNull | Seq\[JValue\] | String, JValue\] of type JValue refers back to the type itself.
+> Illegal cyclic type reference:
+> 
+> alias Map\[Int | BigDecimal | String | Boolean | JNull | Seq\[JValue\] | String, JValue\] of type JValue refers back to the type itself.
 
 Then I hit [this strange solution](https://users.scala-lang.org/t/defining-a-type-in-a-recursive-way-in-dotty/6798/8):
 
@@ -89,4 +91,4 @@ Now the `JValue` is quite stricter, and the `WeakRef` made the recursive type po
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/recursive-types-32je).
+Also in [DEV.to](https://dev.to/cacilhas/recursive-types-32je).

@@ -101,4 +101,4 @@ Other algebraic structures are mostly just variants of these three we’ve just 
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/algebraic-structures-2g9o).
+Also in [DEV.to](https://dev.to/cacilhas/algebraic-structures-2g9o).

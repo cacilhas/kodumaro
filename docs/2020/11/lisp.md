@@ -138,4 +138,4 @@ The result is:
 
 Translated from [here](/2017/11/lisp.html) and [here](/2017/11/lazy-racket.html).
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/lisp-473j).
+Also in [DEV.to](https://dev.to/cacilhas/lisp-473j).

@@ -30,4 +30,4 @@ Unfortunately the Capitalism is about profit, not quality, getting the employees
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/the-either-issue-3j53).
+Also in [DEV.to](https://dev.to/cacilhas/the-either-issue-3j53).

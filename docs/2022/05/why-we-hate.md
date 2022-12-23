@@ -94,8 +94,8 @@ In order to allow then to work with Erlang, some imbecile developer decided to w
 
 ### Why we hate X
 
-I could keep going on and on, talking about [Javascript](https://www.javascript.com/), [TypeScript](https://www.typescriptlang.org/), [Wren](https://wren.io/), [Odin](https://odin-lang.org/), [Moonscript](https://moonscript.org/), [Lua](https://www.lua.org/), [Dart](https://dart.dev/), [C#](https://docs.microsoft.com/en-us/dotnet/csharp/), [F★](https://www.fstar-lang.org/), and every other noteworthy programming language, but I think we’re good here.
+I could keep going on and on, talking about [Javascript](https://www.javascript.com/), [TypeScript](https://www.typescriptlang.org/), [Wren](https://wren.io/), [Odin](https://odin-lang.org/), [Moonscript](https://moonscript.org/), [Lua](https://www.lua.org/), [Dart](https://dart.dev/), [C♯](https://docs.microsoft.com/en-us/dotnet/csharp/), [F★](https://www.fstar-lang.org/), and every other noteworthy programming language, but I think we’re good here.
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/why-we-hate-3m8k).
+Also in [DEV.to](https://dev.to/cacilhas/why-we-hate-3m8k).

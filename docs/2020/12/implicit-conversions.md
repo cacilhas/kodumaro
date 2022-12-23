@@ -96,4 +96,4 @@ Note: value classes are tagged by inheriting `AnyVal`, and need a value of type 
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/implicit-conversions-in-scala-4dgb).
+Also in [DEV.to](https://dev.to/cacilhas/implicit-conversions-in-scala-4dgb).

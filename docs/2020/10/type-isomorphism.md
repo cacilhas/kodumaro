@@ -28,7 +28,7 @@ A few main examples:
 *   `Nothing`: arity is 0 (no possible instance)
 *   `Unit`: arity is 1 (only the `()` value)
 *   `Boolean`: arity is 2 (`true` and `false`)
-*   `Int`: arity is 4 294 967 296 (2³², 4 bytes)
+*   `Int`: arity is 4 294 967 296 (2³², 4 bytes)
 
 So if `A` and `B` have the same arity, you can map each value in `A` to only one in `B`, and vice versa.
 
@@ -43,7 +43,7 @@ For instance, the `YesNo` type is the disjunction of `Yes.type` and `No.type`, i
 *   `Yes.type` has arity 1
 *   `No.type` as arity 1
 *   `YesNo ≡ Yes.type + No.type`
-*   ⊢ The `YesNo`’s arity is 1 + 1 = 2
+*   ⊢ The `YesNo`’s arity is 1 + 1 = 2
 
 Note: [Dotty (Scala 3)](https://dotty.epfl.ch/) has a nice [syntax](https://dotty.epfl.ch/docs/reference/new-types/union-types.html) for type disjunction, similar to [Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/sum-types)’s.
 
@@ -52,13 +52,13 @@ A conjunctive type – when the compounding values are companions, that means, o
 For instance, take the tuple `(Boolean, Int)`:
 
 *   `Boolean` has arity 2
-*   `Int` has arity 4 294 967 296
+*   `Int` has arity 4 294 967 296
 *   `(Boolean, Int) ≡ Boolean * Int`
-*   ⊢ The `(Boolean, Int)`’s arity is 2 × 4 294 967 296 = 8 589 934 592
+*   ⊢ The `(Boolean, Int)`’s arity is 2 × 4 294 967 296 = 8 589 934 592
 
 A lambda type has arity equal to the return type’s arity raised to the power of the argument type’s – multiple arguments are equivalent to a conjunctive type.
 
-*   `Boolean => Int` has arity 4 294 967 296²
+*   `Boolean => Int` has arity 4 294 967 296²
 *   `Int => Boolean` has arity 2⁴²⁹⁴⁹⁶⁷²⁹⁶
 
 You can understand why reading [this](https://codewords.recurse.com/issues/three/algebra-and-calculus-of-algebraic-data-types#fn:answer).
@@ -100,4 +100,4 @@ In this example, `long` and `float` aren’t isomorphic, ’cause they have diff
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/type-isomorphism-3bp9).
+Also in [DEV.to](https://dev.to/cacilhas/type-isomorphism-3bp9).

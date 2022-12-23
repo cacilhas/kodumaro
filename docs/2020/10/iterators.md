@@ -2,7 +2,7 @@
 
 [2017](/legacy.html), the year after the Brazil’s democracy death, was one of my more fruitful years (the more at all was [2008](https://kodumaro.blogspot.com/2008/)), so I decided to transcript some of that year’s posts back.
 
-I’m starting with a compilation of two posts [¹](/2017/02/reiteradores-em-moonscript.html) [²](/2017/02/mais-reiteradores-em-moonscript.html) about interators in [MoonScript](https://moonscript.org/).
+I’m starting with a compilation of two posts[¹](/2017/02/reiteradores-em-moonscript.html) [²](/2017/02/mais-reiteradores-em-moonscript.html) about interators in [MoonScript](https://moonscript.org/).
 
 ### Lua standard iterator
 
@@ -136,4 +136,4 @@ The both approaches are performative, ’cause they use double accumulator to ru
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/lua-moonscript-iterators-1fd0).
+Also in [DEV.to](https://dev.to/cacilhas/lua-moonscript-iterators-1fd0).

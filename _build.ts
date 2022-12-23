@@ -7,7 +7,6 @@ import mustache from 'mustache';
 import path from 'path';
 import rimraf from 'rimraf';
 import showdown, { Converter } from 'showdown';
-import showdownKatex from 'showdown-katex';
 import stylus from 'stylus';
 import Turndown from 'turndown';
 import yaml from 'js-yaml';
@@ -101,7 +100,6 @@ function buildMdConverter(): Converter {
     'PreExtension',
     'TableExtension',
     'YoutubeExtension',
-    showdownKatex(),
   ]});
 
   converter.setOption('completeHTMLDocument', false);
