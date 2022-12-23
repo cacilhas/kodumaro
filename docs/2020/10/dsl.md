@@ -247,4 +247,4 @@ You can go on and implement all the SQL features just for fun, but that’s not 
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/domain-specific-languages-3b52).
+Also in [DEV.to](https://dev.to/cacilhas/domain-specific-languages-3b52).

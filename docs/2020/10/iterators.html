@@ -96,12 +96,11 @@
         </div>
         <div class="panel-body">
           <p class="pull-right" > <img src="//cacilhas.info/img/moonscript.png" alt="MoonScript" /></p>
-<p class="mg-first" > <a href="/legacy.html">2017</a>, the year after the Brazil’s democracy death,
-was one of my more fruitful years (the more at all was <a href="https://kodumaro.blogspot.com/2008/">2008</a>), so I
-decided to transcript some of that year’s posts back.</p>
-<p>I’m starting with a compilation of two
-posts&nbsp;<a href="/2017/02/reiteradores-em-moonscript.html">¹</a>&nbsp;<a href="/2017/02/mais-reiteradores-em-moonscript.html">²</a> about interators in
-<a href="https://moonscript.org/">MoonScript</a>.</p>
+<p class="mg-first" > <a href="/legacy.html">2017</a>, the year after the Brazil’s democracy death, was
+one of my more fruitful years (the more at all was <a href="https://kodumaro.blogspot.com/2008/" target="_blank">2008</a>), so I decided
+to transcript some of that year’s posts back.</p>
+<p>I’m starting with a compilation of two posts<a href="/2017/02/reiteradores-em-moonscript.html">¹</a>&#8202;<a href="/2017/02/mais-reiteradores-em-moonscript.html">²</a> about
+interators in <a href="https://moonscript.org/" target="_blank">MoonScript</a>.</p>
 <h3 id="lua-standard-iterator">Lua standard iterator</h3>
 <p>The Lua’s standard approach is a function that returns multiple values:</p>
 <ol>
@@ -109,7 +108,7 @@ posts&nbsp;<a href="/2017/02/reiteradores-em-moonscript.html">¹</a>&nbsp;<a hre
 <li>The overall state (usually the stop condition).</li>
 <li>The initial value.</li>
 </ol>
-<p>For instance, the <a href="https://planetmath.org/CollatzProblem">Collatz Conjecture</a> can be implemented as follows:</p>
+<p>For instance, the <a href="https://planetmath.org/CollatzProblem" target="_blank">Collatz Conjecture</a> can be implemented as follows:</p>
 <pre class="prettyprint"><code class="moonscript language-moonscript">collatz = =&gt; _collatz, 1, @*2</code></pre>
 <p>The initial value is dobled to allow the first step to return it; the loop ends
 when the state reaches one (<code>1</code>).</p>
@@ -149,7 +148,7 @@ with no arguments.</p>
 <p>This new function holding a closure (the <code>value</code> variable) behaves exactly like
 the <code>collatz</code> implemented using the standard iterator, but in one single block.</p>
 <h3 id="coroutines">Coroutines</h3>
-<p>The more powerful resource in Lua is the <a href="https://www.lua.org/pil/9.1.html">coroutine</a>.</p>
+<p>The more powerful resource in Lua is the <a href="https://www.lua.org/pil/9.1.html" target="_blank">coroutine</a>.</p>
 <p>Coroutines allow yielding results while it keeps running the concurrent routine.</p>
 <p>Collatz Conjecture using coroutine is:</p>
 <pre class="prettyprint"><code class="moonscript language-moonscript">_collatz = (value using coroutine) -&gt;
@@ -174,7 +173,7 @@ the <code>collatz</code> implemented using the standard iterator, but in one sin
 1
 moon&gt;</code></pre>
 <h3 id="fibonacci">Fibonacci</h3>
-<p>Let’s implement two approaches of <a href="https://encyclopediaofmath.org/index.php?title=Fibonacci_numbers">Fibonacci numbers</a>.</p>
+<p>Let’s implement two approaches of <a href="https://encyclopediaofmath.org/index.php?title=Fibonacci_numbers" target="_blank">Fibonacci numbers</a>.</p>
 <p>Using the standard iterator, we simply don’t need to know the last result,
 we can manage it inside a mutable state – it’s possible to implement it in only
 one function using <code>unpack</code>:</p>
@@ -211,7 +210,7 @@ one function using <code>unpack</code>:</p>
 <p>The both approaches are performative, ’cause they use double accumulator to run
 a linear procedure.</p>
 <hr />
-<p class="small" > Also in <a href="https://dev.to/cacilhas/lua-moonscript-iterators-1fd0">DEV Community 👩‍💻👨‍💻</a>.</p>
+<p class="small" > Also in <a href="https://dev.to/cacilhas/lua-moonscript-iterators-1fd0" target="_blank">DEV.to</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

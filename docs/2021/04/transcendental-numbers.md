@@ -42,7 +42,7 @@ But how to get to the desired precision?
 
 One can take this formula and compute greater and greater 𝑛 values, until it reaches the required precision. Nevertheless, the exponent can be quite intimidating, leading to an undesired weak performance – similar or worst than the π computation below. Yet, it’s hard to say how long it must go to getta the desired precision.
 
-Fortunately another [Euler’s](https://www.wolframalpha.com/input/?i=Leonhard+Euler) formula gives us a better solution:
+Fortunately another [Euler](https://www.wolframalpha.com/input/?i=Leonhard+Euler)’s formula gives us a better solution:
 
 ![𝑒 = Σ(1/n!)](//cacilhas.info/img/fact-euler.png)
 
@@ -307,10 +307,10 @@ This computation is way more inefficient than the previous one – Python isn’
 
 To this task, one’s gonna need a tougher tool, as C and multithreading. Again performance is not this post’s scope. Probably it requires using some C cast spells in order to optimise the computation.
 
-Or you can go down through the [Wolfram MathWorld’s](https://mathworld.wolfram.com/Pi.html#related) or [Wolfram Alpha’s](https://www.wolframalpha.com/input/?i=pi) π page references in search of better formulæ. I did it, and I can ensure they are, including serie representations.
+Or you can go down through the [Wolfram MathWorld](https://mathworld.wolfram.com/Pi.html#related)’s or [Wolfram Alpha](https://www.wolframalpha.com/input/?i=pi)’s π page references in search of better formulæ. I did it, and I can ensure they are, including serie representations.
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc).
+Also in [DEV.to](https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc).
 
 Also in [Functional Works](https://www.works-hub.com/learn/how-to-compute-arbitrary-precision-transcendental-numbers-3c1bc?utm_campaign=Automation%20-%20Candidate%20Emails&utm_medium=email&_hsmi=106671327&_hsenc=p2ANqtz-8_Q4Pbh3qH2i_8NyfURQW4LB3Zw54WMX8p4CsnfaSnzEvto6P2K-OaMuOPdhx42y46dRm5lSrLFBtwKWSRIf8d91mzGA&utm_content=106671327&utm_source=hs_email).

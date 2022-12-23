@@ -57,7 +57,7 @@ We’re gonna do some black magic hereafter… This code was taken from the [TIC
 
 The `BOOT` function is called only once, clearing the screen (`cls`).
 
-**Note:** TIC-80 code cannot be larger than 65 536 characters, so avoid unnecessary whitespaces.
+**Note:** TIC-80 code cannot be larger than 65 536 characters, so avoid unnecessary whitespaces.
 
 If nothing is wrong, when you press C-r, you’re gonna get the following background:
 

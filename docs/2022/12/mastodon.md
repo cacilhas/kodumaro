@@ -12,4 +12,4 @@ You can find us searching for [`@kodumaro@social.sndevs.com`](https://social.snd
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/kodumaro-is-going-mastodon-cbl).
+Also in [DEV.to](https://dev.to/cacilhas/kodumaro-is-going-mastodon-cbl).

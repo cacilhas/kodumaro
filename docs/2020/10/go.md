@@ -148,4 +148,4 @@ Some useful resources:
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/about-go-51c1).
+Also in [DEV.to](https://dev.to/cacilhas/about-go-51c1).

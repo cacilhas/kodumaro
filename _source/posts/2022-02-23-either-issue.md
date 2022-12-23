@@ -5,19 +5,19 @@ tags: career education-and-culture
 image: //cacilhas.info/img/lamp.png
 permalink: /2022/02/either-issue.html
 ---
-
-[dev.to]: https://dev.to/cacilhas/the-either-issue-3j53
+[image]: {{{image}}}
+[DEV.to]: https://dev.to/cacilhas/the-either-issue-3j53
 [Either]: https://www.scala-lang.org/api/current/scala/util/Either.html
-[scala]: https://scala-lang.org/
+[Scala]: https://scala-lang.org/
 
-{:class="pull-right"} <img src="{{{ image }}}" alt="Lamp"/>
+{:class="pull-right"} ![Lamp][image]
 
 {:class="mg-first"} Once I was running an operation, and my team had to build
 the application from scratch.
 
 I had met the core developers, we had discussing a lot about which technology
 would better address our demand and, after many considerations, we had chosen
-[Scala][scala].
+[Scala][].
 
 **But** (and there’s always a *but*) Scala programmers are expensive, and the
 company wanted to save every cent (as always).
@@ -64,4 +64,4 @@ to that kinda highly uncomfortable situation.
 
 -----
 
-{:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].
+{:class="small"} Also in [DEV.to][].

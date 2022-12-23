@@ -58,4 +58,4 @@ Learn to code just because. It might be useful at some point – or not.
 
 * * *
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/should-everybody-learn-to-code-45lo).
+Also in [DEV.to](https://dev.to/cacilhas/should-everybody-learn-to-code-45lo).

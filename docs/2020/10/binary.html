@@ -101,7 +101,7 @@ binary and text.</p>
 <p>In this context, binary and text are ways the data is represented.</p>
 <h3 id="binary-protocol">Binary protocol</h3>
 <p>The binary protocol uses bytes to represent data as directly as possible.</p>
-<p>Let’s take the number 98&nbsp;765. Converting from decimal to binary one gets:</p>
+<p>Let’s take the number 98&#8239;765. Converting from decimal to binary one gets:</p>
 <p class="text-center" > 1.1000.0001.1100.1101₂</p>
 <p>C has a type named <code>int</code> that represents integers as 4-byte data. Regrouping the
 data above in 8-bit chunks (bytes), and completing the 4 bytes with zeros:</p>
@@ -117,11 +117,11 @@ order from big-endian:</p>
 <p class="text-center" > CD.81.01.00₁₆</p>
 <p>Considering we’re building a binary protocol. It needs to supply the data type
 in order to identify which kind of data we’re talking about.</p>
-<p>For simplicity (something like <a href="http://www.pinpi.com/en/SDXF_2.htm">SDXF</a>), let’s use 1-byte type tag. For
+<p>For simplicity (something like <a href="http://www.pinpi.com/en/SDXF_2.htm" target="_blank">SDXF</a>), let’s use 1-byte type tag. For
 informing integer, let’s use the number 2:</p>
 <p class="text-center" > 02.00.01.81.CD₁₆</p>
 <h3 id="text-protocol">Text protocol</h3>
-<p>Text data are fully represented as strings. So the number 98&nbsp;765 is
+<p>Text data are fully represented as strings. So the number 98&#8239;765 is
 represented as the characters needed to write the decimal number:</p>
 <p class="text-center" > 39.38.37.36.35₁₆</p>
 <p>Now it needs a way to tell the system where the string ends. C uses the null
@@ -193,7 +193,7 @@ get worse when considering the protocol headers.</p>
 <hr />
 <p>Original post (in Portuguese):
 <a href="https://kodumaro.cacilhas.info/2017/06/binario-texto.html">Diferença entre dado binário e dado textual</a>.</p>
-<p class="small" > Also in <a href="https://dev.to/cacilhas/binary-vs-text-2blo">DEV Community 👩‍💻👨‍💻</a>.</p>
+<p class="small" > Also in <a href="https://dev.to/cacilhas/binary-vs-text-2blo" target="_blank">DEV.to</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

@@ -5,16 +5,17 @@ tags: functional scala
 image: //cacilhas.info/img/scala.png
 permalink: /2020/12/implicit-conversions.html
 ---
-[dev.to]: https://dev.to/cacilhas/implicit-conversions-in-scala-4dgb
-[implicits]: https://www.scala-lang.org/files/archive/spec/2.13/07-implicits.html
-[scala]: https://www.scala-lang.org/
-[singleton]: https://docs.scala-lang.org/sips/42.type.html
-[value-classes]: https://docs.scala-lang.org/overviews/core/value-classes.html
+[image]: {{{image}}}
+[DEV.to]: https://dev.to/cacilhas/implicit-conversions-in-scala-4dgb
+[implicits system]: https://www.scala-lang.org/files/archive/spec/2.13/07-implicits.html
+[Scala]: https://www.scala-lang.org/
+[literal-based singleton types]: https://docs.scala-lang.org/sips/42.type.html
+[Value classes]: https://docs.scala-lang.org/overviews/core/value-classes.html
 
-{:class="pull-right"} <img src="{{{ image }}}" alt="Scala"/>
+{:class="pull-right"} ![Scala][image]
 
-{:class="mg-first"} [Scala][scala] (in version 2.13 while I write) has a
-powerful conversion system based on its [implicits system][implicits].
+{:class="mg-first"} [Scala][] (in version 2.13 while I write) has a powerful
+conversion system based on its [implicits system][].
 
 It works by expanding implicit methods and classes into a more complex
 structure, which would be way harder to code if it needs to be done explicitly.
@@ -91,9 +92,9 @@ Note that everytime `.toXML` is called, a new `XMLString` is created.
 
 ### Implicit value classes
 
-[Value classes][value-classes] are lightweight Scala resources, which **don’t**
-create new instance each call. Instead, every value class uses a companion
-object to envelope the methods, and calls them from it.
+[Value classes][] are lightweight Scala resources, which **don’t** create new
+instance each call. Instead, every value class uses a companion object to
+envelope the methods, and calls them from it.
 
 Consider the following example, a method to determine whether a double is
 integral:
@@ -130,8 +131,8 @@ No instance is created on `.isIntegral` call.
 
 Note: value classes are tagged by inheriting `AnyVal`, and need a value of type
 `* <: AnyVal`, i.e., `Boolean`, `Byte`, `Char`, `Double`, `Float`, `Int`,
-`Long`, `Short`, `Unit`, and their [literal-based singleton types][singleton].
+`Long`, `Short`, `Unit`, and their [literal-based singleton types][].
 
 -----
 
-{:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].
+{:class="small"} Also in [DEV.to][].

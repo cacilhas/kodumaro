@@ -5,62 +5,63 @@ tags: concept education-and-culture math python
 image: //cacilhas.info/img/lamp.png
 permalink: /2021/04/transcendental-numbers.html
 ---
-[dev.to]: https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc
-[email]: mailto:kodumaro@cacilhas.info
-[euler]: https://mathworld.wolfram.com/e.html
-[eulers-formula]: https://mathworld.wolfram.com/EulerFormula.html
-[leibniz]: https://www.wolframalpha.com/input/?i=Gottfried+Wilhelm+Leibniz
-[leonhard-euler]: https://www.wolframalpha.com/input/?i=Leonhard+Euler
-[mathworld-pi]: https://mathworld.wolfram.com/Pi.html#related
-[patreon-kodumaro]: https://www.patreon.com/kodumaro
-[patreon-montegasppa]: https://www.patreon.com/cacilhas
-[patronise]: https://www.patreon.com/join/cacilhas?
-[python]: https://www.python.org/
+[image]: {{{image}}}
+[become my patron]: https://www.patreon.com/join/cacilhas?
+[DEV.to]: https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc
+[employer’s project]: https://contabilone.com/ "Expect the site‘s gonna be published soon."
+[Euler]: https://www.wolframalpha.com/input/?i=Leonhard+Euler
+[Euler’s constant]: https://mathworld.wolfram.com/e.html
+[Euler’s identity]: https://mathworld.wolfram.com/EulerFormula.html
+[Functional Works]: https://www.works-hub.com/learn/how-to-compute-arbitrary-precision-transcendental-numbers-3c1bc?utm_campaign=Automation%20-%20Candidate%20Emails&utm_medium=email&_hsmi=106671327&_hsenc=p2ANqtz-8_Q4Pbh3qH2i_8NyfURQW4LB3Zw54WMX8p4CsnfaSnzEvto6P2K-OaMuOPdhx42y46dRm5lSrLFBtwKWSRIf8d91mzGA&utm_content=106671327&utm_source=hs_email
+[Kodumaro]: {{{site}}}
+[Leibniz]: https://www.wolframalpha.com/input/?i=Gottfried+Wilhelm+Leibniz
+[mail me]: mailto:kodumaro@cacilhas.info
+[musical project]: https://www.patreon.com/cacilhas
+[my last post]: {{{kodumaro.url}}}/2020/12/implicit-conversions.html
+[my personal blog]: {{{montegasppa.url}}}
+[Python]: https://www.python.org/
 [subscribe]: https://www.patreon.com/join/kodumaro?
-[transcendental]: https://mathworld.wolfram.com/TranscendentalNumber.html
-[wolframalpha-pi]: https://www.wolframalpha.com/input/?i=pi
-[works-hub]: https://www.works-hub.com/learn/how-to-compute-arbitrary-precision-transcendental-numbers-3c1bc?utm_campaign=Automation%20-%20Candidate%20Emails&utm_medium=email&_hsmi=106671327&_hsenc=p2ANqtz-8_Q4Pbh3qH2i_8NyfURQW4LB3Zw54WMX8p4CsnfaSnzEvto6P2K-OaMuOPdhx42y46dRm5lSrLFBtwKWSRIf8d91mzGA&utm_content=106671327&utm_source=hs_email
-[youtube]: https://www.youtube.com/channel/UCVJR3ltOPy2fQ7zxzXjUvJA
+[Take a look at what I’ve been on.]: https://www.youtube.com/channel/UCVJR3ltOPy2fQ7zxzXjUvJA
+[Transcendental numbers]: https://mathworld.wolfram.com/TranscendentalNumber.html
+[Wolfram Alpha]: https://www.wolframalpha.com/input/?i=pi
+[Wolfram MathWorld]: https://mathworld.wolfram.com/Pi.html#related
 
 ### Announcement
 
-It has been four months since my
-<a href="{{{ kodumaro.url }}}/2020/12/implicit-conversions.html">my last post</a>,
-one could think this blog has come to an end, but that’s not the case.
+It has been four months since my [my last post][], one could think this blog has
+come to an end, but that’s not the case.
 
-I’ve been very busy working on my
-<a href="https://contabilone.com/" title="Expect the site‘s gonna be published soon.">employer’s project</a>,
-what drained my time, stopping me working on my personal projects.
+I’ve been very busy working on my [employer’s project][], what drained my time,
+stopping me working on my personal projects.
 
-Even so, <a href="{{{ site }}}">Kodumaro</a>,
-<a href="{{{ montegasppa.url }}}">my personal blog</a>, and my
-[musical project][patreon-montegasppa] are **not** over. I just have not enough
-payback for those project, so I cannot apply much time on those. 😢
+Even so, [Kodumaro][], [my personal blog][], and my [musical project][] are
+**not** over. I just have not enough payback for those project, so I cannot
+apply much time on those. 😢
 
-If you’d like to patronise my musical project, [become my patron][patronise]!!
+If you’d like to patronise my musical project, [become my patron][]!!
 
-[Take a look at what I’ve been on.][youtube]
+[Take a look at what I’ve been on.][]
 
 Now, if you enjoy {{{ kodumaro.title }}}, and would like to fund this project,
-please [mail me][email], and let’s talk about it. If I’m getting enough
-funding, I’m considering making it my main job.
+please [mail me][], and let’s talk about it. If I’m getting enough funding, I’m
+considering making it my main job.
 
 Bringing it in mind,
 <strong>I’m releasing a <a href="{{{ patreon.url }}}">Kodumaro’s Patreon page</a></strong>.
-Please [subscribe][subscribe].
+Please [subscribe][].
 
 -----
 
 ### Getting into the point
 
-{:class="pull-right"} <img src="{{{ image }}}" alt="Idea"/>
+{:class="pull-right"} ![Idea][image]
 
-{:class="mg-first"} [Transcendental numbers][transcendental] are probably the
-most useful tools in Mathematics. They are irrational numbers that cannot be
+{:class="mg-first"} [Transcendental numbers][] are probably the most useful
+tools in Mathematics. They are irrational numbers that cannot be
 expressed using a finite formula.
 
-For example, the [Euler’s identity][eulers-formula] is considered the most
-beautiful Mathematical formula (perhaps I’m gonna explore it in the future):
+For example, the [Euler’s identity][] is considered the most beautiful
+Mathematical formula (perhaps I’m gonna explore it in the future):
 
 {:class="text-center"} 𝑒<sup>𝑖π</sup> + 1 = 0
 
@@ -74,8 +75,8 @@ precision.
 
 ### Euler’s constant
 
-The [Euler’s constant][euler] or Euler’s number, 𝑒 for short, is the ratio
-describing any constant growth. It’s defined as:
+The [Euler’s constant][] or Euler’s number, 𝑒 for short, is the ratio describing
+any constant growth. It’s defined as:
 
 {:class="text-center"} <img src="{{{ cacilhas.url }}}/img/euler.png" alt="𝑒 = lim_(n→+∞)[1+(1/n)]^n" />
 
@@ -91,8 +92,7 @@ intimidating, leading to an undesired weak performance – similar or worst than
 the π computation below. Yet, it’s hard to say how long it must go to getta the
 desired precision.
 
-Fortunately another [Euler’s][leonhard-euler] formula gives us a better
-solution:
+Fortunately another [Euler][]’s formula gives us a better solution:
 
 {:class="text-center"} <img src="{{{ cacilhas.url }}}/img/fact-euler.png" alt="𝑒 = Σ(1/n!)" />
 
@@ -141,7 +141,7 @@ must use *log₂*:
 
 So, 26 steps are good enough.
 
-Let’s implement it using [Python][python]:
+Let’s implement it using [Python][]:
 
 ```python
 from numbers import Integral, Rational
@@ -199,7 +199,7 @@ showing how it works and how you can implement and use it.
 π very definition.
 
 However, it’s a transcendental number and needs an infinity serie to be
-computed. [Leibniz][leibniz] gave us a neat solution:
+computed. [Leibniz][] gave us a neat solution:
 
 {:class="text-center"} <img src="{{{ cacilhas.url }}}/img/leibniz-pi.png" alt="π = 4Σ(1/(4n+1) - 1/(4n+3))" />
 
@@ -240,12 +240,12 @@ To this task, one’s gonna need a tougher tool, as C and multithreading. Again
 performance is not this post’s scope. Probably it requires using some C cast
 spells in order to optimise the computation.
 
-Or you can go down through the [Wolfram MathWorld’s][mathworld-pi] or
-[Wolfram Alpha’s][wolframalpha-pi] π page references in search of better
-formulæ. I did it, and I can ensure they are, including serie representations.
+Or you can go down through the [Wolfram MathWorld][]’s or [Wolfram Alpha][]’s π
+page references in search of better formulæ. I did it, and I can ensure they
+are, including serie representations.
 
 -----
 
-{:class="small"} Also in [DEV Community 👩‍💻👨‍💻][dev.to].
+{:class="small"} Also in [DEV.to].
 
-{:class="small"} Also in [Functional Works][works-hub].
+{:class="small"} Also in [Functional Works][].

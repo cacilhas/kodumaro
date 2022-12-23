@@ -8,7 +8,7 @@ In this context, binary and text are ways the data is represented.
 
 The binary protocol uses bytes to represent data as directly as possible.
 
-Let’s take the number 98 765. Converting from decimal to binary one gets:
+Let’s take the number 98 765. Converting from decimal to binary one gets:
 
 1.1000.0001.1100.1101₂
 
@@ -34,7 +34,7 @@ For simplicity (something like [SDXF](http://www.pinpi.com/en/SDXF_2.htm)), let�
 
 ### Text protocol
 
-Text data are fully represented as strings. So the number 98 765 is represented as the characters needed to write the decimal number:
+Text data are fully represented as strings. So the number 98 765 is represented as the characters needed to write the decimal number:
 
 39.38.37.36.35₁₆
 
@@ -110,4 +110,4 @@ Everytime it’s possible, prefer binary representations over text.
 
 Original post (in Portuguese): [Diferença entre dado binário e dado textual](https://kodumaro.cacilhas.info/2017/06/binario-texto.html).
 
-Also in [DEV Community 👩‍💻👨‍💻](https://dev.to/cacilhas/binary-vs-text-2blo).
+Also in [DEV.to](https://dev.to/cacilhas/binary-vs-text-2blo).

@@ -99,13 +99,13 @@
 <p class="mg-first" > For a developer to be able to work with Functional
 Programming, there are a few concepts he or she must master.</p>
 <p>In addition to the <a href="/2019/09/lies-they-told-you.html">functional constraints</a>, there are two very important
-main ideas: <a href="/2020/10/type-isomorphism.html">algebraic data types</a> (ADT) and algebraic structures. In
-this post, we’re looking at some algebraic structures.</p>
+main ideas: <a href="/2020/10/type-isomorphism.html">algebraic data types</a> (ADT) and algebraic structures. In this
+post, we’re looking at some algebraic structures.</p>
 <h3 id="functor">Functor</h3>
 <p>Functor is the simpliest algebraic structure. It’s a wrapper around a datum or
 data that can map operations over them and their successful results.</p>
-<p>A basic functor example in <a href="https://www.scala-lang.org/">Scala</a> is
-<a href="https://www.scala-lang.org/api/current/scala/util/Try.html"><code>scala.util.Try</code></a>:</p>
+<p>A basic functor example in <a href="https://www.scala-lang.org/" target="_blank">Scala</a> is
+<a href="https://www.scala-lang.org/api/current/scala/util/Try.html" target="_blank"><code>scala.util.Try</code></a>:</p>
 <pre class="prettyprint"><code class="scala language-scala">Try(1 / x)
   .map(e =&gt; e*e)
   .map(1 - _)
@@ -116,11 +116,11 @@ data that can map operations over them and their successful results.</p>
 <p>Most of the Scala basic wrappers, like <code>Seq</code>/<code>List</code>, <code>Option</code>, <code>Either</code>, etc,
 are functors too.</p>
 <h3 id="monad">Monad</h3>
-<p><a href="https://www.haskell.org/">Haskell</a>’s monads have been getting people in dread, but they’re
-nothing than a variation of functor approach.</p>
+<p><a href="https://www.haskell.org/" target="_blank">Haskell</a>’s monads have been getting people in dread, but they’re nothing than
+a variation of functor approach.</p>
 <p>A monad is a wrapper around a datum or data that can operate over them flatly
 mapping the results and possibly describing side-effects.</p>
-<p>Our first monad example is the <a href="https://www.scala-lang.org/api/current/scala/collection/immutable/Seq.html"><code>Seq</code></a>:</p>
+<p>Our first monad example is the <a href="https://www.scala-lang.org/api/current/scala/collection/immutable/Seq.html" target="_blank"><code>Seq</code></a>:</p>
 <pre class="prettyprint"><code class="scala language-scala">Seq(1, 2, 3)
   .flapMap(e =&gt; Seq(e * 2))
   .flatMap(e =&gt; if (e == 2) Nil else Seq(e))
@@ -134,7 +134,7 @@ and it has a <code>filter</code> method, more expressive than <code>flatMap</cod
   .filter(_ != 2)
   .flatMap(e =&gt; if (e == 4) Seq(4, 5) else Seq(e))</code></pre>
 <p>The result is the same. <code>List</code>, <code>Option</code>, <code>Try</code>, <code>Either</code>, etc, are monads too.</p>
-<p>The knownest monad is the Haskell’s <a href="https://wiki.haskell.org/Introduction_to_IO"><code>IO</code></a>. The <code>IO</code> monad describes how an
+<p>The knownest monad is the Haskell’s <a href="https://wiki.haskell.org/Introduction_to_IO" target="_blank"><code>IO</code></a>. The <code>IO</code> monad describes how an
 I/O side-effect happens.</p>
 <p>For example:</p>
 <pre class="prettyprint"><code class="haskell language-haskell">greetings :: IO ()
@@ -174,15 +174,15 @@ no need for changing the <code>reduce</code> function.</p>
 <blockquote>
   <p><code>[update]</code></p>
   <p>I forgot to mention, an example of Scala’s built-in monoid is
-  <a href="https://www.scala-lang.org/api/current/scala/math/Numeric.html"><code>Numeric</code></a>: the operation method is <code>ev.plus</code>, and the
+  <a href="https://www.scala-lang.org/api/current/scala/math/Numeric.html" target="_blank"><code>Numeric</code></a>: the operation method is <code>ev.plus</code>, and the
   unit is <code>ev.zero</code>.</p>
   <p><code>[/update]</code></p>
 </blockquote>
 <h3 id="apply-applicative-semiring-lattice-etc">Apply, applicative, semiring, lattice, etc</h3>
 <p>Other algebraic structures are mostly just variants of these three we’ve just
-been through. You can find some definitions in <a href="https://www.linkedin.com/pulse/glossary-functional-programming-john-de-goes/">this glossary</a>.</p>
+been through. You can find some definitions in <a href="https://www.linkedin.com/pulse/glossary-functional-programming-john-de-goes/" target="_blank">this glossary</a>.</p>
 <hr />
-<p class="small" > Also in <a href="https://dev.to/cacilhas/algebraic-structures-2g9o">DEV Community 👩‍💻👨‍💻</a>.</p>
+<p class="small" > Also in <a href="https://dev.to/cacilhas/algebraic-structures-2g9o" target="_blank">DEV.to</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
