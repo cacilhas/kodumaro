@@ -95,8 +95,8 @@
           <h6>The shadows behind the code.</h6>
         </div>
         <div class="panel-body">
-          <p class="pull-right" > <img src="//cacilhas.info/img/glider.png" alt="Logic" /></p>
-<p class="mg-first" > This post is a translation of an <a href="/2017/11/acumuladores.html">older one</a>.</p>
+          <p class="pull-right"> <img src="//cacilhas.info/img/glider.png" alt="Logic"></p>
+<p class="mg-first"> This post is a translation of an <a href="/2017/11/acumuladores.html">older one</a>.</p>
 <p><a href="https://en.wikipedia.org/wiki/Declarative_programming" target="_blank">Declarative</a> <a href="https://en.wikipedia.org/wiki/Logic_programming" target="_blank">Logic</a> Programming is a quite alien paradigm
 for other paradigm pogrammers.</p>
 <p>The most popular paradigm is the Imperative Programming (it has changed), which
@@ -184,15 +184,15 @@ parameter, followed by the current implicit parameters.</p>
 <p>You can try the following query:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">forall(between(0, 10, X), (fibonacci(X, F), writeln({X, F}))).</code></pre>
 <p>For some DCG magics, look at the <a href="http://www.pathwayslms.com/swipltuts/dcg/" target="_blank">Anne Ogborn tutorial</a>.</p>
-<hr />
+<hr>
 <p>For curiosity, the DCG above expands to:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">fibonacci(0, _, `_1`, `_R`) :- `_1` = `_R`, !.
 fibonacci(N, A, `_1`, `_R`) :- succ(N1, N),
                                call(\B^B^B^(true), B, `_1`, `_2`),
                                plus(A, `_2`, `_3`),
                                fibonacci(N1, B, `_3`, `_R`).</code></pre>
-<hr />
-<p class="small" > Also in <a href="https://dev.to/cacilhas/accumulators-in-declarative-logic-programming-5cl7" target="_blank">DEV Community 👩‍💻👨‍💻</a>.</p>
+<hr>
+<p class="small"> Also in <a href="https://dev.to/cacilhas/accumulators-in-declarative-logic-programming-5cl7" target="_blank">DEV Community 👩‍💻👨‍💻</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

@@ -95,44 +95,44 @@
           <h6>The shadows behind the code.</h6>
         </div>
         <div class="panel-body">
-          <p class="pull-right" > <img src="//cacilhas.info/img/glider.png" alt="MoonScript" /></p>
-<p class="mg-first" > I’ve seen people not understanding the difference between
+          <p class="pull-right"> <img src="//cacilhas.info/img/glider.png" alt="MoonScript"></p>
+<p class="mg-first"> I’ve seen people not understanding the difference between
 binary and text.</p>
 <p>In this context, binary and text are ways the data is represented.</p>
 <h3 id="binary-protocol">Binary protocol</h3>
 <p>The binary protocol uses bytes to represent data as directly as possible.</p>
 <p>Let’s take the number 98&nbsp;765. Converting from decimal to binary one gets:</p>
-<p class="text-center" > 1.1000.0001.1100.1101₂</p>
+<p class="text-center"> 1.1000.0001.1100.1101₂</p>
 <p>C has a type named <code>int</code> that represents integers as 4-byte data. Regrouping the
 data above in 8-bit chunks (bytes), and completing the 4 bytes with zeros:</p>
-<p class="text-center" > 00000000.00000001.10000001.11001101₂</p>
+<p class="text-center"> 00000000.00000001.10000001.11001101₂</p>
 <p>Counter-intuitively, the simplier way to represent binary data isn’t binary,
 but hexadecimal. Each 4 bits turns directly into a hexadecimal digit, so every
 byte is represented as 2 hexadecimal digits. So we got:</p>
-<p class="text-center" > 00.01.81.CD₁₆</p>
+<p class="text-center"> 00.01.81.CD₁₆</p>
 <p>The mathematical representation of numbers is <strong>big-endian</strong>, which means, the
 more representative digit comes first. Network uses big-endian too.</p>
 <p>Most of the operating systems are <strong>little-endian</strong>, which means, the inverted
 order from big-endian:</p>
-<p class="text-center" > CD.81.01.00₁₆</p>
+<p class="text-center"> CD.81.01.00₁₆</p>
 <p>Considering we’re building a binary protocol. It needs to supply the data type
 in order to identify which kind of data we’re talking about.</p>
 <p>For simplicity (something like <a href="http://www.pinpi.com/en/SDXF_2.htm" target="_blank">SDXF</a>), let’s use 1-byte type tag. For
 informing integer, let’s use the number 2:</p>
-<p class="text-center" > 02.00.01.81.CD₁₆</p>
+<p class="text-center"> 02.00.01.81.CD₁₆</p>
 <h3 id="text-protocol">Text protocol</h3>
 <p>Text data are fully represented as strings. So the number 98&nbsp;765 is
 represented as the characters needed to write the decimal number:</p>
-<p class="text-center" > 39.38.37.36.35₁₆</p>
+<p class="text-center"> 39.38.37.36.35₁₆</p>
 <p>Now it needs a way to tell the system where the string ends. C uses the null
 character as stop one:</p>
-<p class="text-center" > 39.38.37.36.35.00₁₆</p>
+<p class="text-center"> 39.38.37.36.35.00₁₆</p>
 <p>Pascal starts the string with 2 bytes telling the string length:</p>
-<p class="text-center" > 05.00.39.38.37.36.35₁₆</p>
+<p class="text-center"> 05.00.39.38.37.36.35₁₆</p>
 <p>But, in text protocols, we cannot use non-text bytes (like 05₁₆), so we need to
 represent it as text too, using a separator (CR, for example) to distinguish the
 length from the data:</p>
-<p class="text-center" > 35.0C.39.38.37.36.35₁₆</p>
+<p class="text-center"> 35.0C.39.38.37.36.35₁₆</p>
 <p>Let’s put it all in perspective:</p>
 <table class="table">
 <thead>
@@ -159,12 +159,12 @@ length from the data:</p>
 <p>And what about strings? Over a binary protocol, strings are easily represented,
 one just needs a type flag, the string length, and the string itself.</p>
 <p>Let’s take <code>Kodumaro</code> (4B.6F.64.75.6D.61.72.6F₁₆):</p>
-<p class="text-center" > 01.4B.6F.64.75.6D.61.72.6F.00₁₆</p>
+<p class="text-center"> 01.4B.6F.64.75.6D.61.72.6F.00₁₆</p>
 <p>Or, in a network transmission:</p>
-<p class="text-center" > 01.08.00.4B.6F.64.75.6D.61.72.6F₁₆</p>
+<p class="text-center"> 01.08.00.4B.6F.64.75.6D.61.72.6F₁₆</p>
 <p>Over a text protocol, it usually uses a terminator character on both ends. The
 most common is the quotation mark (<code>"</code>, 22₁₆):</p>
-<p class="text-center" > 31.30.0C.22.4B.6F.64.75.6D.61.72.6F.22₁₆</p>
+<p class="text-center"> 31.30.0C.22.4B.6F.64.75.6D.61.72.6F.22₁₆</p>
 <table class="table">
 <thead>
 <tr>
@@ -190,10 +190,10 @@ most common is the quotation mark (<code>"</code>, 22₁₆):</p>
 <p>I hope you can see how text representations are heavier than binary ones. Things
 get worse when considering the protocol headers.</p>
 <p>Everytime it’s possible, prefer binary representations over text.</p>
-<hr />
+<hr>
 <p>Original post (in Portuguese):
 <a href="https://kodumaro.cacilhas.info/2017/06/binario-texto.html">Diferença entre dado binário e dado textual</a>.</p>
-<p class="small" > Also in <a href="https://dev.to/cacilhas/binary-vs-text-2blo" target="_blank">DEV Community 👩‍💻👨‍💻</a>.</p>
+<p class="small"> Also in <a href="https://dev.to/cacilhas/binary-vs-text-2blo" target="_blank">DEV Community 👩‍💻👨‍💻</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

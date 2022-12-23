@@ -7,6 +7,7 @@ import mustache from 'mustache';
 import path from 'path';
 import rimraf from 'rimraf';
 import showdown, { Converter } from 'showdown';
+import showdownKatex from 'showdown-katex';
 import stylus from 'stylus';
 import Turndown from 'turndown';
 import yaml from 'js-yaml';
@@ -54,6 +55,11 @@ showdown.extension('IExtension', {
   type: 'lang',
   filter: createIndentedFilter('^^i', str => `<i>${str.trim()}</i>`),
 });
+showdown.extension('ImgExtension', {
+  type: 'output',
+  regex: /<img([^>]+[^/])>/g,
+  replace: '<img $1 />',
+});
 showdown.extension('PreExtension', {
   type: 'output',
   regex: /<pre>/g,
@@ -67,7 +73,13 @@ showdown.extension('TableExtension', {
 
 function buildMdConverter(): Converter {
   const converter = new Converter({extensions: [
-    'ClassExtension', 'ExternalLinksExtension', 'IExtension', 'PreExtension', 'TableExtension',
+    'ClassExtension',
+    'ExternalLinksExtension',
+    'IExtension',
+    'ImgExtension',
+    'PreExtension',
+    'TableExtension',
+    showdownKatex(),
   ]});
 
   converter.setOption('completeHTMLDocument', false);
