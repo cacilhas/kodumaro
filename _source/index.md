@@ -3,14 +3,18 @@ type: page
 title: Kodumaro :: Saluton!
 date: 2020-09-23
 ---
+[legacy page]: /legacy.html
+[montegasppa]: {{{montegasppa.url}}}
+[mosaicolivre]: {{{mosaicolivre.url}}}
+[waltercruz]: {{{waltercruz.url}}}
 
 {:class="mg-first"} Hi there!
 
 Kodumaro is a colaboration between three fiend[¹](#pun) programmers:
-<a href="{{{ mosaicolivre.url }}}">{{ mosaicolivre.author }}</a>,
-<a href="{{{ montegasppa.url }}}">{{ montegasppa.author }}</a>,
-and <a href="{{{ waltercruz.url }}}">{{ waltercruz.author }}</a>,
-in an effort to offer you some interesting tips about programming.
+[{{ mosaicolivre.author }}][mosaicolivre],
+[{{ montegasppa.author }}][montegasppa], and
+[{{ waltercruz.author }}][waltercruz], in an effort to offer you some
+interesting tips about programming.
 
 {:id="pun" :class="small"} ¹I like the pun.
 
@@ -28,7 +32,7 @@ in an effort to offer you some interesting tips about programming.
 
 ### Previous posts
 
-You can find older posts in the [legacy page](/legacy.html).
+You can find older posts in the [legacy page][].
 
 <script>
   var urlParams = new URLSearchParams(window.location.search)
