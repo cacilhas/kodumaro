@@ -55,6 +55,26 @@ showdown.extension('IExtension', {
   type: 'lang',
   filter: createIndentedFilter('^^i', str => `<i>${str.trim()}</i>`),
 });
+showdown.extension('YoutubeExtension', {
+  type: 'lang',
+  filter: createIndentedFilter('^^youtube', str => {
+    const params = str.split(/\s+/);
+    const code = params[0];
+    const htmlParams = params.slice(1).join(' ');
+    return `<div class="text-center">
+      <iframe src="https://www.youtube.com/embed/${code}"
+              frameborder="0" ${htmlParams}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+      </iframe>
+    </div>`.replace(/\n\s+/g, ' ');
+  }),
+});
+showdown.extension('BrExtension', {
+  type: 'output',
+  regex: /<br\s*>/g,
+  replace: '<br/>',
+});
 showdown.extension('ImgExtension', {
   type: 'output',
   regex: /<img([^>]+[^/])>/g,
@@ -73,12 +93,14 @@ showdown.extension('TableExtension', {
 
 function buildMdConverter(): Converter {
   const converter = new Converter({extensions: [
+    'BrExtension',
     'ClassExtension',
     'ExternalLinksExtension',
     'IExtension',
     'ImgExtension',
     'PreExtension',
     'TableExtension',
+    'YoutubeExtension',
     showdownKatex(),
   ]});
 
