@@ -38,20 +38,18 @@ showdown.extension('ClassExtension', {
       .replace(/([/]?>) *{\s*((:\w+=".*?")(\s*:\w+=".*?")*)\s*}/g, ' $2 $1')
       .replace(/:(\w+=".*?")/g, '$1'),
 });
-// TODO: how to add target="_blank" to external links only?
-//showdown.extension('ExternalLinksExtension', {
-//  type: 'output',
-//  regex: /<a href="([^"]*)" *[/]>/g,
-//  filter: str => {
-//    const match = /<a href="(?<href>[^"]*)" *[/]>/.exec(str);
-//    if (match?.groups) {
-//      const href = match.groups.href;
-//      if (href.indexOf('cacilhas.info') === -1)
-//        return `<a href="${href}" target="_blank" />`;
-//    }
-//    return str;
-//  },
-//});
+showdown.extension('ExternalLinksExtension', {
+  type: 'output',
+  regex: /<a href="[^"]*" *>/,
+  filter: str =>
+    str.replace(/<a href="[^"]*" *>/g, substr => {
+      const match = /<a href="(?<href>[^"]*)" *>/.exec(substr);
+      const href = match?.groups?.href || '.';
+      if (href.startsWith('http') && (href.indexOf('cacilhas.info') === -1))
+        return `<a href="${href}" target="_blank">`;
+      return substr;
+    }),
+});
 showdown.extension('IExtension', {
   type: 'lang',
   filter: createIndentedFilter('^^i', str => `<i>${str.trim()}</i>`),
@@ -69,7 +67,7 @@ showdown.extension('TableExtension', {
 
 function buildMdConverter(): Converter {
   const converter = new Converter({extensions: [
-    'ClassExtension', 'IExtension', 'PreExtension', 'TableExtension',
+    'ClassExtension', 'ExternalLinksExtension', 'IExtension', 'PreExtension', 'TableExtension',
   ]});
 
   converter.setOption('completeHTMLDocument', false);

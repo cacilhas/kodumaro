@@ -97,7 +97,7 @@
         <div class="panel-body">
           <p class="pull-right" > <img src="//cacilhas.info/img/glider.png" alt="Logic" /></p>
 <p class="mg-first" > This post is a translation of an <a href="/2017/11/acumuladores.html">older one</a>.</p>
-<p><a href="https://en.wikipedia.org/wiki/Declarative_programming">Declarative</a> <a href="https://en.wikipedia.org/wiki/Logic_programming">Logic</a> Programming is a quite alien paradigm
+<p><a href="https://en.wikipedia.org/wiki/Declarative_programming" target="_blank">Declarative</a> <a href="https://en.wikipedia.org/wiki/Logic_programming" target="_blank">Logic</a> Programming is a quite alien paradigm
 for other paradigm pogrammers.</p>
 <p>The most popular paradigm is the Imperative Programming (it has changed), which
 consists of ordering statements that the computer system must perform in
@@ -107,7 +107,7 @@ microprogram.</p>
 far from efficient, leads to hard-mantaining codes, much bug-denser than any
 other paradigm.</p>
 <p>A rival paradigm that’s gaining ground is the
-<a href="https://en.wikipedia.org/wiki/Functional_programming">Function Programming</a>, based on <a href="https://en.wikipedia.org/wiki/Lambda_calculus">λ-calculus</a>, that
+<a href="https://en.wikipedia.org/wiki/Functional_programming" target="_blank">Function Programming</a>, based on <a href="https://en.wikipedia.org/wiki/Lambda_calculus" target="_blank">λ-calculus</a>, that
 takes advantage of some constraints to solve integrity issues.</p>
 <p>Beyond those paradigms, there are a lot more, notable two:</p>
 <ul>
@@ -123,8 +123,8 @@ relations between clauses.</p>
 <p>No “order” is give to the system, instead queries are asked. The aftermath of
 the system trying to figure out the answers is the expected program behaviour.</p>
 <p>The behaviour varies from I/O side-effects to domain changes itself.</p>
-<p>Let’s take <a href="https://www.swi-prolog.org/">Prolog</a> as reference: Prolog has four types of clauses:
-<a href="http://www.ablmcc.edu.hk/~scy/prolog/pro02.htm">facts, rules, goals, and queries</a>.</p>
+<p>Let’s take <a href="https://www.swi-prolog.org/" target="_blank">Prolog</a> as reference: Prolog has four types of clauses:
+<a href="http://www.ablmcc.edu.hk/~scy/prolog/pro02.htm" target="_blank">facts, rules, goals, and queries</a>.</p>
 <p><strong>Facts</strong> are self-sufficient truths, they don’t depend on other facts or rules.
 For instance, “Anna and Bob are friends,” that can be represented as following:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">friend(anna, bob).</code></pre>
@@ -151,7 +151,7 @@ current value <code>N</code> and its predecessors <code>N1</code> and <code>N2</
                    fibonacci(N2, R2),
                    plus(R1, R2, R).</code></pre>
 <p>This is a valid implementation, but with a serious stack overflow issue.
-<a href="http://wiki.c2.com/?TailCallOptimization">TCO</a> is needed for solving it.</p>
+<a href="http://wiki.c2.com/?TailCallOptimization" target="_blank">TCO</a> is needed for solving it.</p>
 <p>Let’s define two rules: the main one calling an auxiliary one. The auxiliary
 rule uses accumulators to transport the result:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">fibonacci(N, R) :- N &gt;= 0,
@@ -165,7 +165,7 @@ fibonacci(N, A, B, R) :- succ(N1, N),
 the index (<code>N</code>), two accumulators (<code>A</code> and <code>B</code>), and the result (<code>R</code>).</p>
 <p>Since the last call is <code>fibonacci/4</code>, it takes advantage of TCO.</p>
 <h3 id="definite-clause-grammar">Definite clause grammar</h3>
-<p><a href="https://www.swi-prolog.org/pldoc/man?section=DCG">Definite clause grammar</a> (DCG) is a way for expressing natural and formal
+<p><a href="https://www.swi-prolog.org/pldoc/man?section=DCG" target="_blank">Definite clause grammar</a> (DCG) is a way for expressing natural and formal
 grammar in Prolog. It uses the <code>--&gt;/2</code> clause as a syntax sugar for grammar
 clearance.</p>
 <p>Shallowly it omits the last two parameters, creating a chaining of clauses.</p>
@@ -183,7 +183,7 @@ first implicit parameter.</p>
 parameter, followed by the current implicit parameters.</p>
 <p>You can try the following query:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">forall(between(0, 10, X), (fibonacci(X, F), writeln({X, F}))).</code></pre>
-<p>For some DCG magics, look at the <a href="http://www.pathwayslms.com/swipltuts/dcg/">Anne Ogborn tutorial</a>.</p>
+<p>For some DCG magics, look at the <a href="http://www.pathwayslms.com/swipltuts/dcg/" target="_blank">Anne Ogborn tutorial</a>.</p>
 <hr />
 <p>For curiosity, the DCG above expands to:</p>
 <pre class="prettyprint"><code class="prolog language-prolog">fibonacci(0, _, `_1`, `_R`) :- `_1` = `_R`, !.
@@ -192,7 +192,7 @@ fibonacci(N, A, `_1`, `_R`) :- succ(N1, N),
                                plus(A, `_2`, `_3`),
                                fibonacci(N1, B, `_3`, `_R`).</code></pre>
 <hr />
-<p class="small" > Also in <a href="https://dev.to/cacilhas/accumulators-in-declarative-logic-programming-5cl7">DEV Community 👩‍💻👨‍💻</a>.</p>
+<p class="small" > Also in <a href="https://dev.to/cacilhas/accumulators-in-declarative-logic-programming-5cl7" target="_blank">DEV Community 👩‍💻👨‍💻</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

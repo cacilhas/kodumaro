@@ -97,11 +97,11 @@
         <div class="panel-body">
           <p class="pull-right" > <img src="//cacilhas.info/img/scala.png" alt="Scala" /></p>
 <p class="mg-first" > I was around with a cyclic reference issue in
-<a href="https://www.scala-lang.org/">Scala</a>: <a href="https://www.json.org/">JSON</a> representation.</p>
-<p>I was using <a href="https://github.com/google/gson">Gson</a> for serialising and deserialising (ain’t going in
+<a href="https://www.scala-lang.org/" target="_blank">Scala</a>: <a href="https://www.json.org/" target="_blank">JSON</a> representation.</p>
+<p>I was using <a href="https://github.com/google/gson" target="_blank">Gson</a> for serialising and deserialising (ain’t going in
 details), but how to represent the models inside the language ecosystem?</p>
-<p>I could follow the Gson documentation and use <a href="https://pt.wikipedia.org/wiki/Plain_Old_Java_Objects">pojos</a>
-(<a href="https://docs.scala-lang.org/tour/case-classes.html">case classes</a> are great for it), but I was in need of something
+<p>I could follow the Gson documentation and use <a href="https://pt.wikipedia.org/wiki/Plain_Old_Java_Objects" target="_blank">pojos</a>
+(<a href="https://docs.scala-lang.org/tour/case-classes.html" target="_blank">case classes</a> are great for it), but I was in need of something
 more flexible.</p>
 <p>I decided to use language primitives, like integers, strings, big numbers, and
 so one.</p>
@@ -122,7 +122,7 @@ type JObject = String Map JValue</code></pre>
 <p>It should crash! But doesn’t, since <code>NodeSeq</code> is <code>Any</code>’s subclass.</p>
 <p>I needed something stricter.</p>
 <h3 id="enter-dotty">Enter Dotty</h3>
-<p>Now I’ve tried <a href="https://dotty.epfl.ch/">Scala 3, codename Dotty</a>.</p>
+<p>Now I’ve tried <a href="https://dotty.epfl.ch/" target="_blank">Scala 3, codename Dotty</a>.</p>
 <p>My first unsuccessful attempt was:</p>
 <pre class="prettyprint"><code class="scala language-scala">type JNull = Unit
 type JValue = Int | BigDecimal | String | Boolean | JNull | Seq[JValue] | String Map JValue</code></pre>
@@ -132,13 +132,13 @@ type JValue = Int | BigDecimal | String | Boolean | JNull | Seq[JValue] | String
   JNull | Seq[JValue] | String, JValue] of type JValue refers back to the type
   itself.</p>
 </blockquote>
-<p>Then I hit <a href="https://users.scala-lang.org/t/defining-a-type-in-a-recursive-way-in-dotty/6798/8">this strange solution</a>:</p>
+<p>Then I hit <a href="https://users.scala-lang.org/t/defining-a-type-in-a-recursive-way-in-dotty/6798/8" target="_blank">this strange solution</a>:</p>
 <pre class="prettyprint"><code class="scala language-scala">type Rec[F[_], A] = A match {
   case Int =&gt; Int | F[Rec[F, Int]]
   case _ =&gt; A | F[Rec[F, A]]
 }</code></pre>
-<p><a href="https://users.scala-lang.org/u/jasper-m">Jasper M</a> is suggesting taking advantage of the Scala
-<a href="https://medium.com/@sinisalouc/overcoming-type-erasure-in-scala-8f2422070d20">type erasure</a> to create a runtime <code>LazyRef</code>. So I followed the
+<p><a href="https://users.scala-lang.org/u/jasper-m" target="_blank">Jasper M</a> is suggesting taking advantage of the Scala
+<a href="https://medium.com/@sinisalouc/overcoming-type-erasure-in-scala-8f2422070d20" target="_blank">type erasure</a> to create a runtime <code>LazyRef</code>. So I followed the
 advice:</p>
 <pre class="prettyprint"><code class="scala language-scala">type JNull = Unit
 type JPrimitive = Int | BigDecimal | String | Boolean | JNull
@@ -171,7 +171,7 @@ x = null</code></pre>
 <p>Now the <code>JValue</code> is quite stricter, and the <code>WeakRef</code> made the recursive type
 possible.</p>
 <hr />
-<p class="small" > Also in <a href="https://dev.to/cacilhas/recursive-types-32je">DEV Community 👩‍💻👨‍💻</a>.</p>
+<p class="small" > Also in <a href="https://dev.to/cacilhas/recursive-types-32je" target="_blank">DEV Community 👩‍💻👨‍💻</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

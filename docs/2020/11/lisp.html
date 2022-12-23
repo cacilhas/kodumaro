@@ -96,9 +96,9 @@
         </div>
         <div class="panel-body">
           <p class="pull-right" > <img src="//cacilhas.info/img/lisp.png" alt="Made with secret alien technology" /></p>
-<p class="mg-first" > LISP is a specification by <a href="http://www.genealogy.ams.org/id.php?id=22145">John McCarthy</a>,
+<p class="mg-first" > LISP is a specification by <a href="http://www.genealogy.ams.org/id.php?id=22145" target="_blank">John McCarthy</a>,
 that has started a brand new programming language family since 1958. It’s based
-on <a href="https://en.wikipedia.org/wiki/Lambda_calculus">λ-calculus</a>, formal system from <a href="http://www.genealogy.ams.org/id.php?id=8011">Alonzo Church</a>’s
+on <a href="https://en.wikipedia.org/wiki/Lambda_calculus" target="_blank">λ-calculus</a>, formal system from <a href="http://www.genealogy.ams.org/id.php?id=8011" target="_blank">Alonzo Church</a>’s
 work in 1930s, designed to deal with symbolic data instead of numeric, most
 imperative languages’ standard.</p>
 <p>LISP means “list processing,” and list is the specification’s main structure.
@@ -108,13 +108,13 @@ Every data – as the code itself – are presented as lists.</p>
 <p>Which is a list of the elements <code>+</code>, <code>1</code>, and <code>2</code>. This list is processed by the
 <code>car</code> (head) and <code>cdr</code> (tail) functions:</p>
 <pre class="prettyprint"><code class="lisp language-lisp">(+ . (1 2))</code></pre>
-<p><code>car</code> and <code>cdr</code> are <a href="https://en.wikipedia.org/wiki/IBM_704">IBM 704</a> instructions, the system where LISP was
+<p><code>car</code> and <code>cdr</code> are <a href="https://en.wikipedia.org/wiki/IBM_704" target="_blank">IBM 704</a> instructions, the system where LISP was
 formost developed. CAR means “Contents of the Address part of Register number”
 and CDR means “Contents of the Decrement part of Register number.”</p>
 <p>The head represents a lambda function, and the tail its parameters. In this
 case, the function is <code>'+</code>, which returns the sum of the parameters.</p>
-<p>The LISP family’s most notable languages are <a href="https://common-lisp.net/">Common Lisp</a>,
-<a href="https://www.gnu.org/software/emacs/manual/html_node/eintr/">Emacs LISP</a>, <a href="http://www.schemers.org/">Scheme</a>, and <a href="https://clojure.org/">Clojure</a>.</p>
+<p>The LISP family’s most notable languages are <a href="https://common-lisp.net/" target="_blank">Common Lisp</a>,
+<a href="https://www.gnu.org/software/emacs/manual/html_node/eintr/" target="_blank">Emacs LISP</a>, <a href="http://www.schemers.org/" target="_blank">Scheme</a>, and <a href="https://clojure.org/" target="_blank">Clojure</a>.</p>
 <p>Let’s take a look at the factorial implementation in three LISP languages. First
 in Common Lisp:</p>
 <pre class="prettyprint"><code class="lisp language-lisp">(defun factorial (n)
@@ -133,13 +133,13 @@ in Common Lisp:</p>
 <h3 id="scheme">Scheme</h3>
 <p>Scheme has became a family itself, with a whole lotta different variations, not
 only different implementations, but different languages too.</p>
-<p>Its most important variations are <a href="https://www.gnu.org/software/guile/">Guile</a>, <a href="https://www.gnu.org/software/mit-scheme/">MIT Scheme</a>, and
-<a href="https://racket-lang.org/">Racket</a> (formerly PLT Scheme).</p>
-<p>Racket is a full <a href="https://en.wikipedia.org/wiki/Rapid_application_development">RAD</a> platform, containing an IDE called
-<a href="https://docs.racket-lang.org/drracket/">DrRacket</a>, WYSIWYG interface builder called <a href="https://pkgs.racket-lang.org/package/mred-designer">MrEd Designer</a>,
+<p>Its most important variations are <a href="https://www.gnu.org/software/guile/" target="_blank">Guile</a>, <a href="https://www.gnu.org/software/mit-scheme/" target="_blank">MIT Scheme</a>, and
+<a href="https://racket-lang.org/" target="_blank">Racket</a> (formerly PLT Scheme).</p>
+<p>Racket is a full <a href="https://en.wikipedia.org/wiki/Rapid_application_development" target="_blank">RAD</a> platform, containing an IDE called
+<a href="https://docs.racket-lang.org/drracket/" target="_blank">DrRacket</a>, WYSIWYG interface builder called <a href="https://pkgs.racket-lang.org/package/mred-designer" target="_blank">MrEd Designer</a>,
 and the PLT interpreter.</p>
-<p>The interpreter supports <a href="http://www.schemers.org/Documents/Standards/R5RS/">R⁵RS</a>, <a href="http://www.r6rs.org/">R⁶RS</a>, <a href="https://docs.racket-lang.org/">PLT</a>,
-<a href="https://docs.racket-lang.org/lazy/">Lazy Racket</a>, and even <a href="https://planet.racket-lang.org/display.ss?package=c.plt&amp;owner=jaymccarthy">C</a>.</p>
+<p>The interpreter supports <a href="http://www.schemers.org/Documents/Standards/R5RS/" target="_blank">R⁵RS</a>, <a href="http://www.r6rs.org/" target="_blank">R⁶RS</a>, <a href="https://docs.racket-lang.org/" target="_blank">PLT</a>,
+<a href="https://docs.racket-lang.org/lazy/" target="_blank">Lazy Racket</a>, and even <a href="https://planet.racket-lang.org/display.ss?package=c.plt&amp;owner=jaymccarthy" target="_blank">C</a>.</p>
 <p>For example, the factorial in Racket:</p>
 <pre class="prettyprint"><code class="scheme language-scheme">!#racket
 
@@ -158,7 +158,7 @@ and the PLT interpreter.</p>
 </ul>
 <h3 id="accumulators">Accumulators</h3>
 <p>Accumulator is a functional programming design pattern for dealing with stack
-overflow by taking advantage of <a href="http://wiki.c2.com/?TailCallOptimization">tail-call optimisation</a> (TCO).</p>
+overflow by taking advantage of <a href="http://wiki.c2.com/?TailCallOptimization" target="_blank">tail-call optimisation</a> (TCO).</p>
 <p>Take the factorial back: the step is defined as the current value times its
 predecessor’s factorial; the stop is zero’s factorial, which equals one.</p>
 <pre class="prettyprint"><code>n! = n × (n-1)!
@@ -180,7 +180,7 @@ parameter and the accumulator, returning the accumulator when it stops:</p>
 <p>Note that now the last call is <code>*factorial*</code>, enabling the TCO.</p>
 <h3 id="lazy-evaluation">Lazy evaluation</h3>
 <p>The most efficient approach to deal with huge calculated data volumes is
-<a href="https://en.wikipedia.org/wiki/Lazy_evaluation">lazy evaluation</a>, or call-by-need. <a href="https://www.haskell.org/">Haskell</a>, for
+<a href="https://en.wikipedia.org/wiki/Lazy_evaluation" target="_blank">lazy evaluation</a>, or call-by-need. <a href="https://www.haskell.org/" target="_blank">Haskell</a>, for
 instance, just evaluates its calls by demand, which enables to build infinite
 lists:</p>
 <pre class="prettyprint"><code class="haskell language-haskell">fib :: [Integer]
@@ -188,7 +188,7 @@ fib = 1 : 1 : zipWith (+) fib (tail fib)</code></pre>
 <p>Than on can take only how many elements one needs:</p>
 <pre class="prettyprint"><code class="haskell language-haskell">take 10 fib</code></pre>
 <h3 id="promises">Promises</h3>
-<p><a href="https://docs.racket-lang.org/lazy/">Lazy Racket</a> uses promises to delay the evaluation, in a similar
+<p><a href="https://docs.racket-lang.org/lazy/" target="_blank">Lazy Racket</a> uses promises to delay the evaluation, in a similar
 taste as Haskell.</p>
 <p>The evaluation of a lazy function is made by the function <code>'!!</code>.</p>
 <p>So the lazy factorial is:</p>
@@ -211,7 +211,7 @@ taste as Haskell.</p>
 <pre class="prettyprint"><code class="scheme language-scheme">'((0 1) (1 1) (2 2) (3 6) (4 24) (5 120))</code></pre>
 <hr />
 <p>Translated from <a href="/2017/11/lisp.html">here</a> and <a href="/2017/11/lazy-racket.html">here</a>.</p>
-<p class="small" > Also in <a href="https://dev.to/cacilhas/lisp-473j">DEV Community 👩‍💻👨‍💻</a>.</p>
+<p class="small" > Also in <a href="https://dev.to/cacilhas/lisp-473j" target="_blank">DEV Community 👩‍💻👨‍💻</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
