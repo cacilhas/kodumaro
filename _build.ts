@@ -33,11 +33,25 @@ const today = moment();
 showdown.setFlavor('github');
 showdown.extension('ClassExtension', {
   type: 'output',
-  filter: (text: string) =>
+  filter: text =>
     text
       .replace(/([/]?>) *{\s*((:\w+=".*?")(\s*:\w+=".*?")*)\s*}/g, ' $2 $1')
       .replace(/:(\w+=".*?")/g, '$1'),
 });
+// TODO: how to add target="_blank" to external links only?
+//showdown.extension('ExternalLinksExtension', {
+//  type: 'output',
+//  regex: /<a href="([^"]*)" *[/]>/g,
+//  filter: str => {
+//    const match = /<a href="(?<href>[^"]*)" *[/]>/.exec(str);
+//    if (match?.groups) {
+//      const href = match.groups.href;
+//      if (href.indexOf('cacilhas.info') === -1)
+//        return `<a href="${href}" target="_blank" />`;
+//    }
+//    return str;
+//  },
+//});
 showdown.extension('IExtension', {
   type: 'lang',
   filter: createIndentedFilter('^^i', str => `<i>${str.trim()}</i>`),
@@ -68,6 +82,7 @@ function buildMdConverter(): Converter {
   converter.setOption('strikethrough', true);
   converter.setOption('tables', true);
   converter.setOption('tasklists', true);
+  converter.setOption('underline', true);
 
   return converter;
 }
