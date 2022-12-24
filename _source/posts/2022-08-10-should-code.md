@@ -76,7 +76,7 @@ This is **lie** programming gurus tell to fool their managers. It’s impossible
 to turn a bike into a motorcycle, or a motorcycle into a car! You end with a
 **wagon pulled by a motorised bike** – a real mess.
 
-You can build a bike as <abbr title="proof of concept">PoC</abbr>, and put it
+You can build a bike as ^^abbr(title="proof of concept") PoC ^^, and put it
 online, but you’ll have to start from scratch to create the definitive car (or
 app) if you want an actual production product. What you get when you create a
 PoC is time to create the product and, more importantly, the knowledge to do it.

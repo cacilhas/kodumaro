@@ -48,8 +48,8 @@ were raised a far cry from where it should’ve been caught – thanks to Scala,
 stacktrace was carried along, but even so it used to be hard to debug.
 
 The core team and I weren’t enough to review every
-<abbr title="Pull Request">PR</abbr> with the required attention, worse ’cause it’s a
-very subtle and hard-to-catch issue.
+^^abbr(title="Pull Request") PR ^^ with the required attention, worse ’cause
+it’s a very subtle and hard-to-catch issue.
 
 After a while, I had to spend a long time cleaning the code: removing the
 `Either` from returns, and catching errors. It was necessary, but awful for the
