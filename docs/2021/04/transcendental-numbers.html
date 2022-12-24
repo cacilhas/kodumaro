@@ -113,13 +113,13 @@ considering making it my main job.</p>
 Please <a href="https://www.patreon.com/join/kodumaro?" target="_blank">subscribe</a>.</p>
 <hr />
 <h3 id="getting-into-the-point">Getting into the point</h3>
-<p class="pull-right" > <img src="//cacilhas.info/img/lamp.png" alt="Idea" /></p>
-<p class="mg-first" > <a href="https://mathworld.wolfram.com/TranscendentalNumber.html" target="_blank">Transcendental numbers</a> are probably the most useful
-tools in Mathematics. They are irrational numbers that cannot be
-expressed using a finite formula.</p>
+<p class="pull-right"> <img src="//cacilhas.info/img/lamp.png" alt="Idea" /></p>
+<p class="mg-first"> <a href="https://mathworld.wolfram.com/TranscendentalNumber.html" target="_blank">Transcendental numbers</a> are probably the most useful tools in
+Mathematics. They are irrational numbers that cannot be expressed using a finite
+formula.</p>
 <p>For example, the <a href="https://mathworld.wolfram.com/EulerFormula.html" target="_blank">Euler’s identity</a> is considered the most beautiful
 Mathematical formula (perhaps I’m gonna explore it in the future):</p>
-<p class="text-center" > 𝑒<sup>𝑖π</sup> + 1 = 0</p>
+<p class="text-center"> 𝑒<sup>𝑖π</sup> + 1 = 0</p>
 <p>It exposes a relation between the two most important transcendental numbers, the
 complex numbers, the unit and the null / zero. It’s used mostly in rotation
 over real 𝑣𝑠 imaginary axes, on complex exponential, roots, and other useful
@@ -129,7 +129,7 @@ precision.</p>
 <h3 id="euler’s-constant">Euler’s constant</h3>
 <p>The <a href="https://mathworld.wolfram.com/e.html" target="_blank">Euler’s constant</a> or Euler’s number, 𝑒 for short, is the ratio describing
 any constant growth. It’s defined as:</p>
-<p class="text-center" > <img src="//cacilhas.info/img/euler.png" alt="𝑒 = lim_(n→+∞)[1+(1/n)]^n" /></p>
+<p class="text-center"> <img src="//cacilhas.info/img/euler.png" alt="𝑒 = lim_(n→+∞)(1+(1/n))^n" /></p>
 <p>It’s about 2.71828…. 𝑒 is kinda magical number, poping up in a lot of
 Mathematical problems, offering good and easy solutions, since complex number
 operations to logarithm, exponential, and other kinds of growth behaviour.</p>
@@ -140,7 +140,7 @@ intimidating, leading to an undesired weak performance – similar or worst than
 the π computation below. Yet, it’s hard to say how long it must go to getta the
 desired precision.</p>
 <p>Fortunately another <a href="https://www.wolframalpha.com/input/?i=Leonhard+Euler" target="_blank">Euler</a>’s formula gives us a better solution:</p>
-<p class="text-center" > <img src="//cacilhas.info/img/fact-euler.png" alt="𝑒 = Σ(1/n!)" /></p>
+<p class="text-center"> <img src="//cacilhas.info/img/fact-euler.png" alt="𝑒 = Σ(1/n!)" /></p>
 <p>This formula is very convenient, ’cause it increases the precision every step
 in an easly predictable way:</p>
 <table class="table">
@@ -353,9 +353,9 @@ showing how it works and how you can implement and use it.</p>
 π very definition.</p>
 <p>However, it’s a transcendental number and needs an infinity serie to be
 computed. <a href="https://www.wolframalpha.com/input/?i=Gottfried+Wilhelm+Leibniz" target="_blank">Leibniz</a> gave us a neat solution:</p>
-<p class="text-center" > <img src="//cacilhas.info/img/leibniz-pi.png" alt="π = 4Σ(1/(4n+1) - 1/(4n+3))" /></p>
+<p class="text-center"> <img src="//cacilhas.info/img/leibniz-pi.png" alt="π = 4Σ(1/(4n+1) - 1/(4n+3))" /></p>
 <p>The process is quite the same used for 𝑒, take the formula:</p>
-<p class="text-center" > <img src="//cacilhas.info/img/leibniz-pi-alt.png" alt="π = 4Σ(1/(4n+1) - 1/(4n+3))" /></p>
+<p class="text-center"> <img src="//cacilhas.info/img/leibniz-pi-alt.png" alt="π = 4Σ(1/(4n+1) - 1/(4n+3)) (alt)" /></p>
 <p>Then get the precision:</p>
 <pre class="prettyprint"><code class="python language-python">compute_pi: Callable[[Integral], Rational] = lambda prec: 4. * sum(
     (1./(4*n+1) - 1./(4*n+3)) for n in range(prec)
@@ -379,8 +379,8 @@ spells in order to optimise the computation.</p>
 page references in search of better formulæ. I did it, and I can ensure they
 are, including serie representations.</p>
 <hr />
-<p class="small" > Also in <a href="https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc" target="_blank">DEV.to</a>.</p>
-<p class="small" > Also in <a href="https://www.works-hub.com/learn/how-to-compute-arbitrary-precision-transcendental-numbers-3c1bc?utm_campaign=Automation%20-%20Candidate%20Emails&amp;utm_medium=email&amp;_hsmi=106671327&amp;_hsenc=p2ANqtz-8_Q4Pbh3qH2i_8NyfURQW4LB3Zw54WMX8p4CsnfaSnzEvto6P2K-OaMuOPdhx42y46dRm5lSrLFBtwKWSRIf8d91mzGA&amp;utm_content=106671327&amp;utm_source=hs_email" target="_blank">Functional Works</a>.</p>
+<p class="small"> Also in <a href="https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc" target="_blank">DEV.to</a>.</p>
+<p class="small"> Also in <a href="https://www.works-hub.com/learn/how-to-compute-arbitrary-precision-transcendental-numbers-3c1bc?utm_campaign=Automation%20-%20Candidate%20Emails&amp;utm_medium=email&amp;_hsmi=106671327&amp;_hsenc=p2ANqtz-8_Q4Pbh3qH2i_8NyfURQW4LB3Zw54WMX8p4CsnfaSnzEvto6P2K-OaMuOPdhx42y46dRm5lSrLFBtwKWSRIf8d91mzGA&amp;utm_content=106671327&amp;utm_source=hs_email" target="_blank">Functional Works</a>.</p>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

@@ -32,20 +32,19 @@ permalink: /2022/05/why-we-hate.html
 [Typescript]: https://www.typescriptlang.org/
 [Wren]: https://wren.io/
 
-{:class="pull-right"} ![NPM repository][image]
+:right ![NPM repository][image]
 
-{:class="mg-first"} Sometimes I spend some time trying to acquire new
-programming skills, to finally figure out I was wasting time with something
-useless.
+:first Sometimes I spend some time trying to acquire new programming skills, to
+finally figure out I was wasting time with something useless.
 
-But even well-known programming tools and languages have their own issues,
-and this is why we hate them.
+But even well-known programming tools and languages have their own issues, and
+this is why we hate them.
 
 
 ### Why we hate Python
 
-[Python][] is one of my favourite programming languages, but I haven’t work
-with it for a while, and it isn’t for nothing.
+[Python][] is one of my favourite programming languages, but I haven’t work with
+it for a while, and it isn’t for nothing.
 
 Python is strongly typed, but also dynamically typed – which wouldn’t be a
 problem if it respected the assigned types, but you can assign an integer to a
@@ -157,7 +156,7 @@ they told – or don’t work at all.
 
 The Nim creators’ line is:
 
-{:class="text-center"} ![WORKS ON MY MACHINE][]
+:centre ![WORKS ON MY MACHINE][]
 
 
 ### Why we hate Elixir
@@ -186,4 +185,4 @@ every other noteworthy programming language, but I think we’re good here.
 
 -----
 
-{:class="small"} Also in [DEV.to][].
+:small Also in [DEV.to][].

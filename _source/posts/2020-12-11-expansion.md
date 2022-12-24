@@ -12,10 +12,10 @@ permalink: /2020/12/implicit-conversions.html
 [literal-based singleton types]: https://docs.scala-lang.org/sips/42.type.html
 [Value classes]: https://docs.scala-lang.org/overviews/core/value-classes.html
 
-{:class="pull-right"} ![Scala][image]
+:right ![Scala][image]
 
-{:class="mg-first"} [Scala][] (in version 2.13 while I write) has a powerful
-conversion system based on its [implicits system][].
+:first [Scala][] (in version 2.13 while I write) has a powerful conversion
+system based on its [implicits system][].
 
 It works by expanding implicit methods and classes into a more complex
 structure, which would be way harder to code if it needs to be done explicitly.
@@ -135,4 +135,4 @@ Note: value classes are tagged by inheriting `AnyVal`, and need a value of type
 
 -----
 
-{:class="small"} Also in [DEV.to][].
+:small Also in [DEV.to][].

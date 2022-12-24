@@ -6,6 +6,10 @@ image: //cacilhas.info/img/lamp.png
 permalink: /2021/04/transcendental-numbers.html
 ---
 [image]: {{{image}}}
+[𝑒 = lim_(n→+∞)(1+(1/n))^n]: {{{cacilhas.url}}}/img/euler.png
+[𝑒 = Σ(1/n!)]: {{{cacilhas.url}}}/img/fact-euler.png
+[π = 4Σ(1/(4n+1) - 1/(4n+3))]: {{{cacilhas.url}}}/img/leibniz-pi.png
+[π = 4Σ(1/(4n+1) - 1/(4n+3)) (alt)]: {{{cacilhas.url}}}/img/leibniz-pi-alt.png
 [become my patron]: https://www.patreon.com/join/cacilhas?
 [DEV.to]: https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc
 [employer’s project]: https://contabilone.com/ "Expect the site‘s gonna be published soon."
@@ -54,16 +58,16 @@ Please [subscribe][].
 
 ### Getting into the point
 
-{:class="pull-right"} ![Idea][image]
+:right ![Idea][image]
 
-{:class="mg-first"} [Transcendental numbers][] are probably the most useful
-tools in Mathematics. They are irrational numbers that cannot be
-expressed using a finite formula.
+:first [Transcendental numbers][] are probably the most useful tools in
+Mathematics. They are irrational numbers that cannot be expressed using a finite
+formula.
 
 For example, the [Euler’s identity][] is considered the most beautiful
 Mathematical formula (perhaps I’m gonna explore it in the future):
 
-{:class="text-center"} 𝑒<sup>𝑖π</sup> + 1 = 0
+:centre 𝑒<sup>𝑖π</sup> + 1 = 0
 
 It exposes a relation between the two most important transcendental numbers, the
 complex numbers, the unit and the null / zero. It’s used mostly in rotation
@@ -78,7 +82,7 @@ precision.
 The [Euler’s constant][] or Euler’s number, 𝑒 for short, is the ratio describing
 any constant growth. It’s defined as:
 
-{:class="text-center"} <img src="{{{ cacilhas.url }}}/img/euler.png" alt="𝑒 = lim_(n→+∞)[1+(1/n)]^n" />
+:centre ![𝑒 = lim_(n→+∞)(1+(1/n))^n][]
 
 It’s about 2.71828…. 𝑒 is kinda magical number, poping up in a lot of
 Mathematical problems, offering good and easy solutions, since complex number
@@ -94,7 +98,7 @@ desired precision.
 
 Fortunately another [Euler][]’s formula gives us a better solution:
 
-{:class="text-center"} <img src="{{{ cacilhas.url }}}/img/fact-euler.png" alt="𝑒 = Σ(1/n!)" />
+:centre ![𝑒 = Σ(1/n!)][]
 
 This formula is very convenient, ’cause it increases the precision every step
 in an easly predictable way:
@@ -201,11 +205,11 @@ showing how it works and how you can implement and use it.
 However, it’s a transcendental number and needs an infinity serie to be
 computed. [Leibniz][] gave us a neat solution:
 
-{:class="text-center"} <img src="{{{ cacilhas.url }}}/img/leibniz-pi.png" alt="π = 4Σ(1/(4n+1) - 1/(4n+3))" />
+:centre ![π = 4Σ(1/(4n+1) - 1/(4n+3))][]
 
 The process is quite the same used for 𝑒, take the formula:
 
-{:class="text-center"} <img src="{{{ cacilhas.url }}}/img/leibniz-pi-alt.png" alt="π = 4Σ(1/(4n+1) - 1/(4n+3))" />
+:centre ![π = 4Σ(1/(4n+1) - 1/(4n+3)) (alt)][]
 
 Then get the precision:
 
@@ -246,6 +250,6 @@ are, including serie representations.
 
 -----
 
-{:class="small"} Also in [DEV.to].
+:small Also in [DEV.to].
 
-{:class="small"} Also in [Functional Works][].
+:small Also in [Functional Works][].

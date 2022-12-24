@@ -16,14 +16,14 @@ permalink: /2020/10/iterators.html
 [¹]: /2017/02/reiteradores-em-moonscript.html
 [²]: /2017/02/mais-reiteradores-em-moonscript.html
 
-{:class="pull-right"} ![MoonScript][image]
+:right ![MoonScript][image]
 
-{:class="mg-first"} [2017][], the year after the Brazil’s democracy death, was
-one of my more fruitful years (the more at all was [2008][2008]), so I decided
-to transcript some of that year’s posts back.
+:first [2017][], the year after the Brazil’s democracy death, was one of my more
+fruitful years (the more at all was [2008][2008]), so I decided to transcript
+some of that year’s posts back.
 
-I’m starting with a compilation of two posts[¹][]&#8202;[²][] about
-interators in [MoonScript][].
+I’m starting with a compilation of two posts[¹][]&#8202;[²][] about interators
+in [MoonScript][].
 
 ### Lua standard iterator
 
@@ -182,4 +182,4 @@ a linear procedure.
 
 -----
 
-{:class="small"} Also in [DEV.to][].
+:small Also in [DEV.to][].

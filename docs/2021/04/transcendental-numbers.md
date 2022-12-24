@@ -34,7 +34,7 @@ Yet, it’s useless if one doesn’t know how to get 𝑒 and π in the required
 
 The [Euler’s constant](https://mathworld.wolfram.com/e.html) or Euler’s number, 𝑒 for short, is the ratio describing any constant growth. It’s defined as:
 
-![𝑒 = lim_(n→+∞)[1+(1/n)]^n](//cacilhas.info/img/euler.png)
+![𝑒 = lim_(n→+∞)(1+(1/n))^n](//cacilhas.info/img/euler.png)
 
 It’s about 2.71828…. 𝑒 is kinda magical number, poping up in a lot of Mathematical problems, offering good and easy solutions, since complex number operations to logarithm, exponential, and other kinds of growth behaviour.
 
@@ -284,7 +284,7 @@ However, it’s a transcendental number and needs an infinity serie to be comput
 
 The process is quite the same used for 𝑒, take the formula:
 
-![π = 4Σ(1/(4n+1) - 1/(4n+3))](//cacilhas.info/img/leibniz-pi-alt.png)
+![π = 4Σ(1/(4n+1) - 1/(4n+3)) (alt)](//cacilhas.info/img/leibniz-pi-alt.png)
 
 Then get the precision:
 

@@ -10,12 +10,12 @@ permalink: /2022/08/should-code.html
 [coding dojos]: https://www.codingdojo.com/
 [“Hello, World!”]: https://www.rosettacode.org/wiki/Hello_world/Text
 
-{:class="pull-right"} ![Yes!!][image]
+:right ![Yes!!][image]
 
-{:class="mg-first"} I’ve seen for long lots of blog posts and YouTube videos
-addressing this topic, invariably answering a loud NO. However, considering
-how far technology has changed your lives and how important Computing knowledge
-has become to us, I must disagree just as loudly.
+:first I’ve seen for long lots of blog posts and YouTube videos addressing this
+topic, invariably answering a loud NO. However, considering how far technology
+has changed your lives and how important Computing knowledge has become to us, I
+must disagree just as loudly.
 
 But it would be shallow if I’d stay stuck to the beginning question, so let’s
 dive deeper.
@@ -92,4 +92,4 @@ Learn to code just because. It might be useful at some point – or not.
 
 -----
 
-{:class="small"} Also in [DEV.to][].
+:small Also in [DEV.to][].

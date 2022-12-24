@@ -10,10 +10,10 @@ permalink: /2022/02/either-issue.html
 [Either]: https://www.scala-lang.org/api/current/scala/util/Either.html
 [Scala]: https://scala-lang.org/
 
-{:class="pull-right"} ![Lamp][image]
+:right ![Lamp][image]
 
-{:class="mg-first"} Once I was running an operation, and my team had to build
-the application from scratch.
+:first Once I was running an operation, and my team had to build the application
+from scratch.
 
 I had met the core developers, we had discussing a lot about which technology
 would better address our demand and, after many considerations, we had chosen
@@ -64,4 +64,4 @@ to that kinda highly uncomfortable situation.
 
 -----
 
-{:class="small"} Also in [DEV.to][].
+:small Also in [DEV.to][].

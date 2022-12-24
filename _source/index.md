@@ -8,7 +8,7 @@ date: 2020-09-23
 [mosaicolivre]: {{{mosaicolivre.url}}}
 [waltercruz]: {{{waltercruz.url}}}
 
-{:class="mg-first"} Hi there!
+:first Hi there!
 
 Kodumaro is a colaboration between three fiend[¹](#pun) programmers:
 [{{ mosaicolivre.author }}][mosaicolivre],
