@@ -128,7 +128,7 @@ At the function end, the angle is updated by 180° a second – since TIC-80 fra
 
 Running you must get the turning symbol:
 
-![Sky Gradient](//cacilhas.info/img/tic80/yin-yang.png)
+![Yin Yang](//cacilhas.info/img/tic80/yin-yang.png)
 
 ### Resouces
 
