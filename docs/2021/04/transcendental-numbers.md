@@ -24,7 +24,7 @@ Bringing it in mind, **I’m releasing a [Kodumaro’s Patreon page](https://www
 
 For example, the [Euler’s identity](https://mathworld.wolfram.com/EulerFormula.html) is considered the most beautiful Mathematical formula (perhaps I’m gonna explore it in the future):
 
-𝑒𝑖π + 1 = 0
+$$$$e^{i\\pi} + 1 = 0$$$$
 
 It exposes a relation between the two most important transcendental numbers, the complex numbers, the unit and the null / zero. It’s used mostly in rotation over real 𝑣𝑠 imaginary axes, on complex exponential, roots, and other useful operations.
 
@@ -34,7 +34,7 @@ Yet, it’s useless if one doesn’t know how to get 𝑒 and π in the required
 
 The [Euler’s constant](https://mathworld.wolfram.com/e.html) or Euler’s number, 𝑒 for short, is the ratio describing any constant growth. It’s defined as:
 
-![𝑒 = lim_(n→+∞)(1+(1/n))^n](//cacilhas.info/img/euler.png)
+$$$$e = \\lim\_{n \\to +\\infty}\\left(1 + \\frac{1}{n}\\right)^n$$$$
 
 It’s about 2.71828…. 𝑒 is kinda magical number, poping up in a lot of Mathematical problems, offering good and easy solutions, since complex number operations to logarithm, exponential, and other kinds of growth behaviour.
 
@@ -44,7 +44,7 @@ One can take this formula and compute greater and greater 𝑛 values, until it 
 
 Fortunately another [Euler](https://www.wolframalpha.com/input/?i=Leonhard+Euler)’s formula gives us a better solution:
 
-![𝑒 = Σ(1/n!)](//cacilhas.info/img/fact-euler.png)
+$$$$e = \\sum\_{n=0}^{+\\infty}\\frac{1}{n!}$$$$
 
 This formula is very convenient, ’cause it increases the precision every step in an easly predictable way:
 
@@ -280,11 +280,11 @@ We’re not worried about performance here, it’s not this post’s scope. We�
 
 However, it’s a transcendental number and needs an infinity serie to be computed. [Leibniz](https://www.wolframalpha.com/input/?i=Gottfried+Wilhelm+Leibniz) gave us a neat solution:
 
-![π = 4Σ(1/(4n+1) - 1/(4n+3))](//cacilhas.info/img/leibniz-pi.png)
+:center $$$$1-\\frac{1}{3}+\\frac{1}{5}-\\frac{1}{7}+\\frac{1}{9}-\\frac{1}{11}+\\cdots=\\frac{\\pi}{4}$$$$
 
 The process is quite the same used for 𝑒, take the formula:
 
-![π = 4Σ(1/(4n+1) - 1/(4n+3)) (alt)](//cacilhas.info/img/leibniz-pi-alt.png)
+$$$$\\pi=4\\sum\_{n=0}^{+\\infty}\\left(\\frac{1}{4n+1}-\\frac{1}{4n+3}\\right)$$$$
 
 Then get the precision:
 

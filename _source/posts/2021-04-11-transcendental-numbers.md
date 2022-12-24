@@ -6,10 +6,6 @@ image: //cacilhas.info/img/lamp.png
 permalink: /2021/04/transcendental-numbers.html
 ---
 [image]: {{{image}}}
-[𝑒 = lim_(n→+∞)(1+(1/n))^n]: {{{cacilhas.url}}}/img/euler.png
-[𝑒 = Σ(1/n!)]: {{{cacilhas.url}}}/img/fact-euler.png
-[π = 4Σ(1/(4n+1) - 1/(4n+3))]: {{{cacilhas.url}}}/img/leibniz-pi.png
-[π = 4Σ(1/(4n+1) - 1/(4n+3)) (alt)]: {{{cacilhas.url}}}/img/leibniz-pi-alt.png
 [become my patron]: https://www.patreon.com/join/cacilhas?
 [DEV.to]: https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc
 [employer’s project]: https://contabilone.com/ "Expect the site‘s gonna be published soon."
@@ -67,7 +63,7 @@ formula.
 For example, the [Euler’s identity][] is considered the most beautiful
 Mathematical formula (perhaps I’m gonna explore it in the future):
 
-:centre 𝑒<sup>𝑖π</sup> + 1 = 0
+:centre ^^math e^{i\pi} + 1 = 0
 
 It exposes a relation between the two most important transcendental numbers, the
 complex numbers, the unit and the null / zero. It’s used mostly in rotation
@@ -82,7 +78,7 @@ precision.
 The [Euler’s constant][] or Euler’s number, 𝑒 for short, is the ratio describing
 any constant growth. It’s defined as:
 
-:centre ![𝑒 = lim_(n→+∞)(1+(1/n))^n][]
+:centre ^^math e = \lim_{n \to +\infty}\left(1 + \frac{1}{n}\right)^n
 
 It’s about 2.71828…. 𝑒 is kinda magical number, poping up in a lot of
 Mathematical problems, offering good and easy solutions, since complex number
@@ -98,7 +94,7 @@ desired precision.
 
 Fortunately another [Euler][]’s formula gives us a better solution:
 
-:centre ![𝑒 = Σ(1/n!)][]
+:centre ^^math e = \sum_{n=0}^{+\infty}\frac{1}{n!}
 
 This formula is very convenient, ’cause it increases the precision every step
 in an easly predictable way:
@@ -205,11 +201,11 @@ showing how it works and how you can implement and use it.
 However, it’s a transcendental number and needs an infinity serie to be
 computed. [Leibniz][] gave us a neat solution:
 
-:centre ![π = 4Σ(1/(4n+1) - 1/(4n+3))][]
+:center ^^math 1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\frac{1}{9}-\frac{1}{11}+\cdots=\frac{\pi}{4}
 
 The process is quite the same used for 𝑒, take the formula:
 
-:centre ![π = 4Σ(1/(4n+1) - 1/(4n+3)) (alt)][]
+:centre ^^math \pi=4\sum_{n=0}^{+\infty}\left(\frac{1}{4n+1}-\frac{1}{4n+3}\right)
 
 Then get the precision:
 
