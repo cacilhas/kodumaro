@@ -48,7 +48,7 @@ This is a sample code for learning, written in [Moonscript](https://moonscript.o
         tic = 0
     
     OVR = ->
-      print "Score: #{score}", 2, 126, 3, false, 1, true
+      print "Score: #{score}", 3, 128, 3, false, 1, true
 
 Download the [card](//github.com/cacilhas/misc/blob/master/minitron.tic)!
 
