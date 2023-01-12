@@ -4,7 +4,7 @@ This is a sample code for learning, written in [Moonscript](https://moonscript.o
 
     -- title:   MiniTron
     -- author:  Montegasppa <batalema@cacilhas.info>
-    -- desc:    spartan Tron implementation
+    -- desc:    A very spartan Tron implementation
     -- license: 3-Clause BSD
     -- version: 0.1
     -- script:  moon
@@ -51,3 +51,7 @@ This is a sample code for learning, written in [Moonscript](https://moonscript.o
       print "Score: #{score}", 2, 126, 3, false, 1, true
 
 Download the [card](//github.com/cacilhas/misc/blob/master/minitron.tic)!
+
+* * *
+
+Also in [DEV.to](https://dev.to/cacilhas/a-minitron-in-47-lines-10d6).
