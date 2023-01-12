@@ -11,11 +11,9 @@ This is a sample code for learning, written in [Moonscript](https://moonscript.o
     export ^
     local  *
     
-    cycle = x: 120, y: 68
+    local cycle, dir, tic, score
+    
     size = 2
-    dir = 3
-    tic = 0
-    score = 0
     
     move = ->
       with cycle
@@ -34,6 +32,8 @@ This is a sample code for learning, written in [Moonscript](https://moonscript.o
         score += 1
     
     BOOT = ->
+      cycle = x: 120, y: 68
+      dir, tic, score = 3, 0, 0
       cls!
       rectb 0, 0, 240, 136, 4
       rectb 1, 1, 238, 134, 4
