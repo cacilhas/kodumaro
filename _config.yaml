@@ -91,12 +91,15 @@ hondaj:
   title: ĤøŅĐΔj̆₀
   url: //hondaj.cacilhas.info/
 
-
 mastodon:
   title: Mastodon
   url: https://social.sndevs.com/@kodumaro
   account: "@kodumaro@social.sndevs.com"
   badge: //cacilhas.info/img/mastodon.png
+
+misc:
+  title: Miscelaneous
+  url: //github.com/cacilhas/misc/blob/master
 
 montegasppa:
   title: ℳontegasppα and Giulia C.’s Thoughts
