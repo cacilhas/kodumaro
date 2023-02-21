@@ -1,6 +1,6 @@
 ![Oni](//cacilhas.info/img/oni.png)
 
-A platform I simply love is [Scratch](https://scratch.mit.edu/). You can build different kinds of applications using a visual programming based on drag’n’drop’ping blocks.
+A platform I simply love is [Scratch](https://scratch.mit.edu/). You can build different kinds of application using a visual programming based on drag’n’drop’ping blocks.
 
 Recently I’ve been working on a Lovecraftian game quite simple, where you just need to find a key using a sensor, while running away from a oni-style demon. I call it “Must Find the Key to Escape” (not the most creative name, I know).
 
