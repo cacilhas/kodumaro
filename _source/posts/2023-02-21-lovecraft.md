@@ -18,7 +18,7 @@ griffpatch: https://scratch.mit.edu/users/griffpatch/
 :right ![Oni][image]
 
 :first A platform I simply love is [Scratch][]. You can build different kinds of
-application using a visual programming based on drag’n’drop’ping blocks.
+application using a visual programming based on drag’n’drop blocks.
 
 Recently I’ve been working on a Lovecraftian game quite simple, where you just
 need to find a key using a sensor, while running away from an *oni*-style demon. I
