@@ -28,7 +28,7 @@ I based the code on a
 <a href="{{{griffpatch}}}" target="_blank"><code>@griffpatch</code></a>’s
 [ray-casting series][], and a [simple sound tutorial][] from [The STEAMist][].
 
-You can play the game on [Scratch][scratch version] or on
+You can play the game at [Scratch][scratch version] or at
 [TurboWarp][turbowarp version].
 
 <center><iframe src="https://experiments.turbowarp.org/pointerlock/806344631/embed" allowtransparency="true" width="512" height="512" frameborder="0" scrolling="no" title="Must Find the Key to Escape" allowfullscreen="allowfullscreen"></iframe></center>
