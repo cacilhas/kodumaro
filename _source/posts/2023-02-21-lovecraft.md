@@ -21,7 +21,7 @@ griffpatch: https://scratch.mit.edu/users/griffpatch/
 application using a visual programming based on drag’n’drop’ping blocks.
 
 Recently I’ve been working on a Lovecraftian game quite simple, where you just
-need to find a key using a sensor, while running away from a *oni*-style demon. I
+need to find a key using a sensor, while running away from an *oni*-style demon. I
 call it “Must Find the Key to Escape” (not the most creative name, I know).
 
 I based the code on a
