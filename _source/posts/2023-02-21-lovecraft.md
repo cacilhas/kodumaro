@@ -6,8 +6,8 @@ image: //cacilhas.info/img/oni.png
 permalink: /2023/02/lovecraft.html
 griffpatch: https://scratch.mit.edu/users/griffpatch/
 ---
-[`@griffpatch`]: https://scratch.mit.edu/users/griffpatch/
-[image]: {{{image}}}
+[DEV.to]: https://dev.to/cacilhas/a-lovecraftian-game-4524
+[image]: {{{image}}} =120x170
 [ray-casting series]: https://www.youtube.com/watch?v=M1c5TcdITVs
 [Scratch]: https://scratch.mit.edu/
 [scratch version]: https://scratch.mit.edu/projects/806344631/
@@ -31,4 +31,8 @@ I based the code on a
 You can play the game on [Scratch][scratch version] or on
 [TurboWarp][turbowarp version].
 
-<center><iframe src="https://experiments.turbowarp.org/pointerlock/806344631/embed" allowtransparency="true" width="512" height="512" frameborder="0" scrolling="no" title="Must Find the Key to Escape" allowfullscreen="allowfullscreen"></center>
+<center><iframe src="https://experiments.turbowarp.org/pointerlock/806344631/embed" allowtransparency="true" width="512" height="512" frameborder="0" scrolling="no" title="Must Find the Key to Escape" allowfullscreen="allowfullscreen"></iframe></center>
+
+-----
+
+:small Also in [DEV.to][].

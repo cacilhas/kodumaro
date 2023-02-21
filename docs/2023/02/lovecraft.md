@@ -8,4 +8,6 @@ I based the code on a [`@griffpatch`](https://scratch.mit.edu/users/griffpatch/)
 
 You can play the game on [Scratch](https://scratch.mit.edu/projects/806344631/) or on [TurboWarp](https://experiments.turbowarp.org/pointerlock/806344631).
 
-</center></p></x-turndown>
+* * *
+
+Also in [DEV.to](https://dev.to/cacilhas/a-lovecraftian-game-4524).
