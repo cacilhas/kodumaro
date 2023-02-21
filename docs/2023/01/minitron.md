@@ -29,7 +29,7 @@ This is a sample code for learning, written in [Moonscript](https://moonscript.o
         reset! if pix(next.x, next.y) != 0
         rect .x, .y, size, size, 9
         cycle = next
-        score += 1
+      score += 1
     
     BOOT = ->
       cycle = x: 120, y: 68
