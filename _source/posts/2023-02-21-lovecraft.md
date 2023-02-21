@@ -1,7 +1,7 @@
 ---
 title: A Lovecraftian game
 date: 2023-02-21
-tags: games scratch
+tags: game-engine scratch
 image: //cacilhas.info/img/oni.png
 permalink: /2023/02/lovecraft.html
 griffpatch: https://scratch.mit.edu/users/griffpatch/
