@@ -50,7 +50,7 @@ This is a sample code for learning, written in [Moonscript](https://moonscript.o
     OVR = ->
       print "Score: #{score}", 3, 128, 3, false, 1, true
 
-Download the [card](//github.com/cacilhas/misc/raw/master/minitron.tic)!
+Download the [card](//cacilhas.info/misc/minitron.tic)!
 
 * * *
 
