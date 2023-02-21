@@ -12,7 +12,7 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
 </p><p>We’ve performed the steering wheel unit test, and everything works fine. Now we have to test how it integrates with the whole car. So we’re gonna design
  an acceptance test, using a real car to see whether the wheel can turn the
  car left and right properly or not.</p><p>But we want to test <strong>only</strong> the steering wheel behaviour, so we decided to use a <em>partial</em> car for testing it. The partial car may have no
- gear, or even no engine. We don’t need’em, we just wanna see whether the
+ gear, or any engine neither. We don’t need’em, we just wanna see whether the
  steering wheel does its job.</p><p>What a humongous mistake! The partial car’s behaviour is far different from the real one’s. So the mistaken acceptance test runs fine, but the steering
  wheel may not be able to turn a real car in time or at the right turn.</p><p>This weird example is an analogy for how I’ve seen people writing acceptance tests (and calling them “integration tests”).</p><p>Because of a misunderstanding of the <a href="https://blogs.itemis.com/en/a-brief-overview-of-state-machine-types">FSM</a>, software designers think there can be allowed to create inconsistent-state
  models in order to change that state little by little through a procedure
