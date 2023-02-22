@@ -60,27 +60,27 @@ A monoid is a structure that supplies an operation and an unit instance for that
 A simple monoid definition is:
 
     trait Monoid[A] {
-      def add(a: A, b: A): A
+      def op(a: A, b: A): A
       def unit[A]: A
     }
 
 Let’s, for instance, define two monoids for dealing with integer and string sequences:
 
-    implicit object IntMonoid extends Monoid[Int] {
-      def add(a: Int, b: Int): Int = a + b
+    given object IntSumMonoid extends Monoid[Int] {
+      def op(a: Int, b: Int): Int = a + b
       def unit: Int = 0
     }
     
-    implicit object StringMonoid extends Monoid[String] {
-      def add(a: String, b: String): String = a concat b
+    given object StringConcatMonoid extends Monoid[String] {
+      def op(a: String, b: String): String = a concat b
       def unit: String = ""
     }
 
 Defined these two monoids, we can code a function that can reduce an integer or string sequence:
 
-    def reduce[A](xs: Seq[A])(implicit ev: Monoid[A]): A =
+    def reduce[A](xs: Seq[A])(using ev: Monoid[A]): A =
       if (xs.isEmpty) ev.unit
-      else ev.add(xs.head, reduce(xs.tail))
+      else ev.op(xs.head, reduce(xs.tail))
 
 It works like this:
 

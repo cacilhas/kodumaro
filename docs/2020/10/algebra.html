@@ -148,25 +148,25 @@ writing to the standard output.</p>
 operation and type.</p>
 <p>A simple monoid definition is:</p>
 <pre class="prettyprint"><code class="scala language-scala">trait Monoid[A] {
-  def add(a: A, b: A): A
+  def op(a: A, b: A): A
   def unit[A]: A
 }</code></pre>
 <p>Let’s, for instance, define two monoids for dealing with integer and string
 sequences:</p>
-<pre class="prettyprint"><code class="scala language-scala">implicit object IntMonoid extends Monoid[Int] {
-  def add(a: Int, b: Int): Int = a + b
+<pre class="prettyprint"><code class="scala language-scala">given object IntSumMonoid extends Monoid[Int] {
+  def op(a: Int, b: Int): Int = a + b
   def unit: Int = 0
 }
 
-implicit object StringMonoid extends Monoid[String] {
-  def add(a: String, b: String): String = a concat b
+given object StringConcatMonoid extends Monoid[String] {
+  def op(a: String, b: String): String = a concat b
   def unit: String = ""
 }</code></pre>
 <p>Defined these two monoids, we can code a function that can reduce an integer or
 string sequence:</p>
-<pre class="prettyprint"><code class="scala language-scala">def reduce[A](xs: Seq[A])(implicit ev: Monoid[A]): A =
+<pre class="prettyprint"><code class="scala language-scala">def reduce[A](xs: Seq[A])(using ev: Monoid[A]): A =
   if (xs.isEmpty) ev.unit
-  else ev.add(xs.head, reduce(xs.tail))</code></pre>
+  else ev.op(xs.head, reduce(xs.tail))</code></pre>
 <p>It works like this:</p>
 <pre class="prettyprint"><code class="scala language-scala">reduce(Seq(1, 2, 3)) // returns 6
 reduce(Seq("Hello", ", ", "World", "!")) // returns "Hello, World!"</code></pre>
