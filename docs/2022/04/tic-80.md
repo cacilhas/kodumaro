@@ -132,4 +132,4 @@ Running you must get the turning symbol:
 
 ### Resouces
 
-Download the Moonscript code from [here](//cacilhas.info/misc/tic80/yin-yang.moon), or the cartridge from [here](//cacilhas.info/misc/tic80/yin-yang.tic).
+Download the [Moonscript code](//cacilhas.info/misc/tic80/yin-yang.moon), or the [cartridge](//cacilhas.info/misc/tic80/yin-yang.tic).
