@@ -1,12 +1,12 @@
 ![Scala](//cacilhas.info/img/scala.png)
 
-For a developer to be able to work with Functional Programming, there are a few concepts he or she must master.
+For a developer to be able to work with Functional Programming, there are a few concepts they must master.
 
 In addition to the [functional constraints](/2019/09/lies-they-told-you.html), there are two very important main ideas: [algebraic data types](/2020/10/type-isomorphism.html) (ADT) and algebraic structures. In this post, we’re looking at some algebraic structures.
 
 ### Functor
 
-Functor is the simpliest algebraic structure. It’s a wrapper around a datum or data that can map operations over them and their successful results.
+Functor is the simpliest algebraic structure. It’s a wrapper around data that can map operations over them and their successful results.
 
 A basic functor example in [Scala](https://www.scala-lang.org/) is [`scala.util.Try`](https://www.scala-lang.org/api/current/scala/util/Try.html):
 
@@ -24,14 +24,14 @@ Most of the Scala basic wrappers, like `Seq`/`List`, `Option`, `Either`, etc, ar
 
 [Haskell](https://www.haskell.org/)’s monads have been getting people in dread, but they’re nothing than a variation of functor approach.
 
-A monad is a wrapper around a datum or data that can operate over them flatly mapping the results and possibly describing side-effects.
+A monad is a wrapper around data that can operate over them flatly mapping the results and possibly describing side-effects.
 
 Our first monad example is the [`Seq`](https://www.scala-lang.org/api/current/scala/collection/immutable/Seq.html):
 
     Seq(1, 2, 3)
       .flapMap(e => Seq(e * 2))
       .flatMap(e => if (e == 2) Nil else Seq(e))
-      .flatMap(e => if (e == 4) Seq(4, 5) else Seq(e))
+      .flatMap(e => if (e == 3) Seq(4, 5) else Seq(e))
 
 The result is `Seq(4, 5, 6)`; the `flatMap` method is the main resource of a monad.
 
