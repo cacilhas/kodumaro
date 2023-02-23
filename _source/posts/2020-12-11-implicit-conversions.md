@@ -17,6 +17,8 @@ permalink: /2020/12/implicit-conversions.html
 :first [Scala][] (in version 2.13 while I write) has a powerful conversion
 system based on its [implicits system][].
 
+> `[update 2023-02-23]`I updated the codes to Scala 3.x.`[/update]`
+
 It works by expanding implicit methods and classes into a more complex
 structure, which would be way harder to code if it needs to be done explicitly.
 
@@ -63,9 +65,8 @@ Implicit classes are the way to inject methods into existent types.
 For instance, let’s create a string method to generate the XML node from it:
 
 ```scala
-implicit class XMLString(value: String) {
+implicit class XMLString(value: String):
   def toXML: Option[NodeSeq] = Try(XML loadString value).toOption
-}
 
 val source = getDataFromOutsideSource() // : String
 
@@ -100,9 +101,8 @@ Consider the following example, a method to determine whether a double is
 integral:
 
 ```scala
-implicit class IntegralDouble(val value: Double): extends AnyVal {
+implicit class IntegralDouble(val value: Double) extends AnyVal:
   def isIntegral: Boolean = value % 1 == 0
-}
 
 val value = getSomeFloatPointValue() // : Double
 
@@ -113,10 +113,6 @@ if (value.isIntegral)
 Which expands to:
 
 ```scala
-class IntegralDouble(val value: Double): extends AnyVal {
-  def isIntegral: Boolean = IntegralDouble isIntegral$expansion value
-}
-
 object IntegralDouble {
   def isIntegral$expansion(value: Double): Boolean = value % 1.0 == 0.0
 }

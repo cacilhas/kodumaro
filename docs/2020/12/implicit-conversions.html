@@ -100,6 +100,9 @@
           <p class="pull-right"> <img src="//cacilhas.info/img/scala.png" alt="Scala" /></p>
 <p class="mg-first"> <a href="https://www.scala-lang.org/" target="_blank">Scala</a> (in version 2.13 while I write) has a powerful conversion
 system based on its <a href="https://www.scala-lang.org/files/archive/spec/2.13/07-implicits.html" target="_blank">implicits system</a>.</p>
+<blockquote>
+  <p><code>[update 2023-02-23]</code>I updated the codes to Scala 3.x.<code>[/update]</code></p>
+</blockquote>
 <p>It works by expanding implicit methods and classes into a more complex
 structure, which would be way harder to code if it needs to be done explicitly.</p>
 <p>We’re gonna talk about three ways to implement implicit conversions and their
@@ -122,9 +125,8 @@ val values: Seq[Int] = Seq(0.4, 1.8, 2.2) map double2int</code></pre>
 <h3 id="implicit-classes">Implicit classes</h3>
 <p>Implicit classes are the way to inject methods into existent types.</p>
 <p>For instance, let’s create a string method to generate the XML node from it:</p>
-<pre class="prettyprint"><code class="scala language-scala">implicit class XMLString(value: String) {
+<pre class="prettyprint"><code class="scala language-scala">implicit class XMLString(value: String):
   def toXML: Option[NodeSeq] = Try(XML loadString value).toOption
-}
 
 val source = getDataFromOutsideSource() // : String
 
@@ -148,20 +150,15 @@ instance each call. Instead, every value class uses a companion object to
 envelope the methods, and calls them from it.</p>
 <p>Consider the following example, a method to determine whether a double is
 integral:</p>
-<pre class="prettyprint"><code class="scala language-scala">implicit class IntegralDouble(val value: Double): extends AnyVal {
+<pre class="prettyprint"><code class="scala language-scala">implicit class IntegralDouble(val value: Double) extends AnyVal:
   def isIntegral: Boolean = value % 1 == 0
-}
 
 val value = getSomeFloatPointValue() // : Double
 
 if (value.isIntegral)
   doSomeMathWith(value)</code></pre>
 <p>Which expands to:</p>
-<pre class="prettyprint"><code class="scala language-scala">class IntegralDouble(val value: Double): extends AnyVal {
-  def isIntegral: Boolean = IntegralDouble isIntegral$expansion value
-}
-
-object IntegralDouble {
+<pre class="prettyprint"><code class="scala language-scala">object IntegralDouble {
   def isIntegral$expansion(value: Double): Boolean = value % 1.0 == 0.0
 }
 
@@ -204,7 +201,7 @@ if (IntegralDouble.isIntegral$expansion(value))
             var disqus_config = function() {
               this.page = this.page || {}
               this.page.url = 'https://kodumaro.cacilhas.info/2020/12/implicit-conversions.html'
-              this.page.identifier = '_source.posts.2020-12-11-expansion'
+              this.page.identifier = '_source.posts.2020-12-11-implicit-conversions'
               this.page.title = 'Implicit Conversions in Scala'
             }
             $(document).ready(function() {
