@@ -6,7 +6,7 @@ Recently I’ve been working on a Lovecraftian game quite simple, where you just
 
 I based the code on a [`@griffpatch`](https://scratch.mit.edu/users/griffpatch/)’s [ray-casting series](https://www.youtube.com/watch?v=M1c5TcdITVs), and a [simple sound tutorial](https://www.youtube.com/watch?v=v99RKhePxw8) from [The STEAMist](https://scratch.mit.edu/users/ThePhantomAnimator/).
 
-You can play the game at [Scratch](https://scratch.mit.edu/projects/806344631/) or at [TurboWarp](https://experiments.turbowarp.org/pointerlock/806344631).
+You can play the game at [Scratch](https://scratch.mit.edu/projects/806344631/) or at [TurboWarp](https://experiments.turbowarp.org/pointerlock/806344631/fullscreen).
 
 * * *
 

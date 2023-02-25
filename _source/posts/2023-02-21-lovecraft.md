@@ -13,7 +13,7 @@ griffpatch: https://scratch.mit.edu/users/griffpatch/
 [scratch version]: https://scratch.mit.edu/projects/806344631/
 [simple sound tutorial]: https://www.youtube.com/watch?v=v99RKhePxw8
 [The STEAMist]: https://scratch.mit.edu/users/ThePhantomAnimator/
-[turbowarp version]: https://experiments.turbowarp.org/pointerlock/806344631
+[turbowarp version]: https://experiments.turbowarp.org/pointerlock/806344631/fullscreen
 
 :right ![Oni][image]
 
