@@ -51,6 +51,15 @@ author: &author
         style:
           width: 24px
           height: 24px
+    exercism:
+      name: Exercism
+      title: Exercism
+      url: https://exercism.org/profiles/cacilhas
+      image:
+        source: //cacilhas.info/img/exercism.png
+        style:
+          width: 24px
+          height: 24px
     linkedin:
       name: LinkedIn
       title: Rodrigo Cacilhas
