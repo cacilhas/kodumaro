@@ -3,7 +3,7 @@
 This is a sample code for learning, written in [Moonscript](https://moonscript.org/) for [TIC-80](https://tic80.com/):
 
     -- title:   MiniTron
-    -- author:  Montegasppa <batalema@cacilhas.info>
+    -- author:  Montegasppa <montegasppa@cacilhas.info>
     -- desc:    A very spartan Tron implementation
     -- license: 3-Clause BSD
     -- version: 0.1
