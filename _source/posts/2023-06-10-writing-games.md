@@ -49,11 +49,11 @@ permalink: /2023/06/writing-games.html
 :right ![Itch.io][image]
 
 :first I’m simply fascinated by indie game development. It’s free from a bunch
-of programming concerns, and allows us to explore new horinzons.
+of programming concerns, and allows us to explore new horizons.
 
 I’m tired of development risks due to **money** – always money! Nothing is more
 important in our Capitalist system than money, not culture, not even human
-lifes; money is in the society’s kernel, and it leads to a lotta stress. I’m
+lives; money is in the society’s kernel, and it leads to a lotta stress. I’m
 really tired of it.
 
 I’d really take a way out if I find it, and indie game development seems to be
@@ -69,7 +69,7 @@ looking for more detail about any game or code here, leave a comment. 😉
 
 ### Itch.io
 
-For me, [Itch.io][] is the best game release platform, and I’ve been using it as
+IMHO, [Itch.io][] is the best game release platform, and I’ve been using it as
 [my personal showcase][]. Every game we’re talking about in this post you can
 find there.
 
@@ -114,22 +114,23 @@ I don’t wanna talk about [this one][snake]… 😒
 
 :right ![Godot Engine][godot-image]
 
-I reckon [Godot Engine][] is the better balanced game engine available:
+I reckon [Godot Engine][] is the best balanced game engine available:
 
 - Unity 3D is easy and widely used, but lacks security; I wouldn’t recommend.
 - Unreal Engine is the most powerful, but requires too much hardware resources
   both to develop and to play games.
 - UPBGE is an eternal doubt.
 - In GDevelop, simple things become a challenge to be achieved.
-- Construct and Game Maker are more expensive than they actually deliver.
+- Construct and Game Maker are more expensive than they actually deliver, as
+  well as so many others.
 - Scratch aims for Education, not commercial purposes.
 
 I got some Godot games I’ve been working on:
 
-- [Standstill][]: a tower-defence game, I created it to test
+- [Standstill][]: a tower-defence game. I created it to test
   [Kenney’s assets][], which are amazing. This is one of my games I’m proud of.
 - [Catcheese][] is a simple maze game based on [CuteMaze][].
-- [Fairy Tale][] intends to be an immersive adventure game, but I’ve deeply
+- [Fairy Tale][] intends to be an immersive adventure game, but I’ve miserably
   failed. It’s still funny though. 😬
 - [Kodumaro Catch Game][] is what it says: a catch game. More precisely a 1D
   catch game (only moves side to side). I made the game in about one hour and
@@ -176,3 +177,5 @@ It’s still [published][Get Out!], but I cannot do any changes anymore.
 
 Do you like any of those games? Want any more details? Code? Development
 process? Leave a comment!
+
+:small Also in <a href="https://dev.to/cacilhas/writing-games-5clg">DEV.to</a>.

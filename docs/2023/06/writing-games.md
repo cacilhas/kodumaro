@@ -1,8 +1,8 @@
 ![Itch.io](//cacilhas.info/img/itch-io-icon.png)
 
-I’m simply fascinated by indie game development. It’s free from a bunch of programming concerns, and allows us to explore new horinzons.
+I’m simply fascinated by indie game development. It’s free from a bunch of programming concerns, and allows us to explore new horizons.
 
-I’m tired of development risks due to **money** – always money! Nothing is more important in our Capitalist system than money, not culture, not even human lifes; money is in the society’s kernel, and it leads to a lotta stress. I’m really tired of it.
+I’m tired of development risks due to **money** – always money! Nothing is more important in our Capitalist system than money, not culture, not even human lives; money is in the society’s kernel, and it leads to a lotta stress. I’m really tired of it.
 
 I’d really take a way out if I find it, and indie game development seems to be a promising one. Anyway it had never been for me.
 
@@ -12,7 +12,7 @@ Said that, let’s get into some side projects I’ve been playing around with. 
 
 ### Itch.io
 
-For me, [Itch.io](https://itch.io/) is the best game release platform, and I’ve been using it as [my personal showcase](https://cacilhas.itch.io/). Every game we’re talking about in this post you can find there.
+IMHO, [Itch.io](https://itch.io/) is the best game release platform, and I’ve been using it as [my personal showcase](https://cacilhas.itch.io/). Every game we’re talking about in this post you can find there.
 
 ### Scratch games
 
@@ -41,20 +41,20 @@ I don’t wanna talk about [this one](https://cacilhas.itch.io/snake)… 😒
 
 ![Godot Engine](//cacilhas.info/img/godot.png)
 
-I reckon [Godot Engine](https://godotengine.org/) is the better balanced game engine available:
+I reckon [Godot Engine](https://godotengine.org/) is the best balanced game engine available:
 
 *   Unity 3D is easy and widely used, but lacks security; I wouldn’t recommend.
 *   Unreal Engine is the most powerful, but requires too much hardware resources both to develop and to play games.
 *   UPBGE is an eternal doubt.
 *   In GDevelop, simple things become a challenge to be achieved.
-*   Construct and Game Maker are more expensive than they actually deliver.
+*   Construct and Game Maker are more expensive than they actually deliver, as well as so many others.
 *   Scratch aims for Education, not commercial purposes.
 
 I got some Godot games I’ve been working on:
 
-*   [Standstill](https://cacilhas.itch.io/standstill): a tower-defence game, I created it to test [Kenney’s assets](https://kenney.nl/assets), which are amazing. This is one of my games I’m proud of.
+*   [Standstill](https://cacilhas.itch.io/standstill): a tower-defence game. I created it to test [Kenney’s assets](https://kenney.nl/assets), which are amazing. This is one of my games I’m proud of.
 *   [Catcheese](https://cacilhas.itch.io/catcheese) is a simple maze game based on [CuteMaze](https://gottcode.org/cutemaze/).
-*   [Fairy Tale](https://cacilhas.itch.io/fairy-tale) intends to be an immersive adventure game, but I’ve deeply failed. It’s still funny though. 😬
+*   [Fairy Tale](https://cacilhas.itch.io/fairy-tale) intends to be an immersive adventure game, but I’ve miserably failed. It’s still funny though. 😬
 *   [Kodumaro Catch Game](https://cacilhas.itch.io/catch-game) is what it says: a catch game. More precisely a 1D catch game (only moves side to side). I made the game in about one hour and then I spent my free time during two days trying to catch smoke. It is unnecessarily heavyweight, but have some cool details.
 
 ### Raylib games
@@ -89,3 +89,5 @@ It’s still [published](https://cacilhas.itch.io/get-out), but I cannot do any 
 * * *
 
 Do you like any of those games? Want any more details? Code? Development process? Leave a comment!
+
+Also in [DEV.to](https://dev.to/cacilhas/writing-games-5clg).
