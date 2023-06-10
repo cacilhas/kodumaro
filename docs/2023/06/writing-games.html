@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatibile" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="language" content="en" />
+    <meta name="copyright" content="CC-BY 4.0" />
+    <meta name="url" content="//kodumaro.cacilhas.info/2023/06/writing-games.html" />
+    <meta name="date" content="Jun. 10, 2023" />
+    <meta name="search_date" content="2023-06-10" />
+    <meta name="author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <meta property="og:site_name" content="Kodumaro" />
+    <meta property="og:title" content="Writing games" />
+    <meta property="og:url" content="//kodumaro.cacilhas.info/2023/06/writing-games.html" />
+    <meta property="og:image" content="//cacilhas.info/img/itch-io-icon.png" />
+    <meta property="article:author" content="Arĥimedeς Montegasppα Cacilhας" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kavivanar" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:i,bold&amp;subset=latin-ext" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
+    <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/kodumaro.css" />
+    <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
+    <title>Writing games</title>
+    <link rel="icon" href="/img/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
+    <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
+    <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
+    <script src="//montegasppa.cacilhas.info/js/handle-old-url.js"></script>
+    <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
+    <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
+    <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="async" src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5741846017654057",
+        enable_page_level_ads: true,
+      })
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date;a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,"script","https://www.google-analytics.com/analytics.js","ga")
+      ga("create", "UA-99357497-1", "auto")
+      ga("send", "pageview")
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-togge="collapse" data-target="#navbar" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="dropdown">
+            <span class="navbar-brand dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ℭacilhας.INFO</span>
+            <ul class="dropdown-menu">
+              <li><a href="//cacilhas.info/"><i class="glyphicon glyphicon-home"></i>&nbsp;ℭacilhας.INFO</a></li>
+              <li><a href="//kodumaro.cacilhas.info/"><i class="licon icon-kodumaro"></i>&nbsp;Kodumaro</a></li>
+              <li><a href="//montegasppa.cacilhas.info/"><i class="licon icon-montegasppa"></i>&nbsp;ℳontegasppα and Giulia C.’s Thoughts</a></li>
+              <li><hr/></li>
+              <li><a href="//hondaj.cacilhas.info/" target="_blank"><i class="licon icon-hondaj"></i>&nbsp;ĤøŅĐΔj̆₀</a></li>
+              <li><a href="//vortaro.cacilhas.info/" target="_blank"><i class="glyphicon glyphicon-link"></i>&nbsp;&#x2F;&#x2F;vortaro.cacilhas.info&#x2F;</a></li>
+              <li><a href="https://claudiotorcato.wordpress.com/" target="_blank"><i class="licon icon-wordpress"></i>&nbsp;Mosaico Livre</a></li>
+              <li><a href="https://www.patreon.com/cacilhas" target="_blank"><i class="licon icon-patreon"></i>&nbsp;ℳontegasppα</a></li>
+              <li><a href="https://montegasppa.bandcamp.com/releases" target="_blank"><i class="licon icon-le-obscur-essentes"></i>&nbsp;Le Obscur Essenteς</a></li>
+              <li><a href="https://www.todasfridas.com.br/" target="_blank"><i class="licon icon-fridas"></i>&nbsp;Todas Fridas</a></li>
+              <li><a href="https://waltercruz.com/" target="_blank"><i class="glyphicon glyphicon-link"></i>&nbsp;Walter Cruz</a></li>
+              <li><a href="https://dev.to/cacilhas" target="_blank"><i class="licon icon-dev-to"></i>&nbsp;DEV Profile 👩‍💻👨‍💻</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="//kodumaro.cacilhas.info"><i class="glyphicon glyphicon-home"></i>&nbsp;Home</a></li>
+            <li class="active"><a href="//kodumaro.cacilhas.info/2023/06/writing-games.html">Writing games</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="mg-title">Writing games</h2>
+          <h6 class="pull-right">2023-06-10</h6>
+          <h6>The shadows behind the code.</h6>
+        </div>
+        <div class="panel-body">
+          <p class="pull-right"> <img src="//cacilhas.info/img/itch-io-icon.png" alt="Itch.io" width="128" height="128" /></p>
+<p class="mg-first"> I’m simply fascinated by indie game development. It’s free from a bunch
+of programming concerns, and allows us to explore new horizons.</p>
+<p>I’m tired of development risks due to <strong>money</strong> – always money! Nothing is more
+important in our Capitalist system than money, not culture, not even human
+lives; money is in the society’s kernel, and it leads to a lotta stress. I’m
+really tired of it.</p>
+<p>I’d really take a way out if I find it, and indie game development seems to be
+a promising one. Anyway it had never been for me.</p>
+<p>Nevertheless, I’ve been using game development for study and to keep my mind
+sharp since ever.</p>
+<p>Said that, let’s get into some side projects I’ve been playing around with. I’m
+not getting into many details, otherwise I couldn’t quote them all. If you’re
+looking for more detail about any game or code here, leave a comment. 😉</p>
+<h3 id="itchio">Itch.io</h3>
+<p>IMHO, <a href="https://itch.io/" target="_blank">Itch.io</a> is the best game release platform, and I’ve been using it as
+<a href="https://cacilhas.itch.io/" target="_blank">my personal showcase</a>. Every game we’re talking about in this post you can
+find there.</p>
+<h3 id="scratch-games">Scratch games</h3>
+<p>I’m talking about <a href="https://scratch.mit.edu/" target="_blank">Scratch</a> first to sweep it away, ’cause Scratch earns its
+own whole post.</p>
+<p>I think Scratch is a great sandbox to test concepts and a good place to share
+ideas.</p>
+<p>I have a Scratch project called <a href="https://scratch.mit.edu/studios/30951170" target="_blank">Casual Funny Games</a>, and we can get into it
+in another post. Even on Itch.io I have a <a href="https://cacilhas.itch.io/casual-funny-games" target="_blank">page for it</a>.</p>
+<h3 id="tic-80-games">TIC-80 games</h3>
+<p class="pull-right"> <img src="//cacilhas.info/img/tic80.png" alt="TIC-80" width="84" height="84" /></p>
+<p>I love <a href="https://en.wikipedia.org/wiki/Fantasy_video_game_console" target="_blank">fantasy consoles</a>, and my favourite is <a href="http://tic80.com/" target="_blank">TIC-80</a>: it has an old home
+computer feeling which no other console manages to emulate. Therefore I
+recommend purchasing its <a href="https://nesbox.itch.io/tic80" target="_blank">payed version</a>.</p>
+<p>I’ve published some TIC-80 games of my own, most of them developed using
+<a href="https://moonscript.org/" target="_blank">Moonscript</a>:</p>
+<ul>
+<li><a href="https://cacilhas.itch.io/sokoban" target="_blank">Sokoban</a> is a classic among classics! I literally copied every detail from
+the <a href="https://msxgamesworld.com/software.php?id=1518" target="_blank">MSX implementation</a>.</li>
+<li><a href="https://cacilhas.itch.io/arkanoid-ng" target="_blank">Arkanoid NG</a> is my TIC-80 implementation of the classic <a href="https://spectrumcomputing.co.uk/entry/0000255" target="_blank">Arkanoid</a>, one
+of the first breakout games.</li>
+<li><a href="https://cacilhas.itch.io/missile" target="_blank">Missile Command</a> is a clone of the
+<a href="https://www.arcade-history.com/?page=detail&amp;id=1644" target="_blank">Atari’s same-title shoot’em up game</a>. Don’t let
+missiles destroy your builds!</li>
+<li><a href="https://cacilhas.itch.io/tetris" target="_blank">Kodumaro Tetris</a>: who doesn’t known the Russian <a href="https://tetris.com/" target="_blank">Tetris</a>!? In here I took
+care of the presentation.</li>
+</ul>
+<p>I don’t wanna talk about <a href="https://cacilhas.itch.io/snake" target="_blank">this one</a>… 😒</p>
+<h3 id="godot-engine-games">Godot Engine games</h3>
+<p class="pull-right"> <img src="//cacilhas.info/img/godot.png" alt="Godot Engine" width="84" height="84" /></p>
+<p>I reckon <a href="https://godotengine.org/" target="_blank">Godot Engine</a> is the best balanced game engine available:</p>
+<ul>
+<li>Unity 3D is easy and widely used, but lacks security; I wouldn’t recommend.</li>
+<li>Unreal Engine is the most powerful, but requires too much hardware resources
+both to develop and to play games.</li>
+<li>UPBGE is an eternal doubt.</li>
+<li>In GDevelop, simple things become a challenge to be achieved.</li>
+<li>Construct and Game Maker are more expensive than they actually deliver, as
+well as so many others.</li>
+<li>Scratch aims for Education, not commercial purposes.</li>
+</ul>
+<p>I got some Godot games I’ve been working on:</p>
+<ul>
+<li><a href="https://cacilhas.itch.io/standstill" target="_blank">Standstill</a>: a tower-defence game. I created it to test
+<a href="https://kenney.nl/assets" target="_blank">Kenney’s assets</a>, which are amazing. This is one of my games I’m proud of.</li>
+<li><a href="https://cacilhas.itch.io/catcheese" target="_blank">Catcheese</a> is a simple maze game based on <a href="https://gottcode.org/cutemaze/" target="_blank">CuteMaze</a>.</li>
+<li><a href="https://cacilhas.itch.io/fairy-tale" target="_blank">Fairy Tale</a> intends to be an immersive adventure game, but I’ve miserably
+failed. It’s still funny though. 😬</li>
+<li><a href="https://cacilhas.itch.io/catch-game" target="_blank">Kodumaro Catch Game</a> is what it says: a catch game. More precisely a 1D
+catch game (only moves side to side). I made the game in about one hour and
+then I spent my free time during two days trying to catch smoke. It is
+unnecessarily heavyweight, but have some cool details.</li>
+</ul>
+<h3 id="raylib-games">Raylib games</h3>
+<p class="pull-right"> <img src="//cacilhas.info/img/ferris-the-crab.png" alt="Ferris the Crab" width="84" height="56" /></p>
+<p>If you need performance, I recommend <a href="https://www.raylib.com/" target="_blank">Raylib</a> with <a href="https://www.rust-lang.org/" target="_blank">Rust</a>.</p>
+<p>Raylib is exceptional for 2D games. Not that good for 3D, but still gets the job
+done.</p>
+<ul>
+<li><a href="https://cacilhas.itch.io/nanpure" target="_blank">Nanpure</a> is a colourful <a href="https://sudoku.com/" target="_blank">sudoku</a> – instead of numbers, you got colours.</li>
+<li><a href="https://en.wikipedia.org/wiki/Nonogram" target="_blank">Nonogram</a> is a random implementation for <a href="https://en.wikipedia.org/wiki/Nonogram" target="_blank">nonogram</a>. It doesn’t form
+meaningful pictures, but has the advantage to be able to be played forever.</li>
+</ul>
+<p>I have a lot of other <a href="https://crates.io/users/cacilhas" target="_blank">Rust applications</a>, but only these two games.</p>
+<h3 id="gdevelop-games">GDevelop games</h3>
+<p class="pull-right"> <img src="//cacilhas.info/img/gdevelop.png" alt="GDevelop5" width="84" height="84" /></p>
+<p>I couldn’t leave <a href="https://gdevelop.io/" target="_blank">GDevelop</a> out. It is nothing its authors claim it is:</p>
+<ul>
+<li>It’s <strong>not easy</strong>.</li>
+<li>It’s <strong>not no-code</strong>.</li>
+<li>It’s <strong>not RAD</strong>.</li>
+</ul>
+<p>Even so it’s really amusing, I usually have a lotta good time using GDevelop.</p>
+<p>I used to have a GDevelop game in Itch.io, <a href="https://cacilhas.itch.io/get-out" target="_blank">Get Out!</a>, however it has a very
+sad story: its code wasn’t published to any remote repository, and my hard disk
+got fried, so I <strong>lost the whole code</strong>. 😭</p>
+<p>It’s still <a href="https://cacilhas.itch.io/get-out" target="_blank">published</a>, but I cannot do any changes anymore.</p>
+<hr />
+<p>Do you like any of those games? Want any more details? Code? Development
+process? Leave a comment!</p>
+<p class="small"> Also in <a href="https://dev.to/cacilhas/writing-games-5clg" target="_blank">DEV.to</a>.</p>
+        </div>
+        <div id="tags" class="pull-right tags">
+          <script>
+            var tags = 'career education-and-culture fantasy-console game-engine lua rust scratch'
+            if (tags) {
+              var first = true
+              for (var tag of tags.split(" ")) {
+                if (first) { first = false }
+                else $('#tags').append('&nbsp;|&nbsp;')
+                $('#tags').append(
+                  '<a href="/?tag=' + tag + '" class="tag">' + tag.replace(/-/g, ' ') + '</a>'
+                )
+              }
+            }
+          </script>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div id="disqus_thread">
+            <noscript>
+              Please enable JavaScript to view the comments
+              <a href="https://disqus.com/?ref_noscript">powered by Disqus</a>.
+            </noscript>
+          </div>
+          <script>
+            var disqus_config = function() {
+              this.page = this.page || {}
+              this.page.url = 'https://kodumaro.cacilhas.info/2023/06/writing-games.html'
+              this.page.identifier = '_source.posts.2023-06-10-writing-games'
+              this.page.title = 'Writing games'
+            }
+            $(document).ready(function() {
+              var d = document, s = d.createElement('script')
+              s.src = 'https://kodumaro.disqus.com/embed.js'
+              s.setAttribute('data-timestamp', +new Date())
+              ;(d.head || d.body).appendChild(s)
+            })
+          </script>
+        </div>
+      </div>
+      <div>
+        <div class="pull-left">
+          <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px;"
+               data-ad-client="ca-pub-5741846017654057" data-ad-slot=""></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({})</script>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer" id="footer">
+      <p class="pull-left small">
+        <a href="https://dev.to/cacilhas" target="_blank">
+          <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+               alt="DEV Profile 👩‍💻👨‍💻"
+               height="30" width="30"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+      <p class="pull-left small">
+        <a rel="me" href="https://social.sndevs.com/@kodumaro" target="_blank">
+          <img src="//cacilhas.info/img/mastodon.png"
+               alt="Mastodon"
+               height="24" width="22"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+      <p class="small">
+        Arĥimedeς Montegasppα Cacilhας
+        &nbsp;
+        <a ref="license" href="http://creativecommons.org/licenses/by/4.0/deed">
+          <img rel="license"
+               alt="CC-BY 4.0"
+               src="https://i.creativecommons.org/l/by/4.0/80x15.png"
+               style="vertical-align: middle; border: none;" />
+        </a>
+      </p>
+    </div>
+    <script src="//cacilhas.info/js/bootstrap.min.js"></script>
+    <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
+    <script language="javascript">
+      $(document).ready(function() {
+        $('[title]').tooltip();
+      })
+    </script>
+  </body>
+</html>
