@@ -36,6 +36,7 @@ permalink: /2023/06/writing-games.html
 [Raylib]: https://www.raylib.com/
 [Rust]: https://www.rust-lang.org/
 [Rust applications]: https://crates.io/users/cacilhas
+[scratch-cat]: //cacilhas.info/img/scratch-cat.png =84x84
 [Standstill]: https://cacilhas.itch.io/standstill
 [sudoku]: https://sudoku.com/
 [Tetris]: https://tetris.com/
@@ -75,6 +76,8 @@ find there.
 
 
 ### Scratch games
+
+:right ![Scratch cat][scratch-cat]
 
 I’m talking about [Scratch][] first to sweep it away, ’cause Scratch earns its
 own whole post.

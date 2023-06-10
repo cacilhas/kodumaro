@@ -16,6 +16,8 @@ IMHO, [Itch.io](https://itch.io/) is the best game release platform, and I’ve 
 
 ### Scratch games
 
+![Scratch cat](//cacilhas.info/img/scratch-cat.png)
+
 I’m talking about [Scratch](https://scratch.mit.edu/) first to sweep it away, ’cause Scratch earns its own whole post.
 
 I think Scratch is a great sandbox to test concepts and a good place to share ideas.
