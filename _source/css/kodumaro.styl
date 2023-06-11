@@ -11,6 +11,7 @@ $code = #dd8800
 $text_color = #ffddaa
 $bg_color = #443322
 $link_color = #8888ff
+$tag_color = white
 $badge_color = $code
 $shadow = $code
 
@@ -22,7 +23,7 @@ body
   background-origin initial !important
   background-clip initial !important
 
-.panel-default
+.panel-body
   color  $text_color
   background-color $bg_color
 
@@ -66,12 +67,12 @@ code
 .tag
   border: 1px solid gray !important
   border-radius: 5px !important
-  color: black !important
+  color: $tag_color !important
   font-family "Roboto Mono", Monaco, monospace !important
   padding: 0px 2px 0px 2px !important
 
   a
-    color: black
+    color: $tag_color !important
 
 
 .label-default

@@ -12,11 +12,11 @@ body {
   background-origin: initial !important;
   background-clip: initial !important;
 }
-.panel-default {
+.panel-body {
   color: #fda;
   background-color: #432;
 }
-.panel-default a {
+.panel-body a {
   color: #88f !important;
 }
 .panel-heading {
@@ -57,12 +57,12 @@ code {
 .tag {
   border: 1px solid #808080 !important;
   border-radius: 5px !important;
-  color: #000 !important;
+  color: #fff !important;
   font-family: "Roboto Mono", Monaco, monospace !important;
   padding: 0px 2px 0px 2px !important;
 }
 .tag a {
-  color: #000;
+  color: #fff !important;
 }
 .label-default {
   background-color: #d80 !important;
