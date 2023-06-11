@@ -12,6 +12,13 @@ body {
   background-origin: initial !important;
   background-clip: initial !important;
 }
+.panel-default {
+  color: #fda;
+  background-color: #432;
+}
+.panel-default a {
+  color: #88f !important;
+}
 .panel-heading {
   color: #fff !important;
   background-image: url("/img/title-background.jpg") !important;
@@ -23,19 +30,19 @@ body {
   background-size: cover !important;
 }
 .panel-heading h2 {
-  text-shadow: #c60 2px 2px 2px;
+  text-shadow: #d80 2px 2px 2px;
   text-transform: capitalize;
 }
 .panel-heading h6 {
-  text-shadow: #c60 1px 1px 1px;
+  text-shadow: #d80 1px 1px 1px;
 }
 h3 {
-  color: #c60 !important;
+  color: #d80 !important;
 }
 li code,
 p code,
 tr code {
-  color: #c60 !important;
+  color: #d80 !important;
   background-color: inherit !important;
 }
 h3 code,
@@ -58,10 +65,10 @@ code {
   color: #000;
 }
 .label-default {
-  background-color: #c60 !important;
+  background-color: #d80 !important;
 }
 .badge {
-  background-color: #c60 !important;
+  background-color: #d80 !important;
 }
 .panel-body ul {
   list-style: none;

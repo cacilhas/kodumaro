@@ -7,7 +7,10 @@
   font-weight normal
   font-style normal
 
-$code = #cc6600
+$code = #dd8800
+$text_color = #ffddaa
+$bg_color = #443322
+$link_color = #8888ff
 $badge_color = $code
 $shadow = $code
 
@@ -18,6 +21,13 @@ body
   background-position initial !important
   background-origin initial !important
   background-clip initial !important
+
+.panel-default
+  color  $text_color
+  background-color $bg_color
+
+  a
+    color $link_color !important
 
 .panel-heading
   color white !important
