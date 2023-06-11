@@ -10,11 +10,11 @@ date: 2020-09-23
 
 :first Hi there!
 
-Kodumaro is a colaboration between three fiend[¹](#pun) programmers:
+Kodumaro is a colaborative effort of three fiend[¹](#pun) programmers,
 [{{ mosaicolivre.author }}][mosaicolivre],
 [{{ montegasppa.author }}][montegasppa], and
-[{{ waltercruz.author }}][waltercruz], in an effort to offer you some
-interesting tips about programming.
+[{{ waltercruz.author }}][waltercruz], to offer you some interesting tips about
+programming.
 
 {:id="pun" :class="small"} ¹I like the pun.
 
