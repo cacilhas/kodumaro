@@ -49,7 +49,7 @@ I reckon [Godot Engine](https://godotengine.org/) is the best balanced game engi
 *   Unreal Engine is the most powerful, but requires too much hardware resources both to develop and to play games.
 *   UPBGE is an eternal doubt.
 *   In GDevelop, simple things become a challenge to be achieved.
-*   Construct and Game Maker are more expensive than they actually deliver, as well as so many others.
+*   Construct3 and Game Maker are more expensive than they actually deliver, as well as so many others.
 *   Scratch aims for Education, not commercial purposes.
 
 I got some Godot games I’ve been working on:

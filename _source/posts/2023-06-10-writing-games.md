@@ -124,7 +124,7 @@ I reckon [Godot Engine][] is the best balanced game engine available:
   both to develop and to play games.
 - UPBGE is an eternal doubt.
 - In GDevelop, simple things become a challenge to be achieved.
-- Construct and Game Maker are more expensive than they actually deliver, as
+- Construct3 and Game Maker are more expensive than they actually deliver, as
   well as so many others.
 - Scratch aims for Education, not commercial purposes.
 
