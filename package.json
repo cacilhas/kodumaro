@@ -37,6 +37,7 @@
     "@types/showdown": "^1.9.3",
     "@types/stylus": "^0.48.38",
     "@types/turndown": "^5.0.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "yarn": "^1.22.19"
   }
 }
