@@ -12,9 +12,9 @@
   "author": "Arĥimedeς Montegasppα Cacilhας",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cacilhas/montegasppa/issues"
+    "url": "https://github.com/cacilhas/kodumaro/issues"
   },
-  "homepage": "https://montegasppa.cacilhas.info/",
+  "homepage": "https://kodumaro.cacilhas.info/",
   "dependencies": {
     "coffeescript": "^2.5.1",
     "indented-filter": "^0.1.1",
