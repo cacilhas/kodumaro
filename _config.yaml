@@ -1,5 +1,5 @@
 author: &author
-  name: &author_name Arĥimedeς Montegasppα Cacilhας
+  name: &author_name Montegasppα Cacilhας
   email: montegasppa@cacilhas.info
   url: //montegasppa.cacilhas.info/author.html
   contacts:
@@ -7,15 +7,6 @@ author: &author
       name: DEV Profile 👩‍💻👨‍💻
       title: DEV Profile 👩‍💻👨‍💻
       url: https://dev.to/cacilhas
-    twitter:
-      name: Twitter
-      title: Arĥimedeς ℳontegasppα
-      url: https://twitter.com/Montegasppa
-      image:
-        source: //cacilhas.info/img/twitter.png
-        style:
-          width: 24px
-          height: 24px
     patreon:
       name: Patreon
       title: ℳontegasppα

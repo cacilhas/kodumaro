@@ -4,12 +4,12 @@
   "description": "",
   "main": "docs/index.html",
   "scripts": {
-    "build": "tsc -p . && node _build.js; yarn clean",
+    "build": "yarn mrproper && tsc -p . && node _build.js; yarn clean",
     "clean": "rm -f _build.js",
     "mrproper": "yarn clean && rm -rf docs",
     "start": "yarn build && python3 -mhttp.server 8000 --directory docs"
   },
-  "author": "Arĥimedeς Montegasppα Cacilhας",
+  "author": "Montegasppα Cacilhας",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cacilhas/kodumaro/issues"
