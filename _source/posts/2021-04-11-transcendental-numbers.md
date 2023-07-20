@@ -8,7 +8,7 @@ permalink: /2021/04/transcendental-numbers.html
 [image]: {{{image}}}
 [become my patron]: https://www.patreon.com/join/cacilhas?
 [DEV.to]: https://dev.to/cacilhas/how-to-compute-arbitrary-precision-transcendental-numbers-59lc
-[employer’s project]: https://contabilone.com/ "Expect the site‘s gonna be published soon."
+[employer’s project]: https://contabilone.com/
 [Euler]: https://www.wolframalpha.com/input/?i=Leonhard+Euler
 [Euler’s constant]: https://mathworld.wolfram.com/e.html
 [Euler’s identity]: https://mathworld.wolfram.com/EulerFormula.html
@@ -144,34 +144,33 @@ So, 26 steps are good enough.
 Let’s implement it using [Python][]:
 
 ```python
-from numbers import Integral, Rational
 from typing import Callable
 
 # Lazy factorial implementation
-fact: Callable[[Integral], Integral] = lambda n: prod(range(1, n+1))
+fact: Callable[[int], int] = lambda n: prod(range(1, n+1))
 
 # An LRU cached version, if you prefer:
 #
 # from functools import lru_cache
 #
-# fact: Callable[[Integral], Integral] = lambda n: lru_cache(
+# fact: Callable[[int], int] = lru_cache(lambda n:
 #     1 if n <= 0 else (n * fact(n - 1))
 # )
 
-def steps(prec: Integral) -> Integral:
+def steps(prec: int) -> int:
     res = 1
     while fact(res) >> prec == 0:
         res += 1
     return res
 ```
 
-The right shift (`>>`) returns zero as long as the value‘s less bit wide than
+The right shift (`>>`) returns zero as long as the value’s less bit wide than
 the precision.
 
 Now let’s compute 𝑒 itself:
 
 ```python
-compute_e: Callable[[Integral], Rational] = lambda prec: sum(
+compute_e: Callable[[int], Rational] = lambda prec: sum(
     1./fact(x) for x in range(prec)
 )
 ```
@@ -179,7 +178,7 @@ compute_e: Callable[[Integral], Rational] = lambda prec: sum(
 The solutions coming out from it is:
 
 ```python
->>> calculate_e(steps(64))  # Python uses 64-bit floats
+>>> calculate_e(steps(64))  # Python uses 64-bit precision floating point numbers
 2.7182818284590455
 >>> math.e
 2.718281828459045
@@ -210,7 +209,7 @@ The process is quite the same used for 𝑒, take the formula:
 Then get the precision:
 
 ```python
-compute_pi: Callable[[Integral], Rational] = lambda prec: 4. * sum(
+compute_pi: Callable[[int], Rational] = lambda prec: 4. * sum(
     (1./(4*n+1) - 1./(4*n+3)) for n in range(prec)
 )
 ```

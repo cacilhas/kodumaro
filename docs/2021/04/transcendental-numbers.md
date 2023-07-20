@@ -2,7 +2,7 @@
 
 It has been four months since my [my last post](/2020/12/implicit-conversions.html), one could think this blog has come to an end, but that’s not the case.
 
-I’ve been very busy working on my [employer’s project](https://contabilone.com/ "Expect the site‘s gonna be published soon."), what drained my time, stopping me working on my personal projects.
+I’ve been very busy working on my [employer’s project](https://contabilone.com/), what drained my time, stopping me working on my personal projects.
 
 Even so, [Kodumaro](//kodumaro.cacilhas.info), [my personal blog](//montegasppa.cacilhas.info/), and my [musical project](https://www.patreon.com/cacilhas) are **not** over. I just have not enough payback for those project, so I cannot apply much time on those. 😢
 
@@ -233,37 +233,36 @@ So, 26 steps are good enough.
 
 Let’s implement it using [Python](https://www.python.org/):
 
-    from numbers import Integral, Rational
     from typing import Callable
     
     # Lazy factorial implementation
-    fact: Callable[[Integral], Integral] = lambda n: prod(range(1, n+1))
+    fact: Callable[[int], int] = lambda n: prod(range(1, n+1))
     
     # An LRU cached version, if you prefer:
     #
     # from functools import lru_cache
     #
-    # fact: Callable[[Integral], Integral] = lambda n: lru_cache(
+    # fact: Callable[[int], int] = lru_cache(lambda n:
     #     1 if n <= 0 else (n * fact(n - 1))
     # )
     
-    def steps(prec: Integral) -> Integral:
+    def steps(prec: int) -> int:
         res = 1
         while fact(res) >> prec == 0:
             res += 1
         return res
 
-The right shift (`>>`) returns zero as long as the value‘s less bit wide than the precision.
+The right shift (`>>`) returns zero as long as the value’s less bit wide than the precision.
 
 Now let’s compute 𝑒 itself:
 
-    compute_e: Callable[[Integral], Rational] = lambda prec: sum(
+    compute_e: Callable[[int], Rational] = lambda prec: sum(
         1./fact(x) for x in range(prec)
     )
 
 The solutions coming out from it is:
 
-    >>> calculate_e(steps(64))  # Python uses 64-bit floats
+    >>> calculate_e(steps(64))  # Python uses 64-bit precision floating point numbers
     2.7182818284590455
     >>> math.e
     2.718281828459045
@@ -288,7 +287,7 @@ $$$$\\pi=4\\sum\_{n=0}^{+\\infty}\\left(\\frac{1}{4n+1}-\\frac{1}{4n+3}\\right)$
 
 Then get the precision:
 
-    compute_pi: Callable[[Integral], Rational] = lambda prec: 4. * sum(
+    compute_pi: Callable[[int], Rational] = lambda prec: 4. * sum(
         (1./(4*n+1) - 1./(4*n+3)) for n in range(prec)
     )
 
