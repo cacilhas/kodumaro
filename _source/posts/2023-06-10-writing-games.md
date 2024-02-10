@@ -82,7 +82,7 @@ find there.
 I’m talking about [Scratch][] first to sweep it away, ’cause Scratch earns its
 own whole post.
 
-I think Scratch is a great sandbox to test concepts and the place to share
+I think Scratch is a great sandbox to test concepts and the place for sharing
 ideas.
 
 I have a Scratch project called [Casual Funny Games][], and we can get into it
