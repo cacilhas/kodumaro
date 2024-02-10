@@ -20,7 +20,7 @@ IMHO, [Itch.io](https://itch.io/) is the best game release platform, and I’ve 
 
 I’m talking about [Scratch](https://scratch.mit.edu/) first to sweep it away, ’cause Scratch earns its own whole post.
 
-I think Scratch is a great sandbox to test concepts and a good place to share ideas.
+I think Scratch is a great sandbox to test concepts and the place to share ideas.
 
 I have a Scratch project called [Casual Funny Games](https://scratch.mit.edu/studios/30951170), and we can get into it in another post. Even on Itch.io I have a [page for it](https://cacilhas.itch.io/casual-funny-games).
 
@@ -30,7 +30,7 @@ I have a Scratch project called [Casual Funny Games](https://scratch.mit.edu/stu
 
 I love [fantasy consoles](https://en.wikipedia.org/wiki/Fantasy_video_game_console), and my favourite is [TIC-80](http://tic80.com/): it has an old home computer feeling which no other console manages to emulate. Therefore I recommend purchasing its [payed version](https://nesbox.itch.io/tic80).
 
-I’ve published some TIC-80 games of my own, most of them developed using [Moonscript](https://moonscript.org/):
+I’ve published some TIC-80 games of my own, all of them developed using [Moonscript](https://moonscript.org/):
 
 *   [Sokoban](https://cacilhas.itch.io/sokoban) is a classic among classics! I literally copied every detail from the [MSX implementation](https://msxgamesworld.com/software.php?id=1518).
 *   [Arkanoid NG](https://cacilhas.itch.io/arkanoid-ng) is my TIC-80 implementation of the classic [Arkanoid](https://spectrumcomputing.co.uk/entry/0000255), one of the first breakout games.
@@ -68,7 +68,7 @@ If you need performance, I recommend [Raylib](https://www.raylib.com/) with [Rus
 Raylib is exceptional for 2D games. Not that good for 3D, but still gets the job done.
 
 *   [Nanpure](https://cacilhas.itch.io/nanpure) is a colourful [sudoku](https://sudoku.com/) – instead of numbers, you got colours.
-*   [Nonogram](https://en.wikipedia.org/wiki/Nonogram) is a random implementation for [nonogram](https://en.wikipedia.org/wiki/Nonogram). It doesn’t form meaningful pictures, but has the advantage to be able to be played forever.
+*   [Nonogram](https://cacilhas.itch.io/nonogram) is a random implementation for [nonogram](https://en.wikipedia.org/wiki/Nonogram). It doesn’t form meaningful pictures, but has the advantage to be able to be played forever.
 
 I have a lot of other [Rust applications](https://crates.io/users/cacilhas), but only these two games.
 
@@ -82,7 +82,7 @@ I couldn’t leave [GDevelop](https://gdevelop.io/) out. It is nothing its autho
 *   It’s **not no-code**.
 *   It’s **not RAD**.
 
-Even so it’s really amusing, I usually have a lotta good time using GDevelop.
+Even so it’s really amusing, I usually have a lotta good time developing in GDevelop.
 
 I used to have a GDevelop game in Itch.io, [Get Out!](https://cacilhas.itch.io/get-out), however it has a very sad story: its code wasn’t published to any remote repository, and my hard disk got fried, so I **lost the whole code**. 😭
 

@@ -25,13 +25,13 @@ permalink: /2023/06/writing-games.html
 [Itch.io]: https://itch.io/
 [Kenney’s assets]: https://kenney.nl/assets
 [Kodumaro Catch Game]: https://cacilhas.itch.io/catch-game
+[kodumaro-nonogram]: https://cacilhas.itch.io/nonogram
 [Kodumaro Tetris]: https://cacilhas.itch.io/tetris
 [Missile Command]: https://cacilhas.itch.io/missile
 [Moonscript]: https://moonscript.org/
 [msx-sokoban]: https://msxgamesworld.com/software.php?id=1518
 [my personal showcase]: https://cacilhas.itch.io/
 [Nanpure]: https://cacilhas.itch.io/nanpure
-[Nonogram]: https://cacilhas.itch.io/nonogram
 [nonogram]: https://en.wikipedia.org/wiki/Nonogram
 [Raylib]: https://www.raylib.com/
 [Rust]: https://www.rust-lang.org/
@@ -82,7 +82,7 @@ find there.
 I’m talking about [Scratch][] first to sweep it away, ’cause Scratch earns its
 own whole post.
 
-I think Scratch is a great sandbox to test concepts and a good place to share
+I think Scratch is a great sandbox to test concepts and the place to share
 ideas.
 
 I have a Scratch project called [Casual Funny Games][], and we can get into it
@@ -97,7 +97,7 @@ I love [fantasy consoles][], and my favourite is [TIC-80][]: it has an old home
 computer feeling which no other console manages to emulate. Therefore I
 recommend purchasing its [payed version][tic-80-on-itch].
 
-I’ve published some TIC-80 games of my own, most of them developed using
+I’ve published some TIC-80 games of my own, all of them developed using
 [Moonscript][]:
 
 - [Sokoban][] is a classic among classics! I literally copied every detail from
@@ -151,8 +151,9 @@ Raylib is exceptional for 2D games. Not that good for 3D, but still gets the job
 done.
 
 - [Nanpure][] is a colourful [sudoku][] – instead of numbers, you got colours.
-- [Nonogram][] is a random implementation for [nonogram][]. It doesn’t form
-  meaningful pictures, but has the advantage to be able to be played forever.
+- [Nonogram][kodumaro-nonogram] is a random implementation for [nonogram][]. It
+  doesn’t form meaningful pictures, but has the advantage to be able to be
+  played forever.
 
 I have a lot of other [Rust applications][], but only these two games.
 
@@ -167,7 +168,8 @@ I couldn’t leave [GDevelop][] out. It is nothing its authors claim it is:
 - It’s **not no-code**.
 - It’s **not RAD**.
 
-Even so it’s really amusing, I usually have a lotta good time using GDevelop.
+Even so it’s really amusing, I usually have a lotta good time developing in
+GDevelop.
 
 I used to have a GDevelop game in Itch.io, [Get Out!][], however it has a very
 sad story: its code wasn’t published to any remote repository, and my hard disk
