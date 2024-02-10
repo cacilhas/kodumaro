@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -121,19 +122,19 @@ learning curve (despite <a href="https://lwn.net/Articles/249460/" target="_blan
 <p>An instance of any struct that matches an interface is instance of the
 inteface too, just like structural types.</p>
 <p>For sample, take the following interface:</p>
-<pre><code class="golang language-golang">type Person interface {
+<pre><code class="go language-go">type Person interface {
   FirstName() string
   LastName() string
   FullName() string
   Birth() time.Time
 }</code></pre>
 <p>If one has defined a struct:</p>
-<pre><code class="golang language-golang">type personType struct {
+<pre><code class="go language-go">type personType struct {
   firstName, lastName string
   birth               time.Time
 }</code></pre>
 <p>And then every function from <code>Person</code> is implemented for <code>personType</code>:</p>
-<pre><code class="golang language-golang">func (p personType) FirstName() string {
+<pre><code class="go language-go">func (p personType) FirstName() string {
   return p.firstName
 }
 
@@ -149,14 +150,14 @@ func (p personType) Birth() time.Time {
   return p.birth
 }</code></pre>
 <p>Then it’s possible to return a <code>personType</code> as <code>Person</code>:</p>
-<pre><code class="golang language-golang">func NewPerson(firstName, lastName string, birth time.Time) Person {
+<pre><code class="go language-go">func NewPerson(firstName, lastName string, birth time.Time) Person {
   return personType{firstName, lastName, birth}
 }</code></pre>
 <h3 id="unit-tests">Unit tests</h3>
 <p>For testing, Go’s got a built-in <a href="https://golang.org/pkg/testing/" target="_blank">testing</a> library, that’s very easy to
 use.</p>
 <p>Being very verbose, a yet simple example may be:</p>
-<pre><code class="golang language-golang">func TestPerson(t *testing.T) {
+<pre><code class="go language-go">func TestPerson(t *testing.T) {
   timeForm := "2006-01-02"
   birth, _ := time.Parse(timeForm, "2017-06-12")
   p := NewPerson("John", "Doe", birth)
@@ -196,10 +197,10 @@ use.</p>
 <p>The Go’s exception catching pattern is returning the error as second argument
 for every function that can go wrong.</p>
 <p>In the sample above, one can found this line:</p>
-<pre><code class="golang language-golang">birth, _ := time.Parse(timeForm, "2017-06-12")</code></pre>
+<pre><code class="go language-go">birth, _ := time.Parse(timeForm, "2017-06-12")</code></pre>
 <p>The underscore (<code>_</code>) means the exception is discarded. If one wanna deal with
 the exception, one can do something like:</p>
-<pre><code class="golang language-golang">birth, err := time.Parse(timeForm, "2017-06-12")
+<pre><code class="go language-go">birth, err := time.Parse(timeForm, "2017-06-12")
 if err != nil {
   // Deal with the exception
   ...
@@ -211,7 +212,7 @@ calling the <code>panic()</code> function.</p>
 <p>One can catch the exception and return it through a writable channel (<code>chan</code> or
 <code>chan&lt;-</code>).</p>
 <p>It smells like:</p>
-<pre><code class="golang language-golang">func DoSomethingDangerous(res chan&lt;- error) {
+<pre><code class="go language-go">func DoSomethingDangerous(res chan&lt;- error) {
   defer res &lt;- recover()
 
   // Do somenthing that can raise a panic attack.
@@ -228,6 +229,7 @@ calling the <code>panic()</code> function.</p>
 </ul>
 <hr />
 <p class="small"> Also in <a href="https://dev.to/cacilhas/about-go-51c1" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/go.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

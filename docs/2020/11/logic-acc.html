@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -132,7 +133,7 @@ For instance, “Anna and Bob are friends,” that can be represented as followi
 <pre><code class="prolog language-prolog">friend(anna, bob).</code></pre>
 <p><strong>Rules</strong> depend on facts or other rules to validate whether it’s true. For
 instance:</p>
-<pre><code>sunny(Today) :- \+ raining(Today).</code></pre>
+<pre><code class="prolog language-prolog">sunny(Today) :- \+ raining(Today).</code></pre>
 <p>Today is sunny if it’s not (<code>\+</code>) raining.</p>
 <p><strong>Goal</strong> is the target query, with no variables. <strong>Query</strong> is any question asked
 to the system, with variables or not.</p>
@@ -195,6 +196,7 @@ fibonacci(N, A, `_1`, `_R`) :- succ(N1, N),
                                fibonacci(N1, B, `_3`, `_R`).</code></pre>
 <hr />
 <p class="small"> Also in <a href="https://dev.to/cacilhas/accumulators-in-declarative-logic-programming-5cl7" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/prolog.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>

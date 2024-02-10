@@ -248,3 +248,5 @@ are, including serie representations.
 :small Also in [DEV.to].
 
 :small Also in [Functional Works][].
+
+:language python

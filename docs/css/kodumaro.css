@@ -54,6 +54,9 @@ code {
   font-family: "SF Mono", Monaco, monospace !important;
   font-variant-ligatures: normal;
 }
+pre {
+  padding: 0px;
+}
 .tag {
   border: 1px solid #808080 !important;
   border-radius: 5px !important;

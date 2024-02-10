@@ -183,3 +183,5 @@ a linear procedure.
 -----
 
 :small Also in [DEV.to][].
+
+:language moonscript
