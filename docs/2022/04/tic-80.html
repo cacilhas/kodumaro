@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>Yin-Yang symbol on TIC-80</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -112,7 +113,7 @@ languages too, such as <a href="https://moonscript.org/" target="_blank">Moonscr
 <p>Aiming to build a brief presentation, I’m coding a turning Yin-Yang symbol.</p>
 <h3 id="opening-tic-80">Opening TIC-80</h3>
 <p>Once you open the application, you got the prompt:</p>
-<pre class="prettyprint"><code>TIC-80 tiny computer
+<pre><code>TIC-80 tiny computer
 version 1.0.2164 (b09c50c)
 https://tic80.com (C) 2017-2022
 
@@ -121,12 +122,12 @@ hello! type help for help
 &gt;</code></pre>
 <p>Or something like this. In order to start a new project, use the <code>NEW</code> command,
 informing the language you mean to use:</p>
-<pre class="prettyprint"><code>&gt; NEW moon
+<pre><code>&gt; NEW moon
 new cart is created</code></pre>
 <h3 id="coding-headers-and-background">Coding headers and background</h3>
 <p>Now press <code>Escape</code> to enter the code editor. It starts with a boilerplate we
 don’t need, let’s delete the code, keeping only the headers:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">-- title:   game title
+<pre><code class="moonscript language-moonscript">-- title:   game title
 -- author:  game developer, email, etc.
 -- desc:    short description
 -- site:    website link
@@ -134,14 +135,14 @@ don’t need, let’s delete the code, keeping only the headers:</p>
 -- version: 0.1
 -- script:  moon</code></pre>
 <p>Update the headers to reflect our intension:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">-- title:  Yin Yang
+<pre><code class="moonscript language-moonscript">-- title:  Yin Yang
 -- author: Kodumaro
 -- script: moon
 export ^
 local  *</code></pre>
 <p>We’re gonna do some black magic hereafter… This code was taken from the
 <a href="https://github.com/nesbox/TIC-80/wiki/Sky-gradient" target="_blank">TIC-80’s wiki</a>, and creates a beautiful blue background gradient:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">BOOT=cls
+<pre><code class="moonscript language-moonscript">BOOT=cls
 
 BDR==&gt;
  poke 0x3fc1,@
@@ -172,7 +173,7 @@ back:</p>
 <p>In TIC-80, colours are stored in a palette, <a href="https://lospec.com/palette-list/sweetie-16" target="_blank">defaults to</a>:</p>
 <p class="text-center"> <img src="//cacilhas.info/img/tic80/sweetie-16.png" alt="Sweetie-16" /></p>
 <p>So the variables are initialised:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">import sin,cos,pi from math
+<pre><code class="moonscript language-moonscript">import sin,cos,pi from math
 c=x:120,y:68
 tau=pi*2
 angle=0
@@ -184,11 +185,11 @@ yang=12</code></pre>
 to run every tick.</p>
 <p>The black eye centre is calculated as a 2D vector of the current angle, away
 from the screen centre using the greater radius:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript"> c1=x:c.x+cos(angle)*rM,y:c.y+sin(angle)*rM</code></pre>
+<pre><code class="moonscript language-moonscript"> c1=x:c.x+cos(angle)*rM,y:c.y+sin(angle)*rM</code></pre>
 <p>The white eye centre is 180° away from the other one:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript"> a2=angle+pi</code></pre>
+<pre><code class="moonscript language-moonscript"> a2=angle+pi</code></pre>
 <p>And the centre is calculated from the angle <code>a2</code>:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">  c2=x:c.x+cos(a2)*rM,y:c.y+sin(a2)*rM</code></pre>
+<pre><code class="moonscript language-moonscript">  c2=x:c.x+cos(a2)*rM,y:c.y+sin(a2)*rM</code></pre>
 <p>Now we need to draw four circles:</p>
 <ol>
 <li>A big dark one in <code>c1</code></li>
@@ -197,17 +198,18 @@ from the screen centre using the greater radius:</p>
 <li>A small dark one in <code>c2</code></li>
 </ol>
 <p>Which, using the TIC-8 assets, is:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript"> circ c1.x,c1.y,rM,yin
+<pre><code class="moonscript language-moonscript"> circ c1.x,c1.y,rM,yin
  circ c2.x,c2.y,rM,yang
  circ c1.x,c1.y,rm,yang
  circ c2.x,c2.y,rm,yin</code></pre>
 <p>At the function end, the angle is updated by 180° a second – since TIC-80
 framerate is 60Hz, 3° a tick:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript"> angle=(angle+pi/60)%tau</code></pre>
+<pre><code class="moonscript language-moonscript"> angle=(angle+pi/60)%tau</code></pre>
 <p>Running you must get the turning symbol:</p>
 <p class="text-center"> <img src="//cacilhas.info/img/tic80/yin-yang.png" alt="Yin Yang" /></p>
 <h3 id="resouces">Resouces</h3>
 <p>Download the <a href="//cacilhas.info/misc/tic80/yin-yang.moon">Moonscript code</a>, or the <a href="//cacilhas.info/misc/tic80/yin-yang.tic">cartridge</a>.</p>
+<script src="/js/languages/moonscript.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
@@ -289,6 +291,7 @@ framerate is 60Hz, 3° a tick:</p>
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })

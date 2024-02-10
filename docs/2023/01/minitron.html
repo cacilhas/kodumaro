@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>A MiniTron in 47 lines</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -100,7 +101,7 @@
           <p class="pull-right"> <img src="//cacilhas.info/img/tic80.png" alt="TIC-80" width="120" height="120" /></p>
 <p class="mg-first"> This is a sample code for learning, written in <a href="https://moonscript.org/" target="_blank">Moonscript</a> for
 <a href="https://tic80.com/" target="_blank">TIC-80</a>:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">-- title:   MiniTron
+<pre><code class="moonscript language-moonscript">-- title:   MiniTron
 -- author:  Montegasppa &lt;montegasppa@cacilhas.info&gt;
 -- desc:    A very spartan Tron implementation
 -- license: 3-Clause BSD
@@ -150,6 +151,7 @@ OVR = -&gt;
 <p>Download the <a href="//cacilhas.info/misc/minitron.tic">card</a>!</p>
 <hr />
 <p class="small"> Also in <a href="https://dev.to/cacilhas/a-minitron-in-47-lines-10d6" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/moonscript.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
@@ -231,6 +233,7 @@ OVR = -&gt;
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })

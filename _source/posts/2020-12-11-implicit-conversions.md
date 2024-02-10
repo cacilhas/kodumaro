@@ -132,3 +132,5 @@ Note: value classes are tagged by inheriting `AnyVal`, and need a value of type
 -----
 
 :small Also in [DEV.to][].
+
+:language scala

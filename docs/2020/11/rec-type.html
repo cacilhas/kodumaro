@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>Recursive Types</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -107,25 +108,25 @@ great for it), but I was in need of something more flexible.</p>
 <p>I decided to use language primitives, like integers, strings, big numbers, and
 so one.</p>
 <p>So I created some types for deal with that:</p>
-<pre class="prettyprint"><code class="scala language-scala">type unroll[+A] = A
+<pre><code class="scala language-scala">type unroll[+A] = A
 type JValue = unroll[_ &lt;: Any]
 type JArray = Seq[JValue]
 type JObject = String Map JValue</code></pre>
 <p>Not bad, I can hold complex objects in <code>JValue</code> variables:</p>
-<pre class="prettyprint"><code class="scala language-scala">val data: JValue = Map(
+<pre><code class="scala language-scala">val data: JValue = Map(
   "x" -&gt; 3,
   "y" -&gt; 4,
   "name" -&gt; "test",
   "list" -&gt; Seq("zero", 1, 2, 3, true),
 )</code></pre>
 <p>But odd things started to happen, like:</p>
-<pre class="prettyprint"><code class="scala language-scala">val element: JValue = &lt;data&gt;This is an XML node&lt;/data&gt;</code></pre>
+<pre><code class="scala language-scala">val element: JValue = &lt;data&gt;This is an XML node&lt;/data&gt;</code></pre>
 <p>It should crash! But doesn’t, since <code>NodeSeq</code> is <code>Any</code>’s subclass.</p>
 <p>I needed something stricter.</p>
 <h3 id="enter-dotty">Enter Dotty</h3>
 <p>Now I’ve tried <a href="https://dotty.epfl.ch/" target="_blank">Scala 3, codename Dotty</a>.</p>
 <p>My first unsuccessful attempt was:</p>
-<pre class="prettyprint"><code class="scala language-scala">type JNull = Unit
+<pre><code class="scala language-scala">type JNull = Unit
 type JValue = Int | BigDecimal | String | Boolean | JNull | Seq[JValue] | String Map JValue</code></pre>
 <p>And Dotty put a damper on my plans:</p>
 <blockquote>
@@ -133,13 +134,13 @@ type JValue = Int | BigDecimal | String | Boolean | JNull | Seq[JValue] | String
   <p>alias Map[Int | BigDecimal | String | Boolean | JNull | Seq[JValue] | String, JValue] of type JValue refers back to the type itself.</p>
 </blockquote>
 <p>Then I hit <a href="https://users.scala-lang.org/t/defining-a-type-in-a-recursive-way-in-dotty/6798/8" target="_blank">this strange solution</a>:</p>
-<pre class="prettyprint"><code class="scala language-scala">type Rec[F[_], A] = A match {
+<pre><code class="scala language-scala">type Rec[F[_], A] = A match {
   case Int =&gt; Int | F[Rec[F, Int]]
   case _ =&gt; A | F[Rec[F, A]]
 }</code></pre>
 <p><a href="https://users.scala-lang.org/u/jasper-m" target="_blank">Jasper M</a> is suggesting taking advantage of the Scala <a href="https://medium.com/@sinisalouc/overcoming-type-erasure-in-scala-8f2422070d20" target="_blank">type erasure</a> to
 create a runtime <code>LazyRef</code>. So I followed the advice:</p>
-<pre class="prettyprint"><code class="scala language-scala">type JNull = Unit
+<pre><code class="scala language-scala">type JNull = Unit
 type JPrimitive = Int | BigDecimal | String | Boolean | JNull
 
 type Rec[JArray[_], JObject[_], A] = A match
@@ -148,7 +149,7 @@ type Rec[JArray[_], JObject[_], A] = A match
 
 type JValue = Rec[Seq, [A] =&gt;&gt; String Map A, JPrimitive]</code></pre>
 <p>And <em>vois la</em>! It works pretty well!</p>
-<pre class="prettyprint"><code class="scala language-scala">// Okay, unit represents null
+<pre><code class="scala language-scala">// Okay, unit represents null
 var x: JValue = ()
 
 // Also okay
@@ -171,6 +172,7 @@ x = null</code></pre>
 possible.</p>
 <hr />
 <p class="small"> Also in <a href="https://dev.to/cacilhas/recursive-types-32je" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/scala.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
@@ -252,6 +254,7 @@ possible.</p>
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>Domain-specific Languages</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -120,9 +121,9 @@ in fact, just some <code>SELECT</code> resources. For the sake of simplicity, we
 taking care of sql injection or complex queries; The idea is enabling to
 represent a simple <code>SELECT</code> statement in a syntax as close as possible to SQL.</p>
 <p>The target is:</p>
-<pre class="prettyprint"><code class="scala language-scala">Select("name", "surname") from "t_users" where Condition("surname") == "Doe" limit 10</code></pre>
+<pre><code class="scala language-scala">Select("name", "surname") from "t_users" where Condition("surname") == "Doe" limit 10</code></pre>
 <p>It must serialise to:</p>
-<pre class="prettyprint"><code class="sql language-sql">SELECT name, surname FROM t_users WHERE surname = 'Doe' LIMIT 10</code></pre>
+<pre><code class="sql language-sql">SELECT name, surname FROM t_users WHERE surname = 'Doe' LIMIT 10</code></pre>
 <h3 id="the-condition">The condition</h3>
 <p>In order to build the <code>Select</code>, we need the <code>From</code>. To build the <code>From</code>, we need
 the <code>Condition</code>, so let’s start there.</p>
@@ -131,7 +132,7 @@ represent “equals,” “not equals,” etc.</p>
 <p>Let’s leave other criteria out and deal only with comparisons, “is null,” “not
 null.” The <code>Criteria</code> trait doesn’t need to be accessible outside of the
 <code>Condition</code> class, so it can be private:</p>
-<pre class="prettyprint"><code class="scala language-scala">private sealed trait Criteria {def format(key: String, value: String): String}
+<pre><code class="scala language-scala">private sealed trait Criteria {def format(key: String, value: String): String}
 
 private object EQUALS     extends Criteria {def format(key:  String, value: String): String = s"$key = $value"}
 private object GE         extends Criteria {def format(key:  String, value: String): String = s"$key &gt;= $value"}
@@ -144,7 +145,7 @@ private object NOTNULL    extends Criteria {def format(key:  String, value: Stri
 <p>Now, the <code>Condition</code> must hold the field name, the comparing value, and the
 criteria. Since some conditions have no value, the value may be optional.</p>
 <p>Let’s use a valueless criteria for default:</p>
-<pre class="prettyprint"><code class="scala language-scala">case class Condition[A](field: String, value: Option[A] = None) {
+<pre><code class="scala language-scala">case class Condition[A](field: String, value: Option[A] = None) {
 
   private var criteria: Criteria = NOTNULL
 
@@ -205,7 +206,7 @@ criteria. Since some conditions have no value, the value may be optional.</p>
 }</code></pre>
 <h3 id="going-down-to-select">Going down to <code>SELECT</code></h3>
 <p>The <code>Select</code> class is the simpliest of all, it just build a simple <code>SELECT</code>:</p>
-<pre class="prettyprint"><code class="scala language-scala">case class Select private(fields: String*) {
+<pre><code class="scala language-scala">case class Select private(fields: String*) {
 
   def from(tables: String*): From = new From(this, tables: _*)
 
@@ -229,7 +230,7 @@ deal with the <code>SELECT</code> syntax. We’re implementing only <code>WHERE<
 <p>For making it possible, we need to override the <code>clone</code> method too.</p>
 <p>Most of the logic is gonna be in the <code>toString</code> method, responsible for build
 the SQL statement.</p>
-<pre class="prettyprint"><code class="scala language-scala">class From(val select: Select, val tables: String*) {
+<pre><code class="scala language-scala">class From(val select: Select, val tables: String*) {
 
   private var conditions: Seq[Condition[_]] = Nil
   private var _groupBy: Seq[String] = Nil
@@ -337,6 +338,7 @@ statement.</p>
 this post’s target; I just wanna show you how Scala is powerful to design DSL.</p>
 <hr />
 <p class="small"> Also in <a href="https://dev.to/cacilhas/domain-specific-languages-3b52" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/scala.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
@@ -418,6 +420,7 @@ this post’s target; I just wanna show you how Scala is powerful to design DSL.
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>Implicit Conversions in Scala</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -109,30 +110,30 @@ structure, which would be way harder to code if it needs to be done explicitly.<
 expansions.</p>
 <h3 id="implicit-methods">Implicit methods</h3>
 <p>Take the double value sequence:</p>
-<pre class="prettyprint"><code class="scala language-scala">Seq(0.4, 1.8, 2.2)</code></pre>
+<pre><code class="scala language-scala">Seq(0.4, 1.8, 2.2)</code></pre>
 <p>In this case it’s a short list, but it could be hundreds larger. One needs only
 their ceiling integer values, so one must a way to convert the values.</p>
 <p>One can use an implicit method:</p>
-<pre class="prettyprint"><code class="scala language-scala">implicit def double2int(value: Double): Int = value.ceil.toInt
+<pre><code class="scala language-scala">implicit def double2int(value: Double): Int = value.ceil.toInt
 
 val values: Seq[Int] = Seq(0.4, 1.8, 2.2)</code></pre>
 <p>The value of <code>values</code> is:</p>
-<pre class="prettyprint"><code class="scala language-scala">Seq(1, 2, 3)</code></pre>
+<pre><code class="scala language-scala">Seq(1, 2, 3)</code></pre>
 <p>It’s expanded to:</p>
-<pre class="prettyprint"><code class="scala language-scala">def double2int(value: Double): Int = value.ceil.toInt
+<pre><code class="scala language-scala">def double2int(value: Double): Int = value.ceil.toInt
 
 val values: Seq[Int] = Seq(0.4, 1.8, 2.2) map double2int</code></pre>
 <h3 id="implicit-classes">Implicit classes</h3>
 <p>Implicit classes are the way to inject methods into existent types.</p>
 <p>For instance, let’s create a string method to generate the XML node from it:</p>
-<pre class="prettyprint"><code class="scala language-scala">implicit class XMLString(value: String):
+<pre><code class="scala language-scala">implicit class XMLString(value: String):
   def toXML: Option[NodeSeq] = Try(XML loadString value).toOption
 
 val source = getDataFromOutsideSource() // : String
 
 val node = source.toXML</code></pre>
 <p>It expands to:</p>
-<pre class="prettyprint"><code class="scala language-scala">class XMLString(value: String) {
+<pre><code class="scala language-scala">class XMLString(value: String) {
   def toXML: Option[NodeSeq] = Try(XML loadString value).toOption
 }
 
@@ -150,7 +151,7 @@ instance each call. Instead, every value class uses a companion object to
 envelope the methods, and calls them from it.</p>
 <p>Consider the following example, a method to determine whether a double is
 integral:</p>
-<pre class="prettyprint"><code class="scala language-scala">implicit class IntegralDouble(val value: Double) extends AnyVal:
+<pre><code class="scala language-scala">implicit class IntegralDouble(val value: Double) extends AnyVal:
   def isIntegral: Boolean = value % 1 == 0
 
 val value = getSomeFloatPointValue() // : Double
@@ -158,7 +159,7 @@ val value = getSomeFloatPointValue() // : Double
 if (value.isIntegral)
   doSomeMathWith(value)</code></pre>
 <p>Which expands to:</p>
-<pre class="prettyprint"><code class="scala language-scala">object IntegralDouble {
+<pre><code class="scala language-scala">object IntegralDouble {
   def isIntegral$expansion(value: Double): Boolean = value % 1.0 == 0.0
 }
 
@@ -172,6 +173,7 @@ if (IntegralDouble.isIntegral$expansion(value))
 <code>Long</code>, <code>Short</code>, <code>Unit</code>, and their <a href="https://docs.scala-lang.org/sips/42.type.html" target="_blank">literal-based singleton types</a>.</p>
 <hr />
 <p class="small"> Also in <a href="https://dev.to/cacilhas/implicit-conversions-in-scala-4dgb" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/scala.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
@@ -253,6 +255,7 @@ if (IntegralDouble.isIntegral$expansion(value))
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })

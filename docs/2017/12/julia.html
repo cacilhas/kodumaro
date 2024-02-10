@@ -23,7 +23,7 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
  coisas. Diante do problema, a solução dos desenvolvedores foi <strong>tirar a documentação do ar</strong>.</p><p>Foi um banho de água fria e o suficiente para me fazer <strong>desistir</strong> da plataforma.</p><p>Mais recentemente, quando lançaram a <a href="https://julialang.org/downloads/">versão 0.6.1</a> e voltaram com a documentação, resolvi tentar de novo e descobri que meus
  códigos antigos voltaram a funcionar com pouquíssimas alterações.</p><blockquote><p><code>[update 2017-12-18]</code></p><p>No dia seguinte à publicação deste artigo, foi lançada a versão 0.6.2.</p><p><code>[/update]</code></p></blockquote><h3>Uma nova chance</h3><p>Voltei então a experimentar Julia. Apesar das frustrações causadas pelos elogios exagerados e falta de profissionalismo da equipe envolvida, a
  plataforma é realmente boa. A sintaxe é sim elegante, a performance
- razoável e o ecossistema interessante.</p><p>A instalação de pacotes é muito simplificada. Por exemplo, para instalar o pacote de suporte <a href="https://pt.wikipedia.org/wiki/REST">REST<em>ful</em></a> o comando é:</p><pre><code><p><em>sh&gt; </em><strong>julia -e 'Pkg.add("Resftful")'</strong></p></code></pre><p>E Julia faz todo o resto pra você.</p><h3>Collatz</h3><p>Como um exemplo de um módulo Julia, vamos implementar a <a href="https://pt.wikipedia.org/wiki/Conjectura_de_Collatz">conjectura de Collatz</a>. Não veremos paralelismo, mas veremos criação de <a href="https://docs.julialang.org/en/stable/manual/modules/">módulo</a>, <a href="https://docs.julialang.org/en/stable/manual/interfaces/#man-interface-iteration-1">interface de reiteradores</a>, <a href="https://docs.julialang.org/en/stable/manual/documentation/#Types-1"><em>struct</em></a> e <a href="https://docs.julialang.org/en/stable/stdlib/test/">testes unitários</a>.</p><p>Podemos começar com o arquivo <code>Collatz.jl</code>, que definirá o módulo<code>Collatz</code>. O arquivo pode começar assim:</p><pre class="prettyprint"><code>module Collatz
+ razoável e o ecossistema interessante.</p><p>A instalação de pacotes é muito simplificada. Por exemplo, para instalar o pacote de suporte <a href="https://pt.wikipedia.org/wiki/REST">REST<em>ful</em></a> o comando é:</p><pre><code><p><em>sh&gt; </em><strong>julia -e 'Pkg.add("Resftful")'</strong></p></code></pre><p>E Julia faz todo o resto pra você.</p><h3>Collatz</h3><p>Como um exemplo de um módulo Julia, vamos implementar a <a href="https://pt.wikipedia.org/wiki/Conjectura_de_Collatz">conjectura de Collatz</a>. Não veremos paralelismo, mas veremos criação de <a href="https://docs.julialang.org/en/stable/manual/modules/">módulo</a>, <a href="https://docs.julialang.org/en/stable/manual/interfaces/#man-interface-iteration-1">interface de reiteradores</a>, <a href="https://docs.julialang.org/en/stable/manual/documentation/#Types-1"><em>struct</em></a> e <a href="https://docs.julialang.org/en/stable/stdlib/test/">testes unitários</a>.</p><p>Podemos começar com o arquivo <code>Collatz.jl</code>, que definirá o módulo<code>Collatz</code>. O arquivo pode começar assim:</p><pre><code>module Collatz
 
     #=
      = O código vai aqui.
@@ -31,7 +31,7 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
 
 end
 </code></pre><p>Para representar o reiterador (e os passos da reiteração) usaremos um <em>struct</em> imutável que embrulha um inteiro sem sinal. Criaremos dois
- construtores para fazer a conversão de número para o reiterador:</p><pre class="prettyprint"><code>struct Iter
+ construtores para fazer a conversão de número para o reiterador:</p><pre><code>struct Iter
     value::UInt
     Iter(value::UInt) = (value ≡ zero(value)) ?
         throw(InexactError()) : new(value)
@@ -40,9 +40,9 @@ end
 </code></pre><p>O primeiro construtor recebe um inteiro sem sinal, se for igual a zero, levanta um erro do tipo <code>InexactError</code>, se não repassa para o
  construtor padrão, que envelopará o inteiro. O segundo construtor recebe
  um inteiro qualquer, converte para sem sinal e repassa para o construtor
- cabível (o anterior).</p><p>Para expor nosso reiterador, vamos criar um método que retorne o reiterador. No cabeçalho do arquivo, dentro do módulo, exporte:</p><pre class="prettyprint"><code>export collatz
-</code></pre><p>E após a definição do <em>struct</em>:</p><pre class="prettyprint"><code>collatz(value::Integer) = Iter(value)
-</code></pre><p>Isso diz que a função <code>collatz</code>, quando recebe um parâmetro inteiro, retorna um reiterador embrulhando o valor.</p><p>Podemos escrever um teste: crie o arquivo <code>test.jl</code>:</p><pre class="prettyprint"><code>#!/usr/bin/env julia
+ cabível (o anterior).</p><p>Para expor nosso reiterador, vamos criar um método que retorne o reiterador. No cabeçalho do arquivo, dentro do módulo, exporte:</p><pre><code>export collatz
+</code></pre><p>E após a definição do <em>struct</em>:</p><pre><code>collatz(value::Integer) = Iter(value)
+</code></pre><p>Isso diz que a função <code>collatz</code>, quando recebe um parâmetro inteiro, retorna um reiterador embrulhando o valor.</p><p>Podemos escrever um teste: crie o arquivo <code>test.jl</code>:</p><pre><code>#!/usr/bin/env julia
 
 include("Collatz.jl")
 
@@ -61,7 +61,7 @@ module CollatzTest
     end
 end
 </code></pre><p>Já pode rodar o teste:</p><pre><code><p><em>sh&gt; </em><strong>chmod +x test.jl</strong><br/><em>sh&gt; </em><strong>./test.jl</strong><br/><em>Test Summary:            | Pass  Total</em><br/><em>Collatz.Iter             |    1      1</em><br/><em>  should return iterator |    1      1</em></p></code></pre><p>O <em>macro</em> <code>@testset</code> define um grupo de testes, <code>@test</code> define um teste e <code>@inferred</code> forçar a inferência de tipo para permitir
- testes com <code>isa</code>.</p><p>Podemos testar também os casos de erro:</p><pre class="prettyprint"><code>@testset "collatz tests" begin
+ testes com <code>isa</code>.</p><p>Podemos testar também os casos de erro:</p><pre><code>@testset "collatz tests" begin
     @testset "should fail on zero" begin
         @test_throws InexactError collatz(0)
     end
@@ -74,24 +74,24 @@ end
         @test_throws MethodError collatz(1.0)
     end
 end
-</code></pre><p>Voltando ao módulo <code>Collatz</code>, para permitir a reiteração, precisamos importar algumas funções e criar métodos para elas:</p><pre class="prettyprint"><code>import Base.SizeUnknown,
+</code></pre><p>Voltando ao módulo <code>Collatz</code>, para permitir a reiteração, precisamos importar algumas funções e criar métodos para elas:</p><pre><code>import Base.SizeUnknown,
        Base.done,
        Base.iteratorsize,
        Base.next,
        Base.start
 </code></pre><p>Essas funções são usadas internamente pelo <em>data model</em> de Julia para gerenciar reiteração.</p><p>Bem, nesse tipo de sequência não se sabe o tamanho da reiteração, portanto precisamos definir um método para <code>iteratorsize</code> que retorne tamanho
- desconhecido:</p><pre class="prettyprint"><code>iteratorsize(::Iter) = SizeUnknown()
-</code></pre><p>E podemos começar a reiteração com nenhum valor:</p><pre class="prettyprint"><code>start(::Iter) = nothing
-</code></pre><p>Passo seguinte é o próprio valor envolvido pelo reiterador:</p><pre class="prettyprint"><code>next(iter::Iter, ::Void) = (iter.value, iter.value)
-</code></pre><p>Os passos seguintes serão definidos pelo método <code>nextstep</code>:</p><pre class="prettyprint"><code>next(::Iter, state::UInt) = state |&gt; nextstep |&gt; v -&gt; (v, v)
-</code></pre><p>Enquanto <code>nextstep</code> implementa o cálculo do passo da conjectura:</p><pre class="prettyprint"><code>nextstep(value::UInt) = (value % 2) ≡ zero(value) ? value ÷ 2 : 3value + 1
-</code></pre><p>Para a parada, se nada foi retornado ainda, não terminou:</p><pre class="prettyprint"><code>done(::Iter, ::Void) = false
-</code></pre><p>E termina quando chega a um:</p><pre class="prettyprint"><code>done(::Iter, state::UInt) = state ≡ one(state)
-</code></pre><p>Resta apenas testar. Na <em>suite</em> de testes <code>collatz tests</code> acrescente o seguinte teste:</p><pre class="prettyprint"><code>@testset "should be iterable" begin
+ desconhecido:</p><pre><code>iteratorsize(::Iter) = SizeUnknown()
+</code></pre><p>E podemos começar a reiteração com nenhum valor:</p><pre><code>start(::Iter) = nothing
+</code></pre><p>Passo seguinte é o próprio valor envolvido pelo reiterador:</p><pre><code>next(iter::Iter, ::Void) = (iter.value, iter.value)
+</code></pre><p>Os passos seguintes serão definidos pelo método <code>nextstep</code>:</p><pre><code>next(::Iter, state::UInt) = state |&gt; nextstep |&gt; v -&gt; (v, v)
+</code></pre><p>Enquanto <code>nextstep</code> implementa o cálculo do passo da conjectura:</p><pre><code>nextstep(value::UInt) = (value % 2) ≡ zero(value) ? value ÷ 2 : 3value + 1
+</code></pre><p>Para a parada, se nada foi retornado ainda, não terminou:</p><pre><code>done(::Iter, ::Void) = false
+</code></pre><p>E termina quando chega a um:</p><pre><code>done(::Iter, state::UInt) = state ≡ one(state)
+</code></pre><p>Resta apenas testar. Na <em>suite</em> de testes <code>collatz tests</code> acrescente o seguinte teste:</p><pre><code>@testset "should be iterable" begin
     @test [n for n in collatz(5)] == [5, 16, 8, 4, 2, 1]
 end
 </code></pre><p>Temos aqui uma <a href="https://pt.wikipedia.org/wiki/Compreensão_de_lista"><em>list comprehension</em></a> para transformar a sequência em uma lista testável. Poderíamos fazer
- diferente:</p><pre class="prettyprint"><code>@testset "should be iterable" begin
+ diferente:</p><pre><code>@testset "should be iterable" begin
     @test collect(collatz(5)) == [5, 16, 8, 4, 2, 1]
 end
 </code></pre><h3>Arquivos</h3><ul class="list-group"><a href="https://github.com/cacilhas/misc/blob/master/julia/test.jl"><li class="list-group-item"><i class="glyphicon glyphicon-hand-right"></i> <code>test.jl</code></li></a><a href="https://github.com/cacilhas/misc/blob/master/julia/Collatz.jl"><li class="list-group-item"><i class="glyphicon glyphicon-hand-right"></i> <code>Collatz.jl</code></li></a></ul><p>No próximo artigo explicarei melhor alguns detalhes da sintaxe e a relação entre função e métodos.</p></div></div><p class="text-right"><small class="tag"><a href="/tags/functional.html">Functional</a></small></p><div class="panel panel-default"><div class="panel-body"><div class="pull-right"><small><a href="https://kodumaro.cacilhas.info/2017/12/metodos.html">Next: Funções e métodos »</a></small></div></div></div><div class="panel panel-default"><div class="panel-body"><div id="disqus_thread"></div><script language="javascript">var disqus_config = function() {

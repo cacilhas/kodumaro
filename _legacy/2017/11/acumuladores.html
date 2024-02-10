@@ -17,12 +17,12 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
  execução em si consiste em “perguntas” (<em>queries</em>) feitas a esse
  domínio.</p><p>Ao contrário da programação imperativa, nenhuma ordem é dada ao sistema, apenas perguntas, e, ao contrário da programação funcional, efeitos
  colaterais são amplamente tolerados.</p><p>Esses efeitos colaterais vão desde comuncação I/O a até alterações no domínio de verdades – ou seja: o sistema pode aprender novas verdades.</p><p>O domínio de verdade consiste em um conjunto de predicados, e há duas formas de definir um predicado: dizendo se ele é verdadeiro ou falso, ou definindo
- o predicado como uma cadeia de outros predicados.</p><p>Como exemplo vamos determinar os valores da <a href="https://pt.wikipedia.org/wiki/Sequência_de_Fibonacci">sequência de Fibonacci</a> em programação lógica usando acumuladores, assim como fizemos no <a href="https://kodumaro.cacilhas.info/2017/11/lazy-racket.html">artigo sobre acumuladores</a> em programação funcional.</p><h3>Fibonacci</h3><p>Vamos primeiro definir a sequência como um conjunto de verdades.</p><p>Como se trata de uma árvore binária, temos duas paradas, que são definidas como os dois primeiros valores da sequência sendo 1.</p><p>Em <a href="http://www.swi-prolog.org/">Prolog</a> dizemos que é verdade que o elemento na posição 0 é igual a 1:</p><pre class="prettyprint"><code>fibonacci(0, 1).
-</code></pre><p>E que o elemento na posição 1 é igual 1:</p><pre class="prettyprint"><code>fibonacci(1, 1).
+ o predicado como uma cadeia de outros predicados.</p><p>Como exemplo vamos determinar os valores da <a href="https://pt.wikipedia.org/wiki/Sequência_de_Fibonacci">sequência de Fibonacci</a> em programação lógica usando acumuladores, assim como fizemos no <a href="https://kodumaro.cacilhas.info/2017/11/lazy-racket.html">artigo sobre acumuladores</a> em programação funcional.</p><h3>Fibonacci</h3><p>Vamos primeiro definir a sequência como um conjunto de verdades.</p><p>Como se trata de uma árvore binária, temos duas paradas, que são definidas como os dois primeiros valores da sequência sendo 1.</p><p>Em <a href="http://www.swi-prolog.org/">Prolog</a> dizemos que é verdade que o elemento na posição 0 é igual a 1:</p><pre><code>fibonacci(0, 1).
+</code></pre><p>E que o elemento na posição 1 é igual 1:</p><pre><code>fibonacci(1, 1).
 </code></pre><p>Em seguinda, podemos definir o passo: cada elemento é a soma dos dois anteriores. Então, dado o elemento <code>N</code>, sendo <code>N1</code> o anterior
  a ele e <code>N2</code> o anterior a este segundo, podemos determinar os
  elementos nestas posições (<code>R1</code> e <code>R2</code>), para então dizer que
- o resultado da posição <code>N</code> é a soma de <code>R1</code> e <code>R2</code>:</p><pre class="prettyprint"><code>fibonacci(N, R) :- succ(N1, N),
+ o resultado da posição <code>N</code> é a soma de <code>R1</code> e <code>R2</code>:</p><pre><code>fibonacci(N, R) :- succ(N1, N),
                    succ(N2, N1),
                    fibonacci(N1, R1),
                    fibonacci(N2, R2),
@@ -30,15 +30,15 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
 </code></pre><p>Já temos a definição lógica da sequência de Fibonacci! Porém de forma muito ineficiente, construindo uma árvore binária, empilheirando <em>stacks</em> de
  funções uns sobre os outros.</p><p>Para resolver o problema, precisamos fazer uma solução linear tirando proveito de <a href="http://wiki.c2.com/?TailCallOptimization">TCO</a>. Para tanto, usaremos dois acumuladores.</p><p>Acumuladores</p><p>Vamos descartar tudo o que fizemos até agora. Precisamos redefinir o cálculo como uma chamada para a função com acumuladores, passando os valores
  iniciais para os acumuladores. Como usaremos o segundo acumulador como
- resultado, o primeiro (descartado) conterá 0.</p><p>Também adicionaremos uma verificação de valor, para evitar a passagem de valores negativos:</p><pre class="prettyprint"><code>fibonacci(N, R) :- N &gt;= 0,
+ resultado, o primeiro (descartado) conterá 0.</p><p>Também adicionaremos uma verificação de valor, para evitar a passagem de valores negativos:</p><pre><code>fibonacci(N, R) :- N &gt;= 0,
                    fibonacci(N, 0, 1, R).
 </code></pre><p>Assim, o elemento na posição <code>N</code> é <code>R</code> <strong>se</strong> <code>N</code> for maior ou igual a zero e a última pergunta (<code>fibonacci(N, 0, 1, R)</code>)
- for verdadeira.</p><p>Agora vamos definir este último predicado. A parada pode ser definida como:</p><pre class="prettyprint"><code>fibonacci(0, _, R, R) :- !.
+ for verdadeira.</p><p>Agora vamos definir este último predicado. A parada pode ser definida como:</p><pre><code>fibonacci(0, _, R, R) :- !.
 </code></pre><p>Significa que, chegando a <code>N</code> valendo 0, ignora-se o primeiro acumulador e a resposta é igual ao segundo acumulador. o Sinal <code>!</code> indica que,
  se o caso bater com esta definição, ignorar qualquer outra; o símbolo
  <code>_</code> indica que o parâmetro deve ser ignorado.</p><p>O passo pode ser definido como: <code>N1</code> é o antecessor de <code>N</code> – ou melhor, <code>N</code> é o sucessor de <code>N1</code>, <code>AB</code> é a soma dos
  acumuladores <code>A</code> e <code>B</code>, e para o índice <code>N1</code> o primeiro
- acumulador é <code>B</code> e o segundo <code>AB</code>:</p><pre class="prettyprint"><code>fibonacci(N, A, B, R) :- succ(N1, N),
+ acumulador é <code>B</code> e o segundo <code>AB</code>:</p><pre><code>fibonacci(N, A, B, R) :- succ(N1, N),
                          plus(A, B, AB),
                          fibonacci(N1, B, AB, R).
 </code></pre><p>Já temos a sequência e podemos testá-la:</p><pre><code><em>sh$</em> <strong>swipl -q</strong>
@@ -49,19 +49,19 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
 <em>X = 8.</em>
 
 </code></pre><h3>Cadeia de predicados</h3><p>Também podemos definir a função como uma <a href="https://pt.wikipedia.org/wiki/Gramática_de_cláusulas_definidas">cadeia de predicados</a>, usando a sintaxe <code>--&gt;</code>.</p><p>Precisaremos instalar o pacote <code>lambda</code>:</p><pre><code><em>?-</em> <strong>pack_install(lambda).</strong>
-</code></pre><p>E no código <code>fibonacci.pl</code>:</p><pre class="prettyprint"><code>:- [library(lambda)].
-</code></pre><p>Reescrevendo a parada:</p><pre class="prettyprint"><code>fibonacci(0, _) --&gt; '='.
+</code></pre><p>E no código <code>fibonacci.pl</code>:</p><pre><code>:- [library(lambda)].
+</code></pre><p>Reescrevendo a parada:</p><pre><code>fibonacci(0, _) --&gt; '='.
 </code></pre><p>A sintaxe <code>--&gt;</code> entende que o predicado recebe dois parâmetros extra: o resultado do predicado anterior da cadeia e o valor a ser passado para
- o próximo predicado.</p><p>Por exemplo:</p><pre class="prettyprint"><code>d --&gt; a(1), b, c(test).
-</code></pre><p>é o mesmp que:</p><pre class="prettyprint"><code>d(P1, R) :- a(1, P1, R1),
+ o próximo predicado.</p><p>Por exemplo:</p><pre><code>d --&gt; a(1), b, c(test).
+</code></pre><p>é o mesmp que:</p><pre><code>d(P1, R) :- a(1, P1, R1),
             b(R1, R2),
             c(test, R2, R).
-</code></pre><p><code>'='</code> é o mesmo que garantir igualdade: <code>'='(P1,R)</code>, ou <code>P1 = R</code>.</p><p>Precisamos abordar cada predicado da cadeia e convertê-lo nesse formato.</p><p>Aqui temos dois problemas (solucionáveis): o primeiro predicado define o valor de <code>N1</code> sem alterar a cadeira. Para isso usamos <code>{}</code>:</p><pre class="prettyprint"><code>{ succ(N1, N1) },
+</code></pre><p><code>'='</code> é o mesmo que garantir igualdade: <code>'='(P1,R)</code>, ou <code>P1 = R</code>.</p><p>Precisamos abordar cada predicado da cadeia e convertê-lo nesse formato.</p><p>Aqui temos dois problemas (solucionáveis): o primeiro predicado define o valor de <code>N1</code> sem alterar a cadeira. Para isso usamos <code>{}</code>:</p><pre><code>{ succ(N1, N1) },
 </code></pre><p>Segundo precisamos guardar o valor do segundo acumulador em um <em>slot</em> qualquer, por isso precisamos da biblioteca <code>lambda</code>: pegar <code>B</code>
- e repassá-lo para o próximo predicado da cadeia:</p><pre class="prettyprint"><code>call(\B^B^B^(true), B),
+ e repassá-lo para o próximo predicado da cadeia:</p><pre><code>call(\B^B^B^(true), B),
 </code></pre><p>Isso equivale ao lambda <code>λbbb.TRUE</code> atribuindo o valor dos parâmetros (idênticos) a <code>B</code>. Os dois últimos predicados (<code>plus/3</code> e
  <code>fibonacci/4</code>) já estão organizados para receber e repassar ao
- cumulador:</p><pre class="prettyprint"><code>fibonacci(N, A) --&gt; { succ(N1, N) },
+ cumulador:</p><pre><code>fibonacci(N, A) --&gt; { succ(N1, N) },
                     call(\B^B^B^(true), B),
                     plus(A),
                     fibonacci(N1, B).

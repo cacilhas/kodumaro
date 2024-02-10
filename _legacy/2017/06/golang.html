@@ -17,7 +17,7 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
  experimentada e readaptada, como <a href="https://wiki.gnome.org/Projects/Vala">Vala</a> fez com <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/">C#</a>. Teria atraído mais bons programadores devido a uma menor curva de
  aprendizado (apesar de <a href="https://lwn.net/Articles/249460/">Linus Torvalds discordar</a>).</p><h3>Interfaces</h3><p><a href="https://www.golang-book.com/books/intro/9">Interfaces</a> se parecem parte com interfaces de <a href="https://www.oracle.com/java/">Java</a> e parte com interfaces de Objective-C – na verdade <code>struct</code>s se
  parecem com interfaces de Objetive-C. Porém, ao contrário de Java, as
- interfaces de Go seguem a filosofia <a href="http://apprize.info/python/fluent/12.html"><em>goose typing</em></a>, que é um aprimoramento do <a href="https://pt.wikipedia.org/wiki/Duck_typing"><em>duck typing</em></a>.</p><p>Ou seja, se seu objeto implementa todos os métodos descritos pela interface, ele <strong>é de fato</strong> uma instância daquela interface.</p><p>Por exemplo:</p><pre class="prettyprint"><code>type Person interface {
+ interfaces de Go seguem a filosofia <a href="http://apprize.info/python/fluent/12.html"><em>goose typing</em></a>, que é um aprimoramento do <a href="https://pt.wikipedia.org/wiki/Duck_typing"><em>duck typing</em></a>.</p><p>Ou seja, se seu objeto implementa todos os métodos descritos pela interface, ele <strong>é de fato</strong> uma instância daquela interface.</p><p>Por exemplo:</p><pre><code>type Person interface {
   FirstName() string
   LastName() string
   FullName() string
@@ -50,7 +50,7 @@ func (p personType) Birth() time.Time {
 }
 </code></pre><p>No exemplo acima, instâncias da <code>struct</code> <code>personType</code> são automaticamente instâncias de <code>Person</code>, uma vez que
  <code>personType</code> implemente todos os métodos da interface, podendo ser
- retornadas por <code>NewPerson</code> como instâncias reais de <code>Person</code>.</p><h3>Testes unitários</h3><p>A biblioteca padrão de Go oferece recursos simples, porém poderosíssimos para testes unitários. Trata-se da <em>lib</em> <a href="https://golang.org/pkg/testing/"><code>testing</code></a>.</p><p>Por exemplo, para testarmos nossa <code>struct</code> (sendo bastante prolixo):</p><pre class="prettyprint"><code>func TestPerson(t *testing.T) {
+ retornadas por <code>NewPerson</code> como instâncias reais de <code>Person</code>.</p><h3>Testes unitários</h3><p>A biblioteca padrão de Go oferece recursos simples, porém poderosíssimos para testes unitários. Trata-se da <em>lib</em> <a href="https://golang.org/pkg/testing/"><code>testing</code></a>.</p><p>Por exemplo, para testarmos nossa <code>struct</code> (sendo bastante prolixo):</p><pre><code>func TestPerson(t *testing.T) {
   timeForm := "2000-01-31"
   birth, _ := time.Parse(timeForm, "2017-06-12")
   p := NewPerson("John", "Doe", birth)
@@ -84,8 +84,8 @@ func (p personType) Birth() time.Time {
     })
   })
 }
-</code></pre><p>Mais do que suficiente para os testes unitários do dia-a-dia.</p><h3>Tratamento de exceções</h3><p>A forma padrão de tratar exceções em Go é retornando a exceção como última resposta.</p><p>Por exemplo, você deve ter reparado no <code>_</code> na linha que cria a data de nascimento:</p><pre class="prettyprint"><code>birth, _ := time.Parse(timeForm, "2017-06-12")
-</code></pre><p>O <code>_</code> diz para Go descartar o retorno daquela posição. Um código mais honesto seria:</p><pre class="prettyprint"><code>birth, err := time.Parse(timeForm, "2017-06-12")
+</code></pre><p>Mais do que suficiente para os testes unitários do dia-a-dia.</p><h3>Tratamento de exceções</h3><p>A forma padrão de tratar exceções em Go é retornando a exceção como última resposta.</p><p>Por exemplo, você deve ter reparado no <code>_</code> na linha que cria a data de nascimento:</p><pre><code>birth, _ := time.Parse(timeForm, "2017-06-12")
+</code></pre><p>O <code>_</code> diz para Go descartar o retorno daquela posição. Um código mais honesto seria:</p><pre><code>birth, err := time.Parse(timeForm, "2017-06-12")
 if err != nil {
   // Faça alguma coisa com err
   ...
@@ -95,7 +95,7 @@ if err != nil {
  destrutiva que derruba a <em>gorrotina</em> atual e cada uma que esteja
  conectada a ela.</p><p>A forma de tratar um <code>panic</code> é através de um <code>defer</code>.</p><p><code>defer</code> é um bloco de código (não uma função!) que é executado incondicionalmente na saída da função atual.</p><p>Dentro do bloco <code>defer</code> é possível chamar <code>recover()</code>, que para a propagação do <code>panic</code>. Se houver algum <code>panic</code> sendo propagado,
  sua exceção será retornada pelo <code>recover()</code>, caso não haja, será
- retornado <code>nil</code>.</p><p>Por exemplo:</p><pre class="prettyprint"><code>func DoSomethingDangerous(res chan<- error) {
+ retornado <code>nil</code>.</p><p>Por exemplo:</p><pre><code>func DoSomethingDangerous(res chan<- error) {
   defer res <- recover()
 
   // Faz algo que possa levar a um panic

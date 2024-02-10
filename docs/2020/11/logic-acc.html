@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>Accumulators in Declarative Logic Programming</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -129,10 +130,10 @@ the system trying to figure out the answers is the expected program behaviour.</
 <a href="http://www.ablmcc.edu.hk/~scy/prolog/pro02.htm" target="_blank">facts, rules, goals, and queries</a>.</p>
 <p><strong>Facts</strong> are self-sufficient truths, they don’t depend on other facts or rules.
 For instance, “Anna and Bob are friends,” that can be represented as following:</p>
-<pre class="prettyprint"><code class="prolog language-prolog">friend(anna, bob).</code></pre>
+<pre><code class="prolog language-prolog">friend(anna, bob).</code></pre>
 <p><strong>Rules</strong> depend on facts or other rules to validate whether it’s true. For
 instance:</p>
-<pre class="prettyprint"><code>sunny(Today) :- \+ raining(Today).</code></pre>
+<pre><code class="prolog language-prolog">sunny(Today) :- \+ raining(Today).</code></pre>
 <p>Today is sunny if it’s not (<code>\+</code>) raining.</p>
 <p><strong>Goal</strong> is the target query, with no variables. <strong>Query</strong> is any question asked
 to the system, with variables or not.</p>
@@ -143,11 +144,11 @@ otherwise.</p>
 <p>Let’s define the Fibonacci numbers now.</p>
 <p>It’s required the two first values (indexes 0 and 1) to equal 1. One represents
 it in Prolog like this:</p>
-<pre class="prettyprint"><code class="prolog language-prolog">fibonacci(0, 1).
+<pre><code class="prolog language-prolog">fibonacci(0, 1).
 fibonacci(1, 1).</code></pre>
 <p>The step is defined as the sum of its two predecessors. It’s valid to call the
 current value <code>N</code> and its predecessors <code>N1</code> and <code>N2</code>:</p>
-<pre class="prettyprint"><code class="prolog language-prolog">fibonacci(N, R) :- succ(N1, N),
+<pre><code class="prolog language-prolog">fibonacci(N, R) :- succ(N1, N),
                    succ(N2, N1),
                    fibonacci(N1, R1),
                    fibonacci(N2, R2),
@@ -156,7 +157,7 @@ current value <code>N</code> and its predecessors <code>N1</code> and <code>N2</
 <a href="http://wiki.c2.com/?TailCallOptimization" target="_blank">TCO</a> is needed for solving it.</p>
 <p>Let’s define two rules: the main one calling an auxiliary one. The auxiliary
 rule uses accumulators to transport the result:</p>
-<pre class="prettyprint"><code class="prolog language-prolog">fibonacci(N, R) :- N &gt;= 0,
+<pre><code class="prolog language-prolog">fibonacci(N, R) :- N &gt;= 0,
                    fibonacci(N, 0, 1, R).
 
 fibonacci(0, _, R, R) :- !.
@@ -172,7 +173,7 @@ grammar in Prolog. It uses the <code>--&gt;/2</code> clause as a syntax sugar fo
 clearance.</p>
 <p>Shallowly it omits the last two parameters, creating a chaining of clauses.</p>
 <p>The <code>fibonacci//2</code> becomes something like:</p>
-<pre class="prettyprint"><code class="prolog language-prolog">fibonacci(0, _) --&gt; '=', !.
+<pre><code class="prolog language-prolog">fibonacci(0, _) --&gt; '=', !.
 fibonacci(N, A) --&gt; { succ(N1, N) },
                     call(\B^B^B^(true), B),
                     plus(A),
@@ -184,17 +185,18 @@ first implicit parameter.</p>
 <p>Finally, the recursion is called passing the predecessor, the original first
 parameter, followed by the current implicit parameters.</p>
 <p>You can try the following query:</p>
-<pre class="prettyprint"><code class="prolog language-prolog">forall(between(0, 10, X), (fibonacci(X, F), writeln({X, F}))).</code></pre>
+<pre><code class="prolog language-prolog">forall(between(0, 10, X), (fibonacci(X, F), writeln({X, F}))).</code></pre>
 <p>For some DCG magics, look at the <a href="http://www.pathwayslms.com/swipltuts/dcg/" target="_blank">Anne Ogborn tutorial</a>.</p>
 <hr />
 <p>For curiosity, the DCG above expands to:</p>
-<pre class="prettyprint"><code class="prolog language-prolog">fibonacci(0, _, `_1`, `_R`) :- `_1` = `_R`, !.
+<pre><code class="prolog language-prolog">fibonacci(0, _, `_1`, `_R`) :- `_1` = `_R`, !.
 fibonacci(N, A, `_1`, `_R`) :- succ(N1, N),
                                call(\B^B^B^(true), B, `_1`, `_2`),
                                plus(A, `_2`, `_3`),
                                fibonacci(N1, B, `_3`, `_R`).</code></pre>
 <hr />
 <p class="small"> Also in <a href="https://dev.to/cacilhas/accumulators-in-declarative-logic-programming-5cl7" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/prolog.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
@@ -276,6 +278,7 @@ fibonacci(N, A, `_1`, `_R`) :- succ(N1, N),
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })

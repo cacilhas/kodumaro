@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>Type Isomorphism</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -104,11 +105,11 @@ interchangeable with no information lost.</p>
 be casted or converted to <code>B</code> and back to the same <code>a</code>, and any <code>b: B</code> can be
 casted or converted to <code>A</code> and back to the same <code>b</code>.</p>
 <p>For instance, take the following example:</p>
-<pre class="prettyprint"><code class="scala language-scala">sealed trait YesNo
+<pre><code class="scala language-scala">sealed trait YesNo
 object Yes extends YesNo
 object No extends YesNo</code></pre>
 <p>The <code>YesNo</code> type is isomorphic to <code>Boolean</code>:</p>
-<pre class="prettyprint"><code class="scala language-scala">implicit def yesno2bool(value: YesNo): Boolean = value == Yes
+<pre><code class="scala language-scala">implicit def yesno2bool(value: YesNo): Boolean = value == Yes
 implicit def bool2yesno(value: Boolean): YesNo = if (value) Yes else No</code></pre>
 <p>There’s no information lost in converting <code>YesNo</code> to <code>Boolean</code> and back.</p>
 <h3 id="arity">Arity</h3>
@@ -164,7 +165,7 @@ the argument type’s – multiple arguments are equivalent to a conjunctive typ
 <p>So <code>A|B</code> is isomorphic to <code>B|A</code>, and <code>(A,B)</code> is isomorphic to <code>(B,A)</code>.</p>
 <p>The proof is nothing trickier than the <code>swap</code> function itself: if you can swap
 the values without losing data, the types are isomorphic.</p>
-<pre class="prettyprint"><code class="scala language-scala">def swap[A, B](v: (A, B)): (B, A) = (v._2, v._1)</code></pre>
+<pre><code class="scala language-scala">def swap[A, B](v: (A, B)): (B, A) = (v._2, v._1)</code></pre>
 <h3 id="curiosity-isomorphism-in-c">Curiosity: isomorphism in C</h3>
 <p>Since C has low-level access to the memory (through pointers) and is weakly
 typed, one can cast between the two most different types if they have the same
@@ -172,7 +173,7 @@ memory length.</p>
 <p>For instance, in C <code>int</code> and <code>float</code> are isomorphic.</p>
 <p>And amusing code is the fast inverse square root form Quake Ⅲ Arena (<code>Q_rsqrt</code>),
 it does some type black magic with pointer casting:</p>
-<pre class="prettyprint"><code class="c language-c">float Q_rsqrt(float number) {
+<pre><code class="c language-c">float Q_rsqrt(float number) {
     long i;
     float x2, y;
     const float threehalfs = 1.5F;
@@ -191,6 +192,8 @@ different arities, but it shows how data are easily interchangeable, promoting
 the isomorphism.</p>
 <hr />
 <p class="small"> Also in <a href="https://dev.to/cacilhas/type-isomorphism-3bp9" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/c.min.js"></script>
+<script src="/js/languages/scala.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
@@ -272,6 +275,7 @@ the isomorphism.</p>
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })

@@ -82,6 +82,10 @@ showdown.extension('SmallParagraphExtension', {
   regex: /<p>:small\b/g,
   replace: '<p class="small">',
 });
+showdown.extension('LanguageExtension', {
+  type: 'lang',
+  filter: createIndentedFilter(':language', str => `<script src="/js/languages/${str.trim()}.min.js"></script>`),
+});
 
 // Slangs
 showdown.extension('AbbrExtension', {
@@ -121,11 +125,6 @@ showdown.extension('ImgExtension', {
   regex: /<img([^>]+[^/])>/g,
   replace: '<img $1 />',
 });
-showdown.extension('PreExtension', {
-  type: 'output',
-  regex: /<pre>/g,
-  replace: '<pre class="prettyprint">',
-});
 showdown.extension('TableExtension', {
   type: 'output',
   regex: /<table>/g,
@@ -144,8 +143,8 @@ function buildMdConverter(): Converter {
     'FloatRightExtension',
     'IExtension',
     'ImgExtension',
+    'LanguageExtension',
     'MathExtension',
-    'PreExtension',
     'SmallParagraphExtension',
     'TableExtension',
     'YoutubeExtension',

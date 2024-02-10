@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>Lua and MoonScript Iterators</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -111,12 +112,12 @@ in <a href="https://moonscript.org/" target="_blank">MoonScript</a>.</p>
 <li>The initial value.</li>
 </ol>
 <p>For instance, the <a href="https://planetmath.org/CollatzProblem" target="_blank">Collatz Conjecture</a> can be implemented as follows:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">collatz = =&gt; _collatz, 1, @*2</code></pre>
+<pre><code class="moonscript language-moonscript">collatz = =&gt; _collatz, 1, @*2</code></pre>
 <p>The initial value is dobled to allow the first step to return it; the loop ends
 when the state reaches one (<code>1</code>).</p>
 <p>The deal function (<code>_collatz</code>) must accept the stop condition (<code>1</code>) and the
 last value. Using the MoonScript’s <code>self</code>, we can omit the first argument:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">_collatz = (last) =&gt;
+<pre><code class="moonscript language-moonscript">_collatz = (last) =&gt;
     return if last == @
     switch last % 2
         when 0
@@ -124,7 +125,7 @@ last value. Using the MoonScript’s <code>self</code>, we can omit the first ar
         when 1
             last * 3 + 1</code></pre>
 <p>Then it already works in <code>mooni</code>:</p>
-<pre class="prettyprint"><code>moon&gt; print x for x in collatz 10
+<pre><code>moon&gt; print x for x in collatz 10
 10
 5
 16
@@ -137,7 +138,7 @@ moon&gt;</code></pre>
 <p>We can solve this problem by using closures too.</p>
 <p>For that, we need to write a factory that returns only the deal function, but
 with no arguments.</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">collatz = (value) -&gt;
+<pre><code class="moonscript language-moonscript">collatz = (value) -&gt;
     value *= 2
     -&gt;
         return if value == 1
@@ -153,7 +154,7 @@ the <code>collatz</code> implemented using the standard iterator, but in one sin
 <p>The more powerful resource in Lua is the <a href="https://www.lua.org/pil/9.1.html" target="_blank">coroutine</a>.</p>
 <p>Coroutines allow yielding results while it keeps running the concurrent routine.</p>
 <p>Collatz Conjecture using coroutine is:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">_collatz = (value using coroutine) -&gt;
+<pre><code class="moonscript language-moonscript">_collatz = (value using coroutine) -&gt;
     import wrap, yield from coroutine
     wrap -&gt;
         while value != 1
@@ -165,7 +166,7 @@ the <code>collatz</code> implemented using the standard iterator, but in one sin
                     value = value * 3 + 1
         1</code></pre>
 <p>And also:</p>
-<pre class="prettyprint"><code>moon&gt; print x for x in collatz 10
+<pre><code>moon&gt; print x for x in collatz 10
 10
 5
 16
@@ -179,7 +180,7 @@ moon&gt;</code></pre>
 <p>Using the standard iterator, we simply don’t need to know the last result,
 we can manage it inside a mutable state – it’s possible to implement it in only
 one function using <code>unpack</code>:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">fib = (n) -&gt; unpack {
+<pre><code class="moonscript language-moonscript">fib = (n) -&gt; unpack {
     -- Deal function
     =&gt;
         return if @n == 0 -- stop
@@ -190,7 +191,7 @@ one function using <code>unpack</code>:</p>
     {a: 0, b: 1, :n}
 }</code></pre>
 <p>And this works fine:</p>
-<pre class="prettyprint"><code>moon&gt; print i for i in fib 10
+<pre><code>moon&gt; print i for i in fib 10
 1
 1
 2
@@ -202,7 +203,7 @@ one function using <code>unpack</code>:</p>
 34
 55</code></pre>
 <p>Now Fibonacci numbers using coroutine:</p>
-<pre class="prettyprint"><code class="moonscript language-moonscript">fib = (n using coroutine) -&gt;
+<pre><code class="moonscript language-moonscript">fib = (n using coroutine) -&gt;
     import wrap, yield from coroutine
     wrap -&gt;
         a, b = 0, 1
@@ -213,6 +214,7 @@ one function using <code>unpack</code>:</p>
 a linear procedure.</p>
 <hr />
 <p class="small"> Also in <a href="https://dev.to/cacilhas/lua-moonscript-iterators-1fd0" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/moonscript.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
@@ -294,6 +296,7 @@ a linear procedure.</p>
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })

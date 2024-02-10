@@ -16,7 +16,7 @@ ou se prefere trocar para a outra porta ainda fechada.</p><p>Segundo o Paradoxo 
 trocar para a outra porta. Isso porque se a possibilidade dele ganhar era
 33%, ela não se altera, portanto a possibilidade do carro estar em uma das
 outras duas portas – agora apenas uma – é de 67%.</p><p>Nesta sequência de artigos escreveremos um código para colocar à prova esse paradoxo. No processo aprenderemos um pouco sobre <a href="https://github.com/erlang/otp">OTP</a>, o <em>framework</em> de serviços de <a href="http://erlang.org/">Erlang</a>. Neste primeiro artigo, faremos funcionar o primeiro ator: o mestre de
-cerimônias.</p><h3 id="boilerplate"><em>Boilerplate</em></h3><p>Vamos começar com um <em>boilerplate</em> OTP para o mestre de cerimônia. Será um arquivo chamado <code>mh_mc.erl</code>. Usaremos o <a href="http://erlang.org/doc/man/gen_server.html"><code>gen_server</code></a>:</p><pre class="prettyprint"><code class="language-erlang">-module(mh_mc).
+cerimônias.</p><h3 id="boilerplate"><em>Boilerplate</em></h3><p>Vamos começar com um <em>boilerplate</em> OTP para o mestre de cerimônia. Será um arquivo chamado <code>mh_mc.erl</code>. Usaremos o <a href="http://erlang.org/doc/man/gen_server.html"><code>gen_server</code></a>:</p><pre><code class="language-erlang">-module(mh_mc).
 -behavior(gen_server).
 
 -export([start_link/0, stop/0]).
@@ -57,16 +57,16 @@ estado.</li><li class="list-group-item"><i class="glyphicon glyphicon-hand-right
  responde <code>ok</code>.</li><li class="list-group-item"><i class="glyphicon glyphicon-hand-right"></i> <code>handle_cast/2</code>: diz ao OTP o que fazer quando outro processo lança uma chamada assíncrona. Se o requisição for <code>stop</code>, usada pela
  função <code>stop/0</code>, encerra o processo normalmente, caso contrário,
  não responde nada e continua com o estado atual.</li><li class="list-group-item"><i class="glyphicon glyphicon-hand-right"></i> <code>handle_info/2</code>: diz ao OTP o que fazer em caso de <em>timeout</em>.</li><li class="list-group-item"><i class="glyphicon glyphicon-hand-right"></i> <code>terminate/2</code>: função chamada pelo OTP quando o processo encerra.</li></ul><h3 id="iniciando-sistema">Iniciando o sistema</h3><p>A primeira coisa a se fazer é inicializar o sistema criando as portas e colocando os bodes e o carro atrás de cada uma <a href="http://erlang.org/doc/man/random.html">aleatoriamente.</a></p><p>O método que inicializa o processo é <code>init/1</code>. Ele pode continuar recebendo <code>null</code>. O processo deve cuidar pessoalmente de configurar
- as portas.</p><p>Vamos representar as portas usando uma lista de possibilidades. Podemos chamar as possibilidades de <code>prize()</code>:</p><pre class="prettyprint"><code class="language-erlang">-type prize() :: car | goat.
-</code></pre><p>Podemos também definir que as portas são <code>a</code>, <code>b</code> e <code>c</code>:</p><pre class="prettyprint"><code class="language-erlang">-type door() :: a | b | c.
-</code></pre><blockquote><tt>[update 2016-05-23]</tt><p>Colocamos as declarações de tipo no arquivo <code>mh.hrl</code>, que deve ser importando usando:</p><pre class="prettyprint"><code class="language-erlang">-include("mh.hrl").</code></pre><tt>[/update]</tt></blockquote><p>A primeira coisa que precisamos fazer é <em>resetar</em> o sistema de aleatoriedade:</p><pre class="prettyprint"><code class="language-erlang">init(null) -&gt;
+ as portas.</p><p>Vamos representar as portas usando uma lista de possibilidades. Podemos chamar as possibilidades de <code>prize()</code>:</p><pre><code class="language-erlang">-type prize() :: car | goat.
+</code></pre><p>Podemos também definir que as portas são <code>a</code>, <code>b</code> e <code>c</code>:</p><pre><code class="language-erlang">-type door() :: a | b | c.
+</code></pre><blockquote><tt>[update 2016-05-23]</tt><p>Colocamos as declarações de tipo no arquivo <code>mh.hrl</code>, que deve ser importando usando:</p><pre><code class="language-erlang">-include("mh.hrl").</code></pre><tt>[/update]</tt></blockquote><p>A primeira coisa que precisamos fazer é <em>resetar</em> o sistema de aleatoriedade:</p><pre><code class="language-erlang">init(null) -&gt;
   random:seed(now()),
   {ok, []}.
-</code></pre><p>Vamos agora colocar bodes atrás de todas as portas:</p><pre class="prettyprint"><code class="language-erlang">init(null) -&gt;
+</code></pre><p>Vamos agora colocar bodes atrás de todas as portas:</p><pre><code class="language-erlang">init(null) -&gt;
   random:seed(now()),
   Doors = [{a, goat}, {b, goat}, {c, goat}],
   {ok, Doors}.
-</code></pre><p>Agora precisamos escolher uma porta para coloca o carro:</p><pre class="prettyprint"><code class="language-erlang">init(null) -&gt;
+</code></pre><p>Agora precisamos escolher uma porta para coloca o carro:</p><pre><code class="language-erlang">init(null) -&gt;
   random:seed(now()),                                         % inicializa o gerador de números aleatórios
   Doors = [{a, goat}, {b, goat}, {c, goat}],                  % inicializa as três portas com bodes
   CarDoor = lists:nth(random:uniform(3), [a, b, c]),          % escolhe uma porta pra colocar o carro: a, b ou c
@@ -75,24 +75,24 @@ estado.</li><li class="list-group-item"><i class="glyphicon glyphicon-hand-right
  (<code>goat</code>) ou o carro (<code>car</code>) atrás. Nós não conhecemos essa
  formação, mas processo conhece.</p><p>Merece atenção especial a última linha:</p><ul class="list-group"><li class="list-group-item"><i class="glyphicon glyphicon-hand-right"></i> <code>ok</code> informa ao OTP que tudo correu bem.</li><li class="list-group-item"><i class="glyphicon glyphicon-hand-right"></i> O segundo elemento da tupla é a lista de portas. <code>lists:keyreplace/4</code> faz a substituição de um elemento de uma lista
  de tuplas baseada em uma posição das tuplas:<ul><li><code>CarDoor</code> é a porta escolhida;</li><li><code>1</code> indica que a substituição é feita pelo primeiro elemento de cada tupla;</li><li><code>Doors</code> é a list original (apenas bodes);</li><li><code>{CarDoor, car}</code> é o novo elemento carro na porta <code>CarDoor</code>.</li></ul></li></ul><h3 id="valor-das-portas">Obtendo o valor das portas</h3><p>Não faz sentido termos as portas se não pudermos obter seus valores ao final.Para obter o prêmio atrás de um porta, precisamos configurar o método de
- comportamento <code>handle_call/3</code>.</p><p>No momento, a função é:</p><pre class="prettyprint"><code class="language-erlang">handle_call(_Request, _From, State) -&gt; {reply, ok, State}.
-</code></pre><p><strong>Imediatamente</strong> antes, acrescente outra assinatura:</p><pre class="prettyprint"><code class="language-erlang">handle_call({door, Door}, _From, State) -&gt;
+ comportamento <code>handle_call/3</code>.</p><p>No momento, a função é:</p><pre><code class="language-erlang">handle_call(_Request, _From, State) -&gt; {reply, ok, State}.
+</code></pre><p><strong>Imediatamente</strong> antes, acrescente outra assinatura:</p><pre><code class="language-erlang">handle_call({door, Door}, _From, State) -&gt;
     case lists:keyfind(Door, 1, State) of
         {_, Prize} -&gt; {reply, {prize, Prize}, State};
         false -&gt; {reply, null, State}
     end;
 </code></pre><p>Agora, se o processo receber uma chamada síncrona no formato <code>{door, Door}</code>, retornará o conteúdo daquela porta. Precisamos apenas
- de uma interface. Primeiro vamos exportá-la e definir sua especificação:</p><pre class="prettyprint"><code class="language-erlang">-export([start_link/0, stop/0, get_prize/1]).
+ de uma interface. Primeiro vamos exportá-la e definir sua especificação:</p><pre><code class="language-erlang">-export([start_link/0, stop/0, get_prize/1]).
 
 ...
 
 -spec get_prize(Door :: door()) -&gt; {ok, Prize} when Prize :: prize() | {error, _}.
-</code></pre><p>Podemos implementar a função <code>get_prize/1</code>, que apenas faz a chamada para OTP:</p><pre class="prettyprint"><code class="language-erlang">get_prize(Door) -&gt;
+</code></pre><p>Podemos implementar a função <code>get_prize/1</code>, que apenas faz a chamada para OTP:</p><pre><code class="language-erlang">get_prize(Door) -&gt;
     case gen_server:call(?MODULE, {door, Door}) of
         {prize, Prize} -&gt; {ok, Prize};
         Other -&gt; {error, Other}
     end.
-</code></pre><h3 id="outra-porta">A outra porta</h3><p>A última coisa é oferecer a outra porta para abertura. Esse processo tem doisfluxos:</p><ol><li>O convidado escolheu a porta com o carro, então o mestre de cerimônias deveescolher uma das outras duas portas, aleatoriamente;</li><li>O convidado escolheu uma porta com bode, então o mestre de cerimônias deveabrir a outra com bode.</li></ol><p>Imediatamente acima da implementação de falha de <code>handle_call/3</code>, crieuma nova implementação tratando do pedido de outra porta para troca:</p><pre class="prettyprint"><code class="language-erlang">handle_call({other, Door}, _From, State) -&gt;
+</code></pre><h3 id="outra-porta">A outra porta</h3><p>A última coisa é oferecer a outra porta para abertura. Esse processo tem doisfluxos:</p><ol><li>O convidado escolheu a porta com o carro, então o mestre de cerimônias deveescolher uma das outras duas portas, aleatoriamente;</li><li>O convidado escolheu uma porta com bode, então o mestre de cerimônias deveabrir a outra com bode.</li></ol><p>Imediatamente acima da implementação de falha de <code>handle_call/3</code>, crieuma nova implementação tratando do pedido de outra porta para troca:</p><pre><code class="language-erlang">handle_call({other, Door}, _From, State) -&gt;
     case lists:keyfind(Door, 1, State) of
         {_, goat} -&gt;
             % convidado escolheu um bode (67%)
@@ -105,13 +105,13 @@ estado.</li><li class="list-group-item"><i class="glyphicon glyphicon-hand-right
         false -&gt; OtherDoor = null
     end,
     {reply, OtherDoor, State};
-</code></pre><blockquote><tt>[update 2016-05-23]</tt><p>A linha que encontra a porta com o carro merece uma explicação maisprofunda.</p><pre class="prettyprint"><code class="language-erlang">{OtherDoor, _} = lists:keyfind(car, 2,
+</code></pre><blockquote><tt>[update 2016-05-23]</tt><p>A linha que encontra a porta com o carro merece uma explicação maisprofunda.</p><pre><code class="language-erlang">{OtherDoor, _} = lists:keyfind(car, 2,
                                lists:keydelete(Door, 1, State));
-</code></pre><p>A primeira função avaliada é:</p><pre class="prettyprint"><code class="language-erlang">lists:keydelete(Door, 1, State)
+</code></pre><p>A primeira função avaliada é:</p><pre><code class="language-erlang">lists:keydelete(Door, 1, State)
 </code></pre><p>Ela retorna uma nova lista a partir de <code>State</code>, removendo a tupla cujo primeiro elemento é <code>Door</code>, ou seja, a porta escolhida pelo
  convidado. Assim, restam duas portas, uma com um bode, outra com o carro.
 É preciso retornar a porta com o carro.</p><p>Então entra o outro <code>lists:keyfind/3</code>, cujo primeiro parâmetro é <code>car</code> e o segundo <code>2</code>. Ele retorna a tupla cujo
- <strong>segundo</strong> elemento é <code>car</code>.</p><p>Finalmente o <em>partern matching</em> seleciona apenas a letra da porta, armazenando-a em <code>OtherDoor</code>.</p><tt>[/update]</tt></blockquote><p>Também precisamos aqui criar uma interface, da mesma forma:</p><pre class="prettyprint"><code class="language-erlang">-export([start_link/0, stop/0, get_prize/1, suggest_another_door/1]).
+ <strong>segundo</strong> elemento é <code>car</code>.</p><p>Finalmente o <em>partern matching</em> seleciona apenas a letra da porta, armazenando-a em <code>OtherDoor</code>.</p><tt>[/update]</tt></blockquote><p>Também precisamos aqui criar uma interface, da mesma forma:</p><pre><code class="language-erlang">-export([start_link/0, stop/0, get_prize/1, suggest_another_door/1]).
 
 ...
 

@@ -13,42 +13,42 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
  the class’ and the constructor’s one.</p><p>Thus the methods are defined inside the constructor body.</p><p>But we have another problem yet: Fish has no closures, and the local variables are collected as soon as the function ends.</p><p>The way to work around it is creating global variables (and functions) with the name bound to the instance identity.</p><p>On Fish, dunder-started functions and variables are weakly private, similar to <a href="https://linux.die.net/diveintopython/html/object_oriented_framework/private_functions.html">Python private methods</a>. So we can prefix the instance attributes (and methods) with dunder
  (<code>__</code>) and the instance id.</p><p>We’re gonna use the <a href="http://man7.org/linux/man-pages/man1/uuidgen.1.html"><code>uuidgen</code> tool</a>. to generate the id.</p><p>The following example is the classic <code>Person</code> class. It has a <code>name</code> and a <code>birth</code>.</p><h3>The constructor</h3><p>The <code>Person</code> function should create the instance reference and pass the parameters to it.</p><p>The reference should be a dunder class name followed by the instance id. The <code>sed</code> call is for removing the dashes from global id (not supported
  by environment variables). The arguments can be <code>--name</code>,
- <code>--surname</code>, and <code>--birth</code>. Let’s make it work:</p><pre class="prettyprint"><code>function Person -d'Person class'
+ <code>--surname</code>, and <code>--birth</code>. Let’s make it work:</p><pre><code>function Person -d'Person class'
   set -l id (uuidgen)
   set -l self __Person_(echo $id | sed 's!-!!g')
   argparse n/name= s/surname= b/birth= -- $argv
-</code></pre><p>OK, now the parameters can be retrieved from <code>_flag_name</code>, <code>_flag_surname</code>, and <code>_flag_birth</code>.</p><h4>Accessor methods</h4><p>We can create three getters (read accessor methods) called <code>id</code>, <code>fullname</code>, and <code>birth</code>. For that we use alias:</p><pre class="prettyprint"><code>&nbsp; alias $self.id="echo -n $id"
+</code></pre><p>OK, now the parameters can be retrieved from <code>_flag_name</code>, <code>_flag_surname</code>, and <code>_flag_birth</code>.</p><h4>Accessor methods</h4><p>We can create three getters (read accessor methods) called <code>id</code>, <code>fullname</code>, and <code>birth</code>. For that we use alias:</p><pre><code>&nbsp; alias $self.id="echo -n $id"
 &nbsp; alias $self.fullname="echo -n $_flag_name $_flag_surname"
 &nbsp; alias $self.birth="echo -n $_flag_birth"
 </code></pre><h4>Instance methods</h4><p>For sample purpose, we can create a method for serialisation. As Fish doesn’t support closures, all private info must use the Fish approach for weakly
- private data, and the method must be built by <code>eval</code> tool:</p><pre class="prettyprint"><code>&nbsp; eval "function $self.string
+ private data, and the method must be built by <code>eval</code> tool:</p><pre><code>&nbsp; eval "function $self.string
 &nbsp;   printf '%s (%s): %s' ($self.fullname) ($self.id) ($self.birth)
 &nbsp; end"
 </code></pre><p>The <code>$self</code> variable is expanded on the method creation. Every other variable (which is <strong>not</strong> right expanded) must be protected by a
- backslash (<code>&#92;$…</code>).</p><h4>Mutable attributes</h4><p>Again Fish doesn’t support closures, thereat it’s necessary to use global variables. For example, a person can have metadata:</p><pre class="prettyprint"><code>&nbsp; set -g "$self"_metadata
-</code></pre><p>Its access method is a bit more complicated. As explained above, it must deal with non-expanded variables:</p><pre class="prettyprint"><code>&nbsp; eval "function $self.metadata -a metadata
+ backslash (<code>&#92;$…</code>).</p><h4>Mutable attributes</h4><p>Again Fish doesn’t support closures, thereat it’s necessary to use global variables. For example, a person can have metadata:</p><pre><code>&nbsp; set -g "$self"_metadata
+</code></pre><p>Its access method is a bit more complicated. As explained above, it must deal with non-expanded variables:</p><pre><code>&nbsp; eval "function $self.metadata -a metadata
 &nbsp;   test -n &#92;"&#92;$metadata&#92;"
 &nbsp;   and set $self""_metadata &#92;"&#92;$metadata&#92;"
 &nbsp;   echo -n &#92;$$self""_metadata
 &nbsp; end"
 </code></pre><h4>Returning the instance</h4><p>At the constructor block’s end, it’s necessary to return the instance global id. The <code>return</code> statement returns the <strong>status code</strong>, so it’s
- <strong>not</strong> what we want.</p><p>To return string values, we need to <strong>echo</strong> them:</p><pre class="prettyprint"><code>&nbsp; echo -n $self
+ <strong>not</strong> what we want.</p><p>To return string values, we need to <strong>echo</strong> them:</p><pre><code>&nbsp; echo -n $self
 end
 </code></pre><h3>The destructor</h3><p>The Fish garbage collector cannot clean up global variables, not even weakly private when their references die. So we need to do it explicitly.
  Therefore we created a destructor block.</p><p>For the destructor, outside the class, we create a <code>delete</code> function. Inside it, we have to erase all functions related to the supplied instance
- ids – and the variables too, if we got some.</p><p>Let’s iterate over the supplied instance global ids and search for their methods:</p><pre class="prettyprint"><code>function delete -d'garbage collector for class instances'
+ ids – and the variables too, if we got some.</p><p>Let’s iterate over the supplied instance global ids and search for their methods:</p><pre><code>function delete -d'garbage collector for class instances'
   for instance in $argv
     for funcname in (functions --all)
       string match "$instance.*" -- "$funcname" &gt;/dev/null
       and functions --erase "$funcname"
     end
-</code></pre><p>It also must erase the attributes stored in environment variables:</p><pre class="prettyprint"><code>&nbsp;   set | awk '{ print $1; }' | while read envvar
+</code></pre><p>It also must erase the attributes stored in environment variables:</p><pre><code>&nbsp;   set | awk '{ print $1; }' | while read envvar
 &nbsp;     string match "$instance&#92;_*" -- "$envvar" &gt;/dev/null
 &nbsp;     and set --erase "$envvar"
 &nbsp;   end
 &nbsp; end
 end
-</code></pre><p>This is the end!</p><h3>Using the class</h3><p>Now an example of using the class:</p><pre class="prettyprint"><code>begin
+</code></pre><p>This is the end!</p><h3>Using the class</h3><p>Now an example of using the class:</p><pre><code>begin
   set -l person_a (Person -nJohn  -sDoe      -b1970-01-01)
   set -l person_b (Person -nPedro -sde&#92; Lara -b1925-02-25)
   $person_a.metadata nobody &gt;/dev/null

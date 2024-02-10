@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>LISP</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -105,10 +106,10 @@ symbolic data instead of numeric, most imperative languages’ standard.</p>
 <p>LISP means “list processing,” and list is the specification’s main structure.
 Every data – as the code itself – are presented as lists.</p>
 <p>For instance, the sum of 1 and 2:</p>
-<pre class="prettyprint"><code class="lisp language-lisp">(+ 1 2)</code></pre>
+<pre><code class="lisp language-lisp">(+ 1 2)</code></pre>
 <p>Which is a list of the elements <code>+</code>, <code>1</code>, and <code>2</code>. This list is processed by the
 <code>car</code> (head) and <code>cdr</code> (tail) functions:</p>
-<pre class="prettyprint"><code class="lisp language-lisp">(+ . (1 2))</code></pre>
+<pre><code class="lisp language-lisp">(+ . (1 2))</code></pre>
 <p><code>car</code> and <code>cdr</code> are <a href="https://en.wikipedia.org/wiki/IBM_704" target="_blank">IBM 704</a> instructions, the system where LISP was formost
 developed. CAR means “Contents of the Address part of Register number” and CDR
 means “Contents of the Decrement part of Register number.”</p>
@@ -118,18 +119,18 @@ case, the function is <code>'+</code>, which returns the sum of the parameters.<
 <a href="http://www.schemers.org/" target="_blank">Scheme</a>, and <a href="https://clojure.org/" target="_blank">Clojure</a>.</p>
 <p>Let’s take a look at the factorial implementation in three LISP languages. First
 in Common Lisp:</p>
-<pre class="prettyprint"><code class="lisp language-lisp">(defun factorial (n)
+<pre><code class="lisp language-lisp">(defun factorial (n)
   (if (= n 0)
     1
     (* n (factorial (- n 1)))))</code></pre>
 <p>In R⁵RS (Scheme):</p>
-<pre class="prettyprint"><code class="scheme language-scheme">(define factorial
+<pre><code class="scheme language-scheme">(define factorial
   (lambda (n)
     (if (zero? n)
       1
       (* n (factorial (- n 1))))))</code></pre>
 <p>In Clojure:</p>
-<pre class="prettyprint"><code class="clojure language-clojure">(defn factorial [n]
+<pre><code class="clojure language-clojure">(defn factorial [n]
   (reduce * (range 1 (inc n))))</code></pre>
 <h3 id="scheme">Scheme</h3>
 <p>Scheme has became a family itself, with a whole lotta different variations, not
@@ -141,7 +142,7 @@ WYSIWYG interface builder called <a href="https://pkgs.racket-lang.org/package/m
 <p>The interpreter supports <a href="http://www.schemers.org/Documents/Standards/R5RS/" target="_blank">R⁵RS</a>, <a href="http://www.r6rs.org/" target="_blank">R⁶RS</a>, <a href="https://docs.racket-lang.org/" target="_blank">PLT</a>, <a href="https://docs.racket-lang.org/lazy/" target="_blank">Lazy Racket</a>, and even
 <a href="https://planet.racket-lang.org/display.ss?package=c.plt&amp;owner=jaymccarthy" target="_blank">C</a>.</p>
 <p>For example, the factorial in Racket:</p>
-<pre class="prettyprint"><code class="scheme language-scheme">!#racket
+<pre><code class="scheme language-scheme">!#racket
 
 (define factorial
   (λ (n)
@@ -161,18 +162,18 @@ WYSIWYG interface builder called <a href="https://pkgs.racket-lang.org/package/m
 overflow by taking advantage of <a href="http://wiki.c2.com/?TailCallOptimization" target="_blank">tail-call optimisation</a> (TCO).</p>
 <p>Take the factorial back: the step is defined as the current value times its
 predecessor’s factorial; the stop is zero’s factorial, which equals one.</p>
-<pre class="prettyprint"><code>n! = n × (n-1)!
+<pre><code>n! = n × (n-1)!
 0! = 1</code></pre>
 <p>Looking at the PLT implementation above, you can see the last call id <code>'*</code>; in
 order to enable TCO, it should be <code>factorial</code>.</p>
 <p>It must exist an accumulator-driven function to make it possible, so the
 <code>factorial</code> becomes:</p>
-<pre class="prettyprint"><code class="scheme language-scheme">(define factorial
+<pre><code class="scheme language-scheme">(define factorial
   (λ (n)
     *factorial* n 1))</code></pre>
 <p>The accumulator-driven version (<code>*factorial*</code>) must receive the original
 parameter and the accumulator, returning the accumulator when it stops:</p>
-<pre class="prettyprint"><code class="scheme language-scheme">(define *factorial*
+<pre><code class="scheme language-scheme">(define *factorial*
   (λ (n acc)
     [if (zero? n)
       acc
@@ -182,16 +183,16 @@ parameter and the accumulator, returning the accumulator when it stops:</p>
 <p>The most efficient approach to deal with huge calculated data volumes is
 <a href="https://en.wikipedia.org/wiki/Lazy_evaluation" target="_blank">lazy evaluation</a>, or call-by-need. <a href="https://www.haskell.org/" target="_blank">Haskell</a>, for instance, just evaluates
 its calls by demand, which enables to build infinite lists:</p>
-<pre class="prettyprint"><code class="haskell language-haskell">fib :: [Integer]
+<pre><code class="haskell language-haskell">fib :: [Integer]
 fib = 1 : 1 : zipWith (+) fib (tail fib)</code></pre>
 <p>Than on can take only how many elements one needs:</p>
-<pre class="prettyprint"><code class="haskell language-haskell">take 10 fib</code></pre>
+<pre><code class="haskell language-haskell">take 10 fib</code></pre>
 <h3 id="promises">Promises</h3>
 <p><a href="https://docs.racket-lang.org/lazy/" target="_blank">Lazy Racket</a> uses promises to delay the evaluation, in a similar taste as
 Haskell.</p>
 <p>The evaluation of a lazy function is made by the function <code>'!!</code>.</p>
 <p>So the lazy factorial is:</p>
-<pre class="prettyprint"><code class="scheme language-scheme">#!lazy
+<pre><code class="scheme language-scheme">#!lazy
 
 (provide factorial)
 
@@ -205,12 +206,16 @@ Haskell.</p>
   (λ (n)
     (*factorial* n 1)))</code></pre>
 <p>And one can evaluate it by calling:</p>
-<pre class="prettyprint"><code class="scheme language-scheme">(!! [map (λ (n) `(,n ,(factorial n))) '(0 1 2 3 4 5)])</code></pre>
+<pre><code class="scheme language-scheme">(!! [map (λ (n) `(,n ,(factorial n))) '(0 1 2 3 4 5)])</code></pre>
 <p>The result is:</p>
-<pre class="prettyprint"><code class="scheme language-scheme">'((0 1) (1 1) (2 2) (3 6) (4 24) (5 120))</code></pre>
+<pre><code class="scheme language-scheme">'((0 1) (1 1) (2 2) (3 6) (4 24) (5 120))</code></pre>
 <hr />
 <p>Translated from <a href="/2017/11/lisp.html">here</a> and <a href="/2017/11/lazy-racket.html">here</a>.</p>
 <p class="small"> Also in <a href="https://dev.to/cacilhas/lisp-473j" target="_blank">DEV.to</a>.</p>
+<script src="/js/languages/clojure.min.js"></script>
+<script src="/js/languages/haskell.min.js"></script>
+<script src="/js/languages/lisp.min.js"></script>
+<script src="/js/languages/scheme.min.js"></script>
         </div>
         <div id="tags" class="pull-right tags">
           <script>
@@ -292,6 +297,7 @@ Haskell.</p>
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })

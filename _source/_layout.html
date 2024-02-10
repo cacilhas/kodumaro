@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
+    <link rel="stylesheet" href="/css/hightlight.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-dropdownhover.min.css" />
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
@@ -31,7 +32,6 @@
     <link rel="stylesheet" href="{{{ cacilhas.url }}}/css/cacilhas.css" />
     <title>{{ title }}</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="{{{ montegasppa.url }}}js/ie-emulation-modes-warning.js"></script>
     <script src="{{{ montegasppa.url }}}js/jquery.min.js"></script>
     <script src="{{{ montegasppa.url }}}js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +39,7 @@
     <script src="{{{ montegasppa.url }}}js/alt-title.js"></script>
     <script src="{{{ montegasppa.url }}}js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="{{{ montegasppa.url }}}js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -179,6 +180,7 @@
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })
