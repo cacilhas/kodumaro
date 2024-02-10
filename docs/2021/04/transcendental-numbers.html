@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="//cacilhas.info/css/cacilhas.css" />
     <title>How to Compute Arbitrary Precision Transcendental Numbers</title>
     <link rel="icon" href="/img/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="//montegasppa.cacilhas.info/js/ie-emulation-modes-warning.js"></script>
     <script src="//montegasppa.cacilhas.info/js/jquery.min.js"></script>
     <script src="//montegasppa.cacilhas.info/js/bootstrap-dropdownhover.min.js"></script>
@@ -39,6 +38,7 @@
     <script src="//montegasppa.cacilhas.info/js/alt-title.js"></script>
     <script src="//montegasppa.cacilhas.info/js/anchors.js"></script>
     <script id="MathJax-script" async="async" src="//montegasppa.cacilhas.info/js/tex-mml-chtml.js"></script>
+    <script src="/js/highlight.min.js"></script>
     <script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="//polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
@@ -315,7 +315,7 @@ must use <em>log₂</em>:</p>
 </ul>
 <p>So, 26 steps are good enough.</p>
 <p>Let’s implement it using <a href="https://www.python.org/" target="_blank">Python</a>:</p>
-<pre class="prettyprint"><code class="python language-python">from typing import Callable
+<pre><code class="python language-python">from typing import Callable
 
 # Lazy factorial implementation
 fact: Callable[[int], int] = lambda n: prod(range(1, n+1))
@@ -336,11 +336,11 @@ def steps(prec: int) -&gt; int:
 <p>The right shift (<code>&gt;&gt;</code>) returns zero as long as the value’s less bit wide than
 the precision.</p>
 <p>Now let’s compute 𝑒 itself:</p>
-<pre class="prettyprint"><code class="python language-python">compute_e: Callable[[int], Rational] = lambda prec: sum(
+<pre><code class="python language-python">compute_e: Callable[[int], Rational] = lambda prec: sum(
     1./fact(x) for x in range(prec)
 )</code></pre>
 <p>The solutions coming out from it is:</p>
-<pre class="prettyprint"><code class="python language-python">&gt;&gt;&gt; calculate_e(steps(64))  # Python uses 64-bit precision floating point numbers
+<pre><code class="python language-python">&gt;&gt;&gt; calculate_e(steps(64))  # Python uses 64-bit precision floating point numbers
 2.7182818284590455
 &gt;&gt;&gt; math.e
 2.718281828459045</code></pre>
@@ -358,18 +358,18 @@ computed. <a href="https://www.wolframalpha.com/input/?i=Gottfried+Wilhelm+Leibn
 <p>The process is quite the same used for 𝑒, take the formula:</p>
 <p class="text-center"> $$\pi=4\sum_{n=0}^{+\infty}\left(\frac{1}{4n+1}-\frac{1}{4n+3}\right)$$</p>
 <p>Then get the precision:</p>
-<pre class="prettyprint"><code class="python language-python">compute_pi: Callable[[int], Rational] = lambda prec: 4. * sum(
+<pre><code class="python language-python">compute_pi: Callable[[int], Rational] = lambda prec: 4. * sum(
     (1./(4*n+1) - 1./(4*n+3)) for n in range(prec)
 )</code></pre>
 <p>Tip: the precision is <em>log₂(4n)</em>, so <em>n = 2<sup>prec-2</sup></em>, which one
 can get by left shifting. Note that we got exactly the inverse of the previous
 calculation: here the necessary steps amount grows very fast with small gain.</p>
 <p>So you may get disappointed when running:</p>
-<pre class="prettyprint"><code class="python language-python">&gt;&gt;&gt; compute_pi(1 &lt;&lt; (64 - 2))</code></pre>
+<pre><code class="python language-python">&gt;&gt;&gt; compute_pi(1 &lt;&lt; (64 - 2))</code></pre>
 <p>This computation is way more inefficient than the previous one – Python isn’t
 that good in dealing with floating-point operation and it’s necessary a
 humongous amount of steps to getta the target. I recomend 5M steps:</p>
-<pre class="prettyprint"><code class="python language-python">&gt;&gt;&gt; compute_pi(5000000)
+<pre><code class="python language-python">&gt;&gt;&gt; compute_pi(5000000)
 3.141592553588895
 &gt;&gt;&gt; math.pi
 3.141592653589793</code></pre>
@@ -463,6 +463,7 @@ are, including serie representations.</p>
     <script src="//cacilhas.info/js/bootstrap.min.js"></script>
     <script src="//cacilhas.info/js/ie10-viewport-bug-workaround.js"></script>
     <script language="javascript">
+      hljs.highlightAll();
       $(document).ready(function() {
         $('[title]').tooltip();
       })
