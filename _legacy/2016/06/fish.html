@@ -13,7 +13,7 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
 definidas pelo usuário.</p><p>Duas funções que são chamadas recorrentemente – e podem ser definidas em <code>~/.config/fish/functions/</code> – são <code>fish_prompt</code> e
  <code>fish_title</code>:</p><p><code>fish_prompt</code> é chamada sempre imediatamente antes do <em>prompt</em> ser oferecido ao usuário e tem a função de construir a mensagem do
  <em>prompt</em>.</p><p><code>fish_title</code> é chamada a cada vez que algum outro <em>software</em> – como <code>xterm</code> – solicita o título.</p><h3 id="scripting"><em>Scripting</em></h3><p>Vamos a um <em>script</em> de exemplo: criaremos uma função <code>rmpyc</code> que limpa os arquivos <code>.pyc</code> do diretório informado. Crie um arquivo
- <code>~/.config/fish/functions/rmpyc.fish</code>:</p><pre class="prettyprint"><code class="language-sh">function rmpyc
+ <code>~/.config/fish/functions/rmpyc.fish</code>:</p><pre><code class="language-sh">function rmpyc
   set -l pathes
   if test (count $argv) = 0
     set pathes .
@@ -27,14 +27,14 @@ definidas pelo usuário.</p><p>Duas funções que são chamadas recorrentemente 
   end
 end
 </code></pre><p>O programa verifica se há mais de um argumento, em não havendo, usa o diretório atual (<code>.</code>).</p><p>Para cada diretório passado, são executados dois comando de <code>find</code>: um para arquivos de Python 3.x, outro para Python 2.7. Repare na clareza dos
- comandos <code>if</code> e <code>for</code>, no uso da palavra chave <code>end</code>.</p><h3 id="lidando-com-listas">Lidando com listas</h3><p>Fish Shell tem um suporte muito bom e intuitivo a listas. Por exemplo, para adicionar um novo <em>path</em> à variável <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code></a>:</p><pre class="prettyprint"><code class="language-sh">set -x PATH $PATH $HOME/bin</code></pre><p>Você pode usar <code>for</code> para reiterar listas:</p><pre class="prettyprint"><code class="language-sh">for path in $PATH
+ comandos <code>if</code> e <code>for</code>, no uso da palavra chave <code>end</code>.</p><h3 id="lidando-com-listas">Lidando com listas</h3><p>Fish Shell tem um suporte muito bom e intuitivo a listas. Por exemplo, para adicionar um novo <em>path</em> à variável <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code></a>:</p><pre><code class="language-sh">set -x PATH $PATH $HOME/bin</code></pre><p>Você pode usar <code>for</code> para reiterar listas:</p><pre><code class="language-sh">for path in $PATH
   echo "$path está em PATH"
 end
-</code></pre><p>É também possível usar listas literais:</p><pre class="prettyprint"><code class="language-sh">for letter in A E I O U
+</code></pre><p>É também possível usar listas literais:</p><pre><code class="language-sh">for letter in A E I O U
   echo "Vogal: $letter"
 end
 </code></pre><p>Um dos recursos mais poderosos de Fish é o produto cartesiano de listas. Por exemplo: uma forma de construir a variável <code>LUA_PATH</code> é usando
- produto cartesiano:</p><pre class="prettyprint"><code class="language-sh">set -l directories
+ produto cartesiano:</p><pre><code class="language-sh">set -l directories
 set -l suffixes ?.lua ?.lc ?/init.lua ?/init.lc
 
 for dir in /usr/share/lua/5.1 /usr/share/lua/scilua /usr/local/share/lua/5.1 /usr/local/share/lua/scilua
@@ -46,11 +46,11 @@ end
 set -l lua_path $directories/$suffixes
 set -x LUA_PATH (string join ';' -- $lua_path)
 </code></pre><h3 id="lidando-com-strings">Lidando com <em>strings</em></h3><p>Outro recurso de Fish é a ferramenta <code>string</code>: basicamente ela traz suporte a contar o tamanho de uma <em>string</em>, pegar <em>substrings</em>,
- quebrar em listas, juntar uma lista em uma <em>string</em>, etc.</p><p>Por exemplo, para converter o <em>path</em> para o formato Mac OS:</p><pre class="prettyprint"><code class="language-sh">function to-mac-os-path -a original_path
+ quebrar em listas, juntar uma lista em uma <em>string</em>, etc.</p><p>Por exemplo, para converter o <em>path</em> para o formato Mac OS:</p><pre><code class="language-sh">function to-mac-os-path -a original_path
   set -l path (string split / -- "$original_path")
   string join : -- $path[2..(count $path)]
 end
-</code></pre><p>Outra alternativa para fazer a mesma coisa:</p><pre class="prettyprint"><code class="language-sh">function to-mac-os-path -a path
+</code></pre><p>Outra alternativa para fazer a mesma coisa:</p><pre><code class="language-sh">function to-mac-os-path -a path
   string replace -a / : -- (string trim -l -c/ -- "$path")
 end
 </code></pre><h3 id="ajuda">Buscando ajuda</h3><p>Os manuais de ajuda podem ser obtidos <a href="http://fishshell.com/docs/current/commands.html"><em>on-line</em></a>, ou digitando o comando <code>help</code>, que direcionará o usuário para o
