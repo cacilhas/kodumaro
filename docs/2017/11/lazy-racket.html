@@ -11,7 +11,7 @@ ga("send", "pageview")</script></head><body><nav class="navbar navbar-inverse na
 Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a href="https://kodumaro.cacilhas.info/">Kodumaro</a></li><li class="active"><a href=".">Lazy Racket</a></li></ul></div></div></nav><div class="container"><div class="panel panel-default"><div class="panel-heading"><h2 class="mg-title">Kodumaro :: Lazy Racket</h2><h6 class="pull-right">Released on November 2nd, 2017</h6><h6>The shadows behind the code.</h6></div><div class="panel-body"><img class="pull-right" src="//cacilhas.info/img/racket.jpg" alt="Racket"/><p class="mg-first">Dando continuidade ao <a href="https://kodumaro.cacilhas.info/2017/11/lisp.html">artigo anterior</a>, podemos abordar dois <em>patterns</em> interessantes: acumuladores e
  avaliação tardia. Usaremos como plataforma <a href="http://racket-lang.org/">Racket</a>, portanto você vai precisar <a href="https://download.racket-lang.org/">instalá-lo</a>.</p><h3>Acumuladores</h3><p>Acumulador é um <em>pattern</em> muito comum em <a href="https://pt.wikipedia.org/wiki/Programação_funcional">programação funcional</a> e <a href="https://pt.wikipedia.org/wiki/Programação_lógica">lógica</a>. Consistem em tirar proveito de <a href="http://wiki.c2.com/?TailCallOptimization"><em>tail-call optimisation</em></a> (TCO) em recursões lineares ou binárias.</p><p>Vamos ao mesmo exemplo do artigo anterior, <a href="https://pt.wikipedia.org/wiki/Fatorial">fatorial</a>.</p><p>O passo do fatorial é definido como o próprio número vezes o fatorial de seu antecessor, enquanto a parada é o fatorial de zero, igual a um:</p><pre><code>n! = n × (n - 1)!
 0! = 1
-</code></pre><p>Implementando isso em Racket fica:</p><pre class="prettyprint"><code>(define factorial
+</code></pre><p>Implementando isso em Racket fica:</p><pre><code>(define factorial
   (λ (n)
     [if (zero? n)
         1
@@ -21,13 +21,13 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
  função, é <code>'factorial</code>.</p><p>Assim, para aproveitar TCO na recursão, é necessário que a última instrução seja a chamada da recursão.</p><p>Pra que isso seja possível, é preciso carregar o resultado acumulado através dos <em>stacks</em> como parâmetro, para que seja retornado na parada. Esta
  carga de valor acumulado é chamada acumulador.</p><p>Então precisamos de uma função que receba o número para o qual se deseja calcular o fatorial <strong>e</strong> o valor acumulado – o acumulador.
  Chamaremos essa função de <code>'*factorial*</code>.</p><p>A função “provida”, <code>'factorial</code>, deverá chamar <code>'*factorial*</code> passando o número para o qual o fatorial deve ser calculado e, como valor
- inicial do acumulador, o valor retornado na parada (1):</p><pre class="prettyprint"><code>(define factorial
+ inicial do acumulador, o valor retornado na parada (1):</p><pre><code>(define factorial
   (λ (n)
     *factorial* n 1))
 </code></pre><p>Todo o trabalho pesado deve ser feito em <code>'*factorial*</code>. O algoritmo é quase idêntico ao da função original, apenas retornando o valor acumulado
  para a parada e, para o passo, retorna a chamada recursiva. A
  multiplicação será efetuada para calcular o próximo valor do acumulador,
- passado como parâmetro para o próximo passo:</p><pre class="prettyprint"><code>(define *factorial*
+ passado como parâmetro para o próximo passo:</p><pre><code>(define *factorial*
   (λ (n acc)
     [if (zero? n)
         acc
@@ -35,7 +35,7 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
 </code></pre><p>Agora temos o cálculo fatorial tirando proveito de TCO, o que torna a função tão eficiente quando uma função reiterativa numa linguagem imperativa, mas
  usando uma abordagem recursiva, muito mais legível e inteligível.</p><h3>Avaliação tardia ou preguiçosa (<em>lazy evaluation</em>)</h3><p>As estratégias mais eficientes para lidar com grandes volumes de dados calculados – e até com quantidades infinitas – é a <a href="https://en.wikipedia.org/wiki/Lazy_evaluation">avaliação tardia</a> ou <em>call-by-need</em>. Linguagens como <a href="https://www.haskell.org/">Haskell</a> resolvem os valores das funções sob demanda, ou seja, se uma função é
  chamada, mas seu resultado não é usado, o corpo da função <strong>não</strong> é
- executado – será apenas quando o retorno for necessário.</p><p>Isso dá ao programador recursos poderosos, como definir Fibonacci como uma uma função que retorna uma lista infinita:</p><pre class="prettyprint"><code>fib :: [Integer]
+ executado – será apenas quando o retorno for necessário.</p><p>Isso dá ao programador recursos poderosos, como definir Fibonacci como uma uma função que retorna uma lista infinita:</p><pre><code>fib :: [Integer]
 fib = 1 : 1 : zipWith (+) fib (tail fib)
 </code></pre><p>Aqui se declara <code>fib</code> como uma função que retorna uma lista de inteiros (<code>Integer</code>) e se define o retorno como 1 seguido de 1, seguido da
  soma de cada elemento retornado por <code>fib</code> com cada elemento
@@ -48,7 +48,7 @@ fib = 1 : 1 : zipWith (+) fib (tail fib)
  das funções por versões preguiçosas, que retornam uma <em>promise</em> em vez
  de avaliar imediatamente seu resultado.</p><p>Ainda introduz a função <code>'!!</code>, que força a resolução da <em>promise</em>.</p><p>Vamos então criar um módulo chamado <code>fact.rkt</code> que provê uma versão preguiçosa do cálculo do fatorial, que pode ser usado paralelamente e sob
  demanda. Repare que o corpo das funções é exatamente igual ao que fizemos
- acima:</p><pre class="prettyprint"><code>#!lazy
+ acima:</p><pre><code>#!lazy
 ;; fact.rkt
 
 (provide factorial)

@@ -19,7 +19,7 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
 abordagem em que a herança se encaixa como uma luva: nos testes unitários,
  ele precisa iniciar uma sessão com o banco (um <a href="https://www.sqlite.org/">SQLite</a>) antes de cada teste, e encerrá-lo ao final de cada um.</p><p>Ele sabe que o método <code>setUp</code> é executado antes de cada teste, enquanto o método <code>tearDown</code> é executado ao final, havendo erro,
  falha ou sucesso. Perfeito!</p><p>Mas ele precisa que todas as classes de teste usem esses métodos, então ele pensa numa solução que parece perfeita: implementar os métodos <em>hook</em>
- numa classe pai, que será herdada pelas demais classes de teste.</p><p>A coisa fica mais ou menos assim:</p><pre class="prettyprint"><code class="language-python">import unittest
+ numa classe pai, que será herdada pelas demais classes de teste.</p><p>A coisa fica mais ou menos assim:</p><pre><code class="language-python">import unittest
 import sqlite3
 import my_app
 
@@ -40,7 +40,7 @@ class TestCase(unittest.TestCase):
 
     def tearDown(self):
         my_app.conn.close()
-</code></pre><h3 id="novo-problema">O novo problema</h3><p>Tudo ia às mil maravilhas, até nosso programador descobrir que, em um de seustestes, ele precisa simular o comportamento de um acesso a um servidor <a href="http://redis.io/">Redis</a>, o que sobrescreve sua perfeita solução de banco de dados!</p><p>Qual a nova solução? O que se faz em herança: evocar <code>super</code>!</p><pre class="prettyprint"><code class="language-python">from unittest.mock import patch
+</code></pre><h3 id="novo-problema">O novo problema</h3><p>Tudo ia às mil maravilhas, até nosso programador descobrir que, em um de seustestes, ele precisa simular o comportamento de um acesso a um servidor <a href="http://redis.io/">Redis</a>, o que sobrescreve sua perfeita solução de banco de dados!</p><p>Qual a nova solução? O que se faz em herança: evocar <code>super</code>!</p><pre><code class="language-python">from unittest.mock import patch
 from my_test_case import TestCase
 from my_app import CacheManager
 
@@ -62,7 +62,7 @@ class TestCacheManager(TestCase):
 </code></pre><p>O que nosso resoluto programador júnior não percebeu – ou percebeu, mas não sacou como resolver – é que o <strong>contrato do <code>unittest</code> foi quebrado</strong>.</p><h3 id="abordagem-correta">A abordagem correta</h3><p>A regra de ouro do <code>unittest</code> é: <strong>jamais</strong> implemente métodos <em>hook</em> em classes que não sejam testes de fato, que sejam abstrações de
  comportamento para casos de teste de fato.</p><p>— Mas como resolver então? 😯</p><p>Como sua classe pai tem o objetivo de alterar o comportamento do <em>framework</em>, sobrescreva rotinas internas do <em>framework</em>.</p><p>No caso, o método cujo comportamento você quer mudar é <code>run</code>. A alteração será parecida com a criação de um contexto usando
  <code>contextlib.contextmanager</code>, apenas trocando o <code>yield</code> por
- <code>super</code>:</p><pre class="prettyprint"><code class="language-python">class TestCase(unittest.TestCase):
+ <code>super</code>:</p><pre><code class="language-python">class TestCase(unittest.TestCase):
 
     def run(self, result=None):
         conn = my_app.conn = sqlite3.connect(':memory:')
@@ -79,7 +79,7 @@ class TestCacheManager(TestCase):
         finally:
             conn.close()
 </code></pre><p>Pronto! O problema já está resolvido! Agora nossa classe <code>TestCase</code> já possui comportamento de <em>framework</em>, e os <em>hooks</em> podem ser usados
- corretamente:</p><pre class="prettyprint"><code class="language-python">class TestCacheManager(TestCase):
+ corretamente:</p><pre><code class="language-python">class TestCacheManager(TestCase):
 
     def setUp(self):
         redis_patch = self.redis_patch = patch('my_app.Redis')

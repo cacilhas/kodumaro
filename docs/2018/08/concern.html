@@ -13,17 +13,17 @@ Home</a></li><li><a href="https://cacilhas.info/about.html">About</a></li><li><a
  <em>concern</em>, a título de comparação.</p><p>Isso me fez pensar: e <a href="https://www.python.org/">Python</a>?</p><h3><em>Mixins</em></h3><p>Já escrevi um <a href="https://kodumaro.cacilhas.info/2016/04/aspectos-2.html">artigo sobre <em>mixins</em></a> em Python, que deixa claro a complexidade quando fazemos a cola dos
  <em>mixins</em> na classe principal usando herança múltipla. Basta olhar a
  assinatura da classe para ver como isso pode ficar complicado com a adição
- de novos <em>mixins</em>:</p><pre class="prettyprint"><code>class Grades(SerialisableGradeMixin, PersistenceMixin, GradesMixin):
+ de novos <em>mixins</em>:</p><pre><code>class Grades(SerialisableGradeMixin, PersistenceMixin, GradesMixin):
 </code></pre><h3><em>Concern</em> em Python</h3><p>Pensando nisso, resolvi implementar uma versão de <em>concern</em> em Python.</p><p>O que precisamos fazer: a <em>factory</em> deve injetar no contexto em que ele for chamado métodos e atributos da classe <em>mixin</em>.</p><p>A primeira coisa que precisamos é ter acessível no corpo da função o contexto da criação da classe. Para isso usamos o módulo <a href="https://docs.python.org/3/library/inspect.html"><code>inspect</code></a>.</p><p>O atributo <code>f_locals</code> do <em>frame</em>, retornado pela função <a href="https://docs.python.org/3/library/inspect.html#inspect.currentframe"><code>frame.currentframe()</code></a>, é equivalente a <code>locals()</code>, mas queremos os “locais” do <em>frame</em>
- que chama nossa função. Esse é o <code>f_back</code>:</p><pre class="prettyprint"><code>context = inspect.currentframe().f_back.f_locals
-</code></pre><p>Já temos o contexto da criação da classe à disposição, agora só falta injetar nele o dicionário de atributos do <em>mixin</em>:</p><pre class="prettyprint"><code>context.update(aspect.__dict__)
-</code></pre><p>O corpo todo do módulo Python fica:</p><pre class="prettyprint"><code># file: concerns.py
+ que chama nossa função. Esse é o <code>f_back</code>:</p><pre><code>context = inspect.currentframe().f_back.f_locals
+</code></pre><p>Já temos o contexto da criação da classe à disposição, agora só falta injetar nele o dicionário de atributos do <em>mixin</em>:</p><pre><code>context.update(aspect.__dict__)
+</code></pre><p>O corpo todo do módulo Python fica:</p><pre><code># file: concerns.py
 import inspect
 
 def concern(aspect: type) -&gt; None:
     context: dict = inspect.currentframe().f_back.f_locals
     context.update(aspect.__dict__)
-</code></pre><p>Só isso já é suficiente! Porém não temos garantias de que funcione, precisamos de testes.</p><h3>Teste unitário</h3><p>Para testar, vamos criar um <em>mixin</em> de serialização e usá-lo num classe muito simples de pessoa.</p><p>O <em>mixin</em> terá dois métodos: um método de serialização e outro de classe de desserialização. Vamos usar <a href="https://www.json.org/">JSON</a> para a serialização, ordenando as chaves para facilitar os testes.</p><pre class="prettyprint"><code># file: serial.py
+</code></pre><p>Só isso já é suficiente! Porém não temos garantias de que funcione, precisamos de testes.</p><h3>Teste unitário</h3><p>Para testar, vamos criar um <em>mixin</em> de serialização e usá-lo num classe muito simples de pessoa.</p><p>O <em>mixin</em> terá dois métodos: um método de serialização e outro de classe de desserialização. Vamos usar <a href="https://www.json.org/">JSON</a> para a serialização, ordenando as chaves para facilitar os testes.</p><pre><code># file: serial.py
 import json
 
 class SerialMixin:
@@ -35,7 +35,7 @@ class SerialMixin:
     def deserialize(cls, data: str):
         return cls(**json.loads(data))
 </code></pre><p>A classe pessoa será uma <a href="https://docs.python.org/3/library/typing.html#typing.NamedTuple"><tupla>nomeada</tupla></a> – porém tuplas em Python são primitivas e não suportam acesso à seu
- dicionário de atributos.</p><p>Podemos contornar isso facilmente criando uma classe base, que será a tupla em si, e uma classe herdeira, que permite acesso ao dicionário de atributos:</p><pre class="prettyprint"><code># file: person.py
+ dicionário de atributos.</p><p>Podemos contornar isso facilmente criando uma classe base, que será a tupla em si, e uma classe herdeira, que permite acesso ao dicionário de atributos:</p><pre><code># file: person.py
 from typing import NamedTuple
 from concerns import concern
 from .serial import SerialMixin
@@ -46,7 +46,7 @@ class PersonBase(NamedTuple):
 
 class Person(PersonBase):
     concern(SerialMixin)
-</code></pre><p>Já temos a classe com uso de <em>mixin</em>. Vamos criar agora o teste, que verifica se instâncias de pessoa podem ser serializadas e desserializadas:</p><pre class="prettyprint"><code># file: test_concern.py
+</code></pre><p>Já temos a classe com uso de <em>mixin</em>. Vamos criar agora o teste, que verifica se instâncias de pessoa podem ser serializadas e desserializadas:</p><pre><code># file: test_concern.py
 from unittest import TestCase
 from .person import Person
 
@@ -64,7 +64,7 @@ class TestConcern(TestCase):
         self.assertIsInstance(p, Person)
         self.assertEqual(p.name, "J")
         self.assertEqual(p.surname, "Quest")
-</code></pre><p>Rodando os testes:</p><pre><code><p><em>sh&gt; </em><strong>python3 -munittest test_concern.py</strong><br/><em>..</em><br/><em>----------------------------------------------------------------------</em><br/><em>Ran 2 tests in 0.000s</em><br/><br/><em>OK</em></p></code></pre><h3>Voltando ao exemplo inicial</h3><p>E a classe <code>Grades</code> do <a href="https://kodumaro.cacilhas.info/2016/04/aspectos-2.html">exemplo anterior</a>?</p><p>Usando nossa <em>factory</em>, seu cabeçalho ficaria assim:</p><pre class="prettyprint"><code>class Grades:
+</code></pre><p>Rodando os testes:</p><pre><code><p><em>sh&gt; </em><strong>python3 -munittest test_concern.py</strong><br/><em>..</em><br/><em>----------------------------------------------------------------------</em><br/><em>Ran 2 tests in 0.000s</em><br/><br/><em>OK</em></p></code></pre><h3>Voltando ao exemplo inicial</h3><p>E a classe <code>Grades</code> do <a href="https://kodumaro.cacilhas.info/2016/04/aspectos-2.html">exemplo anterior</a>?</p><p>Usando nossa <em>factory</em>, seu cabeçalho ficaria assim:</p><pre><code>class Grades:
     concern(SerialisableGradeMixin)
     concern(PersistenceMixin)
     concern(GradesMixin)
