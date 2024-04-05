@@ -55,7 +55,7 @@ The `greetings` function idempotently returns an `IO` monad that can trigger a w
 
 ### Monoid
 
-A monoid is a structure that supplies an operation and an unit instance for that operation and type.
+A monoid is a structure that supplies an operation and a unit instance for that operation and type.
 
 A simple monoid definition is:
 
