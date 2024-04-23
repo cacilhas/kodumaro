@@ -8,12 +8,11 @@ griffpatch: https://scratch.mit.edu/users/griffpatch/
 ---
 [DEV.to]: https://dev.to/cacilhas/a-lovecraftian-game-4524
 [image]: {{{image}}} =120x170
+[Itch.io]: https://cacilhas.itch.io/find-key
 [ray-casting series]: https://www.youtube.com/watch?v=M1c5TcdITVs
 [Scratch]: https://scratch.mit.edu/
-[scratch version]: https://scratch.mit.edu/projects/806344631/
 [simple sound tutorial]: https://www.youtube.com/watch?v=v99RKhePxw8
 [The STEAMist]: https://scratch.mit.edu/users/ThePhantomAnimator/
-[turbowarp version]: https://experiments.turbowarp.org/pointerlock/806344631/fullscreen
 
 :right ![Oni][image]
 
@@ -28,8 +27,7 @@ I based the code on a
 <a href="{{{griffpatch}}}" target="_blank"><code>@griffpatch</code></a>’s
 [ray-casting series][], and a [simple sound tutorial][] from [The STEAMist][].
 
-You can play the game at [Scratch][scratch version] or at
-[TurboWarp][turbowarp version].
+You can play the game at [Itch.io][].
 
 <center><iframe src="https://experiments.turbowarp.org/pointerlock/806344631/embed" allowtransparency="true" width="512" height="512" frameborder="0" scrolling="no" title="Must Find the Key to Escape" allowfullscreen="allowfullscreen"></iframe></center>
 
