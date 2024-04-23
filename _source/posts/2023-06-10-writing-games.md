@@ -31,7 +31,7 @@ permalink: /2023/06/writing-games.html
 [Moonscript]: https://moonscript.org/
 [msx-sokoban]: https://msxgamesworld.com/software.php?id=1518
 [my personal showcase]: https://cacilhas.itch.io/
-[Nanpure]: https://cacilhas.itch.io/nanpure
+[Nanpurë]: https://cacilhas.itch.io/nanpure
 [nonogram]: https://en.wikipedia.org/wiki/Nonogram
 [Raylib]: https://www.raylib.com/
 [Rust]: https://www.rust-lang.org/
@@ -150,7 +150,7 @@ If you need performance, I recommend [Raylib][] with [Rust][].
 Raylib is exceptional for 2D games. Not that good for 3D, but still gets the job
 done.
 
-- [Nanpure][] is a colourful [sudoku][] – instead of numbers, you got colours.
+- [Nanpurë][] is a colourful [sudoku][] – instead of numbers, you got colours.
 - [Nonogram][kodumaro-nonogram] is a random implementation for [nonogram][]. It
   doesn’t form meaningful pictures, but has the advantage to be able to be
   played forever.

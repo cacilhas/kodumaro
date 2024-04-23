@@ -67,7 +67,7 @@ If you need performance, I recommend [Raylib](https://www.raylib.com/) with [Rus
 
 Raylib is exceptional for 2D games. Not that good for 3D, but still gets the job done.
 
-*   [Nanpure](https://cacilhas.itch.io/nanpure) is a colourful [sudoku](https://sudoku.com/) – instead of numbers, you got colours.
+*   [Nanpurë](https://cacilhas.itch.io/nanpure) is a colourful [sudoku](https://sudoku.com/) – instead of numbers, you got colours.
 *   [Nonogram](https://cacilhas.itch.io/nonogram) is a random implementation for [nonogram](https://en.wikipedia.org/wiki/Nonogram). It doesn’t form meaningful pictures, but has the advantage to be able to be played forever.
 
 I have a lot of other [Rust applications](https://crates.io/users/cacilhas), but only these two games.
