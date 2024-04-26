@@ -29,7 +29,7 @@ I based the code on a
 
 You can play the game at [Itch.io][].
 
-<center><iframe src="https://experiments.turbowarp.org/pointerlock/806344631/embed" allowtransparency="true" width="512" height="512" frameborder="0" scrolling="no" title="Must Find the Key to Escape" allowfullscreen="allowfullscreen"></iframe></center>
+<center><iframe src="{{{misc.url}}}/find-the-key.html" allowtransparency="true" width="480" height="360" frameborder="0" scrolling="no" title="Must Find the Key to Escape" allowfullscreen="allowfullscreen"></iframe></center>
 
 -----
 
