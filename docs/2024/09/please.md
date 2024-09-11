@@ -159,3 +159,7 @@ I wanna create a subcommand to help users to set their installation as well, and
 There’s a lot to do, it’s gonna take some time to get to the point I want, but I expect to count on community to help testing and using it.
 
 Let’s see what comes next…
+
+* * *
+
+Also in [DEV.to](https://dev.to/cacilhas/please-install-it-for-me-3ea9).
