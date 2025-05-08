@@ -1,4 +1,4 @@
-![Scala](//cacilhas.info/img/scala.png)
+![Scala](//cacilhas.cc/img/scala.png)
 
 Some days ago I wrote an post about DSL, but it was so sloppy, that I’ve found myself in shame. ’Cause that, I’m removing that post and replacing it with this.
 

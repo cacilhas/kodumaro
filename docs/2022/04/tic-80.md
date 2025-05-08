@@ -61,11 +61,11 @@ The `BOOT` function is called only once, clearing the screen (`cls`).
 
 If nothing is wrong, when you press C-r, you’re gonna get the following background:
 
-![Sky Gradient](//cacilhas.info/img/tic80/sky-gradient.png)
+![Sky Gradient](//cacilhas.cc/img/tic80/sky-gradient.png)
 
 In earlier versions, `Escape` leads you back to the prompt, `escape` again to the code editor. From version 1.0, you must select `CLOSE GAME` in order to get back:
 
-![CLOSE GAME](//cacilhas.info/img/tic80/close-game.png)
+![CLOSE GAME](//cacilhas.cc/img/tic80/close-game.png)
 
 ### Creating the Yin-Yang symbol
 
@@ -81,7 +81,7 @@ Now we need to initialise the variables:
 
 In TIC-80, colours are stored in a palette, [defaults to](https://lospec.com/palette-list/sweetie-16):
 
-![Sweetie-16](//cacilhas.info/img/tic80/sweetie-16.png)
+![Sweetie-16](//cacilhas.cc/img/tic80/sweetie-16.png)
 
 So the variables are initialised:
 
@@ -128,8 +128,8 @@ At the function end, the angle is updated by 180° a second – since TIC-80 fra
 
 Running you must get the turning symbol:
 
-![Yin Yang](//cacilhas.info/img/tic80/yin-yang.png)
+![Yin Yang](//cacilhas.cc/img/tic80/yin-yang.png)
 
 ### Resouces
 
-Download the [Moonscript code](//cacilhas.info/misc/tic80/yin-yang.moon), or the [cartridge](//cacilhas.info/misc/tic80/yin-yang.tic).
+Download the [Moonscript code](//cacilhas.cc/misc/tic80/yin-yang.moon), or the [cartridge](//cacilhas.cc/misc/tic80/yin-yang.tic).

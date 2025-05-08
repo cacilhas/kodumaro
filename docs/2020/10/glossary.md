@@ -1,4 +1,4 @@
-![λ](//cacilhas.info/img/lambda.png)
+![λ](//cacilhas.cc/img/lambda.png)
 
 What makes a program “functional?” You’ve probably found yourself asking yet. There are some few concepts – or **constraints** – that define the functional paradigm.
 

@@ -1,4 +1,4 @@
-![Made with secret alien technology](//cacilhas.info/img/lisp.png)
+![Made with secret alien technology](//cacilhas.cc/img/lisp.png)
 
 LISP is a specification by [John McCarthy](http://www.genealogy.ams.org/id.php?id=22145), that has started a brand new programming language family since 1958. It’s based on [λ-calculus](https://en.wikipedia.org/wiki/Lambda_calculus), formal system from [Alonzo Church](http://www.genealogy.ams.org/id.php?id=8011)’s work in 1930s, designed to deal with symbolic data instead of numeric, most imperative languages’ standard.
 

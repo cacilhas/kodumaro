@@ -1,4 +1,4 @@
-![NPM repository](//cacilhas.info/img/garbage-dump.jpg)
+![NPM repository](//cacilhas.cc/img/garbage-dump.jpg)
 
 Sometimes I spend some time trying to acquire new programming skills, to finally figure out I was wasting time with something useless.
 
@@ -80,7 +80,7 @@ The Nim’s big no-no is that you keep bumping into things that don’t behave a
 
 The Nim creators’ line is:
 
-![WORKS ON MY MACHINE](//cacilhas.info/img/works-on-my-machine.png)
+![WORKS ON MY MACHINE](//cacilhas.cc/img/works-on-my-machine.png)
 
 ### Why we hate Elixir
 

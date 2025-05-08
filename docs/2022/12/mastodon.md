@@ -1,4 +1,4 @@
-![Mastodon](//cacilhas.info/img/mastodon.png)
+![Mastodon](//cacilhas.cc/img/mastodon.png)
 
 Kodumaro [Twitter account](https://twitter.com/kodumaro) has been deactivated, and we’re going [Mastodon](https://social.sndevs.com/@kodumaro) now!
 

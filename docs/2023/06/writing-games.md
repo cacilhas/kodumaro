@@ -1,4 +1,4 @@
-![Itch.io](//cacilhas.info/img/itch-io-icon.png)
+![Itch.io](//cacilhas.cc/img/itch-io-icon.png)
 
 I’m simply fascinated by indie game development. It’s free from a bunch of programming concerns, and allows us to explore new horizons.
 
@@ -16,7 +16,7 @@ IMHO, [Itch.io](https://itch.io/) is the best game release platform, and I’ve 
 
 ### Scratch games
 
-![Scratch cat](//cacilhas.info/img/scratch-cat.png)
+![Scratch cat](//cacilhas.cc/img/scratch-cat.png)
 
 I’m talking about [Scratch](https://scratch.mit.edu/) first to sweep it away, ’cause Scratch earns its own whole post.
 
@@ -26,7 +26,7 @@ I have a Scratch project called [Casual Funny Games](https://scratch.mit.edu/stu
 
 ### TIC-80 games
 
-![TIC-80](//cacilhas.info/img/tic80.png)
+![TIC-80](//cacilhas.cc/img/tic80.png)
 
 I love [fantasy consoles](https://en.wikipedia.org/wiki/Fantasy_video_game_console), and my favourite is [TIC-80](http://tic80.com/): it has an old home computer feeling which no other console manages to emulate. Therefore I recommend purchasing its [payed version](https://nesbox.itch.io/tic80).
 
@@ -41,7 +41,7 @@ I don’t wanna talk about [this one](https://cacilhas.itch.io/snake)… 😒
 
 ### Godot Engine games
 
-![Godot Engine](//cacilhas.info/img/godot.png)
+![Godot Engine](//cacilhas.cc/img/godot.png)
 
 I reckon [Godot Engine](https://godotengine.org/) is the best balanced game engine available:
 
@@ -61,7 +61,7 @@ I got some Godot games I’ve been working on:
 
 ### Raylib games
 
-![Ferris the Crab](//cacilhas.info/img/ferris-the-crab.png)
+![Ferris the Crab](//cacilhas.cc/img/ferris-the-crab.png)
 
 If you need performance, I recommend [Raylib](https://www.raylib.com/) with [Rust](https://www.rust-lang.org/).
 
@@ -74,7 +74,7 @@ I have a lot of other [Rust applications](https://crates.io/users/cacilhas), but
 
 ### GDevelop games
 
-![GDevelop5](//cacilhas.info/img/gdevelop.png)
+![GDevelop5](//cacilhas.cc/img/gdevelop.png)
 
 I couldn’t leave [GDevelop](https://gdevelop.io/) out. It is nothing its authors claim it is:
 

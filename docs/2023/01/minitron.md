@@ -1,9 +1,9 @@
-![TIC-80](//cacilhas.info/img/tic80.png)
+![TIC-80](//cacilhas.cc/img/tic80.png)
 
 This is a sample code for learning, written in [Moonscript](https://moonscript.org/) for [TIC-80](https://tic80.com/):
 
     -- title:   MiniTron
-    -- author:  Montegasppa <montegasppa@cacilhas.info>
+    -- author:  Montegasppa <montegasppa@cacilhas.cc>
     -- desc:    A very spartan Tron implementation
     -- license: 3-Clause BSD
     -- version: 0.1
@@ -50,7 +50,7 @@ This is a sample code for learning, written in [Moonscript](https://moonscript.o
     OVR = ->
       print "Score: #{score}", 3, 128, 3, false, 1, true
 
-Download the [card](//cacilhas.info/misc/minitron.tic)!
+Download the [card](//cacilhas.cc/misc/minitron.tic)!
 
 * * *
 

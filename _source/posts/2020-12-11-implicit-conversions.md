@@ -2,7 +2,7 @@
 title: Implicit Conversions in Scala
 date: 2020-12-11
 tags: functional scala
-image: //cacilhas.info/img/scala.png
+image: //cacilhas.cc/img/scala.png
 permalink: /2020/12/implicit-conversions.html
 ---
 [image]: {{{image}}}

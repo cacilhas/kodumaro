@@ -2,7 +2,7 @@
 title: Writing games
 date: 2023-06-10
 tags: career education-and-culture fantasy-console game-engine lua rust scratch
-image: //cacilhas.info/img/itch-io-icon.png
+image: //cacilhas.cc/img/itch-io-icon.png
 Itch.io: https://itch.io/
 permalink: /2023/06/writing-games.html
 ---
@@ -15,12 +15,12 @@ permalink: /2023/06/writing-games.html
 [CuteMaze]: https://gottcode.org/cutemaze/
 [fantasy consoles]: https://en.wikipedia.org/wiki/Fantasy_video_game_console
 [Fairy Tale]: https://cacilhas.itch.io/fairy-tale
-[ferris]: //cacilhas.info/img/ferris-the-crab.png =84x56
+[ferris]: //cacilhas.cc/img/ferris-the-crab.png =84x56
 [GDevelop]: https://gdevelop.io/
-[gdevelop5]: //cacilhas.info/img/gdevelop.png =84x84
+[gdevelop5]: //cacilhas.cc/img/gdevelop.png =84x84
 [Get Out!]: https://cacilhas.itch.io/get-out
 [Godot Engine]: https://godotengine.org/
-[godot-image]: //cacilhas.info/img/godot.png =84x84
+[godot-image]: //cacilhas.cc/img/godot.png =84x84
 [image]: {{{image}}} =128x128
 [Itch.io]: https://itch.io/
 [Kenney’s assets]: https://kenney.nl/assets
@@ -36,12 +36,12 @@ permalink: /2023/06/writing-games.html
 [Raylib]: https://www.raylib.com/
 [Rust]: https://www.rust-lang.org/
 [Rust applications]: https://crates.io/users/cacilhas
-[scratch-cat]: //cacilhas.info/img/scratch-cat.png =84x84
+[scratch-cat]: //cacilhas.cc/img/scratch-cat.png =84x84
 [Standstill]: https://cacilhas.itch.io/standstill
 [sudoku]: https://sudoku.com/
 [Tetris]: https://tetris.com/
 [TIC-80]: http://tic80.com/
-[tic-80-image]: //cacilhas.info/img/tic80.png =84x84
+[tic-80-image]: //cacilhas.cc/img/tic80.png =84x84
 [tic-80-on-itch]: https://nesbox.itch.io/tic80
 [Scratch]: https://scratch.mit.edu/
 [snake]: https://cacilhas.itch.io/snake

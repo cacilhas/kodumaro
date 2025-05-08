@@ -1,4 +1,4 @@
-![Gopher](//cacilhas.info/img/golang.png)
+![Gopher](//cacilhas.cc/img/golang.png)
 
 Now I’m revisiting an [old post of mine](/2017/06/golang.html) about my personal impressions about the [Go](https://golang.org/) language.
 

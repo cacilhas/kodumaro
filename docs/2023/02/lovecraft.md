@@ -1,4 +1,4 @@
-![Oni](//cacilhas.info/img/oni.png)
+![Oni](//cacilhas.cc/img/oni.png)
 
 A platform I simply love is [Scratch](https://scratch.mit.edu/). You can build different kinds of application using a visual programming based on drag’n’drop blocks.
 

@@ -1,4 +1,4 @@
-![Logic](//cacilhas.info/img/glider.png)
+![Logic](//cacilhas.cc/img/glider.png)
 
 This post is a translation of an [older one](/2017/11/acumuladores.html).
 

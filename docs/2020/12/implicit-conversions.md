@@ -1,4 +1,4 @@
-![Scala](//cacilhas.info/img/scala.png)
+![Scala](//cacilhas.cc/img/scala.png)
 
 [Scala](https://www.scala-lang.org/) (in version 2.13 while I write) has a powerful conversion system based on its [implicits system](https://www.scala-lang.org/files/archive/spec/2.13/07-implicits.html).
 

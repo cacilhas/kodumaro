@@ -1,4 +1,4 @@
-![Scala](//cacilhas.info/img/scala.png)
+![Scala](//cacilhas.cc/img/scala.png)
 
 I was around with a cyclic reference issue in [Scala](https://www.scala-lang.org/): [JSON](https://www.json.org/) representation.
 

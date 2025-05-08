@@ -2,7 +2,7 @@
 title: Should everybody learn to code?
 date: 2022-08-10
 tags: career education-and-culture
-image: //cacilhas.info/img/yes.png
+image: //cacilhas.cc/img/yes.png
 permalink: /2022/08/should-code.html
 ---
 [image]: {{{image}}}

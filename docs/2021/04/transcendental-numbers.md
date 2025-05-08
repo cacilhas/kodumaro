@@ -4,13 +4,13 @@ It has been four months since my [my last post](/2020/12/implicit-conversions.ht
 
 I’ve been very busy working on my [employer’s project](https://contabilone.com/), what drained my time, stopping me working on my personal projects.
 
-Even so, [Kodumaro](//kodumaro.cacilhas.info), [my personal blog](//montegasppa.cacilhas.info/), and my [musical project](https://www.patreon.com/cacilhas) are **not** over. I just have not enough payback for those project, so I cannot apply much time on those. 😢
+Even so, [Kodumaro](//kodumaro.cacilhas.cc), [my personal blog](//montegasppa.cacilhas.cc/), and my [musical project](https://www.patreon.com/cacilhas) are **not** over. I just have not enough payback for those project, so I cannot apply much time on those. 😢
 
 If you’d like to patronise my musical project, [become my patron](https://www.patreon.com/join/cacilhas?)!!
 
 [Take a look at what I’ve been on.](https://www.youtube.com/channel/UCVJR3ltOPy2fQ7zxzXjUvJA)
 
-Now, if you enjoy , and would like to fund this project, please [mail me](mailto:kodumaro@cacilhas.info), and let’s talk about it. If I’m getting enough funding, I’m considering making it my main job.
+Now, if you enjoy , and would like to fund this project, please [mail me](mailto:kodumaro@cacilhas.cc), and let’s talk about it. If I’m getting enough funding, I’m considering making it my main job.
 
 Bringing it in mind, **I’m releasing a [Kodumaro’s Patreon page](https://www.patreon.com/kodumaro)**. Please [subscribe](https://www.patreon.com/join/kodumaro?).
 
@@ -18,7 +18,7 @@ Bringing it in mind, **I’m releasing a [Kodumaro’s Patreon page](https://www
 
 ### Getting into the point
 
-![Idea](//cacilhas.info/img/lamp.png)
+![Idea](//cacilhas.cc/img/lamp.png)
 
 [Transcendental numbers](https://mathworld.wolfram.com/TranscendentalNumber.html) are probably the most useful tools in Mathematics. They are irrational numbers that cannot be expressed using a finite formula.
 

@@ -1,4 +1,4 @@
-![Scala](//cacilhas.info/img/scala.png)
+![Scala](//cacilhas.cc/img/scala.png)
 
 In [type algebra](https://kseo.github.io/posts/2016-12-25-type-isomorphism.html), type isomorphism is the case when two types are interchangeable with no information lost.
 

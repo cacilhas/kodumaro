@@ -1,4 +1,4 @@
-![Scala](//cacilhas.info/img/scala.png)
+![Scala](//cacilhas.cc/img/scala.png)
 
 For a developer to be able to work with Functional Programming, there are a few concepts they must master.
 

@@ -1,7 +1,7 @@
 author: &author
   name: &author_name Montegasppα Cacilhας
-  email: montegasppa@cacilhas.info
-  url: //montegasppa.cacilhas.info/author.html
+  email: montegasppa@cacilhas.cc
+  url: //montegasppa.cacilhas.cc/author.html
   contacts:
     devto:
       name: DEV Profile 👩‍💻👨‍💻
@@ -12,7 +12,7 @@ author: &author
       title: ℳontegasppα
       url: https://www.patreon.com/cacilhas
       image:
-        source: //cacilhas.info/img/patreon.png
+        source: //cacilhas.cc/img/patreon.png
         style:
           width: 24px
           height: 24px
@@ -21,7 +21,7 @@ author: &author
       title: Le Obscur Essenteς
       url: https://montegasppa.bandcamp.com/releases
       image:
-        source: //cacilhas.info/img/le-obscur-essentes.jpg
+        source: //cacilhas.cc/img/le-obscur-essentes.jpg
         style:
           width: 24px
           height: 24px
@@ -29,7 +29,7 @@ author: &author
       name: Github
       url: https://github.com/cacilhas/
       image:
-        source: //cacilhas.info/img/github.png
+        source: //cacilhas.cc/img/github.png
         style:
           width: 24px
           height: 20px
@@ -38,7 +38,7 @@ author: &author
       title: Archimedes Montegasppa
       url: https://www.facebook.com/archimedes.montegasppa.3
       image:
-        source: //cacilhas.info/img/facebook.png
+        source: //cacilhas.cc/img/facebook.png
         style:
           width: 24px
           height: 24px
@@ -47,7 +47,7 @@ author: &author
       title: Exercism
       url: https://exercism.org/profiles/cacilhas
       image:
-        source: //cacilhas.info/img/exercism.png
+        source: //cacilhas.cc/img/exercism.png
         style:
           width: 24px
           height: 24px
@@ -56,7 +56,7 @@ author: &author
       title: Rodrigo Cacilhas
       url: https://br.linkedin.com/in/rodrigocacilhas
       image:
-        source: //cacilhas.info/img/linkedin.png
+        source: //cacilhas.cc/img/linkedin.png
         style:
           width: 24px
           height: 24px
@@ -65,7 +65,7 @@ description: The shadows behind the code.
 favicon: /img/favicon.ico
 image: /img/background.jpg
 lang: en
-site: &site //kodumaro.cacilhas.info
+site: &site //kodumaro.cacilhas.cc
 title: &title Kodumaro
 
 license:
@@ -85,25 +85,25 @@ devto:
 
 cacilhas:
   title: ℭacilhας.INFO
-  url: //cacilhas.info
+  url: //cacilhas.cc
 
 hondaj:
   title: ĤøŅĐΔj̆₀
-  url: //hondaj.cacilhas.info/
+  url: //hondaj.cacilhas.cc/
 
 mastodon:
   title: Mastodon
   url: https://social.sndevs.com/@kodumaro
   account: "@kodumaro@social.sndevs.com"
-  badge: //cacilhas.info/img/mastodon.png
+  badge: //cacilhas.cc/img/mastodon.png
 
 misc:
   title: Miscelaneous
-  url: //cacilhas.info/misc
+  url: //cacilhas.cc/misc
 
 montegasppa:
   title: ℳontegasppα and Giulia C.’s Thoughts
-  url: //montegasppa.cacilhas.info/
+  url: //montegasppa.cacilhas.cc/
   author: *author_name
 
 mosaicolivre:
@@ -122,7 +122,7 @@ todasfridas:
 
 vortaro:
   title: Konsulta Vortaro
-  url: //vortaro.cacilhas.info/
+  url: //vortaro.cacilhas.cc/
 
 waltercruz:
   title: Walter Cruz

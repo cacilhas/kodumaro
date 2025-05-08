@@ -1,4 +1,4 @@
-![Yes!!](//cacilhas.info/img/yes.png)
+![Yes!!](//cacilhas.cc/img/yes.png)
 
 I’ve seen for long lots of blog posts and YouTube videos addressing this topic, invariably answering a loud NO. However, considering how far technology has changed your lives and how important Computing knowledge has become to us, I must disagree just as loudly.
 

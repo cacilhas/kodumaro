@@ -1,4 +1,4 @@
-![MoonScript](//cacilhas.info/img/glider.png)
+![MoonScript](//cacilhas.cc/img/glider.png)
 
 I’ve seen people not understanding the difference between binary and text.
 
@@ -108,6 +108,6 @@ Everytime it’s possible, prefer binary representations over text.
 
 * * *
 
-Original post (in Portuguese): [Diferença entre dado binário e dado textual](https://kodumaro.cacilhas.info/2017/06/binario-texto.html).
+Original post (in Portuguese): [Diferença entre dado binário e dado textual](https://kodumaro.cacilhas.cc/2017/06/binario-texto.html).
 
 Also in [DEV.to](https://dev.to/cacilhas/binary-vs-text-2blo).
