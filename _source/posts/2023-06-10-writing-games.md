@@ -31,7 +31,7 @@ permalink: /2023/06/writing-games.html
 [Moonscript]: https://moonscript.org/
 [msx-sokoban]: https://msxgamesworld.com/software.php?id=1518
 [my personal showcase]: https://cacilhas.itch.io/
-[Nanpurë]: https://cacilhas.itch.io/nanpure
+[Nanpurë]: https://cacilhas.itch.io/numples
 [nonogram]: https://en.wikipedia.org/wiki/Nonogram
 [Raylib]: https://www.raylib.com/
 [Rust]: https://www.rust-lang.org/
