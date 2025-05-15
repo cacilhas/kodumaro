@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/cacilhas/kodumaro/issues"
   },
-  "homepage": "https://kodumaro.cacilhas.cc/",
+  "homepage": "https://kodumaro.pages.dev/",
   "dependencies": {
     "coffeescript": "^2.5.1",
     "indented-filter": "^0.1.1",

@@ -65,7 +65,7 @@ description: The shadows behind the code.
 favicon: /img/favicon.ico
 image: /img/background.jpg
 lang: en
-site: &site //kodumaro.cacilhas.cc
+site: &site //kodumaro.pages.dev
 title: &title Kodumaro
 
 license:
