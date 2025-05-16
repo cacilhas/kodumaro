@@ -2,7 +2,7 @@
 title: How to Compute Arbitrary Precision Transcendental Numbers
 date: 2021-04-11
 tags: concept education-and-culture math python
-image: //cacilhas.cc/img/lamp.png
+image: //img.cacilhas.cc/lamp.png
 permalink: /2021/04/transcendental-numbers.html
 ---
 [image]: {{{image}}}

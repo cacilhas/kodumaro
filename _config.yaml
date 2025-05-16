@@ -12,7 +12,7 @@ author: &author
       title: ℳontegasppα
       url: https://www.patreon.com/cacilhas
       image:
-        source: //cacilhas.cc/img/patreon.png
+        source: //img.cacilhas.cc/patreon.png
         style:
           width: 24px
           height: 24px
@@ -21,7 +21,7 @@ author: &author
       title: Le Obscur Essenteς
       url: https://montegasppa.bandcamp.com/releases
       image:
-        source: //cacilhas.cc/img/le-obscur-essentes.jpg
+        source: //img.cacilhas.cc/le-obscur-essentes.jpg
         style:
           width: 24px
           height: 24px
@@ -29,7 +29,7 @@ author: &author
       name: Github
       url: https://github.com/cacilhas/
       image:
-        source: //cacilhas.cc/img/github.png
+        source: //img.cacilhas.cc/github.png
         style:
           width: 24px
           height: 20px
@@ -38,7 +38,7 @@ author: &author
       title: Archimedes Montegasppa
       url: https://www.facebook.com/archimedes.montegasppa.3
       image:
-        source: //cacilhas.cc/img/facebook.png
+        source: //img.cacilhas.cc/facebook.png
         style:
           width: 24px
           height: 24px
@@ -47,7 +47,7 @@ author: &author
       title: Exercism
       url: https://exercism.org/profiles/cacilhas
       image:
-        source: //cacilhas.cc/img/exercism.png
+        source: //img.cacilhas.cc/exercism.png
         style:
           width: 24px
           height: 24px
@@ -56,7 +56,7 @@ author: &author
       title: Rodrigo Cacilhas
       url: https://br.linkedin.com/in/rodrigocacilhas
       image:
-        source: //cacilhas.cc/img/linkedin.png
+        source: //img.cacilhas.cc/linkedin.png
         style:
           width: 24px
           height: 24px
@@ -95,11 +95,11 @@ mastodon:
   title: Mastodon
   url: https://social.sndevs.com/@kodumaro
   account: "@kodumaro@social.sndevs.com"
-  badge: //cacilhas.cc/img/mastodon.png
+  badge: //img.cacilhas.cc/mastodon.png
 
 misc:
   title: Miscelaneous
-  url: //cacilhas.cc/misc
+  url: //misc.cacilhas.cc
 
 montegasppa:
   title: ℳontegasppα and Giulia C.’s Thoughts

@@ -2,7 +2,7 @@
 title: The “Either” Issue
 date: 2022-02-23
 tags: career education-and-culture
-image: //cacilhas.cc/img/lamp.png
+image: //img.cacilhas.cc/lamp.png
 permalink: /2022/02/either-issue.html
 ---
 [image]: {{{image}}}
