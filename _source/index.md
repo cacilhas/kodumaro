@@ -1,5 +1,5 @@
 ---
-type: page
+type: website
 title: Kodumaro :: Saluton!
 date: 2020-09-23
 ---
