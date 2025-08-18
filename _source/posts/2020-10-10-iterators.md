@@ -101,7 +101,7 @@ Coroutines allow yielding results while it keeps running the concurrent routine.
 Collatz Conjecture using coroutine is:
 
 ```moonscript
-_collatz = (value using coroutine) ->
+collatz = (value using coroutine) ->
     import wrap, yield from coroutine
     wrap ->
         while value != 1
