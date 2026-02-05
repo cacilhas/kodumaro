@@ -1,8 +1,8 @@
 author: &author
-  name: &author_name Montegasppα Cacilhας
-  email: montegasppa@cacilhas.cc
-  username: cacilhas
-  url: //montegasppa.cacilhas.cc/author.html
+  name: &author_name Montegasppα
+  email: kodumaro@montegasppa.cc
+  username: kodumaro
+  url: //montegasppa.cc/author.html
   contacts:
     devto:
       name: DEV Profile 👩‍💻👨‍💻
@@ -13,7 +13,7 @@ author: &author
       title: ℳontegasppα
       url: https://www.patreon.com/cacilhas
       image:
-        source: //img.cacilhas.cc/patreon.png
+        source: //img.montegasppa.cc/patreon.png
         style:
           width: 24px
           height: 24px
@@ -22,7 +22,7 @@ author: &author
       title: Le Obscur Essenteς
       url: https://montegasppa.bandcamp.com/releases
       image:
-        source: //img.cacilhas.cc/le-obscur-essentes.jpg
+        source: //img.montegasppa.cc/le-obscur-essentes.jpg
         style:
           width: 24px
           height: 24px
@@ -30,7 +30,7 @@ author: &author
       name: Github
       url: https://github.com/cacilhas/
       image:
-        source: //img.cacilhas.cc/github.png
+        source: //img.montegasppa.cc/github.png
         style:
           width: 24px
           height: 20px
@@ -39,7 +39,7 @@ author: &author
       title: Archimedes Montegasppa
       url: https://www.facebook.com/archimedes.montegasppa.3
       image:
-        source: //img.cacilhas.cc/facebook.png
+        source: //img.montegasppa.cc/facebook.png
         style:
           width: 24px
           height: 24px
@@ -48,7 +48,7 @@ author: &author
       title: Exercism
       url: https://exercism.org/profiles/cacilhas
       image:
-        source: //img.cacilhas.cc/exercism.png
+        source: //img.montegasppa.cc/exercism.png
         style:
           width: 24px
           height: 24px
@@ -57,7 +57,7 @@ author: &author
       title: Rodrigo Cacilhas
       url: https://br.linkedin.com/in/rodrigocacilhas
       image:
-        source: //img.cacilhas.cc/linkedin.png
+        source: //img.montegasppa.cc/linkedin.png
         style:
           width: 24px
           height: 24px
@@ -85,7 +85,7 @@ devto:
   badge: https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg
 
 cacilhas:
-  title: ℭacilhας.INFO
+  title: ℭacilhας Sertec
   url: //cacilhas.cc
 
 hondaj:
@@ -96,15 +96,15 @@ mastodon:
   title: Mastodon
   url: https://social.sndevs.com/@kodumaro
   account: "@kodumaro@social.sndevs.com"
-  badge: //img.cacilhas.cc/mastodon.png
+  badge: //img.montegasppa.cc/mastodon.png
 
 misc:
   title: Miscelaneous
-  url: //misc.cacilhas.cc
+  url: //misc.montegasppa.cc
 
 montegasppa:
   title: ℳontegasppα and Giulia C.’s Thoughts
-  url: //montegasppa.cacilhas.cc/
+  url: //montegasppa.cc/
   author: *author_name
 
 mosaicolivre:
@@ -123,7 +123,7 @@ todasfridas:
 
 vortaro:
   title: Konsulta Vortaro
-  url: //vortaro.cacilhas.cc/
+  url: //vortaro.montegasppa.cc/
 
 waltercruz:
   title: Walter Cruz
