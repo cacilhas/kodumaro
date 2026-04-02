@@ -2,7 +2,7 @@
 title: A Lovecraftian game
 date: 2023-02-21
 tags: game-engine scratch
-image: //img.cacilhas.cc/oni.png
+image: //img.montegasppa.cc/oni.png
 permalink: /2023/02/lovecraft.html
 griffpatch: https://scratch.mit.edu/users/griffpatch/
 ---

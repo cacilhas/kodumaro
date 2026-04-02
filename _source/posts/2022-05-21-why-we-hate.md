@@ -2,7 +2,7 @@
 title: Why we hate…
 date: 2022-05-21
 tags: career education-and-culture
-image: //img.cacilhas.cc/garbage-dump.jpg
+image: //img.montegasppa.cc/garbage-dump.jpg
 permalink: /2022/05/why-we-hate.html
 ---
 [image]: {{{image}}}
