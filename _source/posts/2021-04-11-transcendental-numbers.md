@@ -15,7 +15,7 @@ permalink: /2021/04/transcendental-numbers.html
 [Functional Works]: https://www.works-hub.com/learn/how-to-compute-arbitrary-precision-transcendental-numbers-3c1bc?utm_campaign=Automation%20-%20Candidate%20Emails&utm_medium=email&_hsmi=106671327&_hsenc=p2ANqtz-8_Q4Pbh3qH2i_8NyfURQW4LB3Zw54WMX8p4CsnfaSnzEvto6P2K-OaMuOPdhx42y46dRm5lSrLFBtwKWSRIf8d91mzGA&utm_content=106671327&utm_source=hs_email
 [Kodumaro]: {{{site}}}
 [Leibniz]: https://www.wolframalpha.com/input/?i=Gottfried+Wilhelm+Leibniz
-[mail me]: mailto:kodumaro@cacilhas.cc
+[mail me]: mailto:kodumaro@montegasppa.cc
 [musical project]: https://www.patreon.com/cacilhas
 [my last post]: {{{kodumaro.url}}}/2020/12/implicit-conversions.html
 [my personal blog]: {{{montegasppa.url}}}

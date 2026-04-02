@@ -21,13 +21,13 @@ programming.
 ### Posts
 
 <ul id="postsList">
-  <noscript>Please enable Javascript to view the posts.</noscript>
+  <noscript>Please enable JavaScript to view the posts.</noscript>
 </ul>
 
 ### Tags
 
 <ul id="tagsList">
-  <noscript>Please enable Javascript to view the posts.</noscript>
+  <noscript>Please enable JavaScript to view the posts.</noscript>
 </ul>
 
 ### Previous posts

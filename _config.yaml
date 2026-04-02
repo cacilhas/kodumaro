@@ -3,64 +3,6 @@ author: &author
   email: kodumaro@montegasppa.cc
   username: kodumaro
   url: //blog.montegasppa.cc/author.html
-  contacts:
-    devto:
-      name: DEV Profile 👩‍💻👨‍💻
-      title: DEV Profile 👩‍💻👨‍💻
-      url: https://dev.to/cacilhas
-    patreon:
-      name: Patreon
-      title: ℳontegasppα
-      url: https://www.patreon.com/cacilhas
-      image:
-        source: //img.montegasppa.cc/patreon.png
-        style:
-          width: 24px
-          height: 24px
-    bandcamp:
-      name: Bandcamp
-      title: Le Obscur Essenteς
-      url: https://montegasppa.bandcamp.com/releases
-      image:
-        source: //img.montegasppa.cc/le-obscur-essentes.jpg
-        style:
-          width: 24px
-          height: 24px
-    github:
-      name: Github
-      url: https://github.com/cacilhas/
-      image:
-        source: //img.montegasppa.cc/github.png
-        style:
-          width: 24px
-          height: 20px
-    facebook:
-      name: Facebook
-      title: Archimedes Montegasppa
-      url: https://www.facebook.com/archimedes.montegasppa.3
-      image:
-        source: //img.montegasppa.cc/facebook.png
-        style:
-          width: 24px
-          height: 24px
-    exercism:
-      name: Exercism
-      title: Exercism
-      url: https://exercism.org/profiles/cacilhas
-      image:
-        source: //img.montegasppa.cc/exercism.png
-        style:
-          width: 24px
-          height: 24px
-    linkedin:
-      name: LinkedIn
-      title: Rodrigo Cacilhas
-      url: https://br.linkedin.com/in/rodrigocacilhas
-      image:
-        source: //img.montegasppa.cc/linkedin.png
-        style:
-          width: 24px
-          height: 24px
 
 description: The shadows behind the code.
 favicon: /img/favicon.ico
@@ -83,14 +25,6 @@ devto:
   title: DEV Profile 👩‍💻👨‍💻
   url: https://dev.to/cacilhas
   badge: https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg
-
-cacilhas:
-  title: ℭacilhας Sertec
-  url: //cacilhas.cc
-
-hondaj:
-  title: ĤøŅĐΔj̆₀
-  url: //kondaj.montegasppa.cc/
 
 mastodon:
   title: Mastodon
