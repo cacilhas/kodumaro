@@ -1,6 +1,6 @@
 ---
 type: website
-title: Kodumaro :: Saluton!
+title: "Kodumaro :: Saluton!"
 date: 2020-09-23
 ---
 [legacy page]: /legacy.html
